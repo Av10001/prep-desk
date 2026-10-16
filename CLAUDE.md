@@ -6,7 +6,8 @@ Exam-prep web app: daily study plan with exact sub-topics to read, timed no-repe
 - `index.html`: page shell for GitHub Pages. The claude.ai version uses the same `app.js`, `store.js`, `styles.css` and `courses/` with its own shell.
 - `app.js`: plan engine (`dayPlan`, `readFor`), views, paper builder, tutor, profiles, AI adapter (`askClaude`). Never define a global named `claude`: it would overwrite `window.claude` on claude.ai.
 - `store.js`: storage. `cloud` = claude.ai per-viewer database (records max 256 KiB, so papers and mistakes are one record each, bucketed by month); `local` = localStorage.
-- `courses/*.json` + `courses/index.json`: one file per course (subjects, topics, `read` sub-topics per topic, `refs`, `notes`, `blocks`, `styles`, `patterns`, `exams`, `milestones`).
+- `courses/*.json` + `courses/index.json`: one file per course. Per subject: `topics`, `read` (sub-topics per topic), `kp` (key points per topic), `src` (per topic `[bookId, chapter]` pairs), `refs` (same as text), `notes` (subject summary). Per course: `books` (`t` title, `a` author, `kind`, `subj`), `blocks`, `styles`, `patterns`, `exams`, `milestones`.
+- Per-profile keys in `store.js`: `progress` (days, sub-topic ticks), `mynotes.<subject>` (own notes per topic), `revise`, `bookdone` (`bookId|chapter`), `ownbooks`, plus papers and mistakes.
 
 ## Rules
 - Use the **ponytail** skill (`.claude/skills/ponytail`, level `full`) on every coding task: smallest complete change, no new dependencies, no build step.

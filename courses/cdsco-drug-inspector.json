@@ -263,7 +263,200 @@
       "Spurious = imitation or substitute or false manufacturer name; adulterated = filthy, decomposed or harmful contents; misbranded = false or misleading labelling."
      ]
     }
-   ]
+   ],
+   "kp": {
+    "D&C Act 1940: objectives, definitions and structure": [
+     "The Act controls import (Chapter III) and manufacture, sale and distribution (Chapter IV) of drugs and cosmetics",
+     "'Drug' includes medicines, devices notified by the Government and substances to diagnose or treat",
+     "Patent or proprietary medicines are defined separately",
+     "Chapter IV-A covers Ayurveda, Siddha and Unani drugs"
+    ],
+    "Advisory and testing bodies": [
+     "DTAB: technical advice to the Centre and states",
+     "DCC: uniform administration across states",
+     "CDL Kolkata: statutory and appellate testing laboratory",
+     "Government Analysts test samples drawn by Inspectors",
+     "DCGI heads CDSCO and licenses new drugs, imports and clinical trials"
+    ],
+    "Drug Inspectors: qualifications, powers and duties": [
+     "Inspectors can enter, inspect, take samples, search and seize stock and records",
+     "The sample is divided into four portions, sealed and signed",
+     "Fair price is paid unless the owner refuses",
+     "An Inspector must not disclose information except for official purposes"
+    ],
+    "Misbranded, adulterated and spurious drugs; offences and penalties": [
+     "Misbranded: false or misleading label, coloured to hide damage",
+     "Adulterated: filthy, decomposed, toxic container, unpermitted colour",
+     "Spurious: imitation, substitute, or false manufacturer name",
+     "Making or selling adulterated or spurious drugs can bring long prison terms and fines",
+     "Cognisable and non-bailable for serious offences"
+    ],
+    "D&C Rules 1945: manufacturing licences": [
+     "Separate licences for different categories of drugs (e.g. general, Schedule C/C1, large-volume parenterals)",
+     "Loan licence: using another licensee's manufacturing facility",
+     "Technical staff must be approved by the licensing authority",
+     "Joint inspection before grant or renewal of licences for certain categories",
+     "Licence can be suspended or cancelled after a hearing"
+    ],
+    "D&C Rules: sale licences and conditions": [
+     "Retail licence requires a registered pharmacist",
+     "Wholesale licence requires a competent person (qualified or experienced)",
+     "Restricted licences for dealers in remote areas",
+     "Purchase and sale records kept for the set period",
+     "Schedule H sold only on prescription; H1 also needs a separate register"
+    ],
+    "Import of drugs and cosmetics": [
+     "Import needs a registration certificate for the manufacturer/product and an import licence",
+     "Small quantities allowed for personal use, test or analysis",
+     "Ports of entry are notified",
+     "Spurious, adulterated or misbranded drugs cannot be imported"
+    ],
+    "Schedules to the Rules": [
+     "C and C1: biological and special products (sera, vaccines, insulin)",
+     "H: prescription only; H1: certain antibiotics, anti-TB, habit-forming drugs",
+     "X: narcotic and psychotropic, stricter records",
+     "G: use under medical supervision; J: diseases a drug may not claim to cure; K: exemptions",
+     "M: GMP; L-1: GLP; P: life period; S: cosmetic standards; T: Ayurvedic GMP"
+    ],
+    "Labelling and packing": [
+     "Labels must carry name, strength, batch number, manufacturing and expiry dates, licence number, manufacturer",
+     "Schedule H, H1 and X carry specific warning boxes",
+     "Parenterals and biologicals have extra labelling rules",
+     "Cosmetics labels list ingredients and manufacturer"
+    ],
+    "New Drugs and Clinical Trials Rules 2019": [
+     "A new drug is one not previously approved in India for that use or form",
+     "Clinical trial needs CDSCO permission and a registered ethics committee",
+     "Compensation is payable for trial-related injury or death",
+     "BA/BE studies need approval and registered centres",
+     "Academic trials have separate conditions"
+    ],
+    "Medical Devices Rules 2017": [
+     "Classes A (low), B (low–moderate), C (moderate–high), D (high) risk",
+     "A and B licensed by state authority; C and D by the central authority",
+     "Manufacturers need a quality management system",
+     "Notified bodies audit class A and B manufacturers",
+     "Clinical investigation rules apply to new devices"
+    ],
+    "Cosmetics Rules 2020": [
+     "Import of cosmetics needs registration with CDSCO",
+     "Manufacture licensed by state authorities",
+     "Cosmetics must meet BIS standards",
+     "Prohibited and restricted ingredients are listed",
+     "Labelling must not make drug-like claims"
+    ],
+    "Pharmacy Act, NDPS Act and DMR Act": [
+     "Pharmacy Act 1948 created the Pharmacy Council of India and state councils",
+     "Only registered pharmacists may dispense",
+     "NDPS Act 1985 distinguishes narcotic drugs (from plants like opium, coca, cannabis) and psychotropic substances",
+     "DMR Act 1954 bans advertisements claiming cures for listed diseases"
+    ],
+    "Drug pricing and other laws": [
+     "NPPA (1997) fixes ceiling prices under DPCO 2013",
+     "Scheduled formulations are those in the NLEM",
+     "Market-based pricing: ceiling from the average price of brands with ≥ 1% market share",
+     "MTP Act governs termination of pregnancy",
+     "CPCSEA oversees animal experiments"
+    ]
+   },
+   "src": {
+    "D&C Act 1940: objectives, definitions and structure": [
+     [
+      "jain",
+      "Drugs and Cosmetics Act"
+     ]
+    ],
+    "Advisory and testing bodies": [
+     [
+      "jain",
+      "Drugs and Cosmetics Act"
+     ]
+    ],
+    "Drug Inspectors: qualifications, powers and duties": [
+     [
+      "jain",
+      "Drugs and Cosmetics Act"
+     ],
+     [
+      "dcact",
+      "D&C Rules (Inspectors)"
+     ]
+    ],
+    "Misbranded, adulterated and spurious drugs; offences and penalties": [
+     [
+      "jain",
+      "Drugs and Cosmetics Act"
+     ]
+    ],
+    "D&C Rules 1945: manufacturing licences": [
+     [
+      "jain",
+      "Drugs and Cosmetics Rules (manufacture)"
+     ]
+    ],
+    "D&C Rules: sale licences and conditions": [
+     [
+      "jain",
+      "Drugs and Cosmetics Rules (sale)"
+     ]
+    ],
+    "Import of drugs and cosmetics": [
+     [
+      "jain",
+      "Drugs and Cosmetics Rules (import)"
+     ]
+    ],
+    "Schedules to the Rules": [
+     [
+      "jain",
+      "Schedules to the D&C Rules"
+     ]
+    ],
+    "Labelling and packing": [
+     [
+      "jain",
+      "Drugs and Cosmetics Rules (labelling)"
+     ]
+    ],
+    "New Drugs and Clinical Trials Rules 2019": [
+     [
+      "ndct",
+      ""
+     ]
+    ],
+    "Medical Devices Rules 2017": [
+     [
+      "mdr",
+      ""
+     ]
+    ],
+    "Cosmetics Rules 2020": [
+     [
+      "cosr",
+      ""
+     ]
+    ],
+    "Pharmacy Act, NDPS Act and DMR Act": [
+     [
+      "jain",
+      "Pharmacy Act"
+     ],
+     [
+      "jain",
+      "NDPS Act"
+     ],
+     [
+      "jain",
+      "Drugs and Magic Remedies Act"
+     ]
+    ],
+    "Drug pricing and other laws": [
+     [
+      "jain",
+      "DPCO and miscellaneous Acts"
+     ]
+    ]
+   }
   },
   "gxp": {
    "n": "GMP, GLP, GCP and quality assurance",
@@ -369,7 +562,122 @@
       "GLP applies to laboratory studies; GCP to trials in humans; do not swap their scope."
      ]
     }
-   ]
+   ],
+   "kp": {
+    "Revised Schedule M: GMP requirements": [
+     "Revised Schedule M adds a pharmaceutical quality system, quality risk management and product quality reviews",
+     "Premises: logical flow, segregation, HVAC suited to the product",
+     "Equipment qualified and maintained",
+     "Personnel trained and hygiene enforced"
+    ],
+    "Cleanrooms and contamination control": [
+     "Grade A: aseptic filling (unidirectional airflow); B: background for A; C and D: less critical steps",
+     "HEPA filtration and pressure cascades prevent contamination",
+     "Environmental monitoring: viable and non-viable particles",
+     "WFI must meet tight microbial and endotoxin limits"
+    ],
+    "Documentation": [
+     "SOPs describe how; records prove it was done",
+     "Batch manufacturing records give full traceability",
+     "Master formula is the approved recipe",
+     "ALCOA+ principles keep data trustworthy",
+     "Data integrity failures are a major inspection finding"
+    ],
+    "Validation and qualification": [
+     "DQ → IQ → OQ → PQ",
+     "Process validation: design, qualification, continued verification",
+     "Cleaning validation sets residue limits between products",
+     "Revalidate after major changes"
+    ],
+    "Change control, deviations and CAPA": [
+     "Change control assesses impact before any change",
+     "Deviations are recorded and investigated",
+     "OOS: laboratory investigation before retesting",
+     "CAPA fixes root causes and prevents recurrence",
+     "Recalls are classed by risk to health"
+    ],
+    "Good Laboratory Practices": [
+     "Schedule L-1 sets GLP for quality control labs",
+     "Calibrate instruments to traceable standards",
+     "Reference standards stored and used under control",
+     "Stability: long-term 30 °C/75% RH for zone IVb; accelerated 40 °C/75% RH",
+     "Retain samples of each batch"
+    ],
+    "Good Clinical Practice": [
+     "Phase I: safety in a small group; II: efficacy and dose; III: confirmatory; IV: post-marketing",
+     "Informed consent before any trial procedure",
+     "Ethics committee approves and monitors",
+     "Serious adverse events reported within set timelines"
+    ],
+    "ICH quality guidelines overview": [
+     "Q1 stability, Q2 analytical validation, Q3 impurities",
+     "Q7 GMP for APIs",
+     "Q8 development, Q9 risk management, Q10 quality system",
+     "M4: Common Technical Document format"
+    ]
+   },
+   "src": {
+    "Revised Schedule M: GMP requirements": [
+     [
+      "dcact",
+      "Revised Schedule M (2023)"
+     ]
+    ],
+    "Cleanrooms and contamination control": [
+     [
+      "dcact",
+      "Revised Schedule M"
+     ],
+     [
+      "whogmp",
+      ""
+     ]
+    ],
+    "Documentation": [
+     [
+      "sharma",
+      "Documentation in pharma"
+     ]
+    ],
+    "Validation and qualification": [
+     [
+      "sharma",
+      "Validation"
+     ]
+    ],
+    "Change control, deviations and CAPA": [
+     [
+      "sharma",
+      "Quality management systems"
+     ]
+    ],
+    "Good Laboratory Practices": [
+     [
+      "dcact",
+      "Schedule L-1"
+     ],
+     [
+      "oecd",
+      ""
+     ]
+    ],
+    "Good Clinical Practice": [
+     [
+      "ich",
+      "ICH E6"
+     ],
+     [
+      "ndct",
+      "NDCT Rules 2019"
+     ]
+    ],
+    "ICH quality guidelines overview": [
+     [
+      "ich",
+      ""
+     ]
+    ]
+   }
   },
   "pceu": {
    "n": "Pharmaceutics and dosage forms",
@@ -507,7 +815,185 @@
       "Flocculated suspensions settle fast but redisperse easily; deflocculated ones settle slowly but form a hard cake."
      ]
     }
-   ]
+   ],
+   "kp": {
+    "Preformulation and physical pharmacy": [
+     "Solubility, pKa, partition coefficient guide formulation",
+     "Polymorphs differ in solubility and stability",
+     "Smaller particles dissolve faster",
+     "Flow: angle of repose < 30° is excellent; Carr's index and Hausner ratio",
+     "First-order degradation: t90 = 0.105/k"
+    ],
+    "Tablets: excipients and manufacturing": [
+     "Diluent, binder, disintegrant, lubricant, glidant each have a role",
+     "Wet granulation: mix, granulate, dry, size",
+     "Direct compression needs good-flowing excipients",
+     "Capping and lamination: entrapped air, worn tooling",
+     "Sticking and picking: moisture or too little lubricant"
+    ],
+    "Tablet coating and evaluation": [
+     "Film coating is thin and fast; sugar coating is thick and slow",
+     "Enteric coating resists gastric acid",
+     "Friability ≤ 1% weight loss",
+     "Disintegration: uncoated tablets typically within 15 minutes (IP)",
+     "Dissolution apparatus 1 basket, 2 paddle"
+    ],
+    "Capsules": [
+     "Hard capsule sizes 000 (largest) to 5 (smallest)",
+     "Soft gelatin capsules hold liquids and oils",
+     "Gelatin plus plasticiser and water make the shell",
+     "Tests: weight variation, disintegration, dissolution"
+    ],
+    "Liquid orals": [
+     "Syrups: high sugar; elixirs: hydroalcoholic",
+     "Suspensions need suspending and wetting agents",
+     "Flocculated: fast settling, easy redispersion",
+     "Emulsions: o/w or w/o; HLB of emulsifier decides type",
+     "Creaming is reversible; cracking is not"
+    ],
+    "Semisolids and suppositories": [
+     "Ointment bases: oleaginous, absorption, water-removable, water-soluble",
+     "Creams are emulsions; gels are semisolid systems",
+     "Suppository bases: cocoa butter (melts) and PEG (dissolves)",
+     "Displacement value adjusts base quantity"
+    ],
+    "Parenteral products": [
+     "Parenterals must be sterile, pyrogen-free and particle-free",
+     "Water for injection and isotonic adjustment",
+     "Type I glass for most parenterals",
+     "LVP: large volume infusions; SVP: small volume",
+     "Lyophilisation for heat- or moisture-sensitive drugs"
+    ],
+    "Sterilization and aseptic processing": [
+     "Autoclave 121 °C for 15 minutes",
+     "Dry heat 160 °C for 2 hours; depyrogenation needs higher temperatures",
+     "Membrane filtration 0.22 µm for heat-labile solutions",
+     "Biological indicators: Geobacillus stearothermophilus (steam), Bacillus atrophaeus (dry heat, EO)",
+     "Media fill validates aseptic processing"
+    ],
+    "Ophthalmic and other sterile preparations": [
+     "Eye drops must be sterile and close to isotonic",
+     "Multidose eye drops need a preservative (e.g. benzalkonium chloride)",
+     "pH and viscosity affect comfort and contact time"
+    ],
+    "Aerosols and novel drug delivery": [
+     "Aerosol: container, valve, propellant, concentrate",
+     "Controlled release keeps levels steady and reduces dosing",
+     "Transdermal patches avoid first-pass metabolism",
+     "Liposomes: phospholipid vesicles for targeting"
+    ],
+    "Packaging": [
+     "Glass types I (borosilicate) to IV",
+     "Plastics can leach or absorb drugs",
+     "Rubber closures tested for compatibility",
+     "Blister packs protect from moisture",
+     "Tamper-evident packaging"
+    ],
+    "Surgical dressings and pharmacopoeial calculations": [
+     "Surgical dressings and sutures have pharmacopoeial standards",
+     "Isotonic: use freezing-point depression or sodium chloride equivalent",
+     "Alligation for mixing strengths",
+     "Proof spirit: 57.1% v/v ethanol"
+    ]
+   },
+   "src": {
+    "Preformulation and physical pharmacy": [
+     [
+      "lachman",
+      "Preformulation"
+     ],
+     [
+      "aulton",
+      "Physical pharmacy"
+     ]
+    ],
+    "Tablets: excipients and manufacturing": [
+     [
+      "lachman",
+      "Tablets"
+     ]
+    ],
+    "Tablet coating and evaluation": [
+     [
+      "lachman",
+      "Tablet coating"
+     ],
+     [
+      "ip",
+      "IP general tests"
+     ]
+    ],
+    "Capsules": [
+     [
+      "lachman",
+      "Capsules"
+     ]
+    ],
+    "Liquid orals": [
+     [
+      "lachman",
+      "Liquids"
+     ],
+     [
+      "aulton",
+      "Disperse systems"
+     ]
+    ],
+    "Semisolids and suppositories": [
+     [
+      "lachman",
+      "Semisolids"
+     ],
+     [
+      "lachman",
+      "Suppositories"
+     ]
+    ],
+    "Parenteral products": [
+     [
+      "lachman",
+      "Sterile products"
+     ]
+    ],
+    "Sterilization and aseptic processing": [
+     [
+      "aulton",
+      "Sterilization"
+     ]
+    ],
+    "Ophthalmic and other sterile preparations": [
+     [
+      "lachman",
+      "Ophthalmic preparations"
+     ]
+    ],
+    "Aerosols and novel drug delivery": [
+     [
+      "lachman",
+      "Aerosols"
+     ],
+     [
+      "lachman",
+      "Sustained release"
+     ]
+    ],
+    "Packaging": [
+     [
+      "lachman",
+      "Packaging"
+     ]
+    ],
+    "Surgical dressings and pharmacopoeial calculations": [
+     [
+      "ip",
+      ""
+     ],
+     [
+      "cooper",
+      "Dispensing"
+     ]
+    ]
+   }
   },
   "bpk": {
    "n": "Biopharmaceutics and pharmacokinetics",
@@ -596,7 +1082,103 @@
       "A large Vd means extensive tissue distribution, not a large plasma volume."
      ]
     }
-   ]
+   ],
+   "kp": {
+    "Drug absorption": [
+     "Most drugs are absorbed by passive diffusion",
+     "Unionised form crosses membranes (pH-partition)",
+     "First-pass metabolism lowers oral bioavailability",
+     "Food, gastric emptying and formulation alter absorption"
+    ],
+    "Distribution and protein binding": [
+     "Vd = amount in body / plasma concentration",
+     "High protein binding limits free drug",
+     "Displacement from binding sites can cause toxicity (e.g. warfarin)",
+     "Blood–brain barrier excludes polar drugs"
+    ],
+    "Metabolism and excretion": [
+     "Phase I: oxidation, reduction, hydrolysis (CYP450)",
+     "Phase II: conjugation (glucuronide, sulphate, acetyl)",
+     "Inducers speed up metabolism; inhibitors slow it",
+     "Renal clearance = filtration + secretion − reabsorption"
+    ],
+    "One-compartment model": [
+     "IV bolus: C = C0 e^{−kt}; t½ = 0.693/k",
+     "CL = k × Vd; AUC = Dose/CL",
+     "Infusion steady state Css = R0/CL",
+     "Oral: Cmax and tmax depend on ka and k"
+    ],
+    "Multiple dosing and dose adjustment": [
+     "Steady state in 4–5 half-lives",
+     "Loading dose = Css × Vd / F",
+     "Maintenance dose rate = Css × CL / F",
+     "Renal impairment: reduce dose or lengthen interval for renally cleared drugs"
+    ],
+    "Bioavailability and bioequivalence": [
+     "Absolute F = (AUCoral/AUCiv) × (Doseiv/Doseoral)",
+     "Relative bioavailability compares two non-IV products",
+     "BE study: crossover design with washout",
+     "Acceptance: 90% CI of Cmax and AUC ratios within 80–125%"
+    ],
+    "Non-linear and two-compartment kinetics": [
+     "Michaelis–Menten: rate = Vmax C/(Km + C)",
+     "At high doses elimination becomes zero order (phenytoin, ethanol)",
+     "Small dose increases can cause large concentration rises",
+     "Two-compartment: distribution phase then elimination phase"
+    ]
+   },
+   "src": {
+    "Drug absorption": [
+     [
+      "brahmankar",
+      "Absorption of drugs"
+     ]
+    ],
+    "Distribution and protein binding": [
+     [
+      "brahmankar",
+      "Distribution"
+     ],
+     [
+      "brahmankar",
+      "Protein binding"
+     ]
+    ],
+    "Metabolism and excretion": [
+     [
+      "brahmankar",
+      "Biotransformation"
+     ],
+     [
+      "brahmankar",
+      "Excretion"
+     ]
+    ],
+    "One-compartment model": [
+     [
+      "brahmankar",
+      "Pharmacokinetic models"
+     ]
+    ],
+    "Multiple dosing and dose adjustment": [
+     [
+      "brahmankar",
+      "Multiple dosage regimens"
+     ]
+    ],
+    "Bioavailability and bioequivalence": [
+     [
+      "brahmankar",
+      "Bioavailability and bioequivalence"
+     ]
+    ],
+    "Non-linear and two-compartment kinetics": [
+     [
+      "brahmankar",
+      "Non-linear pharmacokinetics"
+     ]
+    ]
+   }
   },
   "anal": {
    "n": "Pharmaceutical analysis",
@@ -716,7 +1298,146 @@
       "Fluorescence intensity is proportional to concentration only at low concentrations; quenching lowers it."
      ]
     }
-   ]
+   ],
+   "kp": {
+    "Basics, errors and method validation": [
+     "Accuracy: closeness to true value; precision: closeness of repeated results",
+     "Systematic errors bias results; random errors scatter them",
+     "ICH Q2: specificity, linearity, range, accuracy, precision, LOD, LOQ, robustness",
+     "LOD = 3.3σ/S; LOQ = 10σ/S"
+    ],
+    "Titrimetric analysis": [
+     "Non-aqueous: perchloric acid in glacial acetic acid for weak bases",
+     "Iodometry uses thiosulphate; iodimetry uses iodine directly",
+     "EDTA titrations use metal indicators (Eriochrome black T)",
+     "Argentometry: Mohr (chromate), Volhard (back titration), Fajans (adsorption indicators)"
+    ],
+    "Limit tests and impurities": [
+     "Chloride: silver nitrate, compare opalescence",
+     "Sulphate: barium chloride turbidity",
+     "Iron: thioglycollic acid, purple colour",
+     "Lead and heavy metals: sulphide or dithizone methods",
+     "Arsenic: Gutzeit apparatus, stain on mercuric chloride paper"
+    ],
+    "Gravimetry, moisture and alcohol content": [
+     "Gravimetry: precipitate, filter, dry, weigh",
+     "Karl Fischer measures water by iodine–SO₂ reaction",
+     "Loss on drying includes all volatiles",
+     "Ash values detect inorganic contamination"
+    ],
+    "UV–Visible spectroscopy, colorimetry and fluorimetry": [
+     "Beer–Lambert: A = εbc",
+     "Bathochromic = red shift; hypsochromic = blue shift",
+     "Fluorimetry is more sensitive than UV",
+     "Quenching lowers fluorescence",
+     "Nephelometry measures scattered light; turbidimetry measures transmitted"
+    ],
+    "IR spectroscopy, AAS and flame photometry": [
+     "IR: functional group region 4000–1500 cm⁻¹, fingerprint below 1500",
+     "Carbonyl stretch near 1700 cm⁻¹",
+     "AAS measures metals by absorption at element-specific wavelengths",
+     "Flame photometry for Na, K, Li, Ca"
+    ],
+    "Chromatography": [
+     "Rf = solute distance / solvent front distance",
+     "HPLC: reverse phase (C18) most common",
+     "System suitability: resolution, tailing, plate count, repeatability",
+     "GC needs volatile, thermally stable samples",
+     "HPTLC for herbal fingerprinting"
+    ],
+    "NMR and mass spectrometry basics": [
+     "NMR chemical shift in ppm from TMS",
+     "n + 1 rule for splitting",
+     "Mass spectrometry gives molecular ion and fragments",
+     "LC-MS identifies impurities"
+    ],
+    "Electrochemical methods": [
+     "Potentiometry measures EMF; glass electrode for pH",
+     "Conductometry for titrations without indicators",
+     "Polarography uses a dropping mercury electrode",
+     "Amperometric titrations follow current"
+    ],
+    "Biological and microbiological tests": [
+     "Sterility test: membrane filtration or direct inoculation, 14 days incubation",
+     "Pyrogen test in rabbits; BET uses LAL reagent",
+     "Microbiological assay: cylinder-plate or turbidimetric",
+     "Microbial limit tests for non-sterile products"
+    ]
+   },
+   "src": {
+    "Basics, errors and method validation": [
+     [
+      "beckett",
+      ""
+     ],
+     [
+      "ich",
+      "ICH Q2"
+     ]
+    ],
+    "Titrimetric analysis": [
+     [
+      "beckett",
+      "Titrimetry"
+     ]
+    ],
+    "Limit tests and impurities": [
+     [
+      "ip",
+      "Appendices"
+     ],
+     [
+      "beckett",
+      ""
+     ]
+    ],
+    "Gravimetry, moisture and alcohol content": [
+     [
+      "beckett",
+      ""
+     ]
+    ],
+    "UV–Visible spectroscopy, colorimetry and fluorimetry": [
+     [
+      "skoog",
+      "Molecular spectroscopy"
+     ]
+    ],
+    "IR spectroscopy, AAS and flame photometry": [
+     [
+      "skoog",
+      ""
+     ]
+    ],
+    "Chromatography": [
+     [
+      "skoog",
+      "Chromatography"
+     ]
+    ],
+    "NMR and mass spectrometry basics": [
+     [
+      "skoog",
+      ""
+     ],
+     [
+      "silverstein",
+      ""
+     ]
+    ],
+    "Electrochemical methods": [
+     [
+      "beckett",
+      "Electrochemical methods"
+     ]
+    ],
+    "Biological and microbiological tests": [
+     [
+      "ip",
+      "Biological tests"
+     ]
+    ]
+   }
   },
   "chem": {
    "n": "Pharmaceutical and medicinal chemistry",
@@ -848,7 +1569,167 @@
       "Know the class of each named drug: questions give a drug and ask its class or mechanism."
      ]
     }
-   ]
+   ],
+   "kp": {
+    "Inorganic pharmaceuticals": [
+     "Antacids: aluminium hydroxide (constipating), magnesium hydroxide (laxative)",
+     "ORS: sodium, potassium, glucose, citrate",
+     "Radiopharmaceuticals: technetium-99m for imaging",
+     "Astringents precipitate proteins"
+    ],
+    "Drug design basics and metabolism chemistry": [
+     "SAR links structure to activity",
+     "Prodrugs: enalapril, levodopa, valacyclovir",
+     "Bioisosteres replace groups with similar properties",
+     "Metabolism usually makes drugs more polar for excretion"
+    ],
+    "CNS drugs": [
+     "Benzodiazepines act on GABA-A; antagonist flumazenil",
+     "Phenytoin, carbamazepine, valproate for epilepsy",
+     "Typical antipsychotics block D2",
+     "SSRIs: fluoxetine, sertraline",
+     "Local anaesthetics: esters (procaine) and amides (lidocaine)"
+    ],
+    "Autonomic drugs": [
+     "Neostigmine and physostigmine inhibit cholinesterase",
+     "Atropine blocks muscarinic receptors",
+     "Adrenaline: α and β agonist; salbutamol: β2 selective",
+     "Propranolol: non-selective β blocker; atenolol: β1 selective"
+    ],
+    "Analgesics": [
+     "Morphine: μ-opioid agonist; naloxone reverses",
+     "Aspirin: irreversible COX inhibition",
+     "Paracetamol: weak anti-inflammatory",
+     "Celecoxib: COX-2 selective"
+    ],
+    "Cardiovascular drugs": [
+     "ACE inhibitors end in -pril; ARBs in -sartan",
+     "Calcium channel blockers: amlodipine, verapamil",
+     "Nitrates relieve angina via venodilation",
+     "Digoxin inhibits Na⁺/K⁺-ATPase",
+     "Statins inhibit HMG-CoA reductase"
+    ],
+    "Diuretics and antidiabetics": [
+     "Loop diuretics (furosemide) are the most potent",
+     "Thiazides act on the distal tubule",
+     "Spironolactone is potassium-sparing",
+     "Metformin: biguanide; glibenclamide: sulphonylurea",
+     "Gliptins inhibit DPP-4; gliflozins inhibit SGLT2"
+    ],
+    "Antihistamines, steroids and hormones": [
+     "H1 blockers: first generation sedate (chlorpheniramine), second do not (cetirizine)",
+     "H2 blockers reduce acid (ranitidine, famotidine)",
+     "Corticosteroids: anti-inflammatory and immunosuppressive",
+     "Carbimazole and propylthiouracil are antithyroid"
+    ],
+    "Antibiotics": [
+     "Penicillins and cephalosporins inhibit cell wall synthesis",
+     "Aminoglycosides act on the 30S ribosome; ototoxic and nephrotoxic",
+     "Macrolides and chloramphenicol act on 50S",
+     "Fluoroquinolones inhibit DNA gyrase",
+     "Sulphonamides with trimethoprim block folate synthesis"
+    ],
+    "Antitubercular, antimalarial, antiviral and antifungal drugs": [
+     "First-line TB drugs: isoniazid, rifampicin, pyrazinamide, ethambutol",
+     "Chloroquine, artemisinins for malaria",
+     "Acyclovir for herpes; tenofovir and others for HIV",
+     "Azoles inhibit ergosterol synthesis; amphotericin B binds ergosterol"
+    ],
+    "Anticancer drugs": [
+     "Alkylating agents: cyclophosphamide",
+     "Antimetabolites: methotrexate, 5-fluorouracil",
+     "Vinca alkaloids and taxanes act on microtubules",
+     "Imatinib is a targeted tyrosine kinase inhibitor"
+    ],
+    "Vitamins": [
+     "Fat-soluble: A, D, E, K",
+     "B1 thiamine (beriberi), B3 niacin (pellagra), B12 (pernicious anaemia)",
+     "C ascorbic acid (scurvy)",
+     "D deficiency: rickets; K: bleeding"
+    ]
+   },
+   "src": {
+    "Inorganic pharmaceuticals": [
+     [
+      "inorg",
+      ""
+     ]
+    ],
+    "Drug design basics and metabolism chemistry": [
+     [
+      "foye",
+      "Drug design"
+     ],
+     [
+      "foye",
+      "Drug metabolism"
+     ]
+    ],
+    "CNS drugs": [
+     [
+      "foye",
+      "CNS drugs"
+     ]
+    ],
+    "Autonomic drugs": [
+     [
+      "foye",
+      "Autonomic drugs"
+     ]
+    ],
+    "Analgesics": [
+     [
+      "foye",
+      "Opioids"
+     ],
+     [
+      "foye",
+      "NSAIDs"
+     ]
+    ],
+    "Cardiovascular drugs": [
+     [
+      "foye",
+      "Cardiovascular drugs"
+     ]
+    ],
+    "Diuretics and antidiabetics": [
+     [
+      "foye",
+      ""
+     ]
+    ],
+    "Antihistamines, steroids and hormones": [
+     [
+      "foye",
+      ""
+     ]
+    ],
+    "Antibiotics": [
+     [
+      "foye",
+      "Antibiotics"
+     ]
+    ],
+    "Antitubercular, antimalarial, antiviral and antifungal drugs": [
+     [
+      "foye",
+      "Chemotherapy"
+     ]
+    ],
+    "Anticancer drugs": [
+     [
+      "foye",
+      "Anticancer agents"
+     ]
+    ],
+    "Vitamins": [
+     [
+      "foye",
+      "Vitamins"
+     ]
+    ]
+   }
   },
   "pcol": {
    "n": "Pharmacology and toxicology",
@@ -978,7 +1859,160 @@
       "Type A ADRs are dose-related and predictable; Type B are bizarre and unpredictable (e.g. allergy)."
      ]
     }
-   ]
+   ],
+   "kp": {
+    "General pharmacology": [
+     "IV route gives 100% bioavailability",
+     "Agonist activates; antagonist blocks",
+     "Potency vs efficacy",
+     "Therapeutic index = LD50/ED50",
+     "Tolerance needs higher doses for the same effect"
+    ],
+    "Autonomic nervous system": [
+     "Muscarinic agonists slow the heart and constrict pupils",
+     "Organophosphates inhibit cholinesterase irreversibly",
+     "α1: vasoconstriction; β1: heart; β2: bronchodilation",
+     "Neuromuscular blockers used in anaesthesia"
+    ],
+    "Central nervous system": [
+     "Barbiturates are more dangerous in overdose than benzodiazepines",
+     "Levodopa with carbidopa for Parkinson's",
+     "Lithium needs blood level monitoring",
+     "Opioids cause respiratory depression and miosis"
+    ],
+    "Cardiovascular and renal drugs": [
+     "First-line antihypertensives: ACE inhibitors/ARBs, CCBs, thiazides",
+     "Heart failure: ACE inhibitors, β blockers, diuretics",
+     "Nitroglycerin relieves angina",
+     "Amiodarone: broad antiarrhythmic with many side effects"
+    ],
+    "Blood, respiratory and GI drugs": [
+     "Heparin acts fast (antithrombin); warfarin slowly (vitamin K antagonist)",
+     "Aspirin and clopidogrel inhibit platelets",
+     "Salbutamol relieves asthma; inhaled steroids prevent attacks",
+     "Proton pump inhibitors (omeprazole) reduce acid most"
+    ],
+    "Endocrine pharmacology": [
+     "Insulin types: rapid, short, intermediate, long acting",
+     "Hypoglycaemia is the main risk of insulin and sulphonylureas",
+     "Levothyroxine for hypothyroidism",
+     "Long-term steroids suppress the adrenal axis"
+    ],
+    "Autacoids and NSAIDs": [
+     "Histamine via H1 (allergy) and H2 (acid)",
+     "Prostaglandins protect gastric mucosa; NSAIDs remove this",
+     "Allopurinol lowers uric acid",
+     "Colchicine for acute gout"
+    ],
+    "Antimicrobial chemotherapy": [
+     "Bactericidal vs bacteriostatic",
+     "Resistance by enzymes (β-lactamase), efflux, target change",
+     "Multidrug TB therapy prevents resistance",
+     "Metronidazole for anaerobes and protozoa",
+     "Albendazole for worms"
+    ],
+    "Adverse drug reactions and pharmacovigilance": [
+     "Type A: dose-related; Type B: unpredictable",
+     "Enzyme inhibitors raise levels of other drugs",
+     "Teratogens: thalidomide, isotretinoin, valproate, warfarin",
+     "PvPI (2010), coordinated by IPC Ghaziabad",
+     "ADR reporting form available to all health workers"
+    ],
+    "Toxicology and antidotes": [
+     "First aid, decontamination, supportive care, then antidote",
+     "Paracetamol: N-acetylcysteine",
+     "Opioids: naloxone; benzodiazepines: flumazenil",
+     "Organophosphates: atropine + pralidoxime",
+     "Iron: desferrioxamine; lead: EDTA; methanol: fomepizole or ethanol"
+    ],
+    "Experimental pharmacology and biostatistics": [
+     "Bioassay compares test and standard responses",
+     "CPCSEA approval for animal studies",
+     "Acute, sub-acute and chronic toxicity studies",
+     "Mean, median, mode, standard deviation",
+     "p < 0.05 conventionally significant"
+    ]
+   },
+   "src": {
+    "General pharmacology": [
+     [
+      "tripathi",
+      "General pharmacological principles"
+     ]
+    ],
+    "Autonomic nervous system": [
+     [
+      "tripathi",
+      "Drugs acting on ANS"
+     ]
+    ],
+    "Central nervous system": [
+     [
+      "tripathi",
+      "Drugs acting on CNS"
+     ]
+    ],
+    "Cardiovascular and renal drugs": [
+     [
+      "tripathi",
+      "Cardiovascular drugs"
+     ],
+     [
+      "tripathi",
+      "Kidney"
+     ]
+    ],
+    "Blood, respiratory and GI drugs": [
+     [
+      "tripathi",
+      ""
+     ]
+    ],
+    "Endocrine pharmacology": [
+     [
+      "tripathi",
+      "Hormones"
+     ]
+    ],
+    "Autacoids and NSAIDs": [
+     [
+      "tripathi",
+      "Autacoids"
+     ]
+    ],
+    "Antimicrobial chemotherapy": [
+     [
+      "tripathi",
+      "Antimicrobial drugs"
+     ]
+    ],
+    "Adverse drug reactions and pharmacovigilance": [
+     [
+      "tripathi",
+      "Adverse drug effects"
+     ]
+    ],
+    "Toxicology and antidotes": [
+     [
+      "tripathi",
+      ""
+     ],
+     [
+      "tox",
+      ""
+     ]
+    ],
+    "Experimental pharmacology and biostatistics": [
+     [
+      "kulkarni",
+      "Experimental pharmacology"
+     ],
+     [
+      "biostat",
+      ""
+     ]
+    ]
+   }
   },
   "bio": {
    "n": "Blood products, vaccines, sera and biotech",
@@ -1071,7 +2105,110 @@
       "Cryoprecipitate is rich in factor VIII and fibrinogen."
      ]
     }
-   ]
+   ],
+   "kp": {
+    "Microbiology basics, sterilization and disinfection": [
+     "Gram-positive: thick peptidoglycan; Gram-negative: outer membrane",
+     "Autoclave sterilises; boiling does not kill spores",
+     "Disinfectant efficiency: phenol coefficient",
+     "Aseptic technique prevents contamination"
+    ],
+    "Blood collection and testing": [
+     "Donors: healthy, age and weight limits, haemoglobin above minimum",
+     "Mandatory tests: HIV 1 & 2, HBsAg, HCV, syphilis, malaria",
+     "ABO and Rh grouping and cross-match",
+     "Blood banks need a licence"
+    ],
+    "Blood components and plasma products": [
+     "Whole blood (CPDA-1) about 35 days at 2–6 °C",
+     "Red cells in SAGM about 42 days",
+     "Platelets about 5 days at 20–24 °C with agitation",
+     "Fresh frozen plasma stored frozen, about 1 year",
+     "Cryoprecipitate: factor VIII and fibrinogen"
+    ],
+    "Vaccines: types and production": [
+     "Live attenuated: BCG, OPV, MMR",
+     "Inactivated: IPV, rabies",
+     "Toxoids: tetanus, diphtheria",
+     "Recombinant: hepatitis B",
+     "Conjugate vaccines (Hib, pneumococcal) work in infants"
+    ],
+    "Cold chain and vaccine handling": [
+     "Most vaccines at 2–8 °C",
+     "Freezing damages adsorbed vaccines (DPT, TT, hepatitis B)",
+     "Shake test detects freeze damage",
+     "VVM shows cumulative heat exposure",
+     "Use open vials as per the multi-dose vial policy"
+    ],
+    "Sera, antitoxins and immunoglobulins": [
+     "Antisera give passive immunity",
+     "Antivenom against snake venom",
+     "IgG crosses the placenta; IgM appears first",
+     "Passive immunity is immediate but short-lived"
+    ],
+    "Biotech products": [
+     "rDNA: gene inserted into a vector, expressed in host cells",
+     "Recombinant insulin, erythropoietin, growth hormone",
+     "Monoclonal antibodies end in -mab",
+     "Biosimilars need comparability with the reference product"
+    ]
+   },
+   "src": {
+    "Microbiology basics, sterilization and disinfection": [
+     [
+      "ananth",
+      "General microbiology"
+     ]
+    ],
+    "Blood collection and testing": [
+     [
+      "dcact",
+      "D&C Rules Part X-B"
+     ],
+     [
+      "naco",
+      ""
+     ]
+    ],
+    "Blood components and plasma products": [
+     [
+      "dcact",
+      "Schedule F"
+     ],
+     [
+      "naco",
+      ""
+     ]
+    ],
+    "Vaccines: types and production": [
+     [
+      "ananth",
+      "Immunity"
+     ],
+     [
+      "vaccine",
+      ""
+     ]
+    ],
+    "Cold chain and vaccine handling": [
+     [
+      "uip",
+      ""
+     ]
+    ],
+    "Sera, antitoxins and immunoglobulins": [
+     [
+      "ananth",
+      "Immunity"
+     ]
+    ],
+    "Biotech products": [
+     [
+      "biotech",
+      ""
+     ]
+    ]
+   }
   },
   "gnosy": {
    "n": "Pharmacognosy",
@@ -1148,7 +2285,91 @@
       "Do not mix Vitali–Morin (tropane alkaloids) with Keller–Killiani (deoxy sugars of cardiac glycosides)."
      ]
     }
-   ]
+   ],
+   "kp": {
+    "Introduction, cultivation and collection": [
+     "Crude drugs classified alphabetically, taxonomically, morphologically, chemically or pharmacologically",
+     "Collection time affects active constituents",
+     "Drying prevents enzymatic decay",
+     "Store away from light and moisture"
+    ],
+    "Evaluation and adulteration of crude drugs": [
+     "Organoleptic: colour, odour, taste",
+     "Microscopic: stomata, trichomes, crystals",
+     "Ash and extractive values",
+     "Adulteration: substitution, inferior grade, exhausted drug"
+    ],
+    "Alkaloid-containing drugs": [
+     "Rauwolfia root: reserpine",
+     "Cinchona bark: quinine",
+     "Belladonna leaf: atropine",
+     "Nux vomica seed: strychnine",
+     "Opium latex: morphine, codeine",
+     "Ipecac root: emetine",
+     "Ephedra: ephedrine",
+     "Vinca: vincristine"
+    ],
+    "Glycoside-containing drugs": [
+     "Digitalis leaf: cardiac glycosides (digitoxin)",
+     "Senna and aloe: anthraquinone laxatives",
+     "Liquorice: glycyrrhizin (saponin)",
+     "Keller–Killiani for cardiac glycosides; Borntrager for anthraquinones"
+    ],
+    "Tannins, volatile oils and resins": [
+     "Tannins precipitate proteins; test with ferric chloride",
+     "Clove oil: eugenol; cinnamon: cinnamaldehyde",
+     "Eucalyptus oil: cineole",
+     "Resins are insoluble in water"
+    ],
+    "Herbal drugs and standardisation": [
+     "Brahmi for memory; tulsi as adaptogen; bael for diarrhoea",
+     "Standardise herbal products by marker compounds",
+     "WHO guidelines for quality of herbal medicines",
+     "Ayurvedic GMP is Schedule T"
+    ]
+   },
+   "src": {
+    "Introduction, cultivation and collection": [
+     [
+      "kokate",
+      "Introduction"
+     ]
+    ],
+    "Evaluation and adulteration of crude drugs": [
+     [
+      "kokate",
+      "Evaluation of crude drugs"
+     ]
+    ],
+    "Alkaloid-containing drugs": [
+     [
+      "kokate",
+      "Alkaloids"
+     ]
+    ],
+    "Glycoside-containing drugs": [
+     [
+      "kokate",
+      "Glycosides"
+     ]
+    ],
+    "Tannins, volatile oils and resins": [
+     [
+      "kokate",
+      ""
+     ]
+    ],
+    "Herbal drugs and standardisation": [
+     [
+      "kokate",
+      ""
+     ],
+     [
+      "api",
+      ""
+     ]
+    ]
+   }
   },
   "hosp": {
    "n": "Hospital and clinical pharmacy, anatomy and physiology",
@@ -1226,7 +2447,83 @@
       "Insulin comes from pancreatic β-cells, glucagon from α-cells."
      ]
     }
-   ]
+   ],
+   "kp": {
+    "Hospital pharmacy organisation": [
+     "Pharmacy and Therapeutics Committee selects formulary drugs",
+     "Formulary lists approved drugs for the hospital",
+     "Unit-dose distribution reduces errors",
+     "Hospital pharmacist heads purchase, storage and distribution"
+    ],
+    "Purchase, storage and inventory": [
+     "ABC: by annual consumption value",
+     "VED: vital, essential, desirable",
+     "FEFO: first expiry, first out",
+     "Cold chain for vaccines, insulin, biologicals"
+    ],
+    "Clinical pharmacy": [
+     "Read prescriptions carefully; check dose, route, interactions",
+     "Counsel on dose, timing, side effects",
+     "TDM for narrow therapeutic index drugs",
+     "Report medication errors without blame"
+    ],
+    "Anatomy and physiology: blood, cardiovascular and respiratory": [
+     "Blood: RBC, WBC, platelets, plasma",
+     "Heart pumps through pulmonary and systemic circulation",
+     "Normal BP about 120/80 mmHg",
+     "Gas exchange in alveoli"
+    ],
+    "Anatomy and physiology: nervous, endocrine, renal and digestive": [
+     "Neurons send impulses; synapses use neurotransmitters",
+     "Endocrine: pituitary controls other glands",
+     "Nephron filters blood and forms urine",
+     "Digestion and absorption mostly in the small intestine"
+    ],
+    "Health education and public health": [
+     "Communicable diseases spread by air, water, vectors or contact",
+     "Balanced diet and micronutrients",
+     "First aid: airway, breathing, circulation",
+     "National health programmes: immunisation, TB, malaria, HIV"
+    ]
+   },
+   "src": {
+    "Hospital pharmacy organisation": [
+     [
+      "partha",
+      "Hospital pharmacy"
+     ]
+    ],
+    "Purchase, storage and inventory": [
+     [
+      "partha",
+      "Drug store management"
+     ]
+    ],
+    "Clinical pharmacy": [
+     [
+      "partha",
+      "Clinical pharmacy"
+     ]
+    ],
+    "Anatomy and physiology: blood, cardiovascular and respiratory": [
+     [
+      "ross",
+      ""
+     ]
+    ],
+    "Anatomy and physiology: nervous, endocrine, renal and digestive": [
+     [
+      "ross",
+      ""
+     ]
+    ],
+    "Health education and public health": [
+     [
+      "health",
+      ""
+     ]
+    ]
+   }
   },
   "inv": {
    "n": "Investigational skills and enforcement",
@@ -1288,7 +2585,64 @@
       "A Government Analyst's report is evidence; the defendant can ask for the court portion to be tested by the Central Drugs Laboratory."
      ]
     }
-   ]
+   ],
+   "kp": {
+    "Inspection procedure": [
+     "Plan with risk-based priority",
+     "Inspect premises, records, storage and staff",
+     "Compare practice with licence conditions and GMP",
+     "Write a factual, signed report"
+    ],
+    "Sampling, seizure and legal procedure": [
+     "Draw statutory samples and divide them into four portions",
+     "Seal, label and sign each portion",
+     "Seizure needs a written order and a receipt",
+     "Keep a chain of custody record",
+     "Send one portion to the Government Analyst"
+    ],
+    "Investigating spurious and NSQ drugs": [
+     "NSQ alerts are published monthly",
+     "Trace spurious drugs back through invoices",
+     "Coordinate with other states and police",
+     "Act on complaints and recalls quickly"
+    ],
+    "Medical devices and cosmetics inspection": [
+     "Check device QMS and classification",
+     "Verify cosmetics licences and labels",
+     "Post-market surveillance finds field problems",
+     "Import consignments checked at ports"
+    ]
+   },
+   "src": {
+    "Inspection procedure": [
+     [
+      "cdscog",
+      "CDSCO inspection guidance"
+     ]
+    ],
+    "Sampling, seizure and legal procedure": [
+     [
+      "dcact",
+      "D&C Act (Inspectors' powers)"
+     ]
+    ],
+    "Investigating spurious and NSQ drugs": [
+     [
+      "cdscog",
+      "CDSCO alerts and guidance"
+     ]
+    ],
+    "Medical devices and cosmetics inspection": [
+     [
+      "mdr",
+      "Medical Devices Rules 2017"
+     ],
+     [
+      "cosr",
+      "Cosmetics Rules 2020"
+     ]
+    ]
+   }
   },
   "gen": {
    "n": "English and computer applications",
@@ -1343,7 +2697,67 @@
       "CDSCO's SUGAM portal handles online applications for approvals and licences."
      ]
     }
-   ]
+   ],
+   "kp": {
+    "English grammar and usage": [
+     "Subject–verb agreement and tenses are tested most",
+     "Articles and prepositions",
+     "Active–passive and direct–indirect conversion",
+     "Spot errors part by part"
+    ],
+    "Vocabulary and comprehension": [
+     "Learn word roots for vocabulary",
+     "One-word substitutions and idioms",
+     "Read the question before the passage",
+     "Eliminate extreme options in comprehension"
+    ],
+    "Computer fundamentals and MS Office": [
+     "CPU, memory (RAM volatile, ROM non-volatile), storage",
+     "Operating system manages hardware and files",
+     "Excel: formulas, absolute references ($A$1), VLOOKUP",
+     "Common shortcuts: Ctrl+C, Ctrl+V, Ctrl+Z"
+    ],
+    "Internet and e-governance": [
+     "Internet protocols: HTTP, HTTPS, SMTP",
+     "Databases: tables, records, queries",
+     "SUGAM and online licensing portals for regulatory work",
+     "Cybersecurity: strong passwords, phishing awareness"
+    ]
+   },
+   "src": {
+    "English grammar and usage": [
+     [
+      "wren",
+      ""
+     ]
+    ],
+    "Vocabulary and comprehension": [
+     [
+      "wpme",
+      ""
+     ],
+     [
+      "compr",
+      ""
+     ]
+    ],
+    "Computer fundamentals and MS Office": [
+     [
+      "compf",
+      ""
+     ]
+    ],
+    "Internet and e-governance": [
+     [
+      "compf",
+      ""
+     ],
+     [
+      "cdscog",
+      "CDSCO portals"
+     ]
+    ]
+   }
   }
  },
  "blocks": [
@@ -1497,5 +2911,320 @@
    ],
    "style": "MCQ"
   }
- ]
+ ],
+ "books": {
+  "jain": {
+   "t": "A Textbook of Forensic Pharmacy (Pharmaceutical Jurisprudence)",
+   "a": "N.K. Jain",
+   "kind": "book",
+   "subj": [
+    "jur"
+   ]
+  },
+  "dcact": {
+   "t": "Drugs and Cosmetics Act 1940 and Rules 1945 (bare text, CDSCO)",
+   "a": "Government of India",
+   "kind": "doc",
+   "subj": [
+    "jur",
+    "gxp",
+    "bio",
+    "inv"
+   ]
+  },
+  "ndct": {
+   "t": "New Drugs and Clinical Trials Rules 2019 (bare text)",
+   "a": "Government of India",
+   "kind": "doc",
+   "subj": [
+    "jur",
+    "gxp"
+   ]
+  },
+  "mdr": {
+   "t": "Medical Devices Rules 2017 (bare text)",
+   "a": "Government of India",
+   "kind": "doc",
+   "subj": [
+    "jur",
+    "inv"
+   ]
+  },
+  "cosr": {
+   "t": "Cosmetics Rules 2020 (bare text)",
+   "a": "Government of India",
+   "kind": "doc",
+   "subj": [
+    "jur",
+    "inv"
+   ]
+  },
+  "whogmp": {
+   "t": "WHO GMP for sterile pharmaceutical products",
+   "a": "World Health Organization",
+   "kind": "doc",
+   "subj": [
+    "gxp"
+   ]
+  },
+  "oecd": {
+   "t": "OECD Principles of Good Laboratory Practice",
+   "a": "OECD",
+   "kind": "doc",
+   "subj": [
+    "gxp"
+   ]
+  },
+  "ich": {
+   "t": "ICH guidelines (E6 GCP, Q1–Q10, M4)",
+   "a": "ICH",
+   "kind": "doc",
+   "subj": [
+    "gxp",
+    "anal"
+   ]
+  },
+  "sharma": {
+   "t": "How to Practice GMPs",
+   "a": "P.P. Sharma",
+   "kind": "book",
+   "subj": [
+    "gxp"
+   ]
+  },
+  "lachman": {
+   "t": "The Theory and Practice of Industrial Pharmacy",
+   "a": "Lachman, Lieberman & Kanig",
+   "kind": "book",
+   "subj": [
+    "pceu"
+   ]
+  },
+  "aulton": {
+   "t": "Aulton's Pharmaceutics: The Design and Manufacture of Medicines",
+   "a": "M.E. Aulton",
+   "kind": "book",
+   "subj": [
+    "pceu"
+   ]
+  },
+  "cooper": {
+   "t": "Cooper and Gunn's Dispensing for Pharmaceutical Students",
+   "a": "Cooper & Gunn",
+   "kind": "book",
+   "subj": [
+    "pceu"
+   ]
+  },
+  "ip": {
+   "t": "Indian Pharmacopoeia",
+   "a": "Indian Pharmacopoeia Commission",
+   "kind": "doc",
+   "subj": [
+    "pceu",
+    "anal"
+   ]
+  },
+  "brahmankar": {
+   "t": "Biopharmaceutics and Pharmacokinetics: A Treatise",
+   "a": "D.M. Brahmankar & S.B. Jaiswal",
+   "kind": "book",
+   "subj": [
+    "bpk"
+   ]
+  },
+  "beckett": {
+   "t": "Practical Pharmaceutical Chemistry, Part 2",
+   "a": "Beckett & Stenlake",
+   "kind": "book",
+   "subj": [
+    "anal"
+   ]
+  },
+  "skoog": {
+   "t": "Principles of Instrumental Analysis",
+   "a": "Skoog, Holler & Crouch",
+   "kind": "book",
+   "subj": [
+    "anal"
+   ]
+  },
+  "silverstein": {
+   "t": "Spectrometric Identification of Organic Compounds",
+   "a": "Silverstein et al.",
+   "kind": "book",
+   "subj": [
+    "anal"
+   ]
+  },
+  "foye": {
+   "t": "Foye's Principles of Medicinal Chemistry",
+   "a": "Lemke & Williams",
+   "kind": "book",
+   "subj": [
+    "chem"
+   ]
+  },
+  "inorg": {
+   "t": "Inorganic pharmaceutical chemistry (any standard text)",
+   "a": "",
+   "kind": "guide",
+   "subj": [
+    "chem"
+   ]
+  },
+  "tripathi": {
+   "t": "Essentials of Medical Pharmacology",
+   "a": "K.D. Tripathi",
+   "kind": "book",
+   "subj": [
+    "pcol"
+   ]
+  },
+  "tox": {
+   "t": "Toxicology (any standard text)",
+   "a": "",
+   "kind": "guide",
+   "subj": [
+    "pcol"
+   ]
+  },
+  "kulkarni": {
+   "t": "Handbook of Experimental Pharmacology",
+   "a": "S.K. Kulkarni",
+   "kind": "book",
+   "subj": [
+    "pcol"
+   ]
+  },
+  "biostat": {
+   "t": "Biostatistics basics (any standard text)",
+   "a": "",
+   "kind": "guide",
+   "subj": [
+    "pcol"
+   ]
+  },
+  "ananth": {
+   "t": "Textbook of Microbiology",
+   "a": "Ananthanarayan & Paniker",
+   "kind": "book",
+   "subj": [
+    "bio"
+   ]
+  },
+  "naco": {
+   "t": "NACO standards for blood banks and blood transfusion services",
+   "a": "NACO",
+   "kind": "doc",
+   "subj": [
+    "bio"
+   ]
+  },
+  "vaccine": {
+   "t": "Vaccine production and quality control (reference texts)",
+   "a": "",
+   "kind": "guide",
+   "subj": [
+    "bio"
+   ]
+  },
+  "uip": {
+   "t": "Universal Immunization Programme cold chain guidelines",
+   "a": "MoHFW",
+   "kind": "doc",
+   "subj": [
+    "bio"
+   ]
+  },
+  "biotech": {
+   "t": "Pharmaceutical biotechnology (any standard text)",
+   "a": "",
+   "kind": "guide",
+   "subj": [
+    "bio"
+   ]
+  },
+  "kokate": {
+   "t": "Pharmacognosy",
+   "a": "Kokate, Purohit & Gokhale",
+   "kind": "book",
+   "subj": [
+    "gnosy"
+   ]
+  },
+  "api": {
+   "t": "Ayurvedic Pharmacopoeia of India",
+   "a": "Government of India",
+   "kind": "doc",
+   "subj": [
+    "gnosy"
+   ]
+  },
+  "partha": {
+   "t": "A Textbook of Clinical Pharmacy Practice",
+   "a": "G. Parthasarathi et al.",
+   "kind": "book",
+   "subj": [
+    "hosp"
+   ]
+  },
+  "ross": {
+   "t": "Ross and Wilson Anatomy and Physiology in Health and Illness",
+   "a": "Waugh & Grant",
+   "kind": "book",
+   "subj": [
+    "hosp"
+   ]
+  },
+  "health": {
+   "t": "Health education and community pharmacy (any standard text)",
+   "a": "",
+   "kind": "guide",
+   "subj": [
+    "hosp"
+   ]
+  },
+  "cdscog": {
+   "t": "CDSCO guidance documents, alerts and portals",
+   "a": "CDSCO",
+   "kind": "doc",
+   "subj": [
+    "inv",
+    "gen"
+   ]
+  },
+  "wren": {
+   "t": "High School English Grammar and Composition",
+   "a": "Wren & Martin",
+   "kind": "book",
+   "subj": [
+    "gen"
+   ]
+  },
+  "wpme": {
+   "t": "Word Power Made Easy",
+   "a": "Norman Lewis",
+   "kind": "book",
+   "subj": [
+    "gen"
+   ]
+  },
+  "compr": {
+   "t": "Reading comprehension practice",
+   "a": "",
+   "kind": "guide",
+   "subj": [
+    "gen"
+   ]
+  },
+  "compf": {
+   "t": "Computer fundamentals (any standard text)",
+   "a": "",
+   "kind": "guide",
+   "subj": [
+    "gen"
+   ]
+  }
+ }
 }

@@ -9,7 +9,8 @@ A free study platform for competitive exams. Each person gets a **profile** that
 - **Today:** what to study in each time slot, the exact sub-topics to read (tick them off), the book chapter, and lecture links for each sub-topic.
 - **Calendar:** the whole plan day by day, with test days and milestones such as applications and exams.
 - **Papers:** timed, exam-style papers; a question you have seen is never repeated. Supports GATE-style (MCQ/MSQ/NAT with negative marking), MCQ-only and descriptive formats.
-- **Notes:** key formulas, must-know results and common traps per subject, plus a topic-by-topic reading checklist.
+- **Notes:** for every topic: key points, which book and chapter to read, the sub-topic checklist, and **your own notes** (saved as you type). Mark topics for revision, search everything, and download your notes as a Markdown file.
+- **Books:** the course library with full titles and authors; each chapter shows the topics it covers and can be ticked off. Add your own books, coaching notes, video courses or PDFs and track their chapters too.
 - **PYQ bank:** paste questions from official previous-year papers; they are tagged automatically and used in your papers first.
 - **Mistakes:** every wrong answer with its solution, until you mark it understood.
 - **Tutor:** an AI tutor that knows your plan, scores and weak areas.
@@ -46,7 +47,8 @@ Courses are JSON files in [`courses/`](courses/).
 
 | Field | What it holds |
 | --- | --- |
-| `subjects` | Subject id → name `n`, colour `c` (1–8), `book`, `topics`, `read` (sub-topics per topic), `refs` (book chapter per topic), `notes` |
+| `subjects` | Subject id → name `n`, colour `c` (1–8), `book`, `topics`, `read` (sub-topics per topic), `kp` (key points per topic), `src` (per topic: `[bookId, chapter]` pairs), `refs` (the same as readable text), `notes` (subject summary) |
+| `books` | Book id → `t` title, `a` author, `kind` (`book`, `doc`, `guide`, `notes`), `subj` (subjects it serves) |
 | `blocks` | Date ranges: `kind` = `learn` / `revise` / `mock` / `written`, `main` subjects, Sunday `par` track, paper `style` |
 | `styles` | Question formats: `kind` = `mixed` / `mcq` / `desc`, `marks`, `neg` (fraction of marks lost per wrong answer) |
 | `patterns` | Full-mock blueprints: questions per subject (`dist`) and duration |

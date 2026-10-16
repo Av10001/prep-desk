@@ -230,7 +230,7 @@ function linksFor(it) {
     <a class="chip" href="${yt(q + (it.topic ? ' ' + base : '') + ' ' + ctx + ' lecture')}" target="_blank" rel="noopener">▶ YouTube lectures</a>
     <a class="chip" href="${yt('NPTEL ' + base + ' ' + (it.topic || ''))}" target="_blank" rel="noopener">▶ NPTEL</a>
     <a class="chip" href="${yt(q + ' ' + base + ' ' + ctx + ' previous year questions solved')}" target="_blank" rel="noopener">PYQ solutions</a>
-    <button class="chip" data-act="notesfor" data-subj="${it.subj}">Notes</button>
+    <button class="chip" data-act="notesfor" data-subj="${it.subj}" data-topic="${esc(it.kind === 'theory' || it.kind === 'parallel' ? it.title : '')}">Notes</button>
     ${s.book ? `<span class="chip">📖 ${esc(s.book)}</span>` : ''}</div>`;
 }
 const readKey = (s, t, x) => `${s}|${t}|${x}`;
@@ -246,7 +246,7 @@ function readBlock(r) {
   return `<div class="readlist"><div class="label">${revise ? 'Revise the whole topic' : 'Read today'}${r.n > 1 ? ` · day ${r.pos + 1} of ${r.n} on this topic` : ''} · ${cnt}/${r.all.length} ticked</div>
    ${list.map(x => readLine(r.subj, r.topic, r.all, x)).join('')}
    ${others.length ? `<details><summary class="muted tiny">Rest of this topic (${others.length})</summary>${others.map(x => readLine(r.subj, r.topic, r.all, x)).join('')}</details>` : ''}
-   ${(S[r.subj].refs || {})[r.topic] ? `<div class="muted tiny">📖 ${esc(S[r.subj].refs[r.topic])}</div>` : ''}</div>`;
+   ${srcOf(r.subj, r.topic).length ? `<div class="muted tiny">📖 ${srcOf(r.subj, r.topic).map(([b, ch]) => esc(bookName(b)) + (ch ? ' — ' + esc(ch) : '')).join('; ')}</div>` : (S[r.subj].refs || {})[r.topic] ? `<div class="muted tiny">📖 ${esc(S[r.subj].refs[r.topic])}</div>` : ''}</div>`;
 }
 function paperForDay(k, scope) {
   const p = st.papers.find(p => p.day === k && p.scope === scope); if (!p) return '';
@@ -525,27 +525,127 @@ function startTick() { const T = st.test; if (!T || T.timer) return; T.timer = s
 let saveT = null; function saveDraft() { clearTimeout(saveT); saveT = setTimeout(() => { const T = st.test; if (!T) return; T.paper.remaining = Math.max(0, Math.round((T.end - Date.now()) / 1000)); savePapers(); }, 1200); }
 function pauseTest() { const T = st.test; if (!T) return; clearInterval(T.timer); T.paper.remaining = Math.max(0, Math.round((T.end - Date.now()) / 1000)); savePapers(); st.test = null; }
 
-/* ---------- Notes ---------- */
-function vNotes() {
+/* ---------- Notes: key points, sources, sub-topics and the candidate's own notes per topic ---------- */
+const kpOf = (s, t) => ((S[s].kp || {})[t]) || CS.get('kp:' + s, {})[t] || [];
+const srcOf = (s, t) => ((S[s].src || {})[t]) || [];
+const myNote = (s, t) => ((CS.get('mynotes.' + s, {})[t]) || {}).t || '';
+const isRev = (s, t) => !!CS.get('revise', {})[s + '|' + t];
+const ownBooks = () => CS.get('ownbooks', []);
+const bookName = b => ((C.books || {})[b] || {}).t || b;
+function srcLine(b, ch, t, bd) {
+  const B = (C.books || {})[b]; const key = b + '|' + (ch || t);
+  return `<label class="ri ${bd[key] ? 'on' : ''}"><input type="checkbox" data-act="bch" data-key="${esc(key)}" ${bd[key] ? 'checked' : ''}><span><b>${esc(B ? B.t : b)}</b>${B && B.a ? ` · ${esc(B.a)}` : ''} — ${ch ? esc(ch) : 'sections on this topic'}</span></label>`;
+}
+function topicCard(s, t, ti, open, showSubj) {
+  const id = fp(s + '|' + t), kp = kpOf(s, t), src = srcOf(s, t), note = myNote(s, t), rev = isRev(s, t);
+  const items = (S[s].read || CS.get('read:' + s, {}))[t] || []; const done = st.progress.read || {};
+  const c = items.filter((_, x) => done[readKey(s, t, x)]).length; const bd = CS.get('bookdone', {});
+  const own = ownBooks().filter(o => o.subj === s);
+  return `<details class="topicbox" id="tp-${id}" ${open ? 'open' : ''}><summary><span class="b">${showSubj ? esc(shortName(s)) + ' · ' : ''}${ti + 1}. ${esc(t)}</span><span class="row tiny" style="gap:6px">${note ? '<span class="pill pa">My notes</span>' : ''}${rev ? '<span class="pill pt">Revise</span>' : ''}${items.length ? `<span class="num muted">${c}/${items.length}</span>` : ''}</span></summary>
+  <div class="stack topicbody">
+   ${kp.length ? `<div><div class="label">Key points</div><ul class="kp">${kp.map(x => `<li>${esc(x)}</li>`).join('')}</ul></div>` : ''}
+   ${src.length || own.length ? `<div><div class="label">Read from</div>${src.map(([b, ch]) => srcLine(b, ch, t, bd)).join('')}${own.map(o => `<div class="muted small">Your material: ${esc(o.t)}${o.url ? ` · <a href="${esc(o.url)}" target="_blank" rel="noopener">open</a>` : ''}</div>`).join('')}</div>` : ''}
+   ${items.length ? `<div><div class="label">Sub-topics</div>${items.map((_, x) => readLine(s, t, items, x)).join('')}</div>` : ''}
+   <div class="field"><label for="mn-${id}">My notes</label><textarea class="mynote" id="mn-${id}" data-subj="${s}" data-topic="${esc(t)}" placeholder="Formulas, shortcuts, page numbers, mistakes you made…">${esc(note)}</textarea><span class="muted tiny" data-saved>${note ? 'Saved' : 'Saves as you type'}</span></div>
+   <div class="row"><button class="btn small" data-act="revise" data-subj="${s}" data-topic="${esc(t)}">${rev ? 'Remove revision mark' : 'Mark for revision'}</button><button class="btn small" data-act="drill" data-subj="${s}" data-topic="${esc(t)}" data-n="10">Practice 10 questions</button><a class="chip" href="${yt(t + ' ' + shortName(s) + ' lecture')}" target="_blank" rel="noopener">▶ Lectures</a></div>
+  </div></details>`;
+}
+function notesBody() {
+  const q = (st.noteQ || '').trim().toLowerCase(), f = st.noteFilter || 'all';
+  const keep = (s, t) => (f !== 'mine' || myNote(s, t)) && (f !== 'rev' || isRev(s, t)) &&
+    (!q || [t, ...kpOf(s, t), myNote(s, t), ...(((S[s].read || {})[t]) || [])].some(x => String(x).toLowerCase().includes(q)));
+  if (q || f !== 'all') {
+    const hits = Object.keys(S).flatMap(s => S[s].topics.map((t, ti) => ({ s, t, ti })).filter(x => keep(x.s, x.t)));
+    return `<div class="label">${hits.length} topic${hits.length === 1 ? '' : 's'}${q ? ` matching “${esc(st.noteQ.trim())}”` : f === 'mine' ? ' with your notes' : ' marked for revision'}</div>
+     ${hits.length ? hits.slice(0, 80).map(h => topicCard(h.s, h.t, h.ti, !!q, true)).join('') : '<div class="empty">Nothing found.</div>'}`;
+  }
   const s = st.noteSubj && S[st.noteSubj] ? st.noteSubj : Object.keys(S)[0]; const subj = S[s];
-  const notes = subj.notes && subj.notes.length ? subj.notes : CS.get('notes:' + s, null);
-  const list = Object.entries(S).map(([k, v]) => `<button class="nsub ${k === s ? 'on' : ''}" data-act="note" data-subj="${k}"><span class="dot" style="background:${col(k)}"></span><span>${esc(v.n)}</span></button>`).join('');
-  const body = notes ? notes.map(sec => `<section class="nsec"><h3>${esc(sec.h)}</h3><ul>${sec.items.map(i => `<li>${esc(i)}</li>`).join('')}</ul></section>`).join('') :
-    `<div class="empty">No notes for this subject yet.${hasKey() ? '' : ' ' + esc(aiHint())}</div><button class="btn primary" data-act="gennotes" data-subj="${s}" ${st.noteBusy || !hasKey() ? 'disabled' : ''}>${st.noteBusy ? '<span class="spin"></span> Writing notes…' : 'Generate notes with Claude'}</button>`;
-  return `<div class="notes"><nav class="nlist sheet" aria-label="Subjects">${list}</nav>
-  <article class="sheet stack"><div><div class="label">Key notes</div><h2>${esc(subj.n)}</h2>${subj.book ? `<div class="muted small">Standard book: ${esc(subj.book)}</div>` : ''}</div>
-  ${body}
-  <section class="nsec"><h3>What to read, topic by topic</h3>${syllabusChecklist(s)}</section>
-  <div class="row"><button class="btn small" data-act="drill" data-subj="${s}" data-topic="" data-n="10">Practice 10 questions</button>${!(subj.notes && subj.notes.length) && notes ? `<button class="btn small" data-act="gennotes" data-subj="${s}" ${st.noteBusy ? 'disabled' : ''}>Rewrite notes</button>` : ''}</div></article></div>`;
+  const summary = subj.notes && subj.notes.length ? subj.notes : CS.get('notes:' + s, null);
+  const books = Object.entries(C.books || {}).filter(([, B]) => (B.subj || []).includes(s));
+  const hasKp = subj.topics.some(t => kpOf(s, t).length);
+  return `<div><div class="label">Notes</div><h2>${esc(subj.n)}</h2></div>
+  ${books.length ? `<div class="row" style="gap:6px">${books.map(([b, B]) => `<button class="chip" data-act="bookfor" data-subj="${s}">📖 ${esc(B.t)}</button>`).join('')}</div>` : (subj.book ? `<div class="muted small">Standard book: ${esc(subj.book)}</div>` : '')}
+  <details class="topicbox"><summary><span class="b">Subject summary</span><span class="muted tiny">formulas and traps for the whole subject</span></summary>
+   ${summary ? summary.map(sec => `<section class="nsec"><h3>${esc(sec.h)}</h3><ul>${sec.items.map(i => `<li>${esc(i)}</li>`).join('')}</ul></section>`).join('') : `<div class="empty">No summary yet.</div>`}
+   ${!(subj.notes && subj.notes.length) && hasKey() ? `<button class="btn small" data-act="gennotes" data-subj="${s}" ${st.noteBusy ? 'disabled' : ''}>${st.noteBusy ? '<span class="spin"></span> Writing…' : summary ? 'Rewrite summary' : 'Write summary with Claude'}</button>` : ''}</details>
+  ${!hasKp && hasKey() ? `<button class="btn small" data-act="genkp" data-subj="${s}" ${st.noteBusy ? 'disabled' : ''}>${st.noteBusy ? '<span class="spin"></span> Writing…' : 'Write key points for every topic with Claude'}</button>` : ''}
+  ${!subj.read && hasKey() ? `<button class="btn small" data-act="genread" data-subj="${s}" ${st.noteBusy ? 'disabled' : ''}>Write sub-topic lists with Claude</button>` : ''}
+  <div class="stack" style="gap:6px">${subj.topics.map((t, ti) => topicCard(s, t, ti, t === st.noteTopic, false)).join('')}</div>`;
 }
-function syllabusChecklist(s) {
-  const subj = S[s]; const rmap = subj.read || CS.get('read:' + s, {}); const done = st.progress.read || {};
-  return `<div class="stack" style="gap:6px">${subj.topics.map((t, ti) => { const items = rmap[t] || []; const c = items.filter((_, x) => done[readKey(s, t, x)]).length;
-    return `<details class="topicbox" ${ti === 0 ? 'open' : ''}><summary><span class="b">${ti + 1}. ${esc(t)}</span><span class="num muted tiny">${items.length ? `${c}/${items.length}` : ''}</span></summary>
-     ${items.length ? items.map((_, x) => readLine(s, t, items, x)).join('') : `<div class="muted tiny">No sub-topic list yet.</div>`}
-     <a class="tiny" href="${yt(t + ' ' + shortName(s) + ' lecture')}" target="_blank" rel="noopener">Lectures on the whole topic</a></details>`; }).join('')}</div>
-  ${!subj.read && hasKey() ? `<button class="btn small" data-act="genread" data-subj="${s}" ${st.noteBusy ? 'disabled' : ''}>${st.noteBusy ? '<span class="spin"></span> Writing…' : 'Generate sub-topic lists with Claude'}</button>` : ''}`;
+function vNotes() {
+  const s = st.noteSubj && S[st.noteSubj] ? st.noteSubj : Object.keys(S)[0];
+  const list = Object.entries(S).map(([k, v]) => { const n = Object.keys(CS.get('mynotes.' + k, {})).length;
+    return `<button class="nsub ${k === s && !st.noteQ && (st.noteFilter || 'all') === 'all' ? 'on' : ''}" data-act="note" data-subj="${k}"><span class="dot" style="background:${col(k)}"></span><span>${esc(v.n)}</span>${n ? `<span class="num muted tiny" style="margin-left:auto">${n}</span>` : ''}</button>`; }).join('');
+  const f = st.noteFilter || 'all';
+  return `<div class="stack"><div class="sheet row" style="align-items:flex-end">
+   <div class="field grow"><label for="nsearch">Search</label><input id="nsearch" type="search" value="${esc(st.noteQ || '')}" placeholder="Search topics, key points and your notes"></div>
+   <div class="field"><label for="nfilter">Show</label><select id="nfilter" data-act="nfilter"><option value="all" ${f === 'all' ? 'selected' : ''}>One subject</option><option value="mine" ${f === 'mine' ? 'selected' : ''}>All topics with my notes</option><option value="rev" ${f === 'rev' ? 'selected' : ''}>All topics marked for revision</option></select></div>
+   <button class="btn small" data-act="exportnotes">Download my notes</button></div>
+  <div class="notes"><nav class="nlist sheet" aria-label="Subjects">${list}</nav><article class="sheet stack" id="nbody">${notesBody()}</article></div></div>`;
 }
+async function exportNotes() {
+  const rev = CS.get('revise', {}); let md = `# My notes: ${C.name}\n\n${st.profile ? st.profile.name + ' · ' : ''}${todayKey()}\n`;
+  for (const [s, v] of Object.entries(S)) {
+    const m = CS.get('mynotes.' + s, {}); const ts = v.topics.filter(t => (m[t] && m[t].t) || rev[s + '|' + t]); if (!ts.length) continue;
+    md += `\n## ${v.n}\n`; for (const t of ts) md += `\n### ${t}${rev[s + '|' + t] ? ' (revise)' : ''}\n\n${(m[t] && m[t].t) || ''}\n`;
+  }
+  await download(`my-notes-${todayKey()}.md`, md);
+}
+async function genKP(s) {
+  st.noteBusy = true; render();
+  try {
+    const out = await claudeJSON(`For "${sname(s)}" in ${C.name}, write 3-5 exam-focused key points for each topic: formulas, standard results and common traps. Plain text with unicode symbols, no LaTeX, each point one short sentence, every formula correct. Topics: ${JSON.stringify(S[s].topics)}.
+Return ONLY a JSON object mapping each topic string exactly as given to an array of key-point strings.`, 8000);
+    const map = {}; for (const t of S[s].topics) if (Array.isArray(out[t])) map[t] = out[t].map(String).slice(0, 6);
+    if (!Object.keys(map).length) throw { message: 'No key points came back. Try again.' };
+    CS.set('kp:' + s, map);
+  } catch (e) { toast(e.message || 'Could not write key points.'); }
+  st.noteBusy = false; render();
+}
+
+/* ---------- Books: course library with chapter → topic map, plus the candidate's own material ---------- */
+const KIND = { book: 'Book', doc: 'Official text', guide: 'Any standard guide', notes: 'Notes' };
+function bookChapters(bid) {
+  const rows = new Map();
+  for (const [s, v] of Object.entries(S)) for (const t of v.topics) for (const [b, ch] of srcOf(s, t)) if (b === bid) {
+    const key = b + '|' + (ch || t); if (!rows.has(key)) rows.set(key, { ch, key, topics: [] }); rows.get(key).topics.push({ s, t });
+  }
+  return [...rows.values()];
+}
+function vBooks() {
+  const fs = st.bookSubj && (S[st.bookSubj] || st.bookSubj === 'all') ? st.bookSubj : 'all'; const bd = CS.get('bookdone', {});
+  const order = Object.keys(S); const rank = B => Math.min(...(B.subj || []).map(x => order.indexOf(x)).filter(i => i >= 0), 99);
+  const ids = Object.keys(C.books || {}).filter(b => fs === 'all' || (C.books[b].subj || []).includes(fs)).sort((a, b) => rank(C.books[a]) - rank(C.books[b]) || C.books[a].t.localeCompare(C.books[b].t));
+  let tot = 0, dn = 0;
+  const cards = ids.map(b => {
+    const B = C.books[b], rows = bookChapters(b), n = rows.filter(r => bd[r.key]).length; tot += rows.length; dn += n;
+    return `<details class="topicbox"><summary><span style="min-width:0"><span class="b">${esc(B.t)}</span>${B.a ? ` <span class="muted small">· ${esc(B.a)}</span>` : ''}<br><span class="row tiny" style="gap:6px;margin-top:4px"><span class="pill pa">${KIND[B.kind] || 'Book'}</span>${(B.subj || []).map(x => `<span><span class="dot" style="background:${col(x)}"></span> ${esc(shortName(x))}</span>`).join('')}</span></span>
+     <span class="num muted tiny">${n}/${rows.length}</span></summary>
+     <div class="meter" style="margin-bottom:8px"><i style="width:${rows.length ? n / rows.length * 100 : 0}%"></i></div>
+     ${rows.map(r => `<div class="chrow"><label class="ri ${bd[r.key] ? 'on' : ''}"><input type="checkbox" data-act="bch" data-key="${esc(r.key)}" ${bd[r.key] ? 'checked' : ''}><span>${r.ch ? esc(r.ch) : 'Sections on ' + esc(r.topics[0].t)}</span></label>
+      <div class="row" style="gap:4px;padding-left:28px">${r.topics.map(x => `<button class="chip tiny" data-act="notesfor" data-subj="${x.s}" data-topic="${esc(x.t)}">${esc(x.t)}</button>`).join('')}</div></div>`).join('')}</details>`;
+  }).join('');
+  const own = ownBooks().filter(o => fs === 'all' || o.subj === fs);
+  const ownCards = own.map(o => { const n = o.ch.filter(c => c.d).length;
+    return `<details class="topicbox"><summary><span style="min-width:0"><span class="b">${esc(o.t)}</span>${o.a ? ` <span class="muted small">· ${esc(o.a)}</span>` : ''}<br><span class="row tiny" style="gap:6px;margin-top:4px"><span class="pill pt">${esc(o.kind)}</span>${S[o.subj] ? `<span><span class="dot" style="background:${col(o.subj)}"></span> ${esc(shortName(o.subj))}</span>` : ''}${o.url ? `<a href="${esc(o.url)}" target="_blank" rel="noopener">open</a>` : ''}</span></span><span class="num muted tiny">${o.ch.length ? `${n}/${o.ch.length}` : ''}</span></summary>
+     ${o.ch.map((c, i) => `<label class="ri ${c.d ? 'on' : ''}"><input type="checkbox" data-act="obch" data-id="${esc(o.id)}" data-i="${i}" ${c.d ? 'checked' : ''}><span>${esc(c.n)}</span></label>`).join('') || '<div class="muted tiny">No chapters listed.</div>'}
+     <div class="row" style="margin-top:8px"><button class="btn small ghost" data-act="delbook" data-id="${esc(o.id)}">Remove</button></div></details>`; }).join('');
+  return `<div class="stack"><div class="sheet row spread" style="align-items:flex-end"><div><h2>Books and material</h2><div class="muted small">${dn} of ${tot} chapters done. Tick a chapter here or in Notes; each chapter lists the topics it covers.</div></div>
+   <div class="field"><label for="bsubj">Subject</label><select id="bsubj" data-act="bsubj"><option value="all">All subjects</option>${Object.entries(S).map(([k, v]) => `<option value="${k}" ${fs === k ? 'selected' : ''}>${esc(v.n)}</option>`).join('')}</select></div></div>
+  <div class="stack" style="gap:6px">${cards || '<div class="sheet empty">No books listed for this course.</div>'}</div>
+  <div class="sheet stack"><h3>Your own books and material</h3><div class="muted small">Coaching notes, a different book, a video course or a PDF you use. Add chapters to track them; they also show under "Read from" in Notes for that subject.</div>
+   ${ownCards ? `<div class="stack" style="gap:6px">${ownCards}</div>` : ''}
+   <div class="grid-form">
+    <div class="field"><label for="ob-title">Title</label><input id="ob-title" placeholder="e.g. Made Easy Networks notes"></div>
+    <div class="field"><label for="ob-author">Author or source</label><input id="ob-author" placeholder="optional"></div>
+    <div class="field"><label for="ob-kind">Type</label><select id="ob-kind">${['Book', 'Coaching notes', 'Video course', 'PDF or handout', 'Website'].map(k => `<option>${k}</option>`).join('')}</select></div>
+    <div class="field"><label for="ob-subj">Subject</label><select id="ob-subj">${Object.entries(S).map(([k, v]) => `<option value="${k}" ${fs === k ? 'selected' : ''}>${esc(v.n)}</option>`).join('')}</select></div>
+    <div class="field wide"><label for="ob-url">Link (optional)</label><input id="ob-url" type="url" placeholder="https://…"></div>
+    <div class="field wide"><label for="ob-ch">Chapters, one per line (optional)</label><textarea id="ob-ch" style="min-height:90px" placeholder="1. Basics&#10;2. Network theorems"></textarea></div>
+   </div>
+   <div class="row"><button class="btn primary" data-act="addbook">Add to my material</button></div></div></div>`;
+}
+
 async function genRead(s) {
   st.noteBusy = true; render();
   try {
@@ -814,10 +914,10 @@ Requirements:
   st.creating = false; render();
 }
 async function download(name, obj) {
-  const text = JSON.stringify(obj, null, 1);
+  const text = typeof obj === 'string' ? obj : JSON.stringify(obj, null, 1);
   if (DL) { try { await DL.save({ filename: name, data: text }); } catch (e) { if (!e || e.code !== 'declined') toast((e && e.message) || 'Could not save the file.'); } return; }
   if (IN_CLAUDE()) { toast('Saving files is not available on this page.'); return; }
-  const blob = new Blob([text], { type: 'application/json' }); const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = name; document.body.appendChild(a); a.click(); setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 500);
+  const blob = new Blob([text], { type: name.endsWith('.md') ? 'text/markdown' : 'application/json' }); const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = name; document.body.appendChild(a); a.click(); setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 500);
 }
 async function loadCourseById(id) {
   const custom = st.custom.find(c => c.id === id); if (custom) return JSON.parse(JSON.stringify(custom));
@@ -845,7 +945,7 @@ function vSettings() {
 }
 
 /* ===================== Render ===================== */
-const VIEWS = { today: vToday, calendar: vCalendar, papers: vPapers, notes: vNotes, bank: vBank, mistakes: vMistakes, tutor: vTutor, courses: vCourses, settings: vSettings };
+const VIEWS = { today: vToday, calendar: vCalendar, papers: vPapers, notes: vNotes, books: vBooks, bank: vBank, mistakes: vMistakes, tutor: vTutor, courses: vCourses, settings: vSettings };
 function render() {
   document.querySelectorAll('#tabs button').forEach(b => b.setAttribute('aria-selected', String(b.dataset.tab === st.tab)));
   if (!C && !['courses', 'settings'].includes(st.tab)) st.tab = 'courses';
@@ -866,7 +966,21 @@ document.addEventListener('click', async ev => {
     else if (a === 'mon') { const [y, m] = st.month.split('-').map(Number); st.month = K(new Date(Date.UTC(y, m - 1 + Number(el.dataset.d), 1))).slice(0, 7); render(); }
     else if (a === 'montoday') { const t = todayKey(); const k = t < PLAN_START ? PLAN_START : t; st.month = k.slice(0, 7); st.sel = k; render(); }
     else if (a === 'tab') { st.tab = el.dataset.to; render(); window.scrollTo(0, 0); }
-    else if (a === 'notesfor' || a === 'note') { st.noteSubj = el.dataset.subj; st.tab = 'notes'; render(); if (a === 'notesfor') window.scrollTo(0, 0); }
+    else if (a === 'notesfor' || a === 'note') {
+      st.noteSubj = el.dataset.subj; st.noteTopic = el.dataset.topic || null; st.noteQ = ''; st.noteFilter = 'all'; st.tab = 'notes'; render();
+      const card = st.noteTopic && document.getElementById('tp-' + fp(st.noteSubj + '|' + st.noteTopic)); if (card) card.scrollIntoView({ block: 'start' }); else if (a === 'notesfor') window.scrollTo(0, 0);
+    }
+    else if (a === 'bookfor') { st.bookSubj = el.dataset.subj; st.tab = 'books'; render(); window.scrollTo(0, 0); }
+    else if (a === 'genkp') await genKP(el.dataset.subj);
+    else if (a === 'exportnotes') await exportNotes();
+    else if (a === 'revise') { const m = CS.get('revise', {}); const k = el.dataset.subj + '|' + el.dataset.topic; if (m[k]) delete m[k]; else m[k] = Date.now(); CS.set('revise', m); const y = window.scrollY; render(); window.scrollTo(0, y); }
+    else if (a === 'addbook') {
+      const t = $('#ob-title').value.trim(); if (!t) { toast('Enter a title.'); return; }
+      const url = $('#ob-url').value.trim(); const list = ownBooks();
+      list.push({ id: 'b' + uid(), t: t.slice(0, 120), a: $('#ob-author').value.trim().slice(0, 80), kind: $('#ob-kind').value, subj: $('#ob-subj').value, url: /^https?:\/\//i.test(url) ? url : '', ch: $('#ob-ch').value.split('\n').map(x => x.trim()).filter(Boolean).slice(0, 200).map(n => ({ n, d: 0 })) });
+      CS.set('ownbooks', list); render(); toast('Added ' + t);
+    }
+    else if (a === 'delbook') { if (el.dataset.confirm !== '1') { el.dataset.confirm = '1'; el.textContent = 'Remove this material?'; return; } CS.set('ownbooks', ownBooks().filter(o => o.id !== el.dataset.id)); render(); }
     else if (a === 'gennotes') await genNotes(el.dataset.subj);
     else if (a === 'genread') await genRead(el.dataset.subj);
     else if (a === 'paper') {
@@ -932,6 +1046,10 @@ document.addEventListener('change', ev => {
   else if (el.dataset.hrs) { const k = el.dataset.hrs; if (st.progress.done[k]) { st.progress.done[k].h = Number(el.value) || 0; CS.set('progress', st.progress); render(); } }
   else if (el.dataset.act === 'readtick') { st.progress.read = st.progress.read || {}; if (el.checked) st.progress.read[el.dataset.key] = Date.now(); else delete st.progress.read[el.dataset.key]; CS.set('progress', st.progress); const y = window.scrollY; render(); window.scrollTo(0, y); }
   else if (el.dataset.act === 'ef') { st.errFilter = el.value; render(); }
+  else if (el.dataset.act === 'bch') { const m = CS.get('bookdone', {}); if (el.checked) m[el.dataset.key] = Date.now(); else delete m[el.dataset.key]; CS.set('bookdone', m); const y = window.scrollY; render(); window.scrollTo(0, y); }
+  else if (el.dataset.act === 'obch') { const list = ownBooks(); const o = list.find(x => x.id === el.dataset.id); if (o && o.ch[+el.dataset.i]) { o.ch[+el.dataset.i].d = el.checked ? Date.now() : 0; CS.set('ownbooks', list); } const y = window.scrollY; render(); window.scrollTo(0, y); }
+  else if (el.dataset.act === 'nfilter') { st.noteFilter = el.value; st.noteQ = ''; render(); }
+  else if (el.dataset.act === 'bsubj') { st.bookSubj = el.value; render(); }
   else if (el.dataset.act === 'profsel') { if (el.value === '__manage') { st.tab = 'courses'; render(); return; } switchProfile(el.value).then(() => { st.tab = 'today'; render(); window.scrollTo(0, 0); }).catch(e => toast(e.message || 'Could not open that profile.')); }
   else if (el.dataset.ans && st.test) {
     const T = st.test; const t = el.dataset.ans;
@@ -941,7 +1059,20 @@ document.addEventListener('change', ev => {
     document.querySelectorAll('.palette button')[T.i]?.classList.toggle('ans', v != null && v !== '' && !(Array.isArray(v) && !v.length));
   }
 });
-document.addEventListener('input', ev => { const el = ev.target; if (st.test && (el.dataset.ans === 'nat' || el.dataset.ans === 'desc')) { st.test.paper.answers[st.test.i] = el.value; saveDraft(); } });
+const noteTimers = {};
+document.addEventListener('input', ev => {
+  const el = ev.target;
+  if (st.test && (el.dataset.ans === 'nat' || el.dataset.ans === 'desc')) { st.test.paper.answers[st.test.i] = el.value; saveDraft(); }
+  else if (el.id === 'nsearch') { st.noteQ = el.value; const b = $('#nbody'); if (b) b.innerHTML = notesBody(); }
+  else if (el.classList.contains('mynote')) {
+    const sv = el.parentElement.querySelector('[data-saved]'); if (sv) sv.textContent = 'Saving…';
+    const key = el.dataset.subj + '|' + el.dataset.topic; clearTimeout(noteTimers[key]);
+    noteTimers[key] = setTimeout(() => {
+      const m = CS.get('mynotes.' + el.dataset.subj, {}); if (el.value.trim()) m[el.dataset.topic] = { t: el.value, u: Date.now() }; else delete m[el.dataset.topic];
+      CS.set('mynotes.' + el.dataset.subj, m); if (sv) sv.textContent = 'Saved';
+    }, 600);
+  }
+});
 document.addEventListener('keydown', ev => { if (ev.target.id === 'ask' && ev.key === 'Enter' && !ev.shiftKey) { ev.preventDefault(); sendChat(ev.target.value); } });
 window.addEventListener('beforeunload', () => { if (st.test) pauseTest(); Store.flush(); });
 document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'hidden') Store.flush(); });

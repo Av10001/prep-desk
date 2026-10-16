@@ -222,3 +222,13 @@ footer{margin-top:28px;font-size:12.5px;color:var(--muted)}
 .profbar select{padding:6px 10px;border:1px solid var(--line);border-radius:6px;background:var(--surface);font-weight:600;max-width:min(360px,80vw);text-overflow:ellipsis}
 @media (max-width:640px){.topright{align-items:flex-start;width:100%}}
 input.inline{padding:6px 9px;border:1px solid var(--line);border-radius:6px;background:var(--surface2);min-width:0;width:180px}
+
+/* ---- notes and books ---- */
+.grow{flex:1;min-width:200px}
+.topicbody{padding-top:4px}
+.kp{margin:4px 0 0;padding-left:20px;display:flex;flex-direction:column;gap:5px;max-width:75ch}
+.kp li{line-height:1.5}
+textarea.mynote{min-height:96px;font-family:var(--f-body);font-size:14.5px;line-height:1.5;resize:vertical}
+.chrow{display:flex;flex-direction:column;gap:2px;padding-block:4px;border-top:1px solid var(--line)}
+.chrow:first-of-type{border-top:0}
+.chip.tiny{font-size:12px;padding:2px 8px}
