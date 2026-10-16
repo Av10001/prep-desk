@@ -2,7 +2,7 @@
 
 A free study platform for competitive exams. Each person gets a **profile** that follows one **course**, with their own progress.
 
-**Live site:** https://avichalchaturvedi.github.io/prep-desk/
+**Live site:** https://av10001.github.io/prep-desk/
 
 ## What it does
 
