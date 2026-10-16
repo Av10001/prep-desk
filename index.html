@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Prep Desk</title>
+<meta name="description" content="Exam prep planner with daily study links, no-repeat weekend papers, PYQ bank, subject notes and an AI tutor.">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%232457c5'/%3E%3Cpath d='M8 9h16M8 16h16M8 23h10' stroke='white' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700&family=Source+Sans+3:wght@400;600;700&family=JetBrains+Mono:wght@500&display=swap">
+<style>html{-webkit-text-size-adjust:100%}body{margin:0}[hidden]{display:none!important}img{max-width:100%}:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}</style>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div>
+      <div class="label">Prep Desk</div>
+      <h1 id="coursename">Prep Desk</h1>
+      <div class="sync" id="sync">Loading…</div>
+    </div>
+    <div class="topright"><div class="profbar" id="profbar"></div><div class="countdowns" id="countdowns"></div></div>
+  </header>
+  <nav class="tabs" role="tablist" id="tabs">
+    <button role="tab" data-tab="today" aria-selected="true">Today</button>
+    <button role="tab" data-tab="calendar" aria-selected="false">Calendar</button>
+    <button role="tab" data-tab="papers" aria-selected="false">Papers</button>
+    <button role="tab" data-tab="notes" aria-selected="false">Notes</button>
+    <button role="tab" data-tab="bank" aria-selected="false">PYQ bank</button>
+    <button role="tab" data-tab="mistakes" aria-selected="false">Mistakes</button>
+    <button role="tab" data-tab="tutor" aria-selected="false">Tutor</button>
+    <button role="tab" data-tab="courses" aria-selected="false">Profiles</button>
+    <button role="tab" data-tab="settings" aria-selected="false">Settings</button>
+  </nav>
+  <main id="view"><div class="empty">Loading your course…</div></main>
+  <footer>Progress is saved in this browser, per profile. Download a backup from Settings now and then.</footer>
+</div>
+<div class="toast" id="toast" role="status" hidden></div>
+<script src="store.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+[
+ {
+  "id": "gate-ese-ece-2028",
+  "name": "GATE EC + ESE E&T 2028",
+  "file": "gate-ese-ece-2028.json",
+  "description": "GATE Electronics & Communication and UPSC ESE Electronics & Telecom, 2028 attempt, for a working professional (~26 h/week)."
+ },
+ {
+  "id": "cdsco-drug-inspector",
+  "name": "CDSCO Drug Inspector (UPSC)",
+  "file": "cdsco-drug-inspector.json",
+  "description": "UPSC Recruitment Test for Drug Inspector in CDSCO: pharmacy subjects, Drugs & Cosmetics Act, GMP/GLP/GCP. One-year plan at about 3 hours a day."
+ }
+]

@@ -1,0 +1,2857 @@
+{
+ "id": "gate-ese-ece-2028",
+ "name": "GATE EC + ESE E&T 2028",
+ "short": "GATE + ESE",
+ "description": "GATE Electronics & Communication and UPSC ESE Electronics & Telecom, 2028 attempt, for a working professional (~26 h/week).",
+ "start": "2026-10-14",
+ "hoursTarget": 26,
+ "exams": [
+  {
+   "date": "2028-01-30",
+   "name": "ESE prelims*"
+  },
+  {
+   "date": "2028-02-06",
+   "name": "GATE 2028*"
+  }
+ ],
+ "datesNote": "* dates projected from the UPSC 2027 calendar",
+ "milestones": {
+  "2026-10-25": "Diagnostic test deadline",
+  "2027-08-25": "GATE 2028 application window (check GOAPS)",
+  "2027-09-15": "ESE 2028 notification expected",
+  "2027-10-05": "ESE 2028 application closes (approx.)",
+  "2028-01-30": "ESE prelims (expected)",
+  "2028-02-06": "GATE 2028 (expected)",
+  "2028-06-18": "ESE mains (expected)"
+ },
+ "routine": {
+  "weekdayAM": "6:00–7:30",
+  "weekdayPM": "8:30–9:30",
+  "satAM": "8:00–11:00",
+  "satMid": "11:30–1:30",
+  "satPM": "3:00–5:30",
+  "sunAM": "8:00–10:00",
+  "sunMid": "10:30–12:30",
+  "sunPM": "3:00–5:00"
+ },
+ "habit": {
+  "subject": "ga",
+  "title": "General Aptitude / current affairs",
+  "note": "20 minutes on your commute or lunch break."
+ },
+ "styles": {
+  "MIXED": {
+   "label": "GATE style (MCQ, MSQ, NAT)",
+   "exam": "GATE Electronics & Communication (EC)",
+   "kind": "mixed",
+   "mix": {
+    "MCQ": 0.55,
+    "MSQ": 0.15,
+    "NAT": 0.3
+   },
+   "marks": [
+    1,
+    2
+   ],
+   "neg": 0.3333333333333333,
+   "minsPerQ": 2.8
+  },
+  "MCQ": {
+   "label": "ESE style (MCQ only)",
+   "exam": "UPSC ESE Electronics & Telecommunication Preliminary Paper II",
+   "kind": "mcq",
+   "marks": [
+    2
+   ],
+   "neg": 0.3333333333333333,
+   "minsPerQ": 2.0
+  },
+  "DESC": {
+   "label": "ESE mains (conventional)",
+   "exam": "UPSC ESE Electronics & Telecommunication Mains",
+   "kind": "desc",
+   "minsPerQ": 30
+  }
+ },
+ "patterns": {
+  "gatefull": {
+   "title": "GATE full mock",
+   "style": "MIXED",
+   "mins": 180,
+   "dist": {
+    "ga": 10,
+    "mLA": 2,
+    "mCalc": 2,
+    "mODE": 1,
+    "mCx": 1,
+    "mProb": 1,
+    "mNum": 1,
+    "net": 6,
+    "sig": 6,
+    "edc": 4,
+    "ana": 7,
+    "dig": 5,
+    "ctl": 5,
+    "com": 8,
+    "emt": 6
+   }
+  },
+  "esefull": {
+   "title": "ESE Paper II mock",
+   "style": "MCQ",
+   "mins": 100,
+   "dist": {
+    "net": 4,
+    "sig": 2,
+    "edc": 4,
+    "ana": 5,
+    "dig": 4,
+    "ctl": 4,
+    "com": 5,
+    "emt": 4,
+    "meas": 4,
+    "bee": 3,
+    "mat": 3,
+    "co": 3,
+    "adve": 3,
+    "advc": 2
+   }
+  },
+  "p1full": {
+   "title": "ESE Paper I mock",
+   "style": "MCQ",
+   "mins": 80,
+   "dist": {
+    "p1": 40
+   }
+  }
+ },
+ "mockDays": {
+  "6": "gatefull",
+  "3": "esefull",
+  "0": "p1full"
+ },
+ "revisionMock": "gatefull",
+ "sources": [
+  {
+   "name": "UPSC previous papers",
+   "url": "https://upsc.gov.in/examinations/previous-question-papers"
+  },
+  {
+   "name": "GATE 2026 official site",
+   "url": "https://gate2026.iitg.ac.in"
+  }
+ ],
+ "subjects": {
+  "mLA": {
+   "n": "Maths · Linear Algebra",
+   "c": 1,
+   "book": "B.S. Grewal / Kreyszig",
+   "topics": [
+    "Matrix algebra and rank",
+    "Systems of linear equations",
+    "Eigenvalues and eigenvectors",
+    "Cayley-Hamilton theorem and special matrices"
+   ],
+   "notes": [
+    {
+     "h": "Must-know results",
+     "items": [
+      "Rank = number of non-zero rows in row-echelon form. rank(AB) ≤ min(rank A, rank B).",
+      "Ax = b with n unknowns: rank[A|b] ≠ rank A → no solution; rank[A|b] = rank A = n → unique; = rank A = r < n → infinitely many, with n − r free variables.",
+      "Homogeneous Ax = 0 is always consistent; a square A has a non-trivial solution only if det A = 0.",
+      "Sum of eigenvalues = trace A; product = det A. Triangular or diagonal matrix: eigenvalues are the diagonal entries.",
+      "If λ is an eigenvalue of A: Aᵏ → λᵏ, A⁻¹ → 1/λ, A + kI → λ + k, kA → kλ. Eigenvectors stay the same.",
+      "Real symmetric → real eigenvalues and orthogonal eigenvectors. Skew-symmetric → 0 or purely imaginary. Orthogonal → |λ| = 1.",
+      "Cayley–Hamilton: A satisfies its own characteristic equation. Use it to get A⁻¹ or high powers of A."
+     ]
+    },
+    {
+     "h": "PYQ traps",
+     "items": [
+      "A matrix with all rows proportional has rank 1, so n − 1 eigenvalues are 0 and the last equals the trace.",
+      "Eigenvectors of distinct eigenvalues are linearly independent; A is diagonalizable only with n independent eigenvectors."
+     ]
+    }
+   ],
+   "read": {
+    "Matrix algebra and rank": [
+     "Types of matrices: symmetric, skew-symmetric, orthogonal, Hermitian, unitary",
+     "Determinant properties and cofactor expansion",
+     "Inverse by adjoint and by row operations",
+     "Elementary row operations and echelon form",
+     "Rank by echelon form and by minors",
+     "Rank properties: rank(AB), rank(Aᵀ), nilpotent and idempotent matrices"
+    ],
+    "Systems of linear equations": [
+     "Augmented matrix and Gauss elimination",
+     "Consistency: rank test for Ax = b",
+     "Unique, infinite and no solution cases with a parameter",
+     "Homogeneous systems: trivial vs non-trivial solutions",
+     "Linear dependence and independence of vectors",
+     "Gauss–Jordan and LU decomposition basics"
+    ],
+    "Eigenvalues and eigenvectors": [
+     "Characteristic equation",
+     "Eigenvalues and eigenvectors of 2×2 and 3×3 matrices",
+     "Algebraic vs geometric multiplicity",
+     "Properties: trace, determinant, powers, inverse",
+     "Eigenvalues of symmetric, orthogonal and triangular matrices",
+     "Diagonalization A = PDP⁻¹"
+    ],
+    "Cayley-Hamilton theorem and special matrices": [
+     "Cayley–Hamilton statement and check on a 2×2 matrix",
+     "Finding A⁻¹ using Cayley–Hamilton",
+     "Computing Aⁿ and matrix polynomials",
+     "Quadratic forms and definiteness from eigenvalues",
+     "Rank-1 matrices (u vᵀ) and their eigenvalues",
+     "Similar matrices and shared eigenvalues"
+    ]
+   },
+   "refs": {
+    "Matrix algebra and rank": "Grewal: Matrices",
+    "Systems of linear equations": "Grewal: Matrices (linear systems)",
+    "Eigenvalues and eigenvectors": "Grewal: Eigenvalues and eigenvectors",
+    "Cayley-Hamilton theorem and special matrices": "Grewal: Eigenvalues (Cayley–Hamilton)"
+   }
+  },
+  "mCalc": {
+   "n": "Maths · Calculus",
+   "c": 1,
+   "book": "B.S. Grewal",
+   "topics": [
+    "Limits, continuity, differentiability",
+    "Mean value theorems",
+    "Maxima and minima",
+    "Definite integrals and applications",
+    "Partial derivatives",
+    "Taylor series"
+   ],
+   "notes": [
+    {
+     "h": "Must-know results",
+     "items": [
+      "Standard limits: sin x / x → 1, (1 + 1/x)ˣ → e, (aˣ − 1)/x → ln a. Use L'Hôpital only for 0/0 or ∞/∞.",
+      "Rolle: f(a) = f(b) ⇒ f′(c) = 0 for some c in (a, b). LMVT: f′(c) = (f(b) − f(a))/(b − a).",
+      "Two-variable extrema at fx = fy = 0: r = fxx, s = fxy, t = fyy. rt − s² > 0 and r < 0 → max; r > 0 → min; rt − s² < 0 → saddle.",
+      "∫₀ᵃ f(x) dx = ∫₀ᵃ f(a − x) dx. Odd function over symmetric limits → 0. Even → 2∫₀ᵃ.",
+      "Wallis: ∫₀^{π/2} sinⁿx dx = (n−1)/n · (n−3)/(n−2) … × (π/2 if n even, 1 if n odd).",
+      "Euler: f homogeneous of degree n ⇒ x fx + y fy = n f.",
+      "Taylor: eˣ = 1 + x + x²/2! + …, sin x = x − x³/3! + …, ln(1 + x) = x − x²/2 + x³/3 − …"
+     ]
+    },
+    {
+     "h": "PYQ traps",
+     "items": [
+      "|x| is continuous but not differentiable at 0. Check left and right derivatives separately.",
+      "Global max/min on a closed interval: also check the endpoints, not only stationary points."
+     ]
+    }
+   ],
+   "read": {
+    "Limits, continuity, differentiability": [
+     "Standard limits and L'Hôpital's rule",
+     "Indeterminate forms 0·∞, ∞−∞, 1^∞",
+     "Continuity at a point and types of discontinuity",
+     "Differentiability: left and right derivatives",
+     "Special functions: |x|, x sin(1/x), floor function"
+    ],
+    "Mean value theorems": [
+     "Rolle's theorem: conditions and meaning",
+     "Lagrange MVT and finding c",
+     "Cauchy MVT",
+     "Checking whether a theorem applies on an interval"
+    ],
+    "Maxima and minima": [
+     "First and second derivative tests",
+     "Global extrema on a closed interval",
+     "Two-variable extrema using rt − s²",
+     "Saddle points",
+     "Lagrange multipliers for constrained extrema"
+    ],
+    "Definite integrals and applications": [
+     "Properties of definite integrals (a − x, symmetry, periodicity)",
+     "Wallis formula",
+     "Improper integrals and convergence",
+     "Area between curves",
+     "Volume of revolution",
+     "Double integrals and change of order"
+    ],
+    "Partial derivatives": [
+     "Partial derivatives and chain rule",
+     "Total derivative",
+     "Euler's theorem for homogeneous functions",
+     "Implicit differentiation",
+     "Jacobians"
+    ],
+    "Taylor series": [
+     "Taylor and Maclaurin series",
+     "Standard expansions: eˣ, sin x, cos x, ln(1 + x), (1 + x)ⁿ",
+     "Using series to evaluate limits",
+     "Two-variable Taylor expansion (first terms)"
+    ]
+   },
+   "refs": {
+    "Limits, continuity, differentiability": "Grewal: Differential calculus",
+    "Mean value theorems": "Grewal: Mean value theorems",
+    "Maxima and minima": "Grewal: Maxima and minima",
+    "Definite integrals and applications": "Grewal: Integral calculus",
+    "Partial derivatives": "Grewal: Partial differentiation",
+    "Taylor series": "Grewal: Expansion of functions"
+   }
+  },
+  "mODE": {
+   "n": "Maths · Differential Equations",
+   "c": 1,
+   "book": "B.S. Grewal / Kreyszig",
+   "topics": [
+    "First order ODEs",
+    "Higher order linear ODEs",
+    "Cauchy-Euler and variation of parameters",
+    "Initial and boundary value problems"
+   ],
+   "notes": [
+    {
+     "h": "Must-know results",
+     "items": [
+      "Linear first order y′ + P y = Q: integrating factor IF = e^{∫P dx}; then y·IF = ∫Q·IF dx + c.",
+      "M dx + N dy = 0 is exact when ∂M/∂y = ∂N/∂x.",
+      "Constant coefficients, roots of auxiliary equation: real distinct → c₁e^{m₁x} + c₂e^{m₂x}; repeated → (c₁ + c₂x)e^{mx}; α ± jβ → e^{αx}(c₁cos βx + c₂sin βx).",
+      "Particular integral for e^{ax}: e^{ax}/f(a). If f(a) = 0, multiply by x and use f′(a).",
+      "Cauchy–Euler x²y″ + a x y′ + b y = 0: try y = xᵐ, giving m(m − 1) + a m + b = 0.",
+      "Wronskian ≠ 0 ⇒ solutions are linearly independent."
+     ]
+    },
+    {
+     "h": "PYQ traps",
+     "items": [
+      "Order = highest derivative; degree = power of that derivative after removing radicals and fractions.",
+      "For an IVP, apply initial conditions to the complete solution (CF + PI), not to the CF alone."
+     ]
+    }
+   ],
+   "read": {
+    "First order ODEs": [
+     "Variable separable equations",
+     "Homogeneous equations (y = vx)",
+     "Exact equations and integrating factors",
+     "Linear equations and Bernoulli equation",
+     "Orthogonal trajectories basics"
+    ],
+    "Higher order linear ODEs": [
+     "Auxiliary equation and complementary function",
+     "Particular integrals for e^{ax}, sin/cos, xⁿ, e^{ax}V",
+     "Special case when f(a) = 0",
+     "Wronskian and linear independence"
+    ],
+    "Cauchy-Euler and variation of parameters": [
+     "Cauchy–Euler equation: substitution x = eᶻ",
+     "Legendre linear equation",
+     "Variation of parameters",
+     "Method of undetermined coefficients"
+    ],
+    "Initial and boundary value problems": [
+     "Applying initial conditions to the complete solution",
+     "Boundary value problems",
+     "Solving ODEs with the Laplace transform",
+     "Physical applications: RLC circuits, mass–spring systems"
+    ]
+   },
+   "refs": {
+    "First order ODEs": "Grewal: Differential equations of first order",
+    "Higher order linear ODEs": "Grewal: Linear differential equations",
+    "Cauchy-Euler and variation of parameters": "Grewal: Linear differential equations",
+    "Initial and boundary value problems": "Grewal: Applications of differential equations"
+   }
+  },
+  "mCx": {
+   "n": "Maths · Complex Variables",
+   "c": 1,
+   "book": "Kreyszig",
+   "topics": [
+    "Analytic functions and Cauchy-Riemann equations",
+    "Cauchy integral theorem and formula",
+    "Taylor and Laurent series",
+    "Residue theorem"
+   ],
+   "notes": [
+    {
+     "h": "Must-know results",
+     "items": [
+      "Analytic ⇔ Cauchy–Riemann: uₓ = v_y and u_y = −vₓ (with continuous partials). Then u and v are harmonic.",
+      "Cauchy theorem: ∮ f(z) dz = 0 if f is analytic inside and on C.",
+      "Cauchy integral formula: ∮ f(z)/(z − a) dz = 2πj f(a); ∮ f(z)/(z − a)^{n+1} dz = 2πj f⁽ⁿ⁾(a)/n!.",
+      "Residue at a simple pole: lim (z − a) f(z), or p(a)/q′(a) for f = p/q. Pole of order m: (1/(m−1)!) d^{m−1}/dz^{m−1} [(z − a)ᵐ f(z)] at z = a.",
+      "Residue theorem: ∮ f dz = 2πj × (sum of residues of poles inside C).",
+      "In a Laurent series about a, the residue is the coefficient of 1/(z − a)."
+     ]
+    },
+    {
+     "h": "PYQ traps",
+     "items": [
+      "Always check which poles lie inside the contour (|z| = r or |z − z₀| = r) before adding residues.",
+      "The region of validity decides which Laurent expansion to use (|z| < 1 vs |z| > 1)."
+     ]
+    }
+   ],
+   "read": {
+    "Analytic functions and Cauchy-Riemann equations": [
+     "Complex numbers, polar form, De Moivre, roots",
+     "Limits and continuity of complex functions",
+     "Cauchy–Riemann equations (Cartesian and polar)",
+     "Harmonic functions and harmonic conjugate",
+     "Milne–Thomson method"
+    ],
+    "Cauchy integral theorem and formula": [
+     "Line integrals in the complex plane",
+     "Cauchy's integral theorem",
+     "Cauchy's integral formula and formula for derivatives",
+     "Evaluating ∮ over |z| = r contours"
+    ],
+    "Taylor and Laurent series": [
+     "Radius of convergence",
+     "Taylor series of analytic functions",
+     "Laurent series in different annular regions",
+     "Zeros and classification of singularities (removable, pole, essential)"
+    ],
+    "Residue theorem": [
+     "Residue at a simple pole and at a pole of order m",
+     "Residue theorem for closed contours",
+     "Real integrals over 0 to 2π using z = e^{jθ}",
+     "Improper real integrals by contour integration"
+    ]
+   },
+   "refs": {
+    "Analytic functions and Cauchy-Riemann equations": "Kreyszig: Complex numbers and functions",
+    "Cauchy integral theorem and formula": "Kreyszig: Complex integration",
+    "Taylor and Laurent series": "Kreyszig: Power, Taylor and Laurent series",
+    "Residue theorem": "Kreyszig: Residue integration"
+   }
+  },
+  "mProb": {
+   "n": "Maths · Probability & Statistics",
+   "c": 1,
+   "book": "B.S. Grewal",
+   "topics": [
+    "Probability and Bayes theorem",
+    "Random variables and standard distributions",
+    "Mean, variance, moments",
+    "Joint distributions and correlation"
+   ],
+   "notes": [
+    {
+     "h": "Must-know results",
+     "items": [
+      "P(A ∪ B) = P(A) + P(B) − P(A ∩ B). Independent: P(A ∩ B) = P(A)P(B). Bayes: P(A|B) = P(B|A)P(A)/P(B).",
+      "Binomial: mean np, variance npq. Poisson: mean = variance = λ.",
+      "Uniform(a, b): mean (a + b)/2, variance (b − a)²/12. Exponential(λ): mean 1/λ, variance 1/λ², memoryless.",
+      "Normal: about 68%, 95%, 99.7% within 1σ, 2σ, 3σ.",
+      "Var(aX + b) = a² Var X. Var(X + Y) = Var X + Var Y + 2 Cov(X, Y).",
+      "Correlation ρ = Cov(X, Y)/(σx σy), with |ρ| ≤ 1. Independent ⇒ uncorrelated (not the reverse)."
+     ]
+    },
+    {
+     "h": "PYQ traps",
+     "items": [
+      "For X, Y uniform on (0, 1) and independent: E[max] = 2/3, E[min] = 1/3.",
+      "A PDF must integrate to 1: use this to find an unknown constant first."
+     ]
+    }
+   ],
+   "read": {
+    "Probability and Bayes theorem": [
+     "Sample space, axioms and addition rule",
+     "Conditional probability and independence",
+     "Total probability theorem",
+     "Bayes' theorem problems",
+     "Counting: permutations and combinations"
+    ],
+    "Random variables and standard distributions": [
+     "Discrete and continuous random variables: PMF, PDF, CDF",
+     "Binomial and Poisson distributions",
+     "Uniform, exponential and normal distributions",
+     "Standard normal table and z-score",
+     "Function of a random variable"
+    ],
+    "Mean, variance, moments": [
+     "Expectation and its linearity",
+     "Variance and standard deviation",
+     "Moments and moment generating function",
+     "Median and mode",
+     "Chebyshev's inequality"
+    ],
+    "Joint distributions and correlation": [
+     "Joint PMF/PDF and marginals",
+     "Independence of random variables",
+     "Covariance and correlation coefficient",
+     "Sum of independent random variables",
+     "Regression lines and least-squares fit"
+    ]
+   },
+   "refs": {
+    "Probability and Bayes theorem": "Grewal: Probability",
+    "Random variables and standard distributions": "Grewal: Random variables and distributions",
+    "Mean, variance, moments": "Grewal: Random variables",
+    "Joint distributions and correlation": "Grewal: Statistics; Probability"
+   }
+  },
+  "mNum": {
+   "n": "Maths · Numerical & Vector",
+   "c": 1,
+   "book": "B.S. Grewal",
+   "topics": [
+    "Numerical solution of equations",
+    "Numerical integration",
+    "Gradient, divergence, curl",
+    "Line, surface and volume integrals",
+    "Green, Stokes and Gauss theorems"
+   ],
+   "notes": [
+    {
+     "h": "Must-know results",
+     "items": [
+      "Newton–Raphson: xₙ₊₁ = xₙ − f(xₙ)/f′(xₙ); quadratic convergence. Bisection: linear, error halves each step.",
+      "Trapezoidal: (h/2)[y₀ + 2(y₁ + … + yₙ₋₁) + yₙ], error O(h²). Simpson 1/3 (n even): (h/3)[y₀ + 4(odd) + 2(even) + yₙ], exact for cubics.",
+      "Euler's method: y₁ = y₀ + h f(x₀, y₀).",
+      "∇ × (∇f) = 0 and ∇ · (∇ × A) = 0 always.",
+      "Divergence theorem: ∯ A · dS = ∭ ∇ · A dV. Stokes: ∮ A · dl = ∬ (∇ × A) · dS.",
+      "Directional derivative = ∇f · â; it is largest along ∇f with value |∇f|."
+     ]
+    },
+    {
+     "h": "PYQ traps",
+     "items": [
+      "Simpson's 1/3 needs an even number of intervals; 3/8 rule needs a multiple of 3.",
+      "A conservative field has zero curl and a path-independent line integral."
+     ]
+    }
+   ],
+   "read": {
+    "Numerical solution of equations": [
+     "Bisection method",
+     "Regula falsi",
+     "Newton–Raphson and order of convergence",
+     "Fixed-point iteration",
+     "Gauss–Seidel for linear systems"
+    ],
+    "Numerical integration": [
+     "Trapezoidal rule and its error",
+     "Simpson's 1/3 and 3/8 rules",
+     "Euler's method for ODEs",
+     "Runge–Kutta 2nd and 4th order",
+     "Newton forward and backward interpolation basics"
+    ],
+    "Gradient, divergence, curl": [
+     "Gradient and directional derivative",
+     "Divergence and solenoidal fields",
+     "Curl and irrotational fields",
+     "Vector identities",
+     "Normal to a surface"
+    ],
+    "Line, surface and volume integrals": [
+     "Line integrals and work done",
+     "Conservative fields and potential function",
+     "Surface integrals",
+     "Volume integrals"
+    ],
+    "Green, Stokes and Gauss theorems": [
+     "Green's theorem in the plane",
+     "Stokes' theorem",
+     "Gauss divergence theorem",
+     "Choosing the easier side of a theorem in problems"
+    ]
+   },
+   "refs": {
+    "Numerical solution of equations": "Grewal: Numerical methods",
+    "Numerical integration": "Grewal: Numerical methods",
+    "Gradient, divergence, curl": "Grewal: Vector calculus",
+    "Line, surface and volume integrals": "Grewal: Vector calculus",
+    "Green, Stokes and Gauss theorems": "Grewal: Vector calculus"
+   }
+  },
+  "net": {
+   "n": "Networks",
+   "c": 2,
+   "book": "Hayt & Kemmerly; Van Valkenburg",
+   "topics": [
+    "KCL, KVL and sources",
+    "Nodal and mesh analysis",
+    "Thevenin, Norton, superposition",
+    "Maximum power transfer and reciprocity",
+    "Network graph theory",
+    "RL and RC transients",
+    "RLC transients and second-order circuits",
+    "Sinusoidal steady state and phasors",
+    "AC power and power factor",
+    "Series and parallel resonance",
+    "Laplace analysis of circuits",
+    "Two-port network parameters",
+    "Coupled circuits and transformers",
+    "Network functions and passive filters"
+   ],
+   "notes": [
+    {
+     "h": "Must-know results",
+     "items": [
+      "Thevenin: Vth = open-circuit voltage; Rth = Voc/Isc. With dependent sources, keep them on and apply a test source.",
+      "Max power: R_L = R_th (DC), P_max = Vth²/(4Rth). AC: Z_L = Z_th*; if only a resistor can vary, R_L = |Z_th|.",
+      "Superposition works for V and I, not power. Dependent sources are never switched off.",
+      "First-order response: x(t) = x(∞) + [x(0⁺) − x(∞)] e^{−t/τ}, τ = RC or L/R with the Thevenin R seen by C or L.",
+      "Capacitor voltage and inductor current cannot jump. At DC steady state: C is open, L is short.",
+      "Series RLC: ω₀ = 1/√(LC), α = R/2L, ζ = α/ω₀; Q = ω₀L/R; BW = R/L = ω₀/Q. Parallel RLC: Q = R√(C/L), BW = 1/RC.",
+      "Graph: tree has n − 1 branches; independent loops (links) = b − n + 1.",
+      "Two-port: reciprocal → z₁₂ = z₂₁, y₁₂ = y₂₁, h₁₂ = −h₂₁, AD − BC = 1. Symmetric → z₁₁ = z₂₂, A = D.",
+      "Complex power S = V I* = P + jQ; power factor = cos φ."
+     ]
+    },
+    {
+     "h": "PYQ traps",
+     "items": [
+      "At t = 0⁺ an uncharged capacitor acts as a short and an unfluxed inductor as an open.",
+      "Use RMS values in power formulas; phasors from peak values need a factor of 1/2."
+     ]
+    }
+   ],
+   "read": {
+    "KCL, KVL and sources": [
+     "Ideal and practical voltage and current sources",
+     "Dependent sources (VCVS, VCCS, CCVS, CCCS)",
+     "KCL and KVL",
+     "Series/parallel resistors, voltage and current division",
+     "Star–delta transformation",
+     "Source transformation"
+    ],
+    "Nodal and mesh analysis": [
+     "Nodal analysis with current sources",
+     "Supernode",
+     "Mesh analysis",
+     "Supermesh",
+     "Circuits with dependent sources",
+     "Choosing nodal vs mesh"
+    ],
+    "Thevenin, Norton, superposition": [
+     "Linearity and superposition",
+     "Thevenin equivalent",
+     "Norton equivalent",
+     "Rth with dependent sources (test-source method)",
+     "Millman's theorem"
+    ],
+    "Maximum power transfer and reciprocity": [
+     "Maximum power transfer (DC)",
+     "Maximum power transfer (AC): conjugate match and resistive load",
+     "Reciprocity theorem",
+     "Tellegen's and substitution theorems",
+     "Compensation theorem"
+    ],
+    "Network graph theory": [
+     "Graph, tree, co-tree, twigs and links",
+     "Incidence matrix",
+     "Tie-set (loop) matrix",
+     "Cut-set matrix",
+     "Number of trees from det(A Aᵀ)"
+    ],
+    "RL and RC transients": [
+     "Source-free RC and RL circuits",
+     "Time constant",
+     "Unit-step forcing function",
+     "Initial and final conditions at t = 0⁻, 0⁺, ∞",
+     "Switched circuits with multiple sources"
+    ],
+    "RLC transients and second-order circuits": [
+     "Source-free parallel RLC: over, critically and under damped",
+     "Source-free series RLC",
+     "Complete response of RLC circuits",
+     "Damping ratio and natural frequency",
+     "Initial derivative conditions dv/dt and di/dt"
+    ],
+    "Sinusoidal steady state and phasors": [
+     "Phasors and complex impedance",
+     "Admittance",
+     "Nodal and mesh analysis with phasors",
+     "Phasor diagrams",
+     "Thevenin equivalents in AC circuits"
+    ],
+    "AC power and power factor": [
+     "Instantaneous and average power",
+     "RMS values",
+     "Apparent power and power factor",
+     "Complex power S = P + jQ",
+     "Power factor correction"
+    ],
+    "Series and parallel resonance": [
+     "Series resonance",
+     "Parallel resonance",
+     "Quality factor and bandwidth",
+     "Half-power frequencies",
+     "Practical parallel resonance (RL ∥ C)"
+    ],
+    "Laplace analysis of circuits": [
+     "Laplace transform pairs and properties",
+     "s-domain models of R, L, C with initial conditions",
+     "Transfer function, poles and zeros",
+     "Initial and final value theorems",
+     "Convolution in circuits"
+    ],
+    "Two-port network parameters": [
+     "z and y parameters",
+     "h and g parameters",
+     "ABCD (transmission) parameters",
+     "Conversion between parameter sets",
+     "Interconnections: series, parallel, cascade",
+     "Reciprocity and symmetry conditions"
+    ],
+    "Coupled circuits and transformers": [
+     "Mutual inductance and dot convention",
+     "Coefficient of coupling",
+     "Energy in coupled coils",
+     "Linear transformer and reflected impedance",
+     "Ideal transformer"
+    ],
+    "Network functions and passive filters": [
+     "Driving-point and transfer functions",
+     "Pole-zero plots",
+     "Bode plots of simple networks",
+     "Passive low-pass, high-pass, band-pass and band-stop filters",
+     "Positive real functions and Foster/Cauer forms basics"
+    ]
+   },
+   "refs": {
+    "KCL, KVL and sources": "Hayt: Basic components; Voltage and current laws",
+    "Nodal and mesh analysis": "Hayt: Basic nodal and mesh analysis",
+    "Thevenin, Norton, superposition": "Hayt: Handy circuit analysis techniques",
+    "Maximum power transfer and reciprocity": "Hayt: Handy circuit analysis techniques",
+    "Network graph theory": "Van Valkenburg: Network topology",
+    "RL and RC transients": "Hayt: Basic RL and RC circuits",
+    "RLC transients and second-order circuits": "Hayt: The RLC circuit",
+    "Sinusoidal steady state and phasors": "Hayt: Sinusoidal steady-state analysis",
+    "AC power and power factor": "Hayt: AC circuit power analysis",
+    "Series and parallel resonance": "Hayt: Frequency response",
+    "Laplace analysis of circuits": "Hayt: Circuit analysis in the s-domain",
+    "Two-port network parameters": "Hayt: Two-port networks",
+    "Coupled circuits and transformers": "Hayt: Magnetically coupled circuits",
+    "Network functions and passive filters": "Van Valkenburg: Network functions; Hayt: Frequency response"
+   }
+  },
+  "sig": {
+   "n": "Signals & Systems",
+   "c": 3,
+   "book": "Oppenheim & Willsky",
+   "topics": [
+    "Signal classification and operations",
+    "System properties",
+    "Continuous-time convolution",
+    "Discrete-time convolution",
+    "Fourier series",
+    "Continuous-time Fourier transform",
+    "DTFT",
+    "DFT and FFT",
+    "Laplace transform and ROC",
+    "Z-transform and ROC",
+    "System analysis using transforms",
+    "Sampling theorem",
+    "Correlation and spectral density",
+    "Frequency response and ideal filters",
+    "Group delay and phase delay",
+    "Causality and stability of LTI systems"
+   ],
+   "notes": [
+    {
+     "h": "Must-know results",
+     "items": [
+      "LTI output y = x * h. Causal ⇔ h(t) = 0 for t < 0. BIBO stable ⇔ ∫|h(t)| dt < ∞.",
+      "Discrete convolution of lengths N₁ and N₂ has length N₁ + N₂ − 1. Area of x * h = (area of x)(area of h).",
+      "Pairs: e^{−at}u(t) ↔ 1/(a + jω); rect(t/T) ↔ T sinc(fT); δ(t) ↔ 1; x(t − t₀) ↔ e^{−jωt₀}X(ω); x(at) ↔ X(ω/a)/|a|.",
+      "Parseval: ∫|x(t)|² dt = (1/2π)∫|X(ω)|² dω.",
+      "Laplace ROC: right-sided → right of the rightmost pole. Stable ⇔ ROC contains the jω axis.",
+      "Z-transform: aⁿu[n] ↔ 1/(1 − a z⁻¹), |z| > |a|. Causal and stable ⇔ all poles inside the unit circle.",
+      "Sampling: fs ≥ 2 f_max. An undersampled tone at f appears at |f − k fs|.",
+      "N-point DFT multiplication = circular convolution. Radix-2 FFT: (N/2) log₂N complex multiplications.",
+      "Group delay τg = −dθ/dω; phase delay τp = −θ(ω)/ω."
+     ]
+    },
+    {
+     "h": "PYQ traps",
+     "items": [
+      "Final value theorem applies only when all poles of sX(s) are in the left half plane.",
+      "Fourier series of a signal with half-wave symmetry has only odd harmonics."
+     ]
+    }
+   ],
+   "read": {
+    "Signal classification and operations": [
+     "Continuous- and discrete-time signals",
+     "Energy and power signals",
+     "Even/odd and periodic signals, fundamental period",
+     "Unit step, impulse, ramp and their relations",
+     "Time shifting, scaling and reversal"
+    ],
+    "System properties": [
+     "Linearity",
+     "Time invariance",
+     "Causality",
+     "BIBO stability",
+     "Memory and invertibility",
+     "Testing properties on given system equations"
+    ],
+    "Continuous-time convolution": [
+     "Convolution integral",
+     "Graphical convolution",
+     "Properties: commutative, associative, distributive",
+     "Impulse response of cascade and parallel systems",
+     "Step response"
+    ],
+    "Discrete-time convolution": [
+     "Convolution sum",
+     "Tabular and graphical methods",
+     "Length of the output sequence",
+     "Linear constant-coefficient difference equations",
+     "FIR vs IIR systems"
+    ],
+    "Fourier series": [
+     "Exponential and trigonometric Fourier series",
+     "Dirichlet conditions",
+     "Symmetry: even, odd, half-wave",
+     "Parseval's relation",
+     "Response of LTI systems to periodic inputs"
+    ],
+    "Continuous-time Fourier transform": [
+     "Fourier transform pairs",
+     "Properties: shift, scaling, duality, differentiation",
+     "Convolution and multiplication properties",
+     "Fourier transform of periodic signals",
+     "Parseval's theorem and energy spectral density"
+    ],
+    "DTFT": [
+     "DTFT definition and periodicity",
+     "Standard DTFT pairs",
+     "DTFT properties",
+     "Frequency response of DT systems"
+    ],
+    "DFT and FFT": [
+     "N-point DFT and IDFT",
+     "Circular shift and circular convolution",
+     "Linear convolution via DFT (zero padding)",
+     "Radix-2 DIT and DIF FFT",
+     "Computational complexity"
+    ],
+    "Laplace transform and ROC": [
+     "Bilateral Laplace transform and ROC",
+     "Properties of the ROC",
+     "Inverse Laplace by partial fractions",
+     "Causality and stability from poles and ROC",
+     "Unilateral Laplace for initial conditions"
+    ],
+    "Z-transform and ROC": [
+     "Z-transform and ROC",
+     "ROC for finite, right-, left- and two-sided sequences",
+     "Z-transform properties",
+     "Inverse z by partial fractions and power series",
+     "Causality and stability"
+    ],
+    "System analysis using transforms": [
+     "Transfer function from differential/difference equations",
+     "Block diagram realizations",
+     "Poles, zeros and frequency response",
+     "All-pass and minimum-phase systems"
+    ],
+    "Sampling theorem": [
+     "Ideal impulse sampling and its spectrum",
+     "Nyquist rate",
+     "Aliasing and anti-aliasing filter",
+     "Reconstruction with an ideal LPF",
+     "Sampling of band-pass signals",
+     "Zero-order hold"
+    ],
+    "Correlation and spectral density": [
+     "Autocorrelation and cross-correlation",
+     "Properties of autocorrelation",
+     "Energy and power spectral density",
+     "Wiener–Khinchin theorem"
+    ],
+    "Frequency response and ideal filters": [
+     "Magnitude and phase response",
+     "Ideal LPF, HPF and BPF",
+     "Distortionless transmission",
+     "Why ideal filters are non-causal"
+    ],
+    "Group delay and phase delay": [
+     "Phase delay",
+     "Group delay",
+     "Linear-phase systems",
+     "Delay of a narrowband signal"
+    ],
+    "Causality and stability of LTI systems": [
+     "Causality from h(t) and h[n]",
+     "BIBO stability condition",
+     "Stability from the ROC",
+     "Marginally stable systems"
+    ]
+   },
+   "refs": {
+    "Signal classification and operations": "Oppenheim: Signals and systems",
+    "System properties": "Oppenheim: Signals and systems (system properties)",
+    "Continuous-time convolution": "Oppenheim: Linear time-invariant systems",
+    "Discrete-time convolution": "Oppenheim: Linear time-invariant systems",
+    "Fourier series": "Oppenheim: Fourier series of periodic signals",
+    "Continuous-time Fourier transform": "Oppenheim: Continuous-time Fourier transform",
+    "DTFT": "Oppenheim: Discrete-time Fourier transform",
+    "DFT and FFT": "Proakis: The discrete Fourier transform",
+    "Laplace transform and ROC": "Oppenheim: The Laplace transform",
+    "Z-transform and ROC": "Oppenheim: The z-transform",
+    "System analysis using transforms": "Oppenheim: Laplace and z-transform (system analysis)",
+    "Sampling theorem": "Oppenheim: Sampling",
+    "Correlation and spectral density": "Lathi: Signals and systems (correlation)",
+    "Frequency response and ideal filters": "Oppenheim: Time and frequency characterization",
+    "Group delay and phase delay": "Oppenheim: Time and frequency characterization",
+    "Causality and stability of LTI systems": "Oppenheim: LTI systems (properties)"
+   }
+  },
+  "edc": {
+   "n": "Electronic Devices",
+   "c": 4,
+   "book": "Streetman; Millman & Halkias",
+   "topics": [
+    "Energy bands and crystal structure",
+    "Carrier statistics and Fermi level",
+    "Drift, diffusion and mobility",
+    "Continuity equation, generation and recombination",
+    "PN junction electrostatics",
+    "PN junction I-V and capacitance",
+    "Breakdown, Zener and special diodes",
+    "BJT device physics",
+    "MOS capacitor",
+    "MOSFET I-V and short-channel effects",
+    "LED, photodiode and solar cell",
+    "IC fabrication: oxidation, diffusion, lithography"
+   ],
+   "notes": [
+    {
+     "h": "Must-know results",
+     "items": [
+      "Mass action law: n·p = nᵢ². kT/q ≈ 25.9 mV at 300 K. Silicon nᵢ ≈ 1.5 × 10¹⁰ cm⁻³ (some papers use 10¹⁰).",
+      "Conductivity σ = q(n μn + p μp). Einstein relation D/μ = kT/q. Diffusion length L = √(Dτ).",
+      "Built-in potential Vbi = (kT/q) ln(NA ND / nᵢ²).",
+      "Depletion width W = √[(2ε(Vbi + VR)/q)(1/NA + 1/ND)]; it extends mostly into the lightly doped side (xn/xp = NA/ND).",
+      "Junction capacitance Cj = εA/W ∝ (Vbi + VR)^{−1/2} for an abrupt junction, ^{−1/3} for linearly graded.",
+      "Diode: I = Is(e^{V/ηVT} − 1). Is roughly doubles every 10 °C.",
+      "MOSFET saturation: ID = (μnCox/2)(W/L)(VGS − VT)²(1 + λVDS); gm = 2ID/(VGS − VT). Linear: ID = μnCox(W/L)[(VGS − VT)VDS − VDS²/2].",
+      "Body effect: VT = VT0 + γ[√(2φF + VSB) − √(2φF)].",
+      "MOS capacitor: accumulation → depletion → inversion; threshold when surface potential = 2φF."
+     ]
+    },
+    {
+     "h": "PYQ traps",
+     "items": [
+      "Zener breakdown (< ~5 V) has a negative temperature coefficient; avalanche (> ~6 V) positive.",
+      "LEDs need direct-bandgap material (GaAs); silicon is indirect. Photodiodes work in reverse bias."
+     ]
+    }
+   ],
+   "read": {
+    "Energy bands and crystal structure": [
+     "Crystal lattices and Miller indices",
+     "Energy bands in metals, semiconductors and insulators",
+     "Direct and indirect bandgap",
+     "Effective mass",
+     "Intrinsic and extrinsic semiconductors"
+    ],
+    "Carrier statistics and Fermi level": [
+     "Fermi–Dirac distribution",
+     "Density of states",
+     "Carrier concentrations n and p using Nc, Nv",
+     "Fermi level position with doping",
+     "Charge neutrality and compensation",
+     "Temperature dependence"
+    ],
+    "Drift, diffusion and mobility": [
+     "Drift current and mobility",
+     "Conductivity and resistivity",
+     "Mobility vs doping and temperature",
+     "Diffusion current",
+     "Einstein relation",
+     "Hall effect"
+    ],
+    "Continuity equation, generation and recombination": [
+     "Generation and recombination",
+     "Carrier lifetime",
+     "Continuity equation",
+     "Steady-state diffusion and diffusion length",
+     "Quasi-Fermi levels"
+    ],
+    "PN junction electrostatics": [
+     "Built-in potential",
+     "Depletion width and charge",
+     "Electric field profile",
+     "Abrupt vs linearly graded junction",
+     "One-sided junction approximation"
+    ],
+    "PN junction I-V and capacitance": [
+     "Ideal diode equation derivation",
+     "Minority carrier distribution",
+     "Reverse saturation current",
+     "Depletion capacitance",
+     "Diffusion capacitance",
+     "Small-signal diode model"
+    ],
+    "Breakdown, Zener and special diodes": [
+     "Zener and avalanche breakdown",
+     "Zener diode as regulator",
+     "Tunnel diode",
+     "Varactor diode",
+     "Schottky diode",
+     "Ohmic contacts"
+    ],
+    "BJT device physics": [
+     "Carrier flow in active mode",
+     "Emitter injection efficiency and base transport factor",
+     "α and β",
+     "Ebers–Moll model basics",
+     "Early effect",
+     "Breakdown and punch-through"
+    ],
+    "MOS capacitor": [
+     "Accumulation, depletion and inversion",
+     "Flat-band voltage",
+     "Threshold voltage expression",
+     "C–V characteristics (low and high frequency)",
+     "Effect of oxide charges"
+    ],
+    "MOSFET I-V and short-channel effects": [
+     "Linear and saturation I–V",
+     "Channel-length modulation",
+     "Body effect",
+     "Subthreshold conduction",
+     "Short-channel effects: velocity saturation, DIBL",
+     "Scaling basics"
+    ],
+    "LED, photodiode and solar cell": [
+     "LED and direct bandgap",
+     "Photodiode and quantum efficiency",
+     "Solar cell: Isc, Voc, fill factor",
+     "Avalanche photodiode",
+     "Laser diode basics"
+    ],
+    "IC fabrication: oxidation, diffusion, lithography": [
+     "Crystal growth and wafer preparation",
+     "Oxidation (dry and wet)",
+     "Diffusion and ion implantation",
+     "Photolithography and etching",
+     "Metallization",
+     "CMOS process flow"
+    ]
+   },
+   "refs": {
+    "Energy bands and crystal structure": "Streetman: Crystal properties; Energy bands",
+    "Carrier statistics and Fermi level": "Streetman: Energy bands and charge carriers",
+    "Drift, diffusion and mobility": "Streetman: Drift of carriers; Diffusion",
+    "Continuity equation, generation and recombination": "Streetman: Excess carriers in semiconductors",
+    "PN junction electrostatics": "Streetman: Junctions (equilibrium)",
+    "PN junction I-V and capacitance": "Streetman: Junctions (forward and reverse bias)",
+    "Breakdown, Zener and special diodes": "Streetman: Junctions (breakdown, special diodes)",
+    "BJT device physics": "Streetman: Bipolar junction transistors",
+    "MOS capacitor": "Streetman: Field-effect transistors (MOS capacitor)",
+    "MOSFET I-V and short-channel effects": "Streetman: Field-effect transistors (MOSFET)",
+    "LED, photodiode and solar cell": "Streetman: Optoelectronic devices",
+    "IC fabrication: oxidation, diffusion, lithography": "Streetman: Integrated circuits"
+   }
+  },
+  "ana": {
+   "n": "Analog Circuits",
+   "c": 5,
+   "book": "Sedra & Smith",
+   "topics": [
+    "Diode circuits: clippers, clampers, rectifiers",
+    "BJT biasing and stability",
+    "MOSFET biasing",
+    "Small-signal models",
+    "CE, CB and CC amplifiers",
+    "CS, CG and CD amplifiers",
+    "Multistage amplifiers and frequency response",
+    "Differential amplifiers",
+    "Current mirrors and active loads",
+    "Feedback amplifiers",
+    "Op-amp ideal circuits",
+    "Op-amp non-idealities",
+    "Active filters",
+    "Oscillators",
+    "Comparators, Schmitt trigger and 555 timer",
+    "Power amplifiers",
+    "Voltage regulators"
+   ],
+   "notes": [
+    {
+     "h": "Must-know results",
+     "items": [
+      "BJT: IC = βIB, IE = (β + 1)IB, α = β/(β + 1); gm = IC/VT; rπ = β/gm; ro = VA/IC.",
+      "CE gain ≈ −gm(RC ∥ RL); with unbypassed RE ≈ −RC/RE. CC: gain ≈ 1, high Rin, low Rout. CB: Rin ≈ 1/gm, current gain ≈ 1.",
+      "CS gain −gm(RD ∥ ro); CD ≈ gmR/(1 + gmR); CG input resistance ≈ 1/gm.",
+      "Miller effect: Cin = C(1 − Av). It sets the upper cutoff of CE/CS stages.",
+      "Differential pair: Ad = gmRC (differential output); CMRR = |Ad/Ac|, improved by a large tail resistance.",
+      "Negative feedback: Af = A/(1 + Aβ). Series mixing raises Rin; shunt lowers it. Voltage sampling lowers Rout; current sampling raises it.",
+      "Op-amp: inverting −Rf/R1; non-inverting 1 + Rf/R1. Full-power bandwidth f = SR/(2πVm). Gain × bandwidth is constant.",
+      "Barkhausen: loop gain = 1, phase 0°. RC phase shift: f = 1/(2πRC√6), gain ≥ 29. Wien bridge: f = 1/(2πRC), gain ≥ 3.",
+      "Rectifiers: half-wave Vdc = Vm/π, ripple factor 1.21; full-wave Vdc = 2Vm/π, ripple 0.482. PIV: half-wave Vm, centre-tap 2Vm, bridge Vm.",
+      "Power amps: class A max 25% (resistive load), 50% (transformer); class B 78.5%; class AB removes crossover distortion.",
+      "555 astable: f = 1.44/((RA + 2RB)C)."
+     ]
+    },
+    {
+     "h": "PYQ traps",
+     "items": [
+      "In small-signal analysis, DC supplies become ground and coupling/bypass capacitors become shorts.",
+      "Check the transistor region first (active, saturation, cutoff) before using any gain formula."
+     ]
+    }
+   ],
+   "read": {
+    "Diode circuits: clippers, clampers, rectifiers": [
+     "Diode models: ideal, constant drop, small-signal",
+     "Half-wave, full-wave and bridge rectifiers",
+     "Capacitor filter and ripple",
+     "Clipper circuits",
+     "Clamper circuits",
+     "Zener regulator design"
+    ],
+    "BJT biasing and stability": [
+     "BJT operating regions",
+     "DC analysis of BJT circuits",
+     "Fixed, collector-feedback and voltage-divider bias",
+     "Stability factor S",
+     "Thermal runaway"
+    ],
+    "MOSFET biasing": [
+     "MOSFET regions of operation",
+     "DC analysis with fixed VG",
+     "Source-degeneration bias",
+     "Drain-to-gate feedback bias",
+     "Current-source biasing"
+    ],
+    "Small-signal models": [
+     "BJT hybrid-π and T models",
+     "h-parameter model",
+     "MOSFET small-signal model",
+     "Calculating gm, rπ, ro",
+     "Body-effect transconductance gmb"
+    ],
+    "CE, CB and CC amplifiers": [
+     "CE amplifier with and without emitter resistance",
+     "CB amplifier",
+     "CC emitter follower",
+     "Input resistance, output resistance and gain of each",
+     "Bootstrapping"
+    ],
+    "CS, CG and CD amplifiers": [
+     "Common-source amplifier",
+     "CS with source degeneration",
+     "Common-gate amplifier",
+     "Source follower",
+     "Comparison of configurations"
+    ],
+    "Multistage amplifiers and frequency response": [
+     "Cascade and cascode amplifiers",
+     "Low-frequency response: coupling and bypass capacitors",
+     "High-frequency hybrid-π model and fT",
+     "Miller theorem and dominant pole",
+     "Gain–bandwidth trade-off"
+    ],
+    "Differential amplifiers": [
+     "BJT and MOS differential pair",
+     "Differential and common-mode gain",
+     "CMRR",
+     "Input offset",
+     "Large-signal transfer characteristic"
+    ],
+    "Current mirrors and active loads": [
+     "Basic current mirror",
+     "Widlar current source",
+     "Wilson and cascode mirrors",
+     "Active load",
+     "Output resistance"
+    ],
+    "Feedback amplifiers": [
+     "Feedback topologies: series-shunt, shunt-series, series-series, shunt-shunt",
+     "Effect on gain, bandwidth, Rin and Rout",
+     "Loop gain and desensitivity",
+     "Stability and phase margin"
+    ],
+    "Op-amp ideal circuits": [
+     "Inverting and non-inverting amplifiers",
+     "Summing and difference amplifiers",
+     "Instrumentation amplifier",
+     "Integrator and differentiator",
+     "Log/antilog amplifiers and precision rectifier"
+    ],
+    "Op-amp non-idealities": [
+     "Finite open-loop gain and bandwidth",
+     "Slew rate and full-power bandwidth",
+     "Input offset voltage and bias currents",
+     "CMRR and PSRR",
+     "Output saturation"
+    ],
+    "Active filters": [
+     "First-order active LPF and HPF",
+     "Sallen–Key second-order filter",
+     "Butterworth and Chebyshev responses",
+     "Band-pass and notch filters",
+     "All-pass filter"
+    ],
+    "Oscillators": [
+     "Barkhausen criterion",
+     "RC phase-shift oscillator",
+     "Wien bridge oscillator",
+     "Colpitts and Hartley oscillators",
+     "Crystal oscillator"
+    ],
+    "Comparators, Schmitt trigger and 555 timer": [
+     "Comparator and zero-crossing detector",
+     "Schmitt trigger and hysteresis",
+     "Astable and monostable multivibrators",
+     "555 timer: astable and monostable"
+    ],
+    "Power amplifiers": [
+     "Class A efficiency",
+     "Class B push-pull and crossover distortion",
+     "Class AB biasing",
+     "Class C and tuned amplifiers",
+     "Power dissipation and heat sinks"
+    ],
+    "Voltage regulators": [
+     "Zener shunt regulator",
+     "Series pass-transistor regulator",
+     "Line and load regulation",
+     "IC regulators (78xx, LM317)",
+     "Switching regulator basics"
+    ]
+   },
+   "refs": {
+    "Diode circuits: clippers, clampers, rectifiers": "Sedra & Smith: Diodes",
+    "BJT biasing and stability": "Sedra & Smith: Bipolar junction transistors",
+    "MOSFET biasing": "Sedra & Smith: MOS field-effect transistors",
+    "Small-signal models": "Sedra & Smith: Transistor amplifiers",
+    "CE, CB and CC amplifiers": "Sedra & Smith: Transistor amplifiers",
+    "CS, CG and CD amplifiers": "Sedra & Smith: Transistor amplifiers",
+    "Multistage amplifiers and frequency response": "Sedra & Smith: Frequency response",
+    "Differential amplifiers": "Sedra & Smith: Differential and multistage amplifiers",
+    "Current mirrors and active loads": "Sedra & Smith: Building blocks of IC amplifiers",
+    "Feedback amplifiers": "Sedra & Smith: Feedback",
+    "Op-amp ideal circuits": "Sedra & Smith: Operational amplifiers",
+    "Op-amp non-idealities": "Sedra & Smith: Operational amplifiers (non-ideal)",
+    "Active filters": "Sedra & Smith: Filters and tuned amplifiers",
+    "Oscillators": "Sedra & Smith: Signal generators",
+    "Comparators, Schmitt trigger and 555 timer": "Sedra & Smith: Signal generators and waveform-shaping",
+    "Power amplifiers": "Sedra & Smith: Output stages and power amplifiers",
+    "Voltage regulators": "Sedra & Smith: Output stages (regulators)"
+   }
+  },
+  "dig": {
+   "n": "Digital Circuits",
+   "c": 6,
+   "book": "Morris Mano",
+   "topics": [
+    "Number systems and codes",
+    "Boolean algebra and logic gates",
+    "K-maps and minimization",
+    "Adders, multiplexers, decoders",
+    "Logic families: TTL and CMOS",
+    "Latches and flip-flops",
+    "Counters",
+    "Shift registers",
+    "Finite state machines",
+    "Semiconductor memories",
+    "ADC and DAC",
+    "Sample-and-hold and timing",
+    "Computer organization basics"
+   ],
+   "notes": [
+    {
+     "h": "Must-know results",
+     "items": [
+      "n-bit 2's complement range: −2ⁿ⁻¹ to 2ⁿ⁻¹ − 1. Overflow when carry into MSB ≠ carry out of MSB.",
+      "Consensus theorem: AB + A′C + BC = AB + A′C. NAND and NOR are universal gates.",
+      "K-map groups are 1, 2, 4, 8 adjacent cells, including wrap-around. Use don't-cares only to enlarge groups.",
+      "A 2ⁿ:1 MUX can implement any function of n + 1 variables. Decoder + OR gate implements any SOP.",
+      "Flip-flops: JK Q⁺ = JQ′ + K′Q; T Q⁺ = T ⊕ Q; D Q⁺ = D.",
+      "Ripple counter delay = n·tpd; synchronous = one tpd. Mod-N needs ⌈log₂N⌉ flip-flops. Ring counter: mod-n; Johnson: mod-2n.",
+      "Noise margins: NMH = VOH − VIH, NML = VIL − VOL. CMOS has near-zero static power.",
+      "DAC resolution = Vref/2ⁿ. Flash ADC needs 2ⁿ − 1 comparators (fastest); successive approximation takes n clock cycles; dual slope is slow but accurate.",
+      "A 2ⁿ × m memory has n address lines and m data lines."
+     ]
+    },
+    {
+     "h": "PYQ traps",
+     "items": [
+      "Race-around occurs in level-triggered JK when J = K = 1 and the clock pulse is longer than the propagation delay.",
+      "XOR of n inputs is 1 when an odd number of inputs are 1."
+     ]
+    }
+   ],
+   "read": {
+    "Number systems and codes": [
+     "Base conversion",
+     "1's and 2's complement arithmetic",
+     "BCD, Gray and excess-3 codes",
+     "Signed-number overflow",
+     "Floating-point basics"
+    ],
+    "Boolean algebra and logic gates": [
+     "Boolean laws and De Morgan's theorems",
+     "SOP, POS, minterms and maxterms",
+     "Universal gates NAND and NOR",
+     "XOR/XNOR properties",
+     "Duality and consensus theorem"
+    ],
+    "K-maps and minimization": [
+     "2-, 3- and 4-variable K-maps",
+     "Prime and essential prime implicants",
+     "Don't-care conditions",
+     "POS simplification",
+     "Quine–McCluskey basics"
+    ],
+    "Adders, multiplexers, decoders": [
+     "Half and full adders, ripple-carry adder",
+     "Carry look-ahead adder",
+     "Multiplexers and function implementation",
+     "Decoders, encoders and priority encoder",
+     "Comparators and parity circuits"
+    ],
+    "Logic families: TTL and CMOS": [
+     "TTL NAND: totem-pole and open-collector outputs",
+     "CMOS inverter, NAND and NOR",
+     "Noise margin, fan-out and propagation delay",
+     "Power–delay product",
+     "ECL basics"
+    ],
+    "Latches and flip-flops": [
+     "SR latch",
+     "D, JK and T flip-flops",
+     "Characteristic and excitation tables",
+     "Race-around and master–slave flip-flop",
+     "Setup and hold time"
+    ],
+    "Counters": [
+     "Asynchronous ripple counters",
+     "Synchronous counter design",
+     "Mod-N counters",
+     "Up/down counters",
+     "Ring and Johnson counters"
+    ],
+    "Shift registers": [
+     "SISO, SIPO, PISO and PIPO registers",
+     "Universal shift register",
+     "Serial adder",
+     "Sequence generators"
+    ],
+    "Finite state machines": [
+     "State diagram and state table",
+     "Mealy vs Moore machines",
+     "State reduction",
+     "Sequence detector design",
+     "Design using excitation tables"
+    ],
+    "Semiconductor memories": [
+     "ROM, PROM, EPROM, EEPROM and flash",
+     "SRAM and DRAM cells",
+     "Memory organization and expansion",
+     "PLA and PAL"
+    ],
+    "ADC and DAC": [
+     "Weighted-resistor DAC",
+     "R-2R ladder DAC",
+     "Flash ADC",
+     "Successive-approximation ADC",
+     "Dual-slope and counter-type ADCs",
+     "Resolution and quantization error"
+    ],
+    "Sample-and-hold and timing": [
+     "Sample-and-hold circuit",
+     "Acquisition and aperture time",
+     "Clock skew and timing diagrams",
+     "Propagation delay calculations"
+    ],
+    "Computer organization basics": [
+     "Machine instructions and addressing modes",
+     "ALU and datapath",
+     "Control unit basics",
+     "Instruction pipelining",
+     "Memory hierarchy and cache basics"
+    ]
+   },
+   "refs": {
+    "Number systems and codes": "Mano: Digital systems and binary numbers",
+    "Boolean algebra and logic gates": "Mano: Boolean algebra and logic gates",
+    "K-maps and minimization": "Mano: Gate-level minimization",
+    "Adders, multiplexers, decoders": "Mano: Combinational logic",
+    "Logic families: TTL and CMOS": "Mano: Digital integrated circuits (logic families)",
+    "Latches and flip-flops": "Mano: Synchronous sequential logic",
+    "Counters": "Mano: Registers and counters",
+    "Shift registers": "Mano: Registers and counters",
+    "Finite state machines": "Mano: Synchronous sequential logic (analysis and design)",
+    "Semiconductor memories": "Mano: Memory and programmable logic",
+    "ADC and DAC": "Mano / Jain: Data converters",
+    "Sample-and-hold and timing": "Mano / Jain: Data converters and timing",
+    "Computer organization basics": "Mano: Computer design basics (GATE EC syllabus)"
+   }
+  },
+  "ctl": {
+   "n": "Control Systems",
+   "c": 7,
+   "book": "Nagrath & Gopal",
+   "topics": [
+    "Block diagram reduction",
+    "Signal flow graphs and Mason gain formula",
+    "Time response of first and second order systems",
+    "Steady-state error and error constants",
+    "Routh-Hurwitz stability",
+    "Root locus",
+    "Bode plot",
+    "Polar and Nyquist plots",
+    "Gain margin and phase margin",
+    "Lead, lag and PID compensators",
+    "State-space representation",
+    "Solution of state equations",
+    "Controllability and observability"
+   ],
+   "notes": [
+    {
+     "h": "Must-know results",
+     "items": [
+      "Closed loop T = G/(1 + GH). Sensitivity of T to G = 1/(1 + GH). Mason: T = Σ PkΔk / Δ.",
+      "Second order: Mp = e^{−ζπ/√(1−ζ²)}; tp = π/ωd; ts ≈ 4/(ζωn) (2% band); ωd = ωn√(1 − ζ²).",
+      "Steady-state error: type 0 step → 1/(1 + Kp); type 1 ramp → 1/Kv; type 2 parabola → 1/Ka.",
+      "Routh: sign changes in the first column = number of RHP poles. Row of zeros → use the auxiliary polynomial (symmetric roots).",
+      "Root locus: starts at open-loop poles, ends at zeros or infinity. Asymptote angles (2q + 1)180°/(P − Z); centroid (Σ poles − Σ zeros)/(P − Z). Real-axis part lies left of an odd count of poles + zeros.",
+      "Bode: each pole −20 dB/dec and −90°; each zero +20 dB/dec and +90°. GM = −20 log|G(jωpc)|; PM = 180° + ∠G(jωgc).",
+      "Nyquist: Z = P + N (N = clockwise encirclements of −1). Closed loop stable when Z = 0.",
+      "Lead improves transient response and PM; lag improves steady-state error.",
+      "State space: T(s) = C(sI − A)⁻¹B + D. Eigenvalues of A are the poles. φ(t) = L⁻¹[(sI − A)⁻¹].",
+      "Controllable ⇔ rank[B AB … Aⁿ⁻¹B] = n. Observable ⇔ rank[C; CA; …; CAⁿ⁻¹] = n."
+     ]
+    },
+    {
+     "h": "PYQ traps",
+     "items": [
+      "System type counts poles of G(s)H(s) at the origin, not closed-loop poles.",
+      "Pole-zero cancellation can hide an uncontrollable or unobservable mode."
+     ]
+    }
+   ],
+   "read": {
+    "Block diagram reduction": [
+     "Transfer function from a differential equation",
+     "Block diagram rules",
+     "Moving summing and take-off points",
+     "Closed-loop transfer function",
+     "Effect of feedback on sensitivity"
+    ],
+    "Signal flow graphs and Mason gain formula": [
+     "Signal flow graph terms",
+     "Converting a block diagram to an SFG",
+     "Mason's gain formula",
+     "Non-touching loops"
+    ],
+    "Time response of first and second order systems": [
+     "Standard test signals",
+     "First-order response",
+     "Second-order underdamped response",
+     "Rise time, peak time, overshoot and settling time",
+     "Effect of adding poles and zeros"
+    ],
+    "Steady-state error and error constants": [
+     "System type",
+     "Static error constants Kp, Kv, Ka",
+     "Steady-state error for step, ramp and parabola",
+     "Error with non-unity feedback",
+     "Generalized error series"
+    ],
+    "Routh-Hurwitz stability": [
+     "Routh array",
+     "Special case: zero in the first column",
+     "Special case: row of zeros",
+     "Range of K for stability",
+     "Marginal stability and oscillation frequency"
+    ],
+    "Root locus": [
+     "Angle and magnitude conditions",
+     "Asymptotes and centroid",
+     "Breakaway and break-in points",
+     "jω-axis crossing",
+     "Effect of adding poles and zeros"
+    ],
+    "Bode plot": [
+     "Asymptotic magnitude plot",
+     "Phase plot",
+     "Corner frequencies",
+     "Finding the transfer function from a Bode plot",
+     "Minimum vs non-minimum phase"
+    ],
+    "Polar and Nyquist plots": [
+     "Polar plots of standard forms",
+     "Nyquist contour and mapping",
+     "Nyquist stability criterion",
+     "Poles on the jω axis",
+     "Conditional stability"
+    ],
+    "Gain margin and phase margin": [
+     "Gain and phase crossover frequencies",
+     "GM and PM from Bode and Nyquist plots",
+     "Relation between PM and damping",
+     "M and N circles basics"
+    ],
+    "Lead, lag and PID compensators": [
+     "Lead compensator and its Bode effect",
+     "Lag compensator",
+     "Lag-lead compensator",
+     "Effects of P, PI, PD and PID controllers"
+    ],
+    "State-space representation": [
+     "State and state variables",
+     "State model from a differential equation",
+     "State model from a transfer function (phase-variable and canonical forms)",
+     "Transfer function from a state model"
+    ],
+    "Solution of state equations": [
+     "State transition matrix",
+     "Laplace method using (sI − A)⁻¹",
+     "Cayley–Hamilton method for e^{At}",
+     "Properties of the STM",
+     "Zero-input and zero-state response"
+    ],
+    "Controllability and observability": [
+     "Kalman controllability test",
+     "Observability test",
+     "Effect of pole-zero cancellation",
+     "Gilbert's test basics",
+     "Pole placement concept"
+    ]
+   },
+   "refs": {
+    "Block diagram reduction": "Nagrath & Gopal: Mathematical models of physical systems",
+    "Signal flow graphs and Mason gain formula": "Nagrath & Gopal: Mathematical models (signal flow graphs)",
+    "Time response of first and second order systems": "Nagrath & Gopal: Time response analysis",
+    "Steady-state error and error constants": "Nagrath & Gopal: Time response analysis (errors)",
+    "Routh-Hurwitz stability": "Nagrath & Gopal: Concepts of stability",
+    "Root locus": "Nagrath & Gopal: Root locus technique",
+    "Bode plot": "Nagrath & Gopal: Frequency response analysis",
+    "Polar and Nyquist plots": "Nagrath & Gopal: Stability in frequency domain",
+    "Gain margin and phase margin": "Nagrath & Gopal: Stability in frequency domain (margins)",
+    "Lead, lag and PID compensators": "Nagrath & Gopal: Design and compensation",
+    "State-space representation": "Nagrath & Gopal: State variable analysis",
+    "Solution of state equations": "Nagrath & Gopal: State variable analysis (solution)",
+    "Controllability and observability": "Nagrath & Gopal: State variable analysis (controllability)"
+   }
+  },
+  "com": {
+   "n": "Communications",
+   "c": 8,
+   "book": "B.P. Lathi; Simon Haykin",
+   "topics": [
+    "Random processes",
+    "Autocorrelation and PSD of random processes",
+    "Noise, SNR and noise figure",
+    "Amplitude modulation: DSB, SSB, VSB",
+    "Superheterodyne receivers",
+    "Frequency and phase modulation",
+    "FM bandwidth and noise in FM",
+    "Sampling, PCM and quantization noise",
+    "Delta modulation and DPCM",
+    "Line coding, pulse shaping and ISI",
+    "Matched filter and optimum receiver",
+    "Digital modulation: ASK, FSK, PSK, QAM",
+    "Bit error rate computation",
+    "Entropy and channel capacity",
+    "Source coding and Huffman codes",
+    "Error control coding basics",
+    "OFDM and spread spectrum basics"
+   ],
+   "notes": [
+    {
+     "h": "Must-know results",
+     "items": [
+      "AM: Pt = Pc(1 + μ²/2); efficiency μ²/(2 + μ²), max 33.3% at μ = 1. BW: AM and DSB-SC 2fm, SSB fm.",
+      "FM: β = Δf/fm. Carson bandwidth = 2(Δf + fm). Total power is constant.",
+      "Superheterodyne: image frequency = fs + 2 f_IF (when LO is above the signal).",
+      "Friis noise: F = F₁ + (F₂ − 1)/G₁ + (F₃ − 1)/(G₁G₂) + … Thermal noise power = kTB.",
+      "PCM: SQNR ≈ 6.02n + 1.76 dB for a full-scale sinusoid; bit rate = n·fs. Each extra bit adds 6 dB.",
+      "Nyquist ISI-free minimum BW = Rb/2; raised cosine BW = (Rb/2)(1 + α).",
+      "Matched filter h(t) = s(T − t); peak output SNR = 2E/N₀.",
+      "BER: BPSK Pe = Q(√(2Eb/N₀)); coherent BFSK Q(√(Eb/N₀)); QPSK has BPSK's bit error rate in half the bandwidth.",
+      "WSS: constant mean, R(τ) depends only on τ. PSD = Fourier transform of R(τ). Output PSD = |H(f)|² × input PSD.",
+      "Entropy H = −Σ p log₂p (max log₂M for equiprobable). Shannon C = B log₂(1 + S/N).",
+      "Block code with minimum distance d: detects d − 1 errors, corrects ⌊(d − 1)/2⌋."
+     ]
+    },
+    {
+     "h": "PYQ traps",
+     "items": [
+      "White noise of two-sided PSD N₀/2 through an ideal LPF of bandwidth B gives noise power N₀B.",
+      "AM with μ > 1 over-modulates: the envelope detector distorts."
+     ]
+    }
+   ],
+   "read": {
+    "Random processes": [
+     "Random process and ensemble",
+     "Mean and autocorrelation function",
+     "Stationarity: SSS and WSS",
+     "Ergodicity",
+     "Gaussian process"
+    ],
+    "Autocorrelation and PSD of random processes": [
+     "Properties of autocorrelation",
+     "Power spectral density",
+     "Wiener–Khinchin theorem",
+     "PSD through LTI systems",
+     "Cross-correlation and cross-PSD"
+    ],
+    "Noise, SNR and noise figure": [
+     "Thermal and shot noise",
+     "White noise and equivalent noise bandwidth",
+     "Noise figure and noise temperature",
+     "Friis formula for cascades",
+     "Narrowband noise representation"
+    ],
+    "Amplitude modulation: DSB, SSB, VSB": [
+     "AM: modulation index, power and efficiency",
+     "DSB-SC generation and coherent detection",
+     "SSB generation (filter and phase methods)",
+     "VSB",
+     "Envelope detector design"
+    ],
+    "Superheterodyne receivers": [
+     "Superheterodyne block diagram",
+     "Choice of intermediate frequency",
+     "Image frequency and rejection",
+     "Tracking and selectivity",
+     "Mixer operation"
+    ],
+    "Frequency and phase modulation": [
+     "Instantaneous frequency",
+     "FM and PM relations",
+     "Narrowband and wideband FM",
+     "Bessel-function spectrum",
+     "Carson's rule",
+     "FM generation and demodulation"
+    ],
+    "FM bandwidth and noise in FM": [
+     "SNR in DSB, SSB and AM",
+     "SNR in FM",
+     "FM threshold effect",
+     "Pre-emphasis and de-emphasis",
+     "Figure-of-merit comparison"
+    ],
+    "Sampling, PCM and quantization noise": [
+     "Sampling theorem review",
+     "PAM",
+     "PCM encoding and bit rate",
+     "Uniform quantization and SQNR",
+     "Companding (μ-law, A-law)"
+    ],
+    "Delta modulation and DPCM": [
+     "Delta modulation",
+     "Slope overload and granular noise",
+     "Adaptive delta modulation",
+     "DPCM and prediction gain"
+    ],
+    "Line coding, pulse shaping and ISI": [
+     "Line codes: NRZ, RZ, Manchester, AMI",
+     "PSD of line codes",
+     "Inter-symbol interference",
+     "Nyquist criterion",
+     "Raised-cosine pulse",
+     "Eye diagram"
+    ],
+    "Matched filter and optimum receiver": [
+     "Matched filter derivation",
+     "Output SNR = 2E/N₀",
+     "Correlator receiver",
+     "Probability of error for binary signalling"
+    ],
+    "Digital modulation: ASK, FSK, PSK, QAM": [
+     "ASK, FSK and PSK",
+     "QPSK and its constellation",
+     "M-ary PSK and QAM",
+     "Bandwidth efficiency",
+     "Coherent and non-coherent detection",
+     "DPSK"
+    ],
+    "Bit error rate computation": [
+     "Q-function",
+     "BER for BPSK, BFSK and ASK",
+     "BER for QPSK",
+     "Eb/N₀ comparisons",
+     "Union bound basics"
+    ],
+    "Entropy and channel capacity": [
+     "Information and entropy",
+     "Joint and conditional entropy",
+     "Mutual information",
+     "Channel capacity of the BSC",
+     "Shannon–Hartley theorem"
+    ],
+    "Source coding and Huffman codes": [
+     "Source coding theorem",
+     "Huffman coding",
+     "Shannon–Fano coding",
+     "Average code length and efficiency",
+     "Kraft inequality"
+    ],
+    "Error control coding basics": [
+     "Hamming distance",
+     "Linear block codes: generator and parity-check matrices",
+     "Syndrome decoding",
+     "Hamming codes",
+     "Cyclic codes and CRC basics",
+     "Convolutional codes basics"
+    ],
+    "OFDM and spread spectrum basics": [
+     "OFDM principle and cyclic prefix",
+     "DSSS and processing gain",
+     "FHSS",
+     "CDMA basics"
+    ]
+   },
+   "refs": {
+    "Random processes": "Haykin: Random processes",
+    "Autocorrelation and PSD of random processes": "Haykin: Random processes (spectra)",
+    "Noise, SNR and noise figure": "Lathi: Behaviour of analog systems in noise",
+    "Amplitude modulation: DSB, SSB, VSB": "Lathi: Amplitude modulations and demodulations",
+    "Superheterodyne receivers": "Lathi: Amplitude modulations (receivers)",
+    "Frequency and phase modulation": "Lathi: Angle modulation and demodulation",
+    "FM bandwidth and noise in FM": "Haykin: Noise in CW modulation systems",
+    "Sampling, PCM and quantization noise": "Lathi: Sampling and analog-to-digital conversion",
+    "Delta modulation and DPCM": "Lathi: Sampling and analog-to-digital conversion",
+    "Line coding, pulse shaping and ISI": "Lathi: Principles of digital data transmission",
+    "Matched filter and optimum receiver": "Haykin: Baseband pulse transmission",
+    "Digital modulation: ASK, FSK, PSK, QAM": "Haykin: Passband digital transmission",
+    "Bit error rate computation": "Haykin: Passband digital transmission (error rates)",
+    "Entropy and channel capacity": "Haykin: Information theory",
+    "Source coding and Huffman codes": "Haykin: Information theory (source coding)",
+    "Error control coding basics": "Haykin: Error-control coding",
+    "OFDM and spread spectrum basics": "Haykin: Spread spectrum; OFDM"
+   }
+  },
+  "emt": {
+   "n": "Electromagnetics",
+   "c": 3,
+   "book": "Sadiku",
+   "topics": [
+    "Vector analysis and coordinate systems",
+    "Electrostatics and boundary conditions",
+    "Magnetostatics",
+    "Maxwell equations",
+    "Plane waves in media",
+    "Reflection, refraction and polarization",
+    "Poynting vector and power flow",
+    "Transmission line equations",
+    "Standing waves, VSWR and impedance matching",
+    "Smith chart",
+    "Rectangular waveguides",
+    "Antenna fundamentals and dipoles",
+    "Antenna arrays and radiation patterns"
+   ],
+   "notes": [
+    {
+     "h": "Must-know results",
+     "items": [
+      "Maxwell: ∇·D = ρv, ∇·B = 0, ∇×E = −∂B/∂t, ∇×H = J + ∂D/∂t.",
+      "Boundaries: tangential E continuous; normal D jumps by ρs; normal B continuous; tangential H jumps by Js.",
+      "Lossless medium: v = 1/√(με), η = √(μ/ε); free space η₀ = 120π ≈ 377 Ω.",
+      "Skin depth δ = 1/√(πfμσ). Good conductor when σ/(ωε) ≫ 1.",
+      "Normal incidence: Γ = (η₂ − η₁)/(η₂ + η₁), τ = 1 + Γ. Brewster angle tan θB = √(ε₂/ε₁) (parallel polarization).",
+      "Average Poynting vector of a plane wave: E₀²/(2η).",
+      "Lines: Z₀ = √(L/C); Γ_L = (Z_L − Z₀)/(Z_L + Z₀); VSWR = (1 + |Γ|)/(1 − |Γ|); Zin = Z₀(Z_L + jZ₀ tan βl)/(Z₀ + jZ_L tan βl).",
+      "Quarter-wave line: Zin = Z₀²/Z_L. Half-wave line repeats Z_L.",
+      "Rectangular guide: TE₁₀ cutoff fc = c/(2a); λg = λ/√(1 − (fc/f)²). No TEM mode in a hollow guide; lowest TM is TM₁₁.",
+      "Half-wave dipole: Rrad ≈ 73 Ω, directivity 1.64. Friis: Pr = Pt Gt Gr (λ/4πR)². Effective aperture Ae = Gλ²/4π."
+     ]
+    },
+    {
+     "h": "PYQ traps",
+     "items": [
+      "A short-circuited line shorter than λ/4 looks inductive; open-circuited looks capacitive.",
+      "Below cutoff a waveguide mode is evanescent: no power flows."
+     ]
+    }
+   ],
+   "read": {
+    "Vector analysis and coordinate systems": [
+     "Dot and cross products",
+     "Cartesian, cylindrical and spherical coordinates",
+     "Coordinate transformations",
+     "Differential length, area and volume"
+    ],
+    "Electrostatics and boundary conditions": [
+     "Coulomb's law and fields of charge distributions",
+     "Gauss's law",
+     "Electric potential",
+     "Dielectric boundary conditions",
+     "Capacitance",
+     "Poisson and Laplace equations",
+     "Method of images"
+    ],
+    "Magnetostatics": [
+     "Biot–Savart law",
+     "Ampère's circuit law",
+     "Magnetic flux and vector potential",
+     "Magnetic boundary conditions",
+     "Inductance and magnetic energy",
+     "Forces on conductors"
+    ],
+    "Maxwell equations": [
+     "Faraday's law: transformer and motional emf",
+     "Displacement current",
+     "Maxwell's equations in point and integral form",
+     "Time-harmonic fields",
+     "Summary of boundary conditions"
+    ],
+    "Plane waves in media": [
+     "Wave equation",
+     "Plane waves in a lossless dielectric",
+     "Lossy media and loss tangent",
+     "Good conductors and skin depth",
+     "Propagation constant"
+    ],
+    "Reflection, refraction and polarization": [
+     "Polarization: linear, circular, elliptical",
+     "Normal incidence at a boundary",
+     "Oblique incidence",
+     "Brewster angle",
+     "Total internal reflection"
+    ],
+    "Poynting vector and power flow": [
+     "Poynting theorem",
+     "Average power density",
+     "Power loss in lossy media"
+    ],
+    "Transmission line equations": [
+     "Distributed line parameters",
+     "Telegrapher's equations",
+     "Characteristic impedance and propagation constant",
+     "Lossless and distortionless lines",
+     "Input impedance"
+    ],
+    "Standing waves, VSWR and impedance matching": [
+     "Reflection coefficient",
+     "Standing waves and VSWR",
+     "Quarter-wave transformer",
+     "Single-stub matching",
+     "Shorted and open stubs"
+    ],
+    "Smith chart": [
+     "Constructing the Smith chart",
+     "Normalized impedance and admittance",
+     "Finding Γ, VSWR and Zin",
+     "Stub matching on the Smith chart"
+    ],
+    "Rectangular waveguides": [
+     "TE and TM modes",
+     "Cutoff frequency and dominant TE₁₀ mode",
+     "Phase and group velocity",
+     "Guide wavelength and wave impedance",
+     "Power and attenuation basics",
+     "Cavity resonators"
+    ],
+    "Antenna fundamentals and dipoles": [
+     "Hertzian dipole fields",
+     "Half-wave dipole and monopole",
+     "Radiation resistance",
+     "Directivity, gain and efficiency",
+     "Effective aperture and Friis equation"
+    ],
+    "Antenna arrays and radiation patterns": [
+     "Two-element array",
+     "Array factor",
+     "Pattern multiplication",
+     "Broadside and end-fire arrays",
+     "Beamwidth and side lobes"
+    ]
+   },
+   "refs": {
+    "Vector analysis and coordinate systems": "Sadiku: Vector algebra; Coordinate systems",
+    "Electrostatics and boundary conditions": "Sadiku: Electrostatic fields; Electric fields in material space",
+    "Magnetostatics": "Sadiku: Magnetostatic fields; Magnetic forces",
+    "Maxwell equations": "Sadiku: Maxwell's equations",
+    "Plane waves in media": "Sadiku: Electromagnetic wave propagation",
+    "Reflection, refraction and polarization": "Sadiku: Electromagnetic wave propagation (reflection)",
+    "Poynting vector and power flow": "Sadiku: Electromagnetic wave propagation (power)",
+    "Transmission line equations": "Sadiku: Transmission lines",
+    "Standing waves, VSWR and impedance matching": "Sadiku: Transmission lines (matching)",
+    "Smith chart": "Sadiku: Transmission lines (Smith chart)",
+    "Rectangular waveguides": "Sadiku: Waveguides and resonators",
+    "Antenna fundamentals and dipoles": "Sadiku: Antennas",
+    "Antenna arrays and radiation patterns": "Sadiku: Antennas (arrays)"
+   }
+  },
+  "meas": {
+   "n": "ESE · Measurements & Instrumentation",
+   "c": 4,
+   "book": "A.K. Sawhney",
+   "topics": [
+    "Errors and statistical analysis",
+    "PMMC, moving iron and electrodynamometer instruments",
+    "DC and AC bridges",
+    "Digital voltmeters and multimeters",
+    "CRO and DSO",
+    "Transducers: strain, temperature, displacement",
+    "Signal analyzers and data acquisition"
+   ],
+   "notes": [
+    {
+     "h": "Must-know results",
+     "items": [
+      "Limiting error: products and quotients add relative errors; sums and differences add absolute errors.",
+      "PMMC: DC only, linear scale. Moving iron: AC and DC, square-law scale. Electrodynamometer: AC/DC, used in wattmeters.",
+      "Ammeter shunt Rsh = Rm/(m − 1). Voltmeter multiplier Rse = Rm(m − 1).",
+      "Bridges: Wheatstone (medium R), Kelvin double (low R), Maxwell (medium-Q inductors), Hay (high-Q inductors), Schering (capacitance and loss), Wien (frequency).",
+      "Lissajous: fy/fx = horizontal tangencies / vertical tangencies.",
+      "A 3½-digit display reads up to 1999. Dual-slope DVMs reject mains noise.",
+      "Strain gauge factor GF = (ΔR/R)/strain. LVDT measures displacement; RTD has a positive tempco; thermistor is usually NTC and non-linear."
+     ]
+    }
+   ],
+   "read": {
+    "Errors and statistical analysis": [
+     "Accuracy, precision, resolution and sensitivity",
+     "Static and dynamic characteristics",
+     "Types of errors",
+     "Limiting error and its combination",
+     "Mean, standard deviation and probable error"
+    ],
+    "PMMC, moving iron and electrodynamometer instruments": [
+     "PMMC construction and torque",
+     "Shunts and multipliers",
+     "Moving-iron instruments",
+     "Electrodynamometer wattmeter",
+     "Energy meter",
+     "Instrument transformers (CT and PT)"
+    ],
+    "DC and AC bridges": [
+     "Wheatstone bridge and sensitivity",
+     "Kelvin double bridge",
+     "Maxwell bridge",
+     "Hay's bridge",
+     "Schering bridge",
+     "Wien bridge",
+     "Anderson bridge"
+    ],
+    "Digital voltmeters and multimeters": [
+     "Ramp-type DVM",
+     "Dual-slope integrating DVM",
+     "Successive-approximation DVM",
+     "Resolution and number of digits",
+     "Frequency counter"
+    ],
+    "CRO and DSO": [
+     "CRT and deflection sensitivity",
+     "Time base and triggering",
+     "Lissajous patterns",
+     "Dual-trace modes",
+     "DSO sampling and storage"
+    ],
+    "Transducers: strain, temperature, displacement": [
+     "Strain gauge and gauge factor",
+     "RTD, thermistor and thermocouple",
+     "LVDT",
+     "Capacitive and piezoelectric transducers",
+     "Hall-effect sensors"
+    ],
+    "Signal analyzers and data acquisition": [
+     "Wave analyzer",
+     "Spectrum analyzer",
+     "Distortion analyzer",
+     "Q-meter",
+     "Data acquisition system components"
+    ]
+   },
+   "refs": {
+    "Errors and statistical analysis": "Sawhney: Measurements and errors",
+    "PMMC, moving iron and electrodynamometer instruments": "Sawhney: Ammeters, voltmeters and wattmeters",
+    "DC and AC bridges": "Sawhney: DC and AC bridges",
+    "Digital voltmeters and multimeters": "Sawhney: Digital instruments",
+    "CRO and DSO": "Sawhney: Cathode ray oscilloscope",
+    "Transducers: strain, temperature, displacement": "Sawhney: Transducers",
+    "Signal analyzers and data acquisition": "Sawhney: Signal analyzers and data acquisition"
+   }
+  },
+  "bee": {
+   "n": "ESE · Basic Electrical Engg",
+   "c": 5,
+   "book": "Nagrath & Kothari (basics)",
+   "topics": [
+    "DC machines",
+    "Transformers",
+    "Induction motors",
+    "Synchronous machines",
+    "Power system basics",
+    "Power and energy measurement"
+   ],
+   "notes": [
+    {
+     "h": "Must-know results",
+     "items": [
+      "DC machine emf E = PφNZ/(60A). Motor back emf Eb = V − IaRa; speed N ∝ Eb/φ. Never start a series motor at no load.",
+      "Transformer: E = 4.44 f N φm. Maximum efficiency when copper loss = core loss. OC test gives core loss; SC test gives copper loss.",
+      "Induction motor: Ns = 120f/P; slip s = (Ns − N)/Ns; rotor frequency = s f; maximum torque at s = R₂/X₂.",
+      "Synchronous motor runs only at Ns, is not self-starting, and its power factor is set by excitation (V-curves).",
+      "Three-phase star: VL = √3 Vph; P = √3 VL IL cos φ. Two-wattmeter method: tan φ = √3(W₁ − W₂)/(W₁ + W₂)."
+     ]
+    }
+   ],
+   "read": {
+    "DC machines": [
+     "EMF and torque equations",
+     "Types of DC generators and their characteristics",
+     "Back emf and speed equation",
+     "Speed control of DC motors",
+     "Losses and efficiency",
+     "Starters"
+    ],
+    "Transformers": [
+     "EMF equation and turns ratio",
+     "Equivalent circuit",
+     "OC and SC tests",
+     "Voltage regulation",
+     "Efficiency and all-day efficiency",
+     "Autotransformer"
+    ],
+    "Induction motors": [
+     "Rotating magnetic field",
+     "Slip and rotor frequency",
+     "Torque–slip characteristics",
+     "Maximum and starting torque",
+     "Starting methods",
+     "Speed control"
+    ],
+    "Synchronous machines": [
+     "Alternator EMF equation",
+     "Synchronous reactance and regulation",
+     "Synchronous motor V-curves",
+     "Power-angle equation",
+     "Starting methods"
+    ],
+    "Power system basics": [
+     "Generation, transmission and distribution layout",
+     "Per-unit system",
+     "Transmission line parameters basics",
+     "Power factor improvement",
+     "Protection: fuses, relays, circuit breakers"
+    ],
+    "Power and energy measurement": [
+     "Single-phase power measurement",
+     "Two-wattmeter method for three-phase power",
+     "Reactive power measurement",
+     "Energy meters",
+     "Power factor meter"
+    ]
+   },
+   "refs": {
+    "DC machines": "Nagrath & Kothari: DC machines",
+    "Transformers": "Nagrath & Kothari: Transformers",
+    "Induction motors": "Nagrath & Kothari: Induction machines",
+    "Synchronous machines": "Nagrath & Kothari: Synchronous machines",
+    "Power system basics": "V.K. Mehta: Principles of power system (basics)",
+    "Power and energy measurement": "Sawhney: Measurement of power and energy"
+   }
+  },
+  "mat": {
+   "n": "ESE · Materials Science",
+   "c": 6,
+   "book": "Dekker / coaching notes",
+   "topics": [
+    "Dielectric materials and polarization",
+    "Magnetic materials",
+    "Conductive and superconducting materials",
+    "Semiconductor materials and crystal defects",
+    "Nanomaterials and optical materials"
+   ],
+   "notes": [
+    {
+     "h": "Must-know results",
+     "items": [
+      "Polarization: electronic, ionic, orientational, space-charge. As frequency rises they drop out in reverse order.",
+      "Clausius–Mossotti: (εr − 1)/(εr + 2) = Nα/(3ε₀).",
+      "Diamagnetic χ < 0; paramagnetic χ small positive (Curie law ∝ 1/T); ferromagnetic large χ with domains and hysteresis. Soft magnets for transformers, hard for permanent magnets.",
+      "Superconductors: zero resistance below Tc and the Meissner effect (flux expulsion). Type I vs Type II.",
+      "Matthiessen's rule: ρ = ρ_thermal + ρ_impurity.",
+      "Packing fraction: SC 0.52, BCC 0.68, FCC and HCP 0.74.",
+      "Hall voltage VH = BI/(nqt); its sign gives the carrier type."
+     ]
+    }
+   ],
+   "read": {
+    "Dielectric materials and polarization": [
+     "Polarization mechanisms",
+     "Dielectric constant and susceptibility",
+     "Clausius–Mossotti relation",
+     "Frequency dependence and dielectric loss",
+     "Ferroelectric, piezoelectric and pyroelectric materials",
+     "Dielectric breakdown"
+    ],
+    "Magnetic materials": [
+     "Magnetic moment and magnetization",
+     "Dia-, para-, ferro-, antiferro- and ferrimagnetism",
+     "Curie and Curie–Weiss laws",
+     "Domains and hysteresis",
+     "Soft and hard magnetic materials",
+     "Ferrites"
+    ],
+    "Conductive and superconducting materials": [
+     "Free electron theory",
+     "Resistivity and Matthiessen's rule",
+     "Conductor materials (Cu, Al, alloys)",
+     "Thermocouple materials",
+     "Superconductivity: Tc, Meissner effect, Type I and II",
+     "Applications of superconductors"
+    ],
+    "Semiconductor materials and crystal defects": [
+     "Crystal structures and packing fraction",
+     "Miller indices",
+     "Point, line and surface defects",
+     "Elemental and compound semiconductors",
+     "Hall effect in materials"
+    ],
+    "Nanomaterials and optical materials": [
+     "Nanomaterials: properties and synthesis",
+     "Carbon nanotubes and graphene",
+     "Optical materials and LCDs",
+     "Optical fibre materials",
+     "Ceramics and polymers basics"
+    ]
+   },
+   "refs": {
+    "Dielectric materials and polarization": "Dekker: Dielectric properties",
+    "Magnetic materials": "Dekker: Magnetic properties",
+    "Conductive and superconducting materials": "Dekker: Conductors and superconductors",
+    "Semiconductor materials and crystal defects": "Dekker: Crystal structure and defects",
+    "Nanomaterials and optical materials": "Coaching notes: Nanomaterials and optical materials"
+   }
+  },
+  "co": {
+   "n": "ESE · Computer Organization",
+   "c": 7,
+   "book": "Hamacher; Gaonkar (8085)",
+   "topics": [
+    "Number representation and computer arithmetic",
+    "Instruction set and addressing modes",
+    "Datapath and control unit",
+    "Pipelining and hazards",
+    "Memory hierarchy and cache",
+    "I/O, interrupts and DMA",
+    "8085 architecture and programming",
+    "8086 architecture"
+   ],
+   "notes": [
+    {
+     "h": "Must-know results",
+     "items": [
+      "Ideal k-stage pipeline speedup = k. Hazards: structural, data (fix with forwarding), control (branch prediction).",
+      "Amdahl: speedup = 1/((1 − f) + f/S).",
+      "Cache AMAT = hit time + miss rate × miss penalty. Address splits into tag, index, offset.",
+      "IEEE 754 single: 1 sign, 8 exponent (bias 127), 23 mantissa bits.",
+      "8085: 8-bit data, 16-bit address (64 KB). Interrupt priority TRAP (non-maskable) > RST 7.5 > 6.5 > 5.5 > INTR.",
+      "8086: 16-bit data, 20-bit address (1 MB). Physical address = segment × 16 + offset.",
+      "DMA modes: burst and cycle stealing."
+     ]
+    }
+   ],
+   "read": {
+    "Number representation and computer arithmetic": [
+     "Signed number representations",
+     "Addition, subtraction and overflow",
+     "Booth's multiplication",
+     "Division algorithms",
+     "IEEE 754 floating point"
+    ],
+    "Instruction set and addressing modes": [
+     "Instruction formats",
+     "Addressing modes",
+     "RISC vs CISC",
+     "Stack and subroutines"
+    ],
+    "Datapath and control unit": [
+     "Single-bus datapath",
+     "Register transfers",
+     "Hardwired control",
+     "Microprogrammed control"
+    ],
+    "Pipelining and hazards": [
+     "Pipeline stages and speedup",
+     "Structural, data and control hazards",
+     "Forwarding and stalls",
+     "Branch prediction",
+     "CPI calculations"
+    ],
+    "Memory hierarchy and cache": [
+     "Memory hierarchy",
+     "Cache mapping: direct, associative, set-associative",
+     "Replacement policies",
+     "Write-through vs write-back",
+     "Average memory access time",
+     "Virtual memory and TLB"
+    ],
+    "I/O, interrupts and DMA": [
+     "Programmed I/O",
+     "Interrupts and priority",
+     "DMA modes",
+     "Bus arbitration"
+    ],
+    "8085 architecture and programming": [
+     "Pin diagram and architecture",
+     "Registers and flags",
+     "Addressing modes",
+     "Instruction set and timing",
+     "Interrupts",
+     "Stack and subroutines",
+     "Simple programs"
+    ],
+    "8086 architecture": [
+     "Architecture: BIU and EU",
+     "Segmentation and physical address",
+     "Addressing modes",
+     "Minimum and maximum mode",
+     "Interrupts"
+    ]
+   },
+   "refs": {
+    "Number representation and computer arithmetic": "Hamacher: Arithmetic",
+    "Instruction set and addressing modes": "Hamacher: Instruction set architecture",
+    "Datapath and control unit": "Hamacher: Basic processing unit",
+    "Pipelining and hazards": "Hamacher: Pipelining",
+    "Memory hierarchy and cache": "Hamacher: The memory system",
+    "I/O, interrupts and DMA": "Hamacher: Input/output organization",
+    "8085 architecture and programming": "Gaonkar: 8085 architecture and programming",
+    "8086 architecture": "Ray & Bhurchandi: 8086 microprocessor"
+   }
+  },
+  "adve": {
+   "n": "ESE · Advanced Electronics",
+   "c": 8,
+   "book": "Kang (CMOS); Proakis (DSP)",
+   "topics": [
+    "VLSI design flow and CMOS logic",
+    "CMOS inverter and power dissipation",
+    "FIR and IIR filter design",
+    "Multirate DSP basics",
+    "Embedded systems and microcontrollers",
+    "FPGA and programmable logic",
+    "Mechatronics and sensors basics"
+   ],
+   "notes": [
+    {
+     "h": "Must-know results",
+     "items": [
+      "CMOS dynamic power P = αCV²f; static power is ideally zero.",
+      "Symmetric CMOS inverter needs (W/L)p ≈ 2–3 × (W/L)n because μp < μn.",
+      "FIR: always stable, can have exact linear phase. IIR: fewer coefficients, may be unstable.",
+      "Bilinear transform: Ω = (2/T) tan(ω/2); no aliasing but frequency warping. Impulse invariance aliases.",
+      "Windows: rectangular has the narrowest main lobe and highest side lobes; Hamming and Blackman trade width for lower side lobes.",
+      "Decimation by M: anti-alias filter before downsampling. Interpolation by L: filter after upsampling.",
+      "FPGA: LUT-based, volatile configuration. CPLD: sum-of-products, non-volatile."
+     ]
+    }
+   ],
+   "read": {
+    "VLSI design flow and CMOS logic": [
+     "VLSI design flow",
+     "CMOS static logic gates",
+     "Transistor sizing",
+     "Pass-transistor and transmission-gate logic",
+     "Dynamic logic basics",
+     "Stick diagrams and layout rules"
+    ],
+    "CMOS inverter and power dissipation": [
+     "Voltage transfer characteristic and noise margins",
+     "Switching threshold",
+     "Propagation delay",
+     "Dynamic and short-circuit power",
+     "Leakage power"
+    ],
+    "FIR and IIR filter design": [
+     "FIR design by window method",
+     "Linear-phase FIR types",
+     "IIR design by impulse invariance",
+     "IIR design by bilinear transform",
+     "Butterworth and Chebyshev prototypes",
+     "Filter structures: direct form, cascade, lattice"
+    ],
+    "Multirate DSP basics": [
+     "Decimation",
+     "Interpolation",
+     "Sampling-rate conversion by L/M",
+     "Polyphase structures basics"
+    ],
+    "Embedded systems and microcontrollers": [
+     "8051 architecture",
+     "Timers and counters",
+     "Serial communication",
+     "Interrupts",
+     "Embedded system design basics",
+     "ARM basics"
+    ],
+    "FPGA and programmable logic": [
+     "PLA, PAL and CPLD",
+     "FPGA architecture: LUTs and CLBs",
+     "HDL design flow",
+     "Verilog/VHDL basics",
+     "ASIC vs FPGA"
+    ],
+    "Mechatronics and sensors basics": [
+     "Sensors and actuators",
+     "Signal conditioning",
+     "Microcontroller interfacing",
+     "Industrial automation and PLC basics"
+    ]
+   },
+   "refs": {
+    "VLSI design flow and CMOS logic": "Kang & Leblebici: Introduction; Combinational MOS logic circuits",
+    "CMOS inverter and power dissipation": "Kang & Leblebici: MOS inverters",
+    "FIR and IIR filter design": "Proakis: Design of digital filters",
+    "Multirate DSP basics": "Proakis: Multirate digital signal processing",
+    "Embedded systems and microcontrollers": "Mazidi: The 8051 microcontroller",
+    "FPGA and programmable logic": "Coaching notes: Programmable logic",
+    "Mechatronics and sensors basics": "Coaching notes: Mechatronics"
+   }
+  },
+  "advc": {
+   "n": "ESE · Advanced Communication",
+   "c": 2,
+   "book": "Forouzan; Keiser; Pozar",
+   "topics": [
+    "OSI and TCP/IP models",
+    "Switching and multiple access",
+    "Microwave devices and components",
+    "Optical fibre communication",
+    "Satellite communication",
+    "Mobile communication: GSM, CDMA, LTE",
+    "Radar basics"
+   ],
+   "notes": [
+    {
+     "h": "Must-know results",
+     "items": [
+      "OSI layers: Physical, Data link, Network, Transport, Session, Presentation, Application. TCP is reliable; UDP is connectionless.",
+      "ALOHA max throughput: pure 18.4%, slotted 36.8%.",
+      "Fibre: NA = √(n₁² − n₂²); acceptance angle = sin⁻¹(NA). V = (2πa/λ)NA; single-mode when V < 2.405.",
+      "GEO satellite altitude ≈ 35,786 km; one-way up-and-down delay ≈ 240–280 ms. Uplink frequency > downlink (C band 6/4 GHz).",
+      "Cellular cluster size N = i² + ij + j²; co-channel reuse ratio D/R = √(3N).",
+      "Radar range ∝ (Pt G² λ² σ / S_min)^{1/4}. Doppler shift fd = 2v/λ.",
+      "Microwave sources: klystron, magnetron (high power), TWT (wideband amplifier), Gunn and IMPATT diodes (negative resistance)."
+     ]
+    }
+   ],
+   "read": {
+    "OSI and TCP/IP models": [
+     "OSI layers and functions",
+     "TCP/IP protocol suite",
+     "IP addressing and subnetting",
+     "TCP vs UDP",
+     "Routing basics"
+    ],
+    "Switching and multiple access": [
+     "Circuit, packet and message switching",
+     "Pure and slotted ALOHA",
+     "CSMA/CD and CSMA/CA",
+     "FDMA, TDMA and CDMA",
+     "Flow and error control: stop-and-wait, sliding window"
+    ],
+    "Microwave devices and components": [
+     "Microwave frequency bands",
+     "Waveguide components: tees, couplers, circulators, isolators",
+     "S-parameters",
+     "Klystron, magnetron and TWT",
+     "Gunn, IMPATT and PIN diodes"
+    ],
+    "Optical fibre communication": [
+     "Ray theory and numerical aperture",
+     "Step- and graded-index fibres",
+     "Single-mode vs multimode and V-number",
+     "Attenuation and dispersion",
+     "Sources (LED, laser) and detectors (PIN, APD)",
+     "Link power budget"
+    ],
+    "Satellite communication": [
+     "Kepler's laws and orbits",
+     "GEO, MEO and LEO",
+     "Link budget and EIRP",
+     "G/T ratio",
+     "Uplink and downlink frequency bands",
+     "Multiple access in satellites"
+    ],
+    "Mobile communication: GSM, CDMA, LTE": [
+     "Cellular concept and frequency reuse",
+     "Handoff",
+     "Co-channel interference and cluster size",
+     "GSM architecture",
+     "CDMA and LTE basics",
+     "Fading and multipath"
+    ],
+    "Radar basics": [
+     "Radar range equation",
+     "Pulse radar and PRF",
+     "Doppler and MTI radar",
+     "CW and FMCW radar"
+    ]
+   },
+   "refs": {
+    "OSI and TCP/IP models": "Forouzan: Data communications and networking",
+    "Switching and multiple access": "Forouzan: Switching; Multiple access; Data link control",
+    "Microwave devices and components": "Pozar / Liao: Microwave devices and components",
+    "Optical fibre communication": "Keiser: Optical fiber communications",
+    "Satellite communication": "Pratt: Satellite communications",
+    "Mobile communication: GSM, CDMA, LTE": "Rappaport: Wireless communications",
+    "Radar basics": "Skolnik: Introduction to radar systems"
+   }
+  },
+  "p1": {
+   "n": "ESE · Paper I (GS & Aptitude)",
+   "c": 4,
+   "book": "Standard Paper I guide",
+   "exam": "UPSC ESE Preliminary Paper I (General Studies & Engineering Aptitude)",
+   "topics": [
+    "Current issues of national importance",
+    "Engineering aptitude and reasoning",
+    "Engineering maths and numerical analysis",
+    "Design, drawing and safety",
+    "Standards and quality practices",
+    "Energy and environment",
+    "Project management",
+    "Basics of material science",
+    "ICT-based tools",
+    "Ethics and values in engineering"
+   ],
+   "notes": [
+    {
+     "h": "High-yield points",
+     "items": [
+      "PERT expected time te = (a + 4m + b)/6; σ = (b − a)/6. Critical path = longest path with zero float.",
+      "Six Sigma = 3.4 defects per million opportunities. ISO 9001: quality management; ISO 14001: environmental management; ISO 45001: occupational safety.",
+      "Quality tools: Pareto (80/20), fishbone (Ishikawa), control charts, PDCA cycle, Kaizen, TQM.",
+      "Energy: know India's renewable targets and recent schemes from the current-affairs track; compare solar, wind, hydro, nuclear capacity factors.",
+      "Environment: greenhouse gases (CO₂, CH₄, N₂O), ozone depletion (CFCs, Montreal Protocol), climate agreements (Paris 2015).",
+      "ICT: e-governance platforms, cybersecurity basics, cloud and IoT terms.",
+      "Ethics: integrity, conflict of interest, whistle-blowing, codes of conduct for engineers."
+     ]
+    }
+   ],
+   "read": {
+    "Current issues of national importance": [
+     "Government schemes in infrastructure and energy",
+     "Union Budget and Economic Survey highlights",
+     "Science and technology news (space, defence, telecom)",
+     "International agreements and summits"
+    ],
+    "Engineering aptitude and reasoning": [
+     "Logical reasoning",
+     "Analytical ability",
+     "Data interpretation",
+     "Series and patterns"
+    ],
+    "Engineering maths and numerical analysis": [
+     "Basic linear algebra and calculus",
+     "Probability and statistics",
+     "Numerical methods basics"
+    ],
+    "Design, drawing and safety": [
+     "Engineering drawing basics: projections",
+     "Design principles",
+     "Safety standards and hazard analysis",
+     "Production planning basics"
+    ],
+    "Standards and quality practices": [
+     "ISO 9000 family",
+     "BIS and standardization",
+     "TQM, Six Sigma and Kaizen",
+     "Quality control charts",
+     "Reliability basics"
+    ],
+    "Energy and environment": [
+     "Conventional and renewable energy sources",
+     "Energy conservation and audit",
+     "Environmental pollution and control",
+     "Climate change agreements",
+     "Environmental impact assessment basics"
+    ],
+    "Project management": [
+     "Project life cycle",
+     "PERT and CPM",
+     "Crashing and cost analysis",
+     "Resource levelling",
+     "Gantt charts"
+    ],
+    "Basics of material science": [
+     "Classification of materials",
+     "Mechanical properties",
+     "Electrical and magnetic properties basics",
+     "Composites and ceramics"
+    ],
+    "ICT-based tools": [
+     "E-governance",
+     "Digital India initiatives",
+     "Networking and cloud basics",
+     "Cybersecurity basics",
+     "IoT and AI basics"
+    ],
+    "Ethics and values in engineering": [
+     "Professional ethics and codes of conduct",
+     "Engineer's responsibility for safety",
+     "Conflict of interest",
+     "Whistle-blowing",
+     "Intellectual property rights"
+    ]
+   },
+   "refs": {
+    "Current issues of national importance": "Newspaper + monthly current-affairs magazine",
+    "Engineering aptitude and reasoning": "Paper I guide: Engineering aptitude",
+    "Engineering maths and numerical analysis": "Paper I guide: Engineering mathematics",
+    "Design, drawing and safety": "Paper I guide: Design, drawing and safety",
+    "Standards and quality practices": "Paper I guide: Standards and quality",
+    "Energy and environment": "Paper I guide: Energy and environment",
+    "Project management": "Paper I guide: Project management",
+    "Basics of material science": "Paper I guide: Material science basics",
+    "ICT-based tools": "Paper I guide: ICT-based tools",
+    "Ethics and values in engineering": "Paper I guide: Ethics and values"
+   }
+  },
+  "ga": {
+   "n": "General Aptitude",
+   "c": 6,
+   "book": "Any GA PYQ book",
+   "topics": [
+    "Verbal ability",
+    "Quantitative aptitude",
+    "Analytical reasoning",
+    "Spatial aptitude"
+   ],
+   "notes": [
+    {
+     "h": "High-yield points",
+     "items": [
+      "Percent change twice: a% then b% → net a + b + ab/100 %.",
+      "Work: if A does a job in a days and B in b days, together ab/(a + b) days.",
+      "Speed: average speed over equal distances = 2xy/(x + y).",
+      "Permutations nPr = n!/(n − r)!; combinations nCr = n!/(r!(n − r)!). Circular arrangements (n − 1)!.",
+      "Verbal: read the full sentence for tense and subject–verb agreement; eliminate options on grammar first, meaning second.",
+      "Data interpretation: estimate before calculating; GA questions reward approximation."
+     ]
+    }
+   ],
+   "read": {
+    "Verbal ability": [
+     "Grammar: tenses, articles, prepositions",
+     "Vocabulary and analogies",
+     "Sentence completion",
+     "Reading comprehension",
+     "Critical reasoning"
+    ],
+    "Quantitative aptitude": [
+     "Percentages, ratio and proportion",
+     "Time, speed and work",
+     "Profit, loss and interest",
+     "Permutations, combinations and probability",
+     "Mensuration and geometry"
+    ],
+    "Analytical reasoning": [
+     "Logical deduction and syllogisms",
+     "Arrangements and puzzles",
+     "Blood relations and directions",
+     "Data interpretation: tables and charts"
+    ],
+    "Spatial aptitude": [
+     "Paper folding and cutting",
+     "Mirror and water images",
+     "Cube and dice problems",
+     "Pattern completion",
+     "Counting figures"
+    ]
+   },
+   "refs": {
+    "Verbal ability": "GA PYQ book: Verbal ability",
+    "Quantitative aptitude": "GA PYQ book: Quantitative aptitude",
+    "Analytical reasoning": "GA PYQ book: Analytical aptitude",
+    "Spatial aptitude": "GA PYQ book: Spatial aptitude"
+   }
+  }
+ },
+ "blocks": [
+  {
+   "s": "2026-10-14",
+   "e": "2026-11-01",
+   "phase": "Phase 0 · Setup",
+   "kind": "learn",
+   "main": [
+    "mLA"
+   ],
+   "par": [
+    "ga"
+   ],
+   "style": "MIXED"
+  },
+  {
+   "s": "2026-11-02",
+   "e": "2026-12-13",
+   "phase": "Phase 1 · GATE core",
+   "kind": "learn",
+   "main": [
+    "net"
+   ],
+   "par": [
+    "mCalc"
+   ],
+   "style": "MIXED"
+  },
+  {
+   "s": "2026-12-14",
+   "e": "2027-01-31",
+   "phase": "Phase 1 · GATE core",
+   "kind": "learn",
+   "main": [
+    "sig"
+   ],
+   "par": [
+    "mODE",
+    "mCx"
+   ],
+   "style": "MIXED"
+  },
+  {
+   "s": "2027-02-01",
+   "e": "2027-02-28",
+   "phase": "Phase 1 · GATE core",
+   "kind": "learn",
+   "main": [
+    "edc"
+   ],
+   "par": [
+    "mProb"
+   ],
+   "style": "MIXED"
+  },
+  {
+   "s": "2027-03-01",
+   "e": "2027-04-11",
+   "phase": "Phase 1 · GATE core",
+   "kind": "learn",
+   "main": [
+    "ana"
+   ],
+   "par": [
+    "mNum"
+   ],
+   "style": "MIXED"
+  },
+  {
+   "s": "2027-04-12",
+   "e": "2027-05-09",
+   "phase": "Phase 1 · GATE core",
+   "kind": "learn",
+   "main": [
+    "dig"
+   ],
+   "par": [
+    "ga"
+   ],
+   "style": "MIXED"
+  },
+  {
+   "s": "2027-05-10",
+   "e": "2027-06-13",
+   "phase": "Phase 1 · GATE core",
+   "kind": "learn",
+   "main": [
+    "ctl"
+   ],
+   "par": [
+    "ga"
+   ],
+   "style": "MIXED"
+  },
+  {
+   "s": "2027-06-14",
+   "e": "2027-08-01",
+   "phase": "Phase 1 · GATE core",
+   "kind": "learn",
+   "main": [
+    "com"
+   ],
+   "par": [
+    "ga"
+   ],
+   "style": "MIXED"
+  },
+  {
+   "s": "2027-08-02",
+   "e": "2027-08-22",
+   "phase": "Phase 1 · GATE core",
+   "kind": "learn",
+   "main": [
+    "emt"
+   ],
+   "par": [
+    "ga"
+   ],
+   "style": "MIXED"
+  },
+  {
+   "s": "2027-08-23",
+   "e": "2027-09-05",
+   "phase": "Phase 2 · ESE subjects",
+   "kind": "learn",
+   "main": [
+    "meas"
+   ],
+   "par": [
+    "p1"
+   ],
+   "style": "MCQ",
+   "habit": "p1"
+  },
+  {
+   "s": "2027-09-06",
+   "e": "2027-09-19",
+   "phase": "Phase 2 · ESE subjects",
+   "kind": "learn",
+   "main": [
+    "bee",
+    "mat"
+   ],
+   "par": [
+    "p1"
+   ],
+   "style": "MCQ",
+   "habit": "p1"
+  },
+  {
+   "s": "2027-09-20",
+   "e": "2027-10-03",
+   "phase": "Phase 2 · ESE subjects",
+   "kind": "learn",
+   "main": [
+    "co"
+   ],
+   "par": [
+    "p1"
+   ],
+   "style": "MCQ",
+   "habit": "p1"
+  },
+  {
+   "s": "2027-10-04",
+   "e": "2027-10-17",
+   "phase": "Phase 2 · ESE subjects",
+   "kind": "learn",
+   "main": [
+    "adve"
+   ],
+   "par": [
+    "p1"
+   ],
+   "style": "MCQ",
+   "habit": "p1"
+  },
+  {
+   "s": "2027-10-18",
+   "e": "2027-11-07",
+   "phase": "Phase 2 · ESE subjects",
+   "kind": "learn",
+   "main": [
+    "advc"
+   ],
+   "par": [
+    "p1"
+   ],
+   "style": "MCQ",
+   "habit": "p1"
+  },
+  {
+   "s": "2027-11-08",
+   "e": "2027-12-31",
+   "phase": "Phase 3 · Revision",
+   "kind": "revise",
+   "main": [
+    "mLA",
+    "mCalc",
+    "mODE",
+    "mCx",
+    "mProb",
+    "mNum",
+    "net",
+    "sig",
+    "edc",
+    "ana",
+    "dig",
+    "ctl",
+    "com",
+    "emt",
+    "meas",
+    "bee",
+    "mat",
+    "co",
+    "adve",
+    "advc"
+   ],
+   "par": [
+    "p1"
+   ],
+   "style": "MIXED",
+   "habit": "p1"
+  },
+  {
+   "s": "2028-01-01",
+   "e": "2028-02-13",
+   "phase": "Phase 4 · Full mocks",
+   "kind": "mock",
+   "main": [
+    "mLA",
+    "mCalc",
+    "mODE",
+    "mCx",
+    "mProb",
+    "mNum",
+    "net",
+    "sig",
+    "edc",
+    "ana",
+    "dig",
+    "ctl",
+    "com",
+    "emt",
+    "meas",
+    "bee",
+    "mat",
+    "co",
+    "adve",
+    "advc"
+   ],
+   "par": [
+    "p1"
+   ],
+   "style": "MIXED",
+   "habit": "p1"
+  },
+  {
+   "s": "2028-02-14",
+   "e": "2028-06-17",
+   "phase": "Phase 5 · ESE mains",
+   "kind": "written",
+   "main": [
+    "net",
+    "sig",
+    "edc",
+    "ana",
+    "dig",
+    "ctl",
+    "com",
+    "emt",
+    "meas",
+    "bee",
+    "mat",
+    "co",
+    "adve",
+    "advc"
+   ],
+   "par": [],
+   "style": "DESC"
+  }
+ ]
+}

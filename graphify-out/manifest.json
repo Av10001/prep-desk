@@ -1,0 +1,38 @@
+{
+  "app.js": {
+    "mtime": 1792111313.7653542,
+    "seen": 1792111353.0243812,
+    "ast_hash": "831763270793aa17a7be01ddb583451c",
+    "semantic_hash": ""
+  },
+  "store.js": {
+    "mtime": 1791989110.43186,
+    "seen": 1792111257.1455212,
+    "ast_hash": "d53e42da0432966273448dbf1e620d56",
+    "semantic_hash": ""
+  },
+  "CLAUDE.md": {
+    "mtime": 1792111255.6070955,
+    "seen": 1792111257.145524,
+    "ast_hash": "a277489f44b8308d844cf0fdb341c397",
+    "semantic_hash": ""
+  },
+  "README.md": {
+    "mtime": 1792111348.8733563,
+    "seen": 1792111353.0243955,
+    "ast_hash": "ac98b0f1bdcd15c08508989abf2de2f1",
+    "semantic_hash": ""
+  },
+  "index.html": {
+    "mtime": 1791989283.4940732,
+    "seen": 1792111257.1455271,
+    "ast_hash": "2f74938b5a8f74c0f879dd3a96f3065f",
+    "semantic_hash": ""
+  },
+  "docs/ponytail-review.md": {
+    "mtime": 1792111311.3733542,
+    "seen": 1792111353.0243986,
+    "ast_hash": "8c4070296aa5cb2222daa8ed6d9ab2df",
+    "semantic_hash": ""
+  }
+}

@@ -1,0 +1,3 @@
+# data and vendored tool files, not app code
+courses/
+.claude/
