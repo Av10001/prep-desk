@@ -232,3 +232,28 @@ textarea.mynote{min-height:96px;font-family:var(--f-body);font-size:14.5px;line-
 .chrow{display:flex;flex-direction:column;gap:2px;padding-block:4px;border-top:1px solid var(--line)}
 .chrow:first-of-type{border-top:0}
 .chip.tiny{font-size:12px;padding:2px 8px}
+
+/* Study now, Ask drawer, upload panel */
+.study{border-left:4px solid var(--accent)}
+.study h2{margin:2px 0}
+.steps{display:flex;gap:4px;overflow-x:auto}
+.steps button{flex:1;min-width:max-content;border:1px solid var(--line);background:var(--surface2);color:var(--ink);padding:6px 10px;border-radius:6px;font-weight:600;font-size:13px;cursor:pointer}
+.steps button[aria-selected="true"]{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.lesson{white-space:pre-wrap;line-height:1.6;font-size:15px;max-width:75ch;overflow-wrap:anywhere}
+.srcs{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;white-space:normal}
+.src summary{cursor:pointer;list-style:none}
+.src summary::-webkit-details-marker{display:none}
+.src[open]{flex-basis:100%}
+.src .expl{margin-top:6px;font-size:13px}
+.mat{border-top:1px solid var(--line);padding-block:6px}
+.mat summary{cursor:pointer}
+.mat .small{margin:4px 0;overflow-wrap:anywhere}
+.chip.ctx{background:var(--accent-soft);border-color:var(--accent)}
+.chip .x{border:0;background:none;color:var(--muted);cursor:pointer;padding:0 0 0 4px;font-size:12px}
+.askfab{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:40;border:0;border-radius:24px;padding:12px 20px;background:var(--accent);color:var(--accent-ink);font-weight:700;font-size:15px;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.25)}
+.drawer{position:fixed;top:0;right:0;bottom:0;z-index:50;width:min(440px,100vw);background:var(--surface);border-left:1px solid var(--line);box-shadow:-6px 0 24px rgba(0,0,0,.18);padding:16px;display:flex;flex-direction:column;gap:10px;overflow-y:auto;box-sizing:border-box}
+.drawer .chat{max-height:none;flex:1;min-height:120px}
+.drawer .msg{max-width:94%}
+.panel{position:fixed;inset:0;z-index:60;background:rgba(0,0,0,.45);display:flex;align-items:flex-start;justify-content:center;padding:24px 16px;overflow-y:auto}
+.pbox{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:18px;width:min(720px,100%);box-sizing:border-box}
+.pbox textarea{width:100%;box-sizing:border-box;font-family:var(--f-body);font-size:14.5px;line-height:1.5;resize:vertical}

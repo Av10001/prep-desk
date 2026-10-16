@@ -1,26 +1,26 @@
 {
   "app.js": {
-    "mtime": 1792146305.4157915,
-    "seen": 1792151009.5871415,
-    "ast_hash": "116052f07a6879c13cb1461b2f0b5a91",
+    "mtime": 1792159415.6004343,
+    "seen": 1792159441.130663,
+    "ast_hash": "9f70dac6066500a7309c5693e16dfdb4",
     "semantic_hash": ""
   },
   "store.js": {
-    "mtime": 1792120204.1506326,
-    "seen": 1792151009.5871415,
-    "ast_hash": "f1377d95b6aab3a548262510c27383b3",
+    "mtime": 1792159415.60287,
+    "seen": 1792159441.130663,
+    "ast_hash": "3c6d3e764c10d57e2b40c4751e38da42",
     "semantic_hash": ""
   },
   "CLAUDE.md": {
-    "mtime": 1792151006.1477327,
-    "seen": 1792151009.5871415,
-    "ast_hash": "a431ec694d0c60dc726bf16d23c28514",
+    "mtime": 1792159437.2541296,
+    "seen": 1792159441.130663,
+    "ast_hash": "5ae3be61263d8f3d2967a31414de6f7a",
     "semantic_hash": ""
   },
   "README.md": {
-    "mtime": 1792151006.2045286,
-    "seen": 1792151009.5871415,
-    "ast_hash": "d50500bb4cf94e93f5bda3eb63996d8f",
+    "mtime": 1792159437.2521987,
+    "seen": 1792159441.130663,
+    "ast_hash": "f1f799d6386476a72a99b77395c5dafb",
     "semantic_hash": ""
   },
   "index.html": {

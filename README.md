@@ -6,6 +6,7 @@ A free study platform for competitive exams. Each person gets a **profile** that
 
 ## What it does
 
+- **Study now:** one card at the top of Today picks the next unticked sub-topic and walks you through it: a short lesson written from the course key points and your own notes, the book chapter and your material to read, a lecture link, 5 quick questions, then tick and move on.
 - **Today:** what to study in each time slot, the exact sub-topics to read (tick them off), the book chapter, and lecture links for each sub-topic.
 - **Calendar:** the whole plan day by day, with test days and milestones such as applications and exams.
 - **Papers:** timed, exam-style papers; a question you have seen is never repeated. Supports GATE-style (MCQ/MSQ/NAT with negative marking), MCQ-only and descriptive formats.
@@ -13,7 +14,8 @@ A free study platform for competitive exams. Each person gets a **profile** that
 - **Books:** the course library with full titles and authors; each chapter shows the topics it covers and can be ticked off. Add your own books, coaching notes, video courses or PDFs and track their chapters too.
 - **PYQ bank:** paste questions from official previous-year papers; they are tagged automatically and used in your papers first.
 - **Mistakes:** every wrong answer with its solution, until you mark it understood.
-- **Tutor:** an AI tutor that knows your plan, scores and weak areas.
+- **Ask:** a floating Ask button on every tab opens the tutor with the topic, question or chapter you are on already attached. Answers come from your own notes and the course first, with source chips ("Your notes: file, p. 3") you can open. Doubts you mark "still unclear" come back on Today the next day. The Tutor tab opens the same drawer.
+- **My material:** upload PDFs (scanned pages included), photos of handwritten notes, .docx, .txt/.md, or type a note. Only the extracted text is kept, tagged to a subject and topic, and it shows in Notes, Books, Study now and Ask. It is included in backups.
 - **Profiles:** one per person or per exam. Add a course for any other exam with Claude, or import a course file.
 
 ## Courses included
@@ -33,7 +35,7 @@ Future exam dates are projections from official calendars and are marked as expe
 | Where progress is saved | The viewer's Claude account, privately | This browser (download backups from Settings) |
 | AI features | The viewer's Claude account, no key needed | Your own Anthropic API key, kept only in this browser |
 
-To use the AI features here, create a key at [console.anthropic.com](https://console.anthropic.com/settings/keys), add credit, and paste it in **Settings**. A Claude.ai Pro or Max subscription does not include API access. Everything else works without a key.
+Without AI everything except lessons, new questions, transcription and Ask still works, and the page links to the claude.ai version, where AI runs free with your Claude account. Or, to use the AI features here, create a key at [console.anthropic.com](https://console.anthropic.com/settings/keys), add credit, and paste it in **Settings**. A Claude.ai Pro or Max subscription does not include API access. Everything else works without a key.
 
 ## Adding a course for everyone
 

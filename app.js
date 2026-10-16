@@ -135,7 +135,8 @@ function dayPlan(k) {
 /* ===================== State ===================== */
 const st = {
   tab: 'today', sel: null, month: null, progress: { done: {} }, papers: [], bank: [], errors: [], seen: new Set(), concepts: {},
-  test: null, openPaper: null, gen: null, bankPreview: null, bankBusy: false, chat: [], chatBusy: false, errFilter: 'all',
+  test: null, openPaper: null, gen: null, bankPreview: null, bankBusy: false, errFilter: 'all',
+  study: null, lessonBusy: false, lessonErr: null, drawer: false, askCtx: null, askBusy: false, askPending: null, askErr: null, askDraft: '', up: null, upTarget: null,
   noteSubj: null, noteBusy: false, courseIndex: [], custom: [], creating: false, createMsg: null, settings: LS.get('settings', { key: '', model: 'claude-sonnet-5-5' }),
   profiles: [], profile: null, renaming: null, profMsg: null
 };
@@ -144,7 +145,7 @@ function loadCourseData() {
   st.papers = Store.list('papers').sort((a, b) => (b.created || 0) - (a.created || 0)); st.bank = CS.get('bank', []); st.errors = Store.list('errors');
   st.seen = new Set(CS.get('seen', [])); st.concepts = CS.get('concepts', {});
   const t = todayKey(); const start = t < PLAN_START ? PLAN_START : t > PLAN_END ? PLAN_END : t;
-  st.sel = start; st.month = start.slice(0, 7); st.noteSubj = Object.keys(S)[0]; st.chat = []; st.test = null; st.openPaper = null; st.gen = null;
+  st.sel = start; st.month = start.slice(0, 7); st.noteSubj = Object.keys(S)[0]; st.study = null; st.lessonErr = null; st.drawer = false; st.askCtx = null; st.up = null; st.test = null; st.openPaper = null; st.gen = null;
 }
 const savePapers = () => Store.sync('papers', st.papers);
 const saveErrors = () => Store.sync('errors', st.errors);
@@ -156,19 +157,31 @@ function markSeen(fps, conc) {
 
 /* ===================== Claude API (visitor's own key) ===================== */
 const MODELS = [['claude-sonnet-5-5', 'Claude Sonnet 5.5 (recommended)'], ['claude-haiku-5-5', 'Claude Haiku 5.5 (cheapest, fastest)'], ['claude-opus-5-5', 'Claude Opus 5.5 (most accurate, costliest)']];
+const CLAUDE_PAGE_URL = 'https://claude.ai/artifact/877EV49habVY6W4auH9CZa';
 const hasKey = () => !!SAMPLE || (!IN_CLAUDE() && !!(st.settings.key && st.settings.key.trim()));
-const aiHint = () => IN_CLAUDE() ? 'Allow Claude for this page: reload it and accept the prompt.' : 'Add your Claude API key in Settings.';
-async function viaSample({ messages, system, onText, signal }) {
+const aiHint = () => IN_CLAUDE() ? 'Allow Claude for this page: reload it and accept the prompt.' : 'Open Prep Desk in Claude, or add an API key in Settings.';
+const aiHtml = () => IN_CLAUDE() ? esc(aiHint()) : `AI answers run free with your Claude account: <a class="btn small primary" href="${CLAUDE_PAGE_URL}" target="_blank" rel="noopener">Open in Claude</a> <button class="btn small ghost" data-act="tab" data-to="settings">or use an API key</button>`;
+const b64 = blob => new Promise((ok, no) => { const r = new FileReader(); r.onload = () => ok(String(r.result).split(',')[1]); r.onerror = () => no(r.error); r.readAsDataURL(blob); });
+async function viaSample({ messages, system, onText, signal, images }) {
   const msgs = messages.map((m, i) => ({ role: m.role, content: i === 0 && system ? system + '\n\n' + m.content : m.content }));
-  try { const r = await SAMPLE(msgs, { cache: false, signal, onText: onText ? (u => onText(u.text)) : undefined }); return r.text || ''; }
+  try { const r = await SAMPLE(msgs, { cache: false, signal, images: images && images.length ? images : undefined, onText: onText ? (u => onText(u.text)) : undefined }); return r.text || ''; }
   catch (e) {
     const code = e && e.code; const human = { not_granted: 'Claude access was declined for this page. Reload and allow it to use AI features.', rate_limited: 'Too many requests right now. Wait a minute and try again.', prompt_too_large: 'That request is too long for Claude. Paste less text at a time.', sampling_disabled: 'AI is turned off for this page.', session_expired: 'Your session expired. Reload the page.' }[code];
     throw { code: code === 'rate_limited' ? 'rate_limited' : code || 'http', message: human || ((e && e.message) || 'Claude could not answer.') };
   }
 }
-async function askClaude({ messages, system, max_tokens = 8000, onText, signal }) {
-  if (SAMPLE) return viaSample({ messages, system, onText, signal });
-  if (!hasKey()) throw { code: 'no_key', message: aiHint() };
+/* prompt: a string or a [{role, content}] list ending on the user; images: Blobs sent with the last user turn */
+async function askClaude(prompt, { images, system, max_tokens = 8000, onText, signal } = {}) {
+  let messages = typeof prompt === 'string' ? [{ role: 'user', content: prompt }] : prompt;
+  if (SAMPLE) {
+    if (images && images.length && !((await SAMPLE.limits().catch(() => null)) || {}).images) throw { code: 'no_images', message: 'Claude cannot read images on this page.' };
+    return viaSample({ messages, system, onText, signal, images });
+  }
+  if (!hasKey()) throw { code: 'no_ai', message: aiHint() };
+  if (images && images.length) {
+    const blocks = await Promise.all(images.map(async b => ({ type: 'image', source: { type: 'base64', media_type: b.type || 'image/jpeg', data: await b64(b) } })));
+    messages = [...messages.slice(0, -1), { role: 'user', content: [...blocks, { type: 'text', text: messages[messages.length - 1].content }] }];
+  }
   const body = { model: st.settings.model || 'claude-sonnet-5-5', max_tokens, messages };
   if (system) body.system = system; if (onText) body.stream = true;
   let res;
@@ -206,7 +219,7 @@ function parseJSON(t) {
   if (start >= 0 && end > start) { try { return JSON.parse(s.slice(start, end + 1)); } catch { } }
   throw { code: 'invalid_json', message: 'Claude returned something that was not valid JSON. Try again.' };
 }
-const claudeJSON = async (prompt, max) => parseJSON(await askClaude({ messages: [{ role: 'user', content: prompt }], max_tokens: max || 8000 }));
+const claudeJSON = async (prompt, max) => parseJSON(await askClaude(prompt, { max_tokens: max || 8000 }));
 
 /* ===================== Top bar ===================== */
 function renderTop() {
@@ -302,8 +315,9 @@ function renderStats() {
 function vToday() {
   const t = todayKey(); const k = t < PLAN_START ? PLAN_START : t;
   const pre = t < PLAN_START ? `<div class="notice">This plan starts on ${fmt(PLAN_START, { day: 'numeric', month: 'long', year: 'numeric' })}. Here is day one.</div>` : '';
-  const keyNote = !hasKey() ? `<div class="notice warn">Paper building, notes generation and the tutor need Claude. ${esc(aiHint())}${IN_CLAUDE() ? '' : ' <button class="btn small" data-act="tab" data-to="settings">Open Settings</button>'}</div>` : '';
-  return `${pre}${keyNote}<div class="grid2"><div class="stack">${renderDay(k)}</div>${renderStats()}</div>`;
+  const keyNote = !hasKey() ? `<div class="notice warn">Lessons, new questions and the Ask tutor need Claude; everything else works without it. ${aiHtml()}</div>` : '';
+  const done = st.progress.read || {}; if (!st.study || done[readKey(st.study.s, st.study.t, st.study.i)]) st.study = studyPick();
+  return `${pre}${keyNote}<div class="stack">${studyCard()}${doubtsCard()}<div class="grid2"><div class="stack">${renderDay(k)}</div>${renderStats()}</div></div>`;
 }
 function vCalendar() {
   const [y, m] = st.month.split('-').map(Number); const first = `${st.month}-01`; const offset = (dow(first) + 6) % 7;
@@ -342,7 +356,7 @@ function vPapers() {
    <div class="field"><label for="cp-mode">Exam style</label><select id="cp-mode">${styleOpts}</select></div>
    <button class="btn primary" data-act="custom">Build paper</button></div>
   <div class="muted small">Questions from your PYQ bank are used first, then new ones are written in the pattern of previous-year papers. Every question you have seen is remembered and skipped later (${st.seen.size} seen so far).</div></div>`;
-  const gen = g ? `<div class="notice ${g.error ? 'err' : ''}">${g.error ? esc(g.error) + (!IN_CLAUDE() && (g.code === 'no_key' || g.code === 'bad_key') ? ' <button class="btn small" data-act="tab" data-to="settings">Open Settings</button>' : '') : `<span class="spin"></span> ${esc(g.msg)}`}</div>` : '';
+  const gen = g ? `<div class="notice ${g.error ? 'err' : ''}">${g.error ? esc(g.error) + (g.code === 'no_ai' ? ' ' + aiHtml() : !IN_CLAUDE() && g.code === 'bad_key' ? ' <button class="btn small" data-act="tab" data-to="settings">Open Settings</button>' : '') : `<span class="spin"></span> ${esc(g.msg)}`}</div>` : '';
   const list = st.papers.length ? `<div class="plist">${st.papers.map(p => `<div class="pitem"><div style="min-width:0"><div class="b">${esc(p.title)}</div>
   <div class="muted small">${new Date(p.created).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' })} · ${p.questions.length} questions${p.fromBank ? ` · ${p.fromBank} from your PYQ bank` : ''}</div></div>
   <div class="row">${p.status === 'done' ? `<span class="score">${p.score}/${p.max}</span><button class="btn small" data-act="open" data-id="${p.id}">Review</button>` : `<button class="btn small test" data-act="start" data-id="${p.id}">${p.answers && Object.keys(p.answers).length ? 'Resume' : 'Start'}</button>`}<button class="btn small ghost" data-act="delpaper" data-id="${p.id}" aria-label="Delete paper">✕</button></div></div>`).join('')}</div>` :
@@ -401,7 +415,7 @@ function vReview(id) {
     else ans = `<div class="label">Your outline</div><div class="expl">${esc(a || '–')}</div><div class="label">Model answer points</div><div class="expl">${esc(q.modelAnswer || '')}</div>`;
     return `<div class="sheet stack" id="rq-${i}"><div class="qmeta"><span class="num">Q${i + 1}</span><span class="pill" style="background:var(--surface2);color:${tag[0]}">${tag[1]}</span><span>${q.type} · ${q.marks} mark${q.marks > 1 ? 's' : ''}</span><span><span class="dot" style="background:${col(q.subject)}"></span> ${esc(sname(q.subject))} · ${esc(q.topic || '')}</span>${q.source ? `<span class="pill pt">${esc(q.source)}</span>` : ''}</div>
    <div class="stem" style="margin:0">${esc(q.stem)}</div>${ans}${q.explanation ? `<div class="expl"><b>Solution.</b> ${esc(q.explanation)}</div>` : ''}
-   ${q.answerChecked === false ? '<div class="muted tiny">This PYQ answer was worked out by Claude; check it against the official key.</div>' : ''}</div>`;
+   ${q.answerChecked === false ? '<div class="muted tiny">This PYQ answer was worked out by Claude; check it against the official key.</div>' : ''}<div class="row"><button class="btn small" data-act="askq" data-id="${p.id}" data-i="${i}">Ask about this</button></div></div>`;
   }).join('');
   return `<div class="stack"><div class="row"><button class="btn small" data-act="back">‹ All papers</button></div>
   <div class="grid2"><div class="sheet stack"><div class="label">${new Date(p.created).toLocaleDateString('en-IN', { day: 'numeric', month: 'long', year: 'numeric' })}</div><h2>${esc(p.title)}</h2>
@@ -484,7 +498,7 @@ ${schema}`;
 async function buildPaper(spec, meta) {
   st.tab = 'papers'; st.openPaper = null;
   if (!spec || !spec.parts.length) { st.gen = { error: 'Nothing to build for this selection.' }; render(); return; }
-  if (!hasKey() && !st.bank.length) { st.gen = { code: 'no_key', error: 'Building papers needs Claude (or questions in your PYQ bank). ' + aiHint() }; render(); return; }
+  if (!hasKey() && !st.bank.length) { st.gen = { code: 'no_ai', error: 'Building papers needs Claude (or questions in your PYQ bank).' }; render(); return; }
   const ST = styleOf(spec.style); st.gen = { msg: 'Picking questions from your PYQ bank…' }; render();
   try {
     const chosen = [], used = new Set(); const parts = spec.parts.map(p => ({ ...p }));
@@ -494,7 +508,7 @@ async function buildPaper(spec, meta) {
       while (p.c > 0 && pool.length) { const q = pool.splice(Math.floor(Math.random() * pool.length), 1)[0]; chosen.push({ ...q, neg: q.type === 'MCQ' ? (ST.neg ?? 0) : 0 }); used.add(q.fp); p.c--; }
     }
     const fromBank = chosen.length; const need = parts.filter(p => p.c > 0);
-    if (need.length && !hasKey()) { if (!chosen.length) throw { code: 'no_key', message: 'Not enough unused bank questions. ' + aiHint() }; }
+    if (need.length && !hasKey()) { if (!chosen.length) throw { code: 'no_ai', message: 'Not enough unused bank questions.' }; }
     else {
       const batches = []; let cur = [], cn = 0;
       for (const p of need) { if (cn && cur[0].m !== p.m) { batches.push(cur); cur = []; cn = 0; } let c = p.c; while (c > 0) { const take = Math.min(c, 10 - cn); cur.push({ ...p, c: take }); cn += take; c -= take; if (cn >= 10) { batches.push(cur); cur = []; cn = 0; } } }
@@ -547,8 +561,9 @@ function topicCard(s, t, ti, open, showSubj) {
    ${kp.length ? `<div><div class="label">Key points</div><ul class="kp">${kp.map(x => `<li>${esc(x)}</li>`).join('')}</ul></div>` : ''}
    ${src.length || own.length ? `<div><div class="label">Read from</div>${src.map(([b, ch]) => srcLine(b, ch, t, bd)).join('')}${own.map(o => `<div class="muted small">Your material: ${esc(o.t)}${o.url ? ` · <a href="${esc(o.url)}" target="_blank" rel="noopener">open</a>` : ''}</div>`).join('')}</div>` : ''}
    ${items.length ? `<div><div class="label">Sub-topics</div>${items.map((_, x) => readLine(s, t, items, x)).join('')}</div>` : ''}
+   <div><div class="label">Your material</div>${matFor(s, t).map(matLine).join('') || '<div class="muted small">Nothing uploaded for this topic yet: add a PDF, photos of handwritten notes, a .docx or a typed note.</div>'}<div class="row" style="margin-top:6px">${upBtns(s, t)}</div></div>
    <div class="field"><label for="mn-${id}">My notes</label><textarea class="mynote" id="mn-${id}" data-subj="${s}" data-topic="${esc(t)}" placeholder="Formulas, shortcuts, page numbers, mistakes you made…">${esc(note)}</textarea><span class="muted tiny" data-saved>${note ? 'Saved' : 'Saves as you type'}</span></div>
-   <div class="row"><button class="btn small" data-act="revise" data-subj="${s}" data-topic="${esc(t)}">${rev ? 'Remove revision mark' : 'Mark for revision'}</button><button class="btn small" data-act="drill" data-subj="${s}" data-topic="${esc(t)}" data-n="10">Practice 10 questions</button><a class="chip" href="${yt(t + ' ' + shortName(s) + ' lecture')}" target="_blank" rel="noopener">▶ Lectures</a></div>
+   <div class="row"><button class="btn small" data-act="revise" data-subj="${s}" data-topic="${esc(t)}">${rev ? 'Remove revision mark' : 'Mark for revision'}</button><button class="btn small" data-act="drill" data-subj="${s}" data-topic="${esc(t)}" data-n="10">Practice 10 questions</button><a class="chip" href="${yt(t + ' ' + shortName(s) + ' lecture')}" target="_blank" rel="noopener">▶ Lectures</a><button class="btn small" data-act="askopen" data-s="${s}" data-t="${esc(t)}" data-label="${esc(shortName(s) + ' · ' + t)}" data-text="${esc(`Topic: ${t} (${sname(s)}).`)}">Ask about this</button></div>
   </div></details>`;
 }
 function notesBody() {
@@ -571,6 +586,7 @@ function notesBody() {
    ${!(subj.notes && subj.notes.length) && hasKey() ? `<button class="btn small" data-act="gennotes" data-subj="${s}" ${st.noteBusy ? 'disabled' : ''}>${st.noteBusy ? '<span class="spin"></span> Writing…' : summary ? 'Rewrite summary' : 'Write summary with Claude'}</button>` : ''}</details>
   ${!hasKp && hasKey() ? `<button class="btn small" data-act="genkp" data-subj="${s}" ${st.noteBusy ? 'disabled' : ''}>${st.noteBusy ? '<span class="spin"></span> Writing…' : 'Write key points for every topic with Claude'}</button>` : ''}
   ${!subj.read && hasKey() ? `<button class="btn small" data-act="genread" data-subj="${s}" ${st.noteBusy ? 'disabled' : ''}>Write sub-topic lists with Claude</button>` : ''}
+  ${matFor(s, null).length ? `<div><div class="label">Your material for the whole subject</div>${matFor(s, null).map(matLine).join('')}</div>` : ''}
   <div class="stack" style="gap:6px">${subj.topics.map((t, ti) => topicCard(s, t, ti, t === st.noteTopic, false)).join('')}</div>`;
 }
 function vNotes() {
@@ -581,7 +597,7 @@ function vNotes() {
   return `<div class="stack"><div class="sheet row" style="align-items:flex-end">
    <div class="field grow"><label for="nsearch">Search</label><input id="nsearch" type="search" value="${esc(st.noteQ || '')}" placeholder="Search topics, key points and your notes"></div>
    <div class="field"><label for="nfilter">Show</label><select id="nfilter" data-act="nfilter"><option value="all" ${f === 'all' ? 'selected' : ''}>One subject</option><option value="mine" ${f === 'mine' ? 'selected' : ''}>All topics with my notes</option><option value="rev" ${f === 'rev' ? 'selected' : ''}>All topics marked for revision</option></select></div>
-   <button class="btn small" data-act="exportnotes">Download my notes</button></div>
+   <button class="btn small" data-act="exportnotes">Download my notes</button>${upBtns(S[st.noteSubj] ? st.noteSubj : '', '')}</div>
   <div class="notes"><nav class="nlist sheet" aria-label="Subjects">${list}</nav><article class="sheet stack" id="nbody">${notesBody()}</article></div></div>`;
 }
 async function exportNotes() {
@@ -624,7 +640,7 @@ function vBooks() {
      <span class="num muted tiny">${n}/${rows.length}</span></summary>
      <div class="meter" style="margin-bottom:8px"><i style="width:${rows.length ? n / rows.length * 100 : 0}%"></i></div>
      ${rows.map(r => `<div class="chrow"><label class="ri ${bd[r.key] ? 'on' : ''}"><input type="checkbox" data-act="bch" data-key="${esc(r.key)}" ${bd[r.key] ? 'checked' : ''}><span>${r.ch ? esc(r.ch) : 'Sections on ' + esc(r.topics[0].t)}</span></label>
-      <div class="row" style="gap:4px;padding-left:28px">${r.topics.map(x => `<button class="chip tiny" data-act="notesfor" data-subj="${x.s}" data-topic="${esc(x.t)}">${esc(x.t)}</button>`).join('')}</div></div>`).join('')}</details>`;
+      <div class="row" style="gap:4px;padding-left:28px">${r.topics.map(x => `<button class="chip tiny" data-act="notesfor" data-subj="${x.s}" data-topic="${esc(x.t)}">${esc(x.t)}</button>`).join('')}<button class="chip tiny" data-act="askopen" data-s="${r.topics[0].s}" data-t="${esc(r.topics[0].t)}" data-label="${esc('Book: ' + B.t + (r.ch ? ', ' + r.ch : ''))}" data-text="${esc(`Book: ${B.t}${B.a ? ' by ' + B.a : ''}${r.ch ? ', chapter "' + r.ch + '"' : ''}. Topics: ${r.topics.map(x => x.t).join('; ')}.`)}">Ask</button></div></div>`).join('')}</details>`;
   }).join('');
   const own = ownBooks().filter(o => fs === 'all' || o.subj === fs);
   const ownCards = own.map(o => { const n = o.ch.filter(c => c.d).length;
@@ -634,6 +650,8 @@ function vBooks() {
   return `<div class="stack"><div class="sheet row spread" style="align-items:flex-end"><div><h2>Books and material</h2><div class="muted small">${dn} of ${tot} chapters done. Tick a chapter here or in Notes; each chapter lists the topics it covers.</div></div>
    <div class="field"><label for="bsubj">Subject</label><select id="bsubj" data-act="bsubj"><option value="all">All subjects</option>${Object.entries(S).map(([k, v]) => `<option value="${k}" ${fs === k ? 'selected' : ''}>${esc(v.n)}</option>`).join('')}</select></div></div>
   <div class="stack" style="gap:6px">${cards || '<div class="sheet empty">No books listed for this course.</div>'}</div>
+  <div class="sheet stack"><h3>Your uploaded notes and files</h3><div class="muted small">PDFs, photos of handwritten notes, .docx and typed notes. Only their text is kept, and the Ask tutor and Study now answer from it first.</div>
+   ${Store.mlist().filter(d => fs === 'all' || d.subj === fs).map(matLine).join('') || '<div class="muted small">Nothing uploaded yet.</div>'}<div class="row">${upBtns(fs === 'all' ? '' : fs, '')}</div></div>
   <div class="sheet stack"><h3>Your own books and material</h3><div class="muted small">Coaching notes, a different book, a video course or a PDF you use. Add chapters to track them; they also show under "Read from" in Notes for that subject.</div>
    ${ownCards ? `<div class="stack" style="gap:6px">${ownCards}</div>` : ''}
    <div class="grid-form">
@@ -743,22 +761,230 @@ This week's topics: ${wk || 'n/a'}. Days in the last week not marked done: ${mis
 Recent papers: ${recent}. Weak subjects: ${weak}. Recent unresolved mistakes: ${errs}.
 Answer concisely and concretely. For a concept doubt, explain step by step with one small worked example. For planning questions, give specific times and topics from the plan; to catch up, compress rather than shift the whole plan. Plain text only, no LaTeX or markdown headings.`;
 }
-function vTutor() {
-  const chips = ['What should I study today?', 'I missed yesterday. How do I catch up?', 'Explain today’s topic simply', 'What are my weak areas?'];
-  return `<div class="sheet"><div class="row spread"><div><h2>Tutor</h2><div class="muted small">Knows your plan, today’s topic, your scores and your mistakes.</div></div>${st.chat.length ? '<button class="btn small" data-act="chatclear">New chat</button>' : ''}</div>
- ${!hasKey() ? `<div class="notice warn" style="margin-top:12px">The tutor needs Claude. ${esc(aiHint())}</div>` : ''}
- <div class="chat" id="chat" style="margin-top:14px">${st.chat.length ? st.chat.map(m => `<div class="msg ${m.role === 'user' ? 'me' : 'ai'}">${esc(m.role === 'user' ? m.show || m.content : m.content)}</div>`).join('') : `<div class="empty">Ask anything: a concept you are stuck on, how to adjust the plan after a busy week, or how to approach a question type.</div>`}${st.chatBusy ? `<div class="msg ai" id="streaming"><span class="spin"></span></div>` : ''}</div>
- <div class="row" style="margin-top:10px;gap:6px">${chips.map(c => `<button class="chip" data-act="chip" data-q="${esc(c)}">${esc(c)}</button>`).join('')}</div>
- <div class="composer"><textarea id="ask" placeholder="Type your question" aria-label="Your question"></textarea><button class="btn primary" data-act="send" ${st.chatBusy || !hasKey() ? 'disabled' : ''}>Send</button></div></div>`;
+/* ---------- My material: uploads become source text (only the extracted text is stored, never the file) ---------- */
+const PDFJS = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/';
+const MAMMOTH = 'https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.6.0/mammoth.browser.min.js';
+const scriptP = {};
+const loadScript = src => scriptP[src] = scriptP[src] || new Promise((ok, no) => { const s = document.createElement('script'); s.src = src; s.onload = ok; s.onerror = () => { delete scriptP[src]; no(new Error('Could not load ' + src.split('/').pop() + '. Check your connection.')); }; document.head.appendChild(s); });
+const canvasJpeg = c => new Promise(ok => c.toBlob(ok, 'image/jpeg', .85));
+async function toJpeg(file, max = 1600) {
+  let bmp; try { bmp = await createImageBitmap(file); } catch { throw new Error('This browser cannot open that image. Save it as JPG or PNG and try again.'); }
+  const k = Math.min(1, max / Math.max(bmp.width, bmp.height)); const c = document.createElement('canvas'); c.width = Math.round(bmp.width * k); c.height = Math.round(bmp.height * k);
+  c.getContext('2d').drawImage(bmp, 0, 0, c.width, c.height); return canvasJpeg(c);
 }
-async function sendChat(text) {
-  text = (text || '').trim(); if (!text || st.chatBusy || !hasKey()) return;
-  st.chat.push({ role: 'user', content: text }); st.chatBusy = true; render();
+async function readImage(blob, say, n) { // Claude transcribes once; the student checks the text before saving
+  if (!hasKey()) return '';
+  say(`Claude is reading page ${n}…`);
+  try { return (await askClaude('Transcribe this page of study notes into plain text. Keep the order and headings. Write every formula as plain text with unicode symbols (for example ΔG = ΔH − TΔS, x², √, →). Mark anything unreadable as [?]. Return only the text.', { images: [blob], max_tokens: 4000 })).trim(); }
+  catch (e) { if (e.code === 'no_ai' || e.code === 'no_images') return ''; throw e; }
+}
+async function readUpload(file, say) { // -> {name, kind, pages:[text], check:[page indexes the student should check or type]}
+  const name = file.name, ext = (name.split('.').pop() || '').toLowerCase(), out = { name, kind: ext, pages: [], check: [] };
+  if (ext === 'pdf') {
+    await loadScript(PDFJS + 'pdf.min.js'); pdfjsLib.GlobalWorkerOptions.workerSrc = PDFJS + 'pdf.worker.min.js';
+    const pdf = await pdfjsLib.getDocument({ data: await file.arrayBuffer() }).promise; const n = Math.min(pdf.numPages, 400); if (pdf.numPages > n) out.note = `Only the first ${n} of ${pdf.numPages} pages were read.`;
+    for (let i = 1; i <= n; i++) {
+      say(`Reading page ${i} of ${n}…`); const pg = await pdf.getPage(i);
+      let text = (await pg.getTextContent()).items.map(x => x.str + (x.hasEOL ? '\n' : ' ')).join('').replace(/[ \t]+/g, ' ').trim();
+      if (text.length < 40) { // almost no text layer: a scanned page, so render it and let Claude read it like a photo
+        const v = pg.getViewport({ scale: 1 }); const vp = pg.getViewport({ scale: Math.min(2, 1600 / Math.max(v.width, v.height)) });
+        const c = document.createElement('canvas'); c.width = Math.round(vp.width); c.height = Math.round(vp.height); await pg.render({ canvasContext: c.getContext('2d'), viewport: vp }).promise;
+        text = await readImage(await canvasJpeg(c), say, i); out.check.push(i - 1);
+      }
+      out.pages.push(text);
+    }
+  } else if (/^(jpe?g|png|heic|heif|webp)$/.test(ext) || (file.type || '').startsWith('image/')) { out.kind = 'photo'; out.pages.push(await readImage(await toJpeg(file), say, 1)); out.check.push(0); }
+  else if (ext === 'docx') { await loadScript(MAMMOTH); out.pages.push((await mammoth.extractRawText({ arrayBuffer: await file.arrayBuffer() })).value.trim()); }
+  else if (ext === 'txt' || ext === 'md' || (file.type || '').startsWith('text/')) out.pages.push((await file.text()).trim());
+  else throw new Error('Use a PDF, a photo (JPG, PNG or HEIC), a .docx, .txt or .md file.');
+  return out;
+}
+
+/* Retrieval without embeddings: ~800-character chunks, scored by term overlap, boosted when tagged to the current topic */
+const STOP = new Set('the and for are but not you all any can had her was one our out has have this that with from they will what when which their there about would into than then them these some been more also each other such only very just over most may its use used using how why who where does did per via is of to in on at by as be or an it we he she his him its'.split(' '));
+const terms = s => (String(s).toLowerCase().match(/[\p{L}\p{N}]+/gu) || []).filter(w => w.length > 1 && !STOP.has(w));
+const tfOf = s => { const m = new Map(); for (const w of terms(s)) m.set(w, (m.get(w) || 0) + 1); return m; };
+const chunkCache = new WeakMap(); // document object -> chunks; a restored or replaced document gets fresh chunks
+function chunksOf(d) {
+  if (chunkCache.has(d)) return chunkCache.get(d); const out = [];
+  d.pages.forEach((p, pi) => { for (let i = 0; i < p.length;) { let e = Math.min(p.length, i + 800); if (e < p.length) { const sp = p.lastIndexOf(' ', e); if (sp > i + 400) e = sp; } const text = p.slice(i, e).trim(); if (text) out.push({ doc: d.id, page: d.kind === 'pdf' ? pi + 1 : 0, subj: d.subj, topic: d.topic, text, tf: tfOf(text) }); i = e; } });
+  chunkCache.set(d, out); return out;
+}
+function retrieve(q, s, t, n = 6) {
+  const qs = [...new Set(terms(q))], note = s && t ? myNote(s, t) : '';
+  const all = [...(note ? [{ doc: 'typed', page: 0, subj: s, topic: t, text: note.slice(0, 1600), tf: tfOf(note) }] : []), ...Store.mlist().flatMap(chunksOf)]; const scored = [];
+  for (const c of all) { let sc = 0; for (const w of qs) { const f = c.tf.get(w); if (f) sc += 1 + Math.log(f); } if (t && c.subj === s && c.topic === t) sc = sc * 1.5 + 1; if (sc > 0) scored.push([sc, c]); }
+  return scored.sort((a, b) => b[0] - a[0]).slice(0, n).map(x => x[1]);
+}
+const chunkName = c => c.doc === 'typed' ? 'Your notes: typed note' : `Your notes: ${(Store.mget(c.doc) || {}).name || 'deleted file'}${c.page ? ', p. ' + c.page : ''}`;
+function sourcesFor(q, c) { // [N1..N6] from the student's material, [K] course key points, [B1..] course books
+  const s = c && c.s, t = c && c.t; const out = retrieve(q, s, t).map((x, i) => ({ id: 'N' + (i + 1), chip: chunkName(x), text: x.text }));
+  if (s && t && S[s]) { const kp = kpOf(s, t); if (kp.length) out.push({ id: 'K', chip: 'Course key points: ' + t, text: kp.join('\n') }); srcOf(s, t).forEach(([b, ch], i) => out.push({ id: 'B' + (i + 1), chip: `Book: ${bookName(b)}${ch ? ', ' + ch : ''}`, text: `Course reading for ${t}: ${bookName(b)}${ch ? ', chapter "' + ch + '"' : ''}.` })); }
+  return out;
+}
+const srcBlock = srcs => srcs.map(x => `[${x.id}] ${x.chip}\n${x.text}`).join('\n\n') || '(none)';
+const GROUND = 'Answer from the SOURCES first and cite their labels inline, like [N2] or [K]. When the sources do not cover something, say so plainly (for example "Your notes don\'t cover this.") before answering from general knowledge. Plain text with unicode symbols, no LaTeX, no markdown headings.';
+const cited = (text, srcs) => srcs.filter(z => text.includes('[' + z.id + ']')).map(z => ({ ...z, text: z.text.slice(0, 600) }));
+const srcChips = list => list && list.length ? `<div class="srcs">${list.map(z => `<details class="src"><summary class="chip">${esc(z.chip)}</summary><div class="expl">${esc(z.text)}</div></details>`).join('')}</div>` : '';
+const matFor = (s, t) => Store.mlist().filter(d => d.subj === s && d.topic === t);
+function matLine(d) {
+  return `<details class="mat"><summary><span>📄 <b>${esc(d.name)}</b> <span class="muted tiny">${esc(d.kind)} · ${d.pages.length} page${d.pages.length === 1 ? '' : 's'}${d.topic ? ' · ' + esc(d.topic) : d.subj ? ' · whole subject' : ' · general'}</span></span></summary>
+   ${d.pages.slice(0, 40).map((p, i) => `<div class="small"><b class="muted">${d.pages.length > 1 ? 'p. ' + (i + 1) : ''}</b> ${esc(p.slice(0, 240))}${p.length > 240 ? '…' : ''}</div>`).join('')}
+   <div class="row"><button class="btn small ghost" data-act="matdel" data-id="${esc(d.id)}">Delete</button></div></details>`;
+}
+const upBtns = (s, t) => `<button class="btn small" data-act="upload" data-subj="${s || ''}" data-topic="${esc(t || '')}">Upload</button><button class="btn small" data-act="newnote" data-subj="${s || ''}" data-topic="${esc(t || '')}">New note</button>`;
+
+/* Upload panel: read the file, suggest a tag, let the student check transcriptions and confirm */
+function suggestTag(text) {
+  const doc = new Set(terms(text.slice(0, 20000))); let best = null, bs = 0;
+  for (const [s, v] of Object.entries(S)) for (const t of v.topics) {
+    const words = new Set(terms(t + ' ' + subsOf(s, t).join(' '))); let n = 0; words.forEach(w => { if (doc.has(w)) n++; });
+    const sc = n / Math.sqrt(words.size || 1); if (sc > bs) { bs = sc; best = { s, t }; }
+  }
+  return best && bs > .5 ? { ...best, why: `Suggested from matching words: ${sname(best.s)} · ${best.t}. Change it if that is wrong.` } : null;
+}
+async function suggest(text) {
+  let r = suggestTag(text); if (!hasKey() || !text.trim()) return r;
   try {
-    const res = await askClaude({ system: tutorContext(), messages: st.chat.map(m => ({ role: m.role, content: m.content })), max_tokens: 2000, onText: t => { const el = $('#streaming'); if (el) el.textContent = t; const c = $('#chat'); if (c) c.scrollTop = c.scrollHeight; } });
-    st.chat.push({ role: 'assistant', content: res || '(no answer)' });
-  } catch (e) { st.chat.pop(); toast(e.message || 'The tutor could not answer.'); }
-  st.chatBusy = false; render();
+    const o = await claudeJSON(`Which syllabus topic do these study notes belong to?\nTopics (subject key | topic):\n${Object.entries(S).flatMap(([s, v]) => v.topics.map(t => s + ' | ' + t)).join('\n')}\n\nNOTES (start):\n${text.slice(0, 3000)}\n\nReturn ONLY JSON {"subj": key, "topic": exact topic} or {"subj": null} if none fits.`, 300);
+    if (o && S[o.subj] && S[o.subj].topics.includes(o.topic)) r = { s: o.subj, t: o.topic, why: `Claude suggests ${sname(o.subj)} · ${o.topic}. Change it if that is wrong.` };
+  } catch { }
+  return r;
+}
+async function startUpload(file, target) {
+  const u = st.up = { msg: 'Reading ' + file.name + '…' }; renderPanel();
+  try {
+    const r = await readUpload(file, m => { if (st.up === u) { u.msg = m; renderPanel(); } });
+    const tag = target && target.s ? { s: target.s, t: target.t || '' } : await suggest(r.pages.join('\n'));
+    u.draft = { ...r, s: tag ? tag.s : '', t: tag ? tag.t : '', why: (tag && tag.why) || '' };
+  } catch (e) { u.err = e.message || 'Could not read that file.'; }
+  if (st.up === u) renderPanel();
+}
+function upSync() {
+  const d = st.up.draft; const g = id => document.getElementById(id);
+  if (g('up-name')) d.name = g('up-name').value.trim(); if (g('up-s')) d.s = g('up-s').value; if (g('up-t')) d.t = S[d.s] && S[d.s].topics.includes(g('up-t').value) ? g('up-t').value : '';
+  document.querySelectorAll('.uppage').forEach(el => { d.pages[+el.dataset.i] = el.value; });
+}
+async function saveUpload() {
+  upSync(); const d = st.up.draft; const pages = d.pages.map(p => String(p || '').trim());
+  if (!pages.some(Boolean)) { toast('There is no text to save yet.'); return; }
+  const doc = { id: 'm' + uid(), name: (d.name || 'My note').slice(0, 120), kind: d.kind, subj: S[d.s] ? d.s : null, topic: S[d.s] && d.t ? d.t : null, added: Date.now(), pages };
+  await Store.mput(doc); st.up = null; renderPanel(); render(); toast(`Saved ${doc.name} to your material.`);
+}
+function renderPanel() {
+  const el = $('#panel'); if (!el) return; el.hidden = !st.up; if (!st.up) { el.innerHTML = ''; return; } const u = st.up, d = u.draft;
+  if (!d) { el.innerHTML = `<div class="pbox stack" role="dialog" aria-label="Add material"><h3>Add material</h3>${u.err ? `<div class="notice err">${esc(u.err)}</div>` : `<div><span class="spin"></span> ${esc(u.msg)}</div>`}<div class="row"><button class="btn" data-act="upcancel">${u.err ? 'Close' : 'Cancel'}</button></div></div>`; return; }
+  const note = d.kind === 'note', chars = d.pages.reduce((a, p) => a + p.length, 0);
+  el.innerHTML = `<div class="pbox stack" role="dialog" aria-label="Add material"><h3>${note ? 'New note' : 'Check and tag: ' + esc(d.name)}</h3>
+   ${note ? `<div class="field"><label for="up-name">Title</label><input id="up-name" value="${esc(d.name)}"></div>` : ''}
+   <div class="grid-form"><div class="field"><label for="up-s">Subject</label><select id="up-s" data-act="ups"><option value="">General (no subject)</option>${Object.entries(S).map(([k, v]) => `<option value="${k}" ${d.s === k ? 'selected' : ''}>${esc(v.n)}</option>`).join('')}</select></div>
+    <div class="field"><label for="up-t">Topic</label><select id="up-t"><option value="">General (whole subject)</option>${(S[d.s] ? S[d.s].topics : []).map(t => `<option ${d.t === t ? 'selected' : ''}>${esc(t)}</option>`).join('')}</select></div></div>
+   ${d.why ? `<div class="muted small">${esc(d.why)}</div>` : ''}${d.note ? `<div class="notice warn">${esc(d.note)}</div>` : ''}
+   ${d.pages.map((p, i) => note || d.check.includes(i) ? `<div class="field"><label for="up-p${i}">${note ? 'Text' : `Page ${i + 1}: ${p ? 'read by Claude. Correct anything it misread.' : 'Claude could not read this page. Type its text here.'}`}</label><textarea class="uppage" id="up-p${i}" data-i="${i}" style="min-height:150px">${esc(p)}</textarea></div>` : '').join('')}
+   ${!note && d.check.length < d.pages.length ? `<details><summary class="muted small">Preview the extracted text</summary><div class="expl">${esc(d.pages.filter((_, i) => !d.check.includes(i)).join('\n\n').slice(0, 3000))}</div></details>` : ''}
+   ${d.check.length && !hasKey() ? `<div class="notice warn">Photos and scanned pages are read by Claude. ${aiHtml()}</div>` : ''}
+   <div class="muted small">${note ? '' : `${d.pages.length} page${d.pages.length === 1 ? '' : 's'} · ${chars} characters. `}Only the text is saved, never the file.</div>
+   <div class="row"><button class="btn primary" data-act="upsave">Save to my material</button><button class="btn" data-act="upcancel">Cancel</button></div></div>`;
+}
+
+/* ---------- Study now: one card that walks through the next unticked sub-topic ---------- */
+const subsOf = (s, t) => ((S[s] && S[s].read) || CS.get('read:' + s, {}))[t] || [];
+const STEPS = ['Learn', 'Read', 'Watch', 'Check', 'Done'];
+function studyPick() {
+  const k = todayKey(), d = k < PLAN_START ? PLAN_START : k > PLAN_END ? PLAN_END : k, plan = dayPlan(d), done = st.progress.read || {};
+  const its = plan.items.filter(i => i.rd && i.rd.all.length); const it = its.length ? its[new Date().getHours() < 12 ? 0 : its.length - 1] : null;
+  const list = [...(it ? [{ subj: it.rd.subj, name: it.rd.topic, from: it.rd.from }] : []), ...topicsOf((blockFor(d) || BLOCKS[BLOCKS.length - 1]).main)];
+  for (const x of list) { const subs = subsOf(x.subj, x.name); for (let j = 0; j < subs.length; j++) { const i = (j + (x.from || 0)) % subs.length;
+    if (!done[readKey(x.subj, x.name, i)]) return { s: x.subj, t: x.name, i, n: subs.length, sub: subs[i], slot: it && it.rd.topic === x.name ? `${it.slot} ${it.time}` : 'Next up', step: 0 }; } }
+  return null;
+}
+const lessonOf = x => CS.get('lessons.' + x.s, {})[x.t + '|' + x.i];
+async function writeLesson(x) {
+  if (st.lessonBusy || !hasKey()) return; st.lessonBusy = true; st.lessonErr = null; render();
+  try {
+    const srcs = sourcesFor(x.sub + ' ' + x.t, { s: x.s, t: x.t });
+    const text = await askClaude(`Write a 300–500 word exam-focused lesson on "${x.sub}" (topic: ${x.t}; ${sname(x.s)}) for a student preparing for ${C.name}. Build it from the course key points and the student's own notes in the SOURCES and stay consistent with them. Include the key formulas or numbers, one short worked example, and end with three common exam traps.\n\nSOURCES:\n${srcBlock(srcs)}`, { system: GROUND, max_tokens: 1800, onText: t => { const el = $('#lesson'); if (el) el.textContent = t; } });
+    // shortcut: lessons live in one kv record per subject (~3 KB each); move them to the material store if browsers hit the localStorage limit
+    const m = CS.get('lessons.' + x.s, {}); m[x.t + '|' + x.i] = { text, src: cited(text, srcs), at: Date.now() }; CS.set('lessons.' + x.s, m);
+  } catch (e) { st.lessonErr = e; }
+  st.lessonBusy = false; render();
+}
+function studyCard() {
+  const x = st.study;
+  if (!x) return `<div class="sheet study"><div class="label">Study now</div><h2>All sub-topics of this phase are ticked</h2><div class="muted">Revise from Notes or build a paper.</div></div>`;
+  const ask = `<button class="btn small" data-act="askopen" data-s="${x.s}" data-t="${esc(x.t)}" data-label="${esc(shortName(x.s) + ' · ' + x.t + ' · ' + x.sub)}" data-text="${esc(`Sub-topic: ${x.sub} (topic ${x.t}, ${sname(x.s)}). Study step: ${STEPS[x.step]}.`)}">Ask about this</button>`;
+  let body = '';
+  if (x.step === 0) {
+    const L = lessonOf(x);
+    if (st.lessonBusy) body = `<div class="lesson" id="lesson"><span class="spin"></span> Writing your lesson from the key points and your notes…</div>`;
+    else if (L) body = `<div class="lesson">${esc(L.text)}</div>${srcChips(L.src)}<div class="row"><button class="btn small" data-act="regen">Regenerate</button></div>`;
+    else {
+      const kp = kpOf(x.s, x.t), own = retrieve(x.sub + ' ' + x.t, x.s, x.t, 2);
+      body = `${st.lessonErr && st.lessonErr.code !== 'no_ai' ? `<div class="notice err">${esc(st.lessonErr.message || 'Could not write the lesson.')}</div>` : ''}${hasKey() ? '' : `<div class="notice warn">A short lesson is written for you with Claude. ${aiHtml()}</div>`}
+       ${kp.length ? `<div class="label">Key points</div><ul class="kp">${kp.map(k => `<li>${esc(k)}</li>`).join('')}</ul>` : ''}
+       ${own.map(c => `<div class="label">${esc(chunkName(c))}</div><div class="expl">${esc(c.text)}</div>`).join('')}
+       ${hasKey() ? '<div class="row"><button class="btn small primary" data-act="regen">Write the lesson</button></div>' : ''}`;
+    }
+  } else if (x.step === 1) {
+    const bd = CS.get('bookdone', {}), src = srcOf(x.s, x.t), mats = matFor(x.s, x.t);
+    body = `<div class="label">Read from</div>${src.map(([b, ch]) => srcLine(b, ch, x.t, bd)).join('') || (S[x.s].book ? `<div class="small">📖 ${esc(S[x.s].book)}</div>` : '<div class="muted small">No book is listed for this topic.</div>')}
+     <div class="label">Your material on this topic</div>${mats.map(matLine).join('') || '<div class="muted small">Nothing uploaded for this topic yet.</div>'}<div class="row">${upBtns(x.s, x.t)}</div>`;
+  } else if (x.step === 2) body = `<div class="row"><a class="btn primary" href="${yt(x.sub + ' ' + shortName(x.s) + ' lecture')}" target="_blank" rel="noopener">▶ Lectures on ${esc(x.sub)}</a><a class="chip" href="${yt('NPTEL ' + shortName(x.s) + ' ' + x.sub)}" target="_blank" rel="noopener">▶ NPTEL</a></div><div class="muted small">Watch one 10–20 minute lecture, then come back for the questions.</div>`;
+  else if (x.step === 3) body = `<div class="muted">Five quick questions on ${esc(x.sub)}. Your PYQ bank is used first; wrong answers go to Mistakes.</div><div class="row"><button class="btn test" data-act="drill" data-subj="${x.s}" data-topic="${esc(x.t + ': ' + x.sub)}" data-n="5">Take 5 questions</button></div>`;
+  else body = `<div class="row"><button class="btn primary" data-act="studydone">✓ Tick “${esc(x.sub)}” and go to the next sub-topic</button></div>`;
+  return `<div class="sheet study stack"><div class="row spread"><div><div class="label">Study now · ${esc(x.slot)}</div><h2>${esc(x.sub)}</h2><div class="muted small"><span class="dot" style="background:${col(x.s)}"></span> ${esc(sname(x.s))} · ${esc(x.t)} · sub-topic ${x.i + 1} of ${x.n}</div></div>${ask}</div>
+   <div class="steps" role="tablist">${STEPS.map((n, i) => `<button role="tab" aria-selected="${i === x.step}" data-act="studystep" data-i="${i}">${i + 1}. ${n}</button>`).join('')}</div>
+   <div class="stack">${body}</div>
+   <div class="row spread"><button class="btn small" data-act="studystep" data-i="${x.step - 1}" ${x.step === 0 ? 'disabled' : ''}>‹ Back</button>${x.step < 4 ? `<button class="btn small primary" data-act="studystep" data-i="${x.step + 1}">Next ›</button>` : ''}</div></div>`;
+}
+function doubtsCard() {
+  const t = todayKey(), list = CS.get('asks', []).filter(a => a.unclear && a.unclear < t); if (!list.length) return '';
+  return `<div class="sheet stack"><h3>Still unclear from before</h3>${list.map(a => `<div class="row spread"><span style="min-width:0"><span class="muted tiny">${esc(a.label)}</span><br>${esc(a.q)}</span><span class="row"><button class="btn small primary" data-act="doubtask" data-id="${a.id}">Ask again</button><button class="btn small" data-act="doubtok" data-id="${a.id}">It's clear now</button></span></div>`).join('')}</div>`;
+}
+
+/* ---------- Ask: a tutor drawer on every tab, grounded in the student's material ---------- */
+function autoCtx() {
+  if (st.tab === 'today' && st.study) return { s: st.study.s, t: st.study.t, label: `${shortName(st.study.s)} · ${st.study.t} · ${st.study.sub}`, text: `Sub-topic: ${st.study.sub} (topic ${st.study.t}, ${sname(st.study.s)}).` };
+  if (st.tab === 'notes' && st.noteTopic && S[st.noteSubj]) return { s: st.noteSubj, t: st.noteTopic, label: `${shortName(st.noteSubj)} · ${st.noteTopic}`, text: `Topic: ${st.noteTopic} (${sname(st.noteSubj)}).` };
+  if (st.tab === 'papers' && st.test) return qCtx(st.test.paper.questions[st.test.i], false);
+  if (st.tab === 'books' && S[st.bookSubj]) return { s: st.bookSubj, label: sname(st.bookSubj), text: `Subject: ${sname(st.bookSubj)}.` };
+  return null;
+}
+function qCtx(q, withAns, your) {
+  const right = q.answer == null ? '' : q.type === 'NAT' ? `${q.answer.lo} to ${q.answer.hi}` : [].concat(q.answer).join(', ');
+  return { s: q.subject, t: S[q.subject] && S[q.subject].topics.includes(q.topic) ? q.topic : null, key: 'q:' + (q.fp || fp(q.stem)), label: 'Question: ' + q.stem.slice(0, 60) + (q.stem.length > 60 ? '…' : ''),
+    text: `Question (${sname(q.subject)}${q.topic ? ', ' + q.topic : ''}):\n${q.stem}${q.options ? '\n' + q.options.map((o, j) => LETTERS[j] + ') ' + o).join('\n') : ''}${withAns ? `${your != null ? '\nMy answer: ' + [].concat(your).join(', ') : ''}\nCorrect answer: ${right}\nSolution: ${q.explanation || q.modelAnswer || ''}` : '\n(I am taking a timed paper: give hints, not the answer.)'}` };
+}
+const ctxKey = c => c ? c.key || c.s + '|' + (c.t || '') : 'general';
+function openAsk(ctx, draft) {
+  if (!C) { toast('Create a profile first.'); return; }
+  st.askCtx = ctx === undefined ? autoCtx() : ctx; st.askDraft = draft || ''; st.askErr = null; st.drawer = true; renderDrawer(); $('#askq')?.focus();
+}
+async function sendAsk(q) {
+  q = String(q || '').trim(); if (!q || st.askBusy) return;
+  if (!hasKey()) { st.askErr = { code: 'no_ai' }; renderDrawer(); return; }
+  const c = st.askCtx, key = ctxKey(c), srcs = sourcesFor(q + ' ' + (c ? c.label : ''), c), asks = CS.get('asks', []);
+  const hist = asks.filter(a => a.key === key).slice(-2).flatMap(a => [{ role: 'user', content: a.q }, { role: 'assistant', content: a.a }]);
+  st.askBusy = true; st.askPending = q; st.askDraft = ''; st.askErr = null; renderDrawer();
+  try {
+    const a = await askClaude([...hist, { role: 'user', content: `${c ? c.text + '\n\n' : ''}SOURCES:\n${srcBlock(srcs)}\n\nMY QUESTION: ${q}` }], { system: tutorContext() + '\n' + GROUND, max_tokens: 2000, onText: t => { const el = $('#askstream'); if (el) el.textContent = t; } });
+    // shortcut: history keeps the last 200 doubts with 600-character snippets in one kv record; page it if students keep more
+    asks.push({ id: uid(), key, label: c ? c.label : 'General', ctx: c, q, a: a || '(no answer)', src: cited(a, srcs), at: Date.now() }); CS.set('asks', asks.slice(-200));
+  } catch (e) { st.askErr = e; if (!st.askDraft) st.askDraft = q; }
+  st.askBusy = false; st.askPending = null; renderDrawer();
+}
+const askMsg = a => `<div class="msg me">${esc(a.q)}</div><div class="msg ai">${esc(a.a)}${srcChips(a.src)}<div class="row"><button class="btn small ghost" data-act="unclear" data-id="${a.id}">${a.unclear ? '✓ Marked still unclear: it will be on Today tomorrow' : 'Still unclear'}</button></div></div>`;
+function renderDrawer() {
+  const el = $('#drawer'); if (!el) return; el.hidden = !st.drawer; if (!st.drawer) { el.innerHTML = ''; return; }
+  const c = st.askCtx, key = ctxKey(c), asks = CS.get('asks', []), thread = asks.filter(a => a.key === key).slice(-8); const groups = new Map();
+  for (const a of asks) groups.set(a.label, [...(groups.get(a.label) || []), a]);
+  el.innerHTML = `<div class="row spread"><h3>Ask</h3><button class="btn small ghost" data-act="askclose" aria-label="Close">✕</button></div>
+   ${c ? `<div><span class="chip ctx">${esc(c.label)}<button class="x" data-act="askctxdel" aria-label="Remove this context">✕</button></span></div>` : '<div class="muted small">No topic attached: answers search all your material.</div>'}
+   <div class="chat" id="askchat">${thread.map(askMsg).join('')}${st.askPending ? `<div class="msg me">${esc(st.askPending)}</div><div class="msg ai" id="askstream"><span class="spin"></span></div>` : ''}${thread.length || st.askPending ? '' : '<div class="empty">Ask a doubt. Answers come from your own notes and the course first, with the sources shown under each answer.</div>'}</div>
+   ${st.askErr ? `<div class="notice ${st.askErr.code === 'no_ai' ? 'warn' : 'err'}">${st.askErr.code === 'no_ai' ? aiHtml() : esc(st.askErr.message || 'The tutor could not answer.')}</div>` : ''}
+   <div class="composer"><textarea id="askq" placeholder="Type your doubt" aria-label="Your question">${esc(st.askDraft || '')}</textarea><button class="btn primary" data-act="asksend" ${st.askBusy ? 'disabled' : ''}>Ask</button></div>
+   ${asks.length ? `<details><summary class="muted small">History by topic (${asks.length})</summary><div class="stack" style="gap:4px;margin-top:6px">${[...groups].reverse().map(([l, list]) => `<div class="label">${esc(l)}</div>${list.slice(-5).reverse().map(a => `<button class="btn small left ghost" data-act="askhist" data-id="${a.id}">${esc(a.q.slice(0, 90))}</button>`).join('')}`).join('')}</div></details>` : ''}`;
+  const ch = $('#askchat'); if (ch) ch.scrollTop = ch.scrollHeight;
 }
 
 /* ---------- Profiles and courses ---------- */
@@ -840,17 +1066,17 @@ async function migrateLegacy() { // progress from the first version of the claud
 }
 async function exportAll() {
   await Store.drain();
-  const out = { app: 'prep-desk', version: 2, saved: new Date().toISOString(), profiles: st.profiles, courses: st.custom.map(({ custom, ...c }) => c), data: {} };
+  const out = { app: 'prep-desk', version: 3, saved: new Date().toISOString(), profiles: st.profiles, courses: st.custom.map(({ custom, ...c }) => c), data: {} };
   for (const p of st.profiles) {
     let d;
-    if (p.id === Store.pid) d = { kv: Object.fromEntries(Store.p), papers: Store.list('papers'), errors: Store.list('errors') };
-    else { const r = await Store.readProfile(p.id); d = { kv: Object.fromEntries(r.kv), papers: [...r.papers.values()], errors: [...r.errors.values()] }; }
+    if (p.id === Store.pid) d = { kv: Object.fromEntries(Store.p), papers: Store.list('papers'), errors: Store.list('errors'), material: Store.mlist() };
+    else { const r = await Store.readProfile(p.id); d = { kv: Object.fromEntries(r.kv), papers: [...r.papers.values()], errors: [...r.errors.values()], material: r.material }; }
     delete d.kv.buckets; out.data[p.id] = d;
   }
   await download(`prep-desk-backup-${todayKey()}.json`, out);
 }
 async function importAll(j) {
-  if (!j || j.app !== 'prep-desk' || j.version !== 2 || !Array.isArray(j.profiles)) throw new Error('That is not a Prep Desk backup file.');
+  if (!j || j.app !== 'prep-desk' || ![2, 3].includes(j.version) || !Array.isArray(j.profiles)) throw new Error('That is not a Prep Desk backup file.');
   for (const c of j.courses || []) saveCustom(validateCourse(c));
   for (const p of j.profiles) {
     if (!p || !p.id || !allCourses().some(c => c.id === p.course)) continue;
@@ -946,19 +1172,22 @@ function vSettings() {
 }
 
 /* ===================== Render ===================== */
-const VIEWS = { today: vToday, calendar: vCalendar, papers: vPapers, notes: vNotes, books: vBooks, bank: vBank, mistakes: vMistakes, tutor: vTutor, courses: vCourses, settings: vSettings };
+const VIEWS = { today: vToday, calendar: vCalendar, papers: vPapers, notes: vNotes, books: vBooks, bank: vBank, mistakes: vMistakes, courses: vCourses, settings: vSettings };
 function render() {
   document.querySelectorAll('#tabs button').forEach(b => b.setAttribute('aria-selected', String(b.dataset.tab === st.tab)));
   if (!C && !['courses', 'settings'].includes(st.tab)) st.tab = 'courses';
+  if (!VIEWS[st.tab]) st.tab = 'today';
   $('#view').innerHTML = VIEWS[st.tab]();
   renderTop();
-  if (st.tab === 'tutor') { const c = $('#chat'); if (c) c.scrollTop = c.scrollHeight; }
+  renderDrawer();
+  const x = st.study; if (st.tab === 'today' && x && x.step === 0 && hasKey() && !st.lessonBusy && !st.lessonErr && !lessonOf(x)) setTimeout(() => writeLesson(x));
   if (st.test) startTick();
 }
 
 /* ===================== Events ===================== */
 document.addEventListener('click', async ev => {
   const tab = ev.target.closest('#tabs button');
+  if (tab && tab.dataset.tab === 'tutor') { openAsk(); return; } // the Tutor tab opens the Ask drawer
   if (tab) { if (st.test && tab.dataset.tab !== 'papers') pauseTest(); st.tab = tab.dataset.tab; if (st.tab !== 'papers') st.openPaper = null; render(); return; }
   const el = ev.target.closest('[data-act]'); if (!el || el.tagName === 'SELECT' || (el.tagName === 'INPUT' && el.type !== 'button')) return; const a = el.dataset.act;
   try {
@@ -1012,13 +1241,23 @@ document.addEventListener('click', async ev => {
     else if (a === 'bankadd') { st.bank.push(...st.bankPreview.items); CS.set('bank', st.bank); st.bankPreview = null; render(); toast('Added to your PYQ bank.'); }
     else if (a === 'bankdiscard') { st.bankPreview = null; render(); }
     else if (a === 'resolve') { const e = st.errors.find(x => x.id === el.dataset.id); if (e) { e.resolved = true; e.resolvedAt = Date.now(); saveErrors(); render(); } }
-    else if (a === 'askerr') {
-      const e = st.errors.find(x => x.id === el.dataset.id); if (!e) return; st.tab = 'tutor'; render(); const q = e.q;
-      await sendChat(`I got this wrong. Explain where I likely went wrong and the concept behind it.\n\n${q.stem}${q.options ? '\n' + q.options.map((o, j) => LETTERS[j] + ') ' + o).join('\n') : ''}\nMy answer: ${Array.isArray(e.your) ? e.your.join(',') : e.your}. Correct: ${q.type === 'NAT' ? q.answer.lo + ' to ' + q.answer.hi : Array.isArray(q.answer) ? q.answer.join(',') : q.answer}.`);
-    }
-    else if (a === 'chip') { st.tab = 'tutor'; await sendChat(el.dataset.q); }
-    else if (a === 'send') await sendChat($('#ask').value);
-    else if (a === 'chatclear') { st.chat = []; render(); }
+    else if (a === 'askerr') { const e = st.errors.find(x => x.id === el.dataset.id); if (e) { openAsk(qCtx(e.q, true, e.your)); await sendAsk('I got this wrong. Explain where I likely went wrong and the concept behind it.'); } }
+    else if (a === 'askq') { const p = st.papers.find(x => x.id === el.dataset.id); const q = p && p.questions[+el.dataset.i]; if (q) openAsk(qCtx(q, true, p.answers?.[+el.dataset.i])); }
+    else if (a === 'askopen') openAsk(el.dataset.label ? { s: S[el.dataset.s] ? el.dataset.s : null, t: el.dataset.t || null, label: el.dataset.label, text: el.dataset.text || el.dataset.label } : undefined);
+    else if (a === 'askclose') { st.drawer = false; renderDrawer(); }
+    else if (a === 'askctxdel') { st.askCtx = null; renderDrawer(); }
+    else if (a === 'asksend') await sendAsk($('#askq').value);
+    else if (a === 'askhist') { const h = CS.get('asks', []).find(x => x.id === el.dataset.id); if (h) { st.askCtx = h.ctx || null; renderDrawer(); } }
+    else if (a === 'unclear' || a === 'doubtok') { const asks = CS.get('asks', []); const h = asks.find(x => x.id === el.dataset.id); if (h) { h.unclear = a === 'unclear' && !h.unclear ? todayKey() : null; CS.set('asks', asks); } renderDrawer(); if (a === 'doubtok') render(); }
+    else if (a === 'doubtask') { const h = CS.get('asks', []).find(x => x.id === el.dataset.id); if (h) openAsk(h.ctx || null, "I still don't understand this: " + h.q); }
+    else if (a === 'studystep') { st.study.step = Math.max(0, Math.min(4, +el.dataset.i)); render(); }
+    else if (a === 'studydone') { const x = st.study; st.progress.read = st.progress.read || {}; st.progress.read[readKey(x.s, x.t, x.i)] = Date.now(); CS.set('progress', st.progress); st.study = null; st.lessonErr = null; render(); window.scrollTo(0, 0); toast('Ticked: ' + x.sub); }
+    else if (a === 'regen') { const x = st.study, m = CS.get('lessons.' + x.s, {}); delete m[x.t + '|' + x.i]; CS.set('lessons.' + x.s, m); st.lessonErr = null; await writeLesson(x); }
+    else if (a === 'upload') { st.upTarget = el.dataset.subj ? { s: el.dataset.subj, t: el.dataset.topic } : null; $('#upfile').click(); }
+    else if (a === 'newnote') { st.up = { draft: { name: 'My note', kind: 'note', pages: [''], check: [], s: el.dataset.subj || '', t: el.dataset.topic || '' } }; renderPanel(); $('#up-name')?.focus(); }
+    else if (a === 'upsave') await saveUpload();
+    else if (a === 'upcancel') { st.up = null; renderPanel(); }
+    else if (a === 'matdel') { if (el.dataset.confirm !== '1') { el.dataset.confirm = '1'; el.textContent = 'Delete this material?'; return; } await Store.mdel(el.dataset.id); render(); }
     else if (a === 'addprof') { const p = await addProfile($('#np-name').value, $('#np-course').value); st.tab = 'today'; render(); window.scrollTo(0, 0); toast('Created profile ' + p.name); }
     else if (a === 'openprof') { await switchProfile(el.dataset.id); st.tab = 'today'; render(); window.scrollTo(0, 0); toast('Opened ' + st.profile.name); }
     else if (a === 'rename') { st.renaming = el.dataset.id; render(); const i = document.getElementById('rn-' + el.dataset.id); if (i) { i.focus(); i.select(); } }
@@ -1036,7 +1275,7 @@ document.addEventListener('click', async ev => {
     else if (a === 'impcourse') { const f = $('#imp-course').files[0]; if (!f) { toast('Choose a course file first.'); return; } const c = validateCourse(JSON.parse(await f.text())); if (st.courseIndex.some(x => x.id === c.id)) c.id += '-imported'; saveCustom(c); render(); toast(`Imported ${c.name}. Add a profile to use it.`); }
     else if (a === 'savekey') { st.settings = { key: $('#set-key').value.trim(), model: $('#set-model').value }; LS.set('settings', st.settings); render(); toast('Settings saved.'); }
     else if (a === 'clearkey') { st.settings = { ...st.settings, key: '' }; LS.set('settings', st.settings); render(); toast('Key removed from this browser.'); }
-    else if (a === 'testkey') { st.settings = { key: $('#set-key').value.trim(), model: $('#set-model').value }; LS.set('settings', st.settings); const m = $('#keymsg'); m.innerHTML = '<span class="spin"></span> Testing…'; try { const t = await askClaude({ messages: [{ role: 'user', content: 'Reply with the single word OK.' }], max_tokens: 10 }); m.textContent = t ? 'Key works.' : 'Got an empty reply.'; } catch (e) { m.textContent = e.message; } renderTop(); }
+    else if (a === 'testkey') { st.settings = { key: $('#set-key').value.trim(), model: $('#set-model').value }; LS.set('settings', st.settings); const m = $('#keymsg'); m.innerHTML = '<span class="spin"></span> Testing…'; try { const t = await askClaude('Reply with the single word OK.', { max_tokens: 10 }); m.textContent = t ? 'Key works.' : 'Got an empty reply.'; } catch (e) { m.textContent = e.message; } renderTop(); }
     else if (a === 'export') await exportAll();
     else if (a === 'import') { const f = $('#imp-backup').files[0]; if (!f) { toast('Choose a backup file first.'); return; } await importAll(JSON.parse(await f.text())); render(); toast('Backup restored.'); }
   } catch (e) { toast(e.message || 'Something went wrong.'); }
@@ -1051,6 +1290,8 @@ document.addEventListener('change', ev => {
   else if (el.dataset.act === 'obch') { const list = ownBooks(); const o = list.find(x => x.id === el.dataset.id); if (o && o.ch[+el.dataset.i]) { o.ch[+el.dataset.i].d = el.checked ? Date.now() : 0; CS.set('ownbooks', list); } const y = window.scrollY; render(); window.scrollTo(0, y); }
   else if (el.dataset.act === 'nfilter') { st.noteFilter = el.value; st.noteQ = ''; render(); }
   else if (el.dataset.act === 'bsubj') { st.bookSubj = el.value; render(); }
+  else if (el.id === 'upfile') { const f = el.files[0]; el.value = ''; if (f) startUpload(f, st.upTarget); }
+  else if (el.dataset.act === 'ups') { upSync(); st.up.draft.t = ''; renderPanel(); }
   else if (el.dataset.act === 'profsel') { if (el.value === '__manage') { st.tab = 'courses'; render(); return; } switchProfile(el.value).then(() => { st.tab = 'today'; render(); window.scrollTo(0, 0); }).catch(e => toast(e.message || 'Could not open that profile.')); }
   else if (el.dataset.ans && st.test) {
     const T = st.test; const t = el.dataset.ans;
@@ -1064,6 +1305,7 @@ const noteTimers = {};
 document.addEventListener('input', ev => {
   const el = ev.target;
   if (st.test && (el.dataset.ans === 'nat' || el.dataset.ans === 'desc')) { st.test.paper.answers[st.test.i] = el.value; saveDraft(); }
+  else if (el.id === 'askq') st.askDraft = el.value;
   else if (el.id === 'nsearch') { st.noteQ = el.value; const b = $('#nbody'); if (b) b.innerHTML = notesBody(); }
   else if (el.classList.contains('mynote')) {
     const sv = el.parentElement.querySelector('[data-saved]'); if (sv) sv.textContent = 'Saving…';
@@ -1074,11 +1316,12 @@ document.addEventListener('input', ev => {
     }, 600);
   }
 });
-document.addEventListener('keydown', ev => { if (ev.target.id === 'ask' && ev.key === 'Enter' && !ev.shiftKey) { ev.preventDefault(); sendChat(ev.target.value); } });
+document.addEventListener('keydown', ev => { if (ev.target.id === 'askq' && ev.key === 'Enter' && !ev.shiftKey) { ev.preventDefault(); sendAsk(ev.target.value); } });
 window.addEventListener('beforeunload', () => { if (st.test) pauseTest(); Store.flush(); });
 document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'hidden') Store.flush(); });
 
 /* ===================== Boot ===================== */
+document.body.insertAdjacentHTML('beforeend', '<button class="askfab" data-act="askopen" aria-label="Ask a doubt">Ask</button><aside class="drawer" id="drawer" hidden aria-label="Ask the tutor"></aside><div class="panel" id="panel" hidden></div><input type="file" id="upfile" accept=".pdf,.txt,.md,.docx,image/*,.heic,.heif" hidden>');
 (async () => {
   try {
     if (window.claude && typeof window.claude.use === 'function') {

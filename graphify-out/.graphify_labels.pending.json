@@ -2,12 +2,9 @@
   "0": "sname",
   "1": "dayPlan",
   "2": "app.js",
-  "3": "esc",
-  "4": "todayKey",
+  "3": "hasKey",
+  "4": "sendAsk",
   "5": "esc",
   "6": "Prep Desk",
-  "7": "switchProfile",
-  "8": "vPapers",
-  "9": "savePapers",
   "12": "store.js"
 }
