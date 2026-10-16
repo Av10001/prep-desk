@@ -10,5 +10,11 @@
   "name": "CDSCO Drug Inspector (UPSC)",
   "file": "cdsco-drug-inspector.json",
   "description": "UPSC Recruitment Test for Drug Inspector in CDSCO: pharmacy subjects, Drugs & Cosmetics Act, GMP/GLP/GCP. One-year plan at about 3 hours a day."
+ },
+ {
+  "id": "csir-net-ls-micro",
+  "name": "CSIR NET Life Sciences (Microbiology focus)",
+  "file": "csir-net-ls-micro.json",
+  "description": "CSIR NET Life Sciences with extra weight on microbiology, immunology and molecular biology."
  }
 ]

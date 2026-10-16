@@ -415,7 +415,8 @@ function vReview(id) {
 function scopeSpec(scope, day, n, styleKey, subj) {
   const k = day || todayKey(); const b = blockFor(k) || BLOCKS[0];
   if (scope.startsWith('pattern:')) {
-    const P = C.patterns[scope.slice(8)]; if (!P) return null; let parts = Object.entries(P.dist).filter(([s]) => S[s]).map(([s, c]) => ({ s, t: null, c }));
+    const P = C.patterns[scope.slice(8)]; if (!P) return null; // sections: per-part marks, e.g. CSIR NET Part C at 4 marks
+    let parts = (P.sections || [{ dist: P.dist }]).flatMap(x => Object.entries(x.dist).filter(([s]) => S[s]).map(([s, c]) => ({ s, t: null, c, m: x.marks })));
     const total = parts.reduce((a, p) => a + p.c, 0);
     if (n && n < total) parts = parts.map(p => ({ ...p, c: Math.max(0, Math.round(p.c * n / total)) })).filter(p => p.c > 0);
     return { style: P.style || defaultStyleKey(), title: P.title + (n && n < total ? ` · ${n} questions` : ''), parts, mins: n && n < total ? null : P.mins };
@@ -496,15 +497,15 @@ async function buildPaper(spec, meta) {
     if (need.length && !hasKey()) { if (!chosen.length) throw { code: 'no_key', message: 'Not enough unused bank questions. ' + aiHint() }; }
     else {
       const batches = []; let cur = [], cn = 0;
-      for (const p of need) { let c = p.c; while (c > 0) { const take = Math.min(c, 10 - cn); cur.push({ ...p, c: take }); cn += take; c -= take; if (cn >= 10) { batches.push(cur); cur = []; cn = 0; } } }
+      for (const p of need) { if (cn && cur[0].m !== p.m) { batches.push(cur); cur = []; cn = 0; } let c = p.c; while (c > 0) { const take = Math.min(c, 10 - cn); cur.push({ ...p, c: take }); cn += take; c -= take; if (cn >= 10) { batches.push(cur); cur = []; cn = 0; } } }
       if (cur.length) batches.push(cur);
       const total = batches.reduce((a, b) => a + b.reduce((x, y) => x + y.c, 0), 0); let done = 0;
       for (const batch of batches) {
         st.gen = { msg: `Writing new PYQ-pattern questions… ${done} of ${total}${fromBank ? ` (plus ${fromBank} from your bank)` : ''}` }; render();
-        const subs = [...new Set(batch.map(p => p.s))]; const avoid = subs.flatMap(s => (st.concepts[s] || []).slice(-25));
-        let raw; try { raw = await genBatch(ST, batch, avoid); } catch (e) { if (e.code === 'rate_limited' || e.code === 'overloaded' || e.code === 'invalid_json') { await new Promise(r => setTimeout(r, 5000)); raw = await genBatch(ST, batch, avoid); } else throw e; }
+        const subs = [...new Set(batch.map(p => p.s))]; const avoid = subs.flatMap(s => (st.concepts[s] || []).slice(-25)); const BST = batch[0].m ? { ...ST, marks: [batch[0].m] } : ST;
+        let raw; try { raw = await genBatch(BST, batch, avoid); } catch (e) { if (e.code === 'rate_limited' || e.code === 'overloaded' || e.code === 'invalid_json') { await new Promise(r => setTimeout(r, 5000)); raw = await genBatch(BST, batch, avoid); } else throw e; }
         const want = batch.reduce((a, p) => a + p.c, 0); let got = 0;
-        for (const r of raw) { if (got >= want) break; const q = normQ(r, ST, subs); if (!q) continue; q.fp = fp(q.stem); if (st.seen.has(q.fp) || used.has(q.fp)) continue; used.add(q.fp); chosen.push(q); got++; }
+        for (const r of raw) { if (got >= want) break; const q = normQ(r, BST, subs); if (!q) continue; q.fp = fp(q.stem); if (st.seen.has(q.fp) || used.has(q.fp)) continue; used.add(q.fp); chosen.push(q); got++; }
         done += got;
       }
     }

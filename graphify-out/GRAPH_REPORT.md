@@ -1,17 +1,17 @@
 # Graph Report - prep-desk  (2026-10-16)
 
 ## Corpus Check
-- 5 files · ~18,713 words
+- 5 files · ~18,808 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 4 file(s) not represented in the graph (top: (none) 3, .css 1)
 
 ## Summary
-- 144 nodes · 421 edges · 8 communities (7 shown, 1 thin omitted)
+- 144 nodes · 421 edges · 11 communities (10 shown, 1 thin omitted)
 - Extraction: 96% EXTRACTED · 4% INFERRED · 0% AMBIGUOUS · INFERRED: 17 edges (avg confidence: 0.89)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `65c8bf04`
+- Built from commit: `6e624ce9`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -23,6 +23,9 @@
 - todayKey
 - esc
 - Prep Desk
+- switchProfile
+- vPapers
+- savePapers
 - store.js
 
 ## God Nodes (most connected - your core abstractions)
@@ -52,7 +55,7 @@
 ## Import Cycles
 - None detected.
 
-## Communities (8 total, 1 thin omitted)
+## Communities (11 total, 1 thin omitted)
 
 ### Community 0 - "sname"
 Cohesion: 0.22
@@ -63,8 +66,8 @@ Cohesion: 0.21
 Nodes (21): blockDays(), blockFor(), completedBefore(), D(), dayPlan(), defaultStyleKey(), diff(), dow() (+13 more)
 
 ### Community 2 - "app.js"
-Cohesion: 0.09
-Nodes (33): BLOCKS, clock(), CS, grade(), importAll(), KIND, LETTERS, loadCourseById() (+25 more)
+Cohesion: 0.13
+Nodes (14): BLOCKS, CS, KIND, LETTERS, LS, MODELS, noteTimers, paperForDay() (+6 more)
 
 ### Community 3 - "esc"
 Cohesion: 0.25
@@ -79,8 +82,20 @@ Cohesion: 0.19
 Nodes (21): bookChapters(), bookName(), col(), esc(), isRev(), kpOf(), linksFor(), myNote() (+13 more)
 
 ### Community 6 - "Prep Desk"
-Cohesion: 0.11
-Nodes (16): addProfile(), uid(), validateCourse(), graphify, Prep Desk, Rules, Must fix, Nice to have (+8 more)
+Cohesion: 0.12
+Nodes (14): validateCourse(), graphify, Prep Desk, Rules, Must fix, Nice to have, Ponytail review: whole codebase (16 Oct 2026), Adding a course for everyone (+6 more)
+
+### Community 7 - "switchProfile"
+Cohesion: 0.22
+Nodes (9): addProfile(), importAll(), loadCourseById(), loadCourseData(), migrateLegacy(), saveCustom(), switchProfile(), uid() (+1 more)
+
+### Community 8 - "vPapers"
+Cohesion: 0.25
+Nodes (9): clock(), grade(), nextSat(), saveErrors(), startTick(), submitTest(), vPapers(), vReview() (+1 more)
+
+### Community 9 - "savePapers"
+Cohesion: 0.67
+Nodes (3): pauseTest(), saveDraft(), savePapers()
 
 ## Knowledge Gaps
 - **1 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
@@ -93,10 +108,10 @@ _Questions this graph is uniquely positioned to answer:_
 - **Are the 2 inferred relationships involving `dayPlan()` (e.g. with `Layout` and `Should fix`) actually correct?**
   _`dayPlan()` has 2 INFERRED edges - model-reasoned connections that need verification._
 - **Should `app.js` be split into smaller, more focused modules?**
-  _Cohesion score 0.0907563025210084 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.13333333333333333 - nodes in this community are weakly interconnected._
 - **Why does `dayPlan()` connect `dayPlan` to `sname`, `app.js`, `todayKey`?**
   _High betweenness centrality (0.084) - this node is a cross-community bridge._
 - **Should `Prep Desk` be split into smaller, more focused modules?**
-  _Cohesion score 0.10526315789473684 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.11764705882352941 - nodes in this community are weakly interconnected._
 - **Why does `Prep Desk` connect `Prep Desk` to `dayPlan`?**
   _High betweenness centrality (0.084) - this node is a cross-community bridge._

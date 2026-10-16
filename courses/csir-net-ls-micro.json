@@ -1,0 +1,4255 @@
+{
+ "id": "csir-net-ls-micro",
+ "name": "CSIR NET Life Sciences (Microbiology focus)",
+ "short": "CSIR NET LS",
+ "description": "CSIR NET Life Sciences with extra weight on microbiology, immunology and molecular biology.",
+ "start": "2026-10-16",
+ "hoursTarget": 27,
+ "exams": [
+  {
+   "date": "2027-07-17",
+   "name": "CSIR NET June 2027*"
+  }
+ ],
+ "datesNote": "* June 2027 session not announced yet; date projected from the June 2026 exam (17–18 July 2026)",
+ "milestones": {
+  "2026-11-05": "December 2026 application closes (announced)",
+  "2026-12-19": "December 2026 exam: 19, 22, 27 Dec (announced)",
+  "2027-05-26": "June 2027 application window opens (expected)",
+  "2027-06-18": "June 2027 application closes (expected)",
+  "2027-07-09": "June 2027 admit card (expected)",
+  "2027-07-17": "CSIR NET June 2027 exam (expected)",
+  "2027-09-10": "June 2027 result (expected)"
+ },
+ "routine": {
+  "weekdayAM": "6:00–7:30",
+  "weekdayPM": "8:30–10:00",
+  "satAM": "7:00–9:00",
+  "satMid": "10:00–12:00",
+  "satPM": "3:00–5:00",
+  "sunAM": "7:00–9:00",
+  "sunMid": "10:00–12:00",
+  "sunPM": "3:00–5:00"
+ },
+ "habit": {
+  "subject": "pa",
+  "title": "Part A aptitude",
+  "note": "20 minutes daily: five Part A questions (numbers, reasoning, graphs), timed."
+ },
+ "styles": {
+  "NET": {
+   "label": "CSIR NET LS-BT (MCQ, −25%)",
+   "exam": "Joint CSIR-UGC NET Life Sciences and Bio-Technology (703): Part A and B 2 marks, Part C 4 marks, 25% negative marking",
+   "kind": "mcq",
+   "marks": [
+    2,
+    4
+   ],
+   "neg": 0.25,
+   "minsPerQ": 2.4
+  }
+ },
+ "patterns": {
+  "lsfull": {
+   "title": "CSIR NET LS-BT full mock",
+   "style": "NET",
+   "mins": 180,
+   "dist": {
+    "pa": 15,
+    "bio": 5,
+    "cell": 5,
+    "fund": 5,
+    "gen": 5,
+    "sig": 5,
+    "dev": 4,
+    "div": 5,
+    "plant": 4,
+    "meth": 4,
+    "anim": 4,
+    "eco": 4,
+    "binf": 3,
+    "bpe": 3,
+    "adv": 4
+   },
+   "sections": [
+    {
+     "name": "Part A",
+     "marks": 2,
+     "dist": {
+      "pa": 15
+     }
+    },
+    {
+     "name": "Part B",
+     "marks": 2,
+     "dist": {
+      "bio": 3,
+      "cell": 3,
+      "fund": 3,
+      "sig": 3,
+      "dev": 2,
+      "plant": 2,
+      "anim": 2,
+      "gen": 3,
+      "div": 3,
+      "eco": 2,
+      "binf": 2,
+      "bpe": 2,
+      "adv": 2,
+      "meth": 3
+     }
+    },
+    {
+     "name": "Part C",
+     "marks": 4,
+     "dist": {
+      "bio": 2,
+      "cell": 2,
+      "fund": 2,
+      "sig": 2,
+      "dev": 2,
+      "plant": 2,
+      "anim": 2,
+      "gen": 2,
+      "div": 2,
+      "eco": 2,
+      "binf": 1,
+      "bpe": 1,
+      "adv": 2,
+      "meth": 1
+     }
+    }
+   ]
+  }
+ },
+ "mockDays": {
+  "6": "lsfull",
+  "0": "lsfull"
+ },
+ "revisionMock": "lsfull",
+ "sources": [
+  {
+   "name": "NTA Joint CSIR-UGC NET (notices, papers, answer keys)",
+   "url": "https://csirnet.nta.nic.in/"
+  },
+  {
+   "name": "CSIR HRDG syllabus and exam scheme",
+   "url": "https://csirhrdg.res.in/Home/Index/1/Default/3485/78"
+  }
+ ],
+ "subjects": {
+  "pa": {
+   "n": "Part A · General Aptitude",
+   "c": 8,
+   "book": "R.S. Aggarwal; CSIR NET Part A papers",
+   "topics": [
+    "Numerical ability",
+    "Geometry, mensuration and data interpretation",
+    "Logical reasoning and puzzles",
+    "Statistics and analytical aptitude"
+   ],
+   "notes": [
+    {
+     "h": "Strategy",
+     "items": [
+      "Part A is 30 of 200 marks: answer 15 of 20, 2 marks each, −0.5 per wrong answer.",
+      "Do it last or first, but cap it at 30–35 minutes; skip any puzzle that has no clear route in 60 seconds.",
+      "Daily 20 minutes of mixed PYQs keeps speed up; log every slip by type (arithmetic, misread, logic).",
+      "Graphs and data questions reward estimation; calculate only to the precision the options need."
+     ]
+    }
+   ],
+   "read": {
+    "Numerical ability": [
+     "Percentages, ratios and averages",
+     "Time, speed and work",
+     "Simple and compound interest",
+     "Number systems, divisibility and remainders",
+     "Permutations, combinations and probability"
+    ],
+    "Geometry, mensuration and data interpretation": [
+     "Areas and perimeters of plane figures",
+     "Volumes and surface areas of solids",
+     "Coordinate geometry basics",
+     "Tables, bar charts and pie charts",
+     "Reading slopes, rates and log scales on graphs"
+    ],
+    "Logical reasoning and puzzles": [
+     "Number and letter series",
+     "Coding and decoding",
+     "Blood relations and direction sense",
+     "Seating and arrangement puzzles",
+     "Syllogisms and Venn diagrams"
+    ],
+    "Statistics and analytical aptitude": [
+     "Mean, median and mode",
+     "Standard deviation and variance",
+     "Probability of simple and compound events",
+     "Clocks, calendars, cubes and dice",
+     "Spatial reasoning and mirror images"
+    ]
+   },
+   "kp": {
+    "Numerical ability": [
+     "Successive changes of a% and b% give a net change of a + b + ab/100 %.",
+     "If A finishes a job in a days and B in b days, together they take ab/(a + b) days.",
+     "Average speed over two equal distances at x and y is 2xy/(x + y), not (x + y)/2.",
+     "For 2 years, compound minus simple interest = P(r/100)².",
+     "nCr = n!/(r!(n − r)!); n people around a circle can sit in (n − 1)! ways."
+    ],
+    "Geometry, mensuration and data interpretation": [
+     "Circle: area πr², circumference 2πr; sphere: volume 4/3 πr³, surface 4πr².",
+     "Cylinder volume πr²h; cone volume πr²h/3 (one third of the cylinder).",
+     "Doubling every length multiplies area by 4 and volume by 8.",
+     "Pie-chart sector angle = (value/total) × 360°.",
+     "On a log axis equal distances mean equal ratios, not equal differences."
+    ],
+    "Logical reasoning and puzzles": [
+     "In a number series check differences first, then ratios, then alternate terms.",
+     "'Some A are B' never implies 'Some A are not B'.",
+     "Direction problems: track net east–west and north–south moves; distance = √(x² + y²).",
+     "In arrangement puzzles place the most constrained person first, then branch."
+    ],
+    "Statistics and analytical aptitude": [
+     "Adding c to every value shifts the mean by c and leaves the SD unchanged.",
+     "Multiplying every value by k multiplies mean and SD by k and the variance by k².",
+     "Clock-hand angle = |30H − 5.5M| degrees; the hands overlap every 720/11 ≈ 65.45 min.",
+     "An ordinary year moves the weekday on by 1, a leap year by 2.",
+     "P(at least one) = 1 − P(none)."
+    ]
+   },
+   "src": {
+    "Numerical ability": [
+     [
+      "aggq",
+      "Percentage"
+     ],
+     [
+      "aggq",
+      "Time and Work"
+     ],
+     [
+      "aggq",
+      "Permutations and Combinations"
+     ]
+    ],
+    "Geometry, mensuration and data interpretation": [
+     [
+      "aggq",
+      "Area"
+     ],
+     [
+      "aggq",
+      "Volume and Surface Area"
+     ],
+     [
+      "aggq",
+      "Pie Charts"
+     ]
+    ],
+    "Logical reasoning and puzzles": [
+     [
+      "aggr",
+      "Series Completion"
+     ],
+     [
+      "aggr",
+      "Blood Relations"
+     ],
+     [
+      "aggr",
+      "Syllogism"
+     ]
+    ],
+    "Statistics and analytical aptitude": [
+     [
+      "aggq",
+      "Probability"
+     ],
+     [
+      "aggr",
+      "Cubes and Dice"
+     ],
+     [
+      "pyq",
+      "Part A questions, last five sessions"
+     ]
+    ]
+   },
+   "refs": {
+    "Numerical ability": "Aggarwal QA: Percentage; Aggarwal QA: Time and Work; Aggarwal QA: Permutations and Combinations",
+    "Geometry, mensuration and data interpretation": "Aggarwal QA: Area; Aggarwal QA: Volume and Surface Area; Aggarwal QA: Pie Charts",
+    "Logical reasoning and puzzles": "Aggarwal Reasoning: Series Completion; Aggarwal Reasoning: Blood Relations; Aggarwal Reasoning: Syllogism",
+    "Statistics and analytical aptitude": "Aggarwal QA: Probability; Aggarwal Reasoning: Cubes and Dice; NTA papers: Part A questions, last five sessions"
+   }
+  },
+  "bio": {
+   "n": "Unit 1 · Structure and Function of Biomolecules",
+   "c": 1,
+   "book": "Lehninger",
+   "topics": [
+    "Atoms, bonds and stabilising interactions",
+    "pH, buffers and biophysical chemistry",
+    "Thermodynamics and bioenergetics",
+    "Carbohydrates and lipids",
+    "Amino acids, proteins and vitamins",
+    "Protein conformation and stability",
+    "Protein function: oxygen binding and allostery",
+    "Enzymes and enzyme kinetics",
+    "Nucleic acid conformation and stability",
+    "Glycolysis, TCA cycle and oxidative phosphorylation",
+    "Carbohydrate and lipid metabolism",
+    "Amino acid and nucleotide metabolism"
+   ],
+   "notes": [
+    {
+     "h": "Strategy",
+     "items": [
+      "Highest-yield unit for both Part B and Part C: enzyme kinetics, thermodynamics and metabolism appear every session.",
+      "Learn numbers that turn into calculations: ΔG°′ values, pKa values, P/O ratios, Km/Vmax shifts with inhibitors.",
+      "Pair every metabolic pathway with its microbial version (fermentations, glyoxylate cycle, Entner–Doudoroff).",
+      "Part C here is graph reading: Lineweaver–Burk plots, titration curves and O₂-binding curves."
+     ]
+    }
+   ],
+   "read": {
+    "Atoms, bonds and stabilising interactions": [
+     "Atomic structure and electronegativity",
+     "Covalent, ionic and coordinate bonds",
+     "Hydrogen bonds and van der Waals forces",
+     "The hydrophobic effect and entropy",
+     "Bond energies: covalent versus non-covalent"
+    ],
+    "pH, buffers and biophysical chemistry": [
+     "pH, pKa and the Henderson–Hasselbalch equation",
+     "Biological buffers",
+     "Titration curves of amino acids",
+     "Colligative properties and osmotic pressure",
+     "Reaction order and rate constants"
+    ],
+    "Thermodynamics and bioenergetics": [
+     "Laws of thermodynamics in living cells",
+     "Free energy, ΔG°′ and equilibrium constants",
+     "Coupled reactions and group transfer",
+     "ATP and other high-energy compounds",
+     "Redox potentials and free energy"
+    ],
+    "Carbohydrates and lipids": [
+     "Monosaccharides, anomers and epimers",
+     "Disaccharides and glycosidic bonds",
+     "Starch, glycogen, cellulose, chitin and peptidoglycan",
+     "Fatty acids, triacylglycerols and phospholipids",
+     "Sterols, sphingolipids and archaeal lipids"
+    ],
+    "Amino acids, proteins and vitamins": [
+     "Classification of the 20 amino acids",
+     "Peptide bond geometry",
+     "Protein purification and sequencing basics",
+     "Water-soluble vitamins and their coenzymes",
+     "Fat-soluble vitamins"
+    ],
+    "Protein conformation and stability": [
+     "The Ramachandran plot",
+     "α-helix and β-sheet geometry",
+     "Motifs, domains and folds",
+     "Tertiary and quaternary structure",
+     "Folding, chaperones and denaturation"
+    ],
+    "Protein function: oxygen binding and allostery": [
+     "Myoglobin and haemoglobin O₂-binding curves",
+     "Cooperativity and the Hill coefficient",
+     "Bohr effect, CO₂ and 2,3-BPG",
+     "MWC and KNF allosteric models",
+     "Ligand binding: Kd and fractional saturation"
+    ],
+    "Enzymes and enzyme kinetics": [
+     "Michaelis–Menten and Lineweaver–Burk plots",
+     "kcat, Km and catalytic efficiency",
+     "Reversible and irreversible inhibition",
+     "Catalytic mechanisms: chymotrypsin and lysozyme",
+     "Regulation: allostery, covalent modification, zymogens, isozymes"
+    ],
+    "Nucleic acid conformation and stability": [
+     "Nucleotides and nucleosides",
+     "A-, B- and Z-DNA",
+     "Melting temperature and hyperchromicity",
+     "RNA secondary structure and tRNA",
+     "Supercoiling and topoisomerases"
+    ],
+    "Glycolysis, TCA cycle and oxidative phosphorylation": [
+     "Glycolysis and its control points",
+     "Pyruvate dehydrogenase and the TCA cycle",
+     "Electron transport complexes I–IV",
+     "Chemiosmosis and ATP synthase",
+     "Fermentations and the Pasteur effect"
+    ],
+    "Carbohydrate and lipid metabolism": [
+     "Gluconeogenesis and its bypass enzymes",
+     "Pentose phosphate and Entner–Doudoroff pathways",
+     "Glycogen synthesis and breakdown",
+     "β-oxidation of fatty acids",
+     "Fatty acid synthesis, ketone bodies and the glyoxylate cycle"
+    ],
+    "Amino acid and nucleotide metabolism": [
+     "Transamination and oxidative deamination",
+     "The urea cycle",
+     "Amino acid biosynthesis families",
+     "De novo purine and pyrimidine synthesis",
+     "Salvage pathways and antimetabolite drugs"
+    ]
+   },
+   "kp": {
+    "Atoms, bonds and stabilising interactions": [
+     "A C–C covalent bond is about 348 kJ/mol; an H-bond 4–20 kJ/mol; a van der Waals contact 0.4–4 kJ/mol.",
+     "An optimal H-bond has a donor–acceptor distance of about 2.8–3.0 Å and is nearly linear.",
+     "The hydrophobic effect is entropy-driven: ordered water around non-polar groups is released.",
+     "Electrostatic force falls with dielectric constant: water ≈ 80, a protein interior ≈ 4, so salt bridges are stronger when buried."
+    ],
+    "pH, buffers and biophysical chemistry": [
+     "pH = pKa + log([A⁻]/[HA]); a buffer works best within pKa ± 1.",
+     "Blood is buffered by HCO₃⁻/H₂CO₃ (pKa 6.1) and the cytosol by phosphate (pKa₂ 6.86).",
+     "For an amino acid without an ionisable side chain, pI = (pKa₁ + pKa₂)/2; glycine ≈ 5.97.",
+     "Osmotic pressure π = iMRT; colligative properties depend on particle number, not identity.",
+     "First-order half-life t½ = 0.693/k and does not depend on the starting concentration."
+    ],
+    "Thermodynamics and bioenergetics": [
+     "ΔG = ΔG°′ + RT ln Q and ΔG°′ = −RT ln K′eq: each tenfold change in K′eq is 5.7 kJ/mol at 25 °C.",
+     "ATP hydrolysis: ΔG°′ = −30.5 kJ/mol, but about −50 to −65 kJ/mol under cellular conditions.",
+     "PEP (−61.9) and 1,3-bisphosphoglycerate (−49.3 kJ/mol) rank above ATP, so they drive substrate-level phosphorylation.",
+     "ΔG°′ = −nFΔE°′ with F = 96.5 kJ V⁻¹ mol⁻¹.",
+     "NADH (E°′ −0.32 V) to O₂ (+0.816 V): ΔE°′ = 1.14 V, ΔG°′ ≈ −220 kJ/mol."
+    ],
+    "Carbohydrates and lipids": [
+     "Glucose and galactose are C-4 epimers; glucose and mannose are C-2 epimers.",
+     "Sucrose, Glc(α1↔2β)Fru, is non-reducing; lactose, Gal(β1→4)Glc, is reducing.",
+     "Cellulose is β1→4 glucose; amylose α1→4; glycogen branches α1→6 every 8–12 residues.",
+     "Peptidoglycan: NAG–NAM chains (β1→4) cross-linked by peptides; lysozyme cuts the NAM–NAG bond.",
+     "Cis double bonds lower the melting point; linoleic acid (18:2 cis-Δ9,12) is essential in humans."
+    ],
+    "Amino acids, proteins and vitamins": [
+     "The peptide bond is planar, with about 40% double-bond character, and almost always trans.",
+     "Absorbance at 280 nm comes mainly from Trp and Tyr.",
+     "Coenzymes: B1 → TPP, B2 → FAD/FMN, B3 → NAD(P), B5 → CoA, B6 → PLP, B7 → biotin (carboxylations), B12 → cobalamin.",
+     "Vitamin K is needed to γ-carboxylate glutamate in clotting factors II, VII, IX and X.",
+     "Selenocysteine, the 21st amino acid, is encoded by UGA plus a SECIS element."
+    ],
+    "Protein conformation and stability": [
+     "α-helix: 3.6 residues per turn, 5.4 Å pitch, 1.5 Å rise per residue; C=O of residue n bonds to N–H of n + 4.",
+     "Right-handed α-helix sits near φ −57°, ψ −47°; β-sheet near φ −120°, ψ +120°; only glycine readily reaches the left-handed region.",
+     "Proline breaks helices; glycine and proline are common in β-turns.",
+     "Anfinsen’s RNase A experiment: sequence determines structure (refolding after urea and β-mercaptoethanol are removed).",
+     "GroEL/GroES is a chaperonin; Hsp70 binds exposed hydrophobic segments."
+    ],
+    "Protein function: oxygen binding and allostery": [
+     "Myoglobin binds O₂ hyperbolically (P50 ≈ 0.26 kPa); haemoglobin sigmoidally (P50 ≈ 3.5 kPa, Hill n ≈ 3).",
+     "Bohr effect: lower pH and higher CO₂ lower O₂ affinity and shift the curve right.",
+     "2,3-BPG binds the central cavity of deoxy-Hb; fetal Hb (γ chains) binds it weakly, so it holds O₂ more tightly.",
+     "CO binds haemoglobin about 250 times more tightly than O₂.",
+     "Fractional saturation θ = [L]/([L] + Kd); θ = 0.5 when [L] = Kd."
+    ],
+    "Enzymes and enzyme kinetics": [
+     "v = Vmax[S]/(Km + [S]); when [S] = Km, v = Vmax/2.",
+     "Competitive inhibitor: apparent Km rises, Vmax unchanged. Uncompetitive: both fall. Pure non-competitive: Vmax falls, Km unchanged.",
+     "Diffusion-limited enzymes reach kcat/Km ≈ 10⁸–10⁹ M⁻¹ s⁻¹ (triose phosphate isomerase, catalase).",
+     "Chymotrypsin’s triad is Ser195, His57, Asp102; it cuts after Phe, Trp and Tyr.",
+     "Lactate dehydrogenase has five isozymes built from H and M subunits."
+    ],
+    "Nucleic acid conformation and stability": [
+     "B-DNA: right-handed, about 10.5 bp per turn, 3.4 Å rise, 20 Å wide. A-DNA: 11 bp per turn. Z-DNA: left-handed, 12 bp per turn.",
+     "Tm rises with GC content and ionic strength; single strands absorb about 40% more at 260 nm (hyperchromic effect).",
+     "Pure DNA has A260/A280 ≈ 1.8; pure RNA ≈ 2.0.",
+     "Lk = Tw + Wr; type I topoisomerases change Lk by 1, type II (gyrase) by 2.",
+     "tRNA has a cloverleaf secondary and L-shaped tertiary structure ending in 3′-CCA."
+    ],
+    "Glycolysis, TCA cycle and oxidative phosphorylation": [
+     "Glycolysis nets 2 ATP and 2 NADH per glucose; control points are hexokinase, PFK-1 and pyruvate kinase.",
+     "PFK-1 is activated by AMP and fructose-2,6-bisphosphate, inhibited by ATP and citrate.",
+     "One TCA turn gives 3 NADH, 1 FADH₂, 1 GTP (or ATP) and 2 CO₂.",
+     "P/O ratios are about 2.5 for NADH and 1.5 for succinate (FADH₂): roughly 30–32 ATP per glucose.",
+     "Inhibitors: rotenone (complex I), antimycin A (III), cyanide and CO (IV), oligomycin (ATP synthase); DNP uncouples."
+    ],
+    "Carbohydrate and lipid metabolism": [
+     "Gluconeogenesis bypasses: pyruvate carboxylase + PEPCK, FBPase-1, glucose-6-phosphatase; it costs 4 ATP + 2 GTP per glucose.",
+     "The oxidative pentose phosphate phase gives 2 NADPH per glucose-6-phosphate; G6PD is rate-limiting.",
+     "Entner–Doudoroff (e.g., Pseudomonas, Zymomonas) yields 1 ATP, 1 NADH and 1 NADPH per glucose.",
+     "Palmitate β-oxidation: 7 cycles → 8 acetyl-CoA, 7 FADH₂, 7 NADH, net 106 ATP.",
+     "The glyoxylate cycle (isocitrate lyase, malate synthase) lets bacteria and plants grow on acetate."
+    ],
+    "Amino acid and nucleotide metabolism": [
+     "Aminotransferases need PLP; ALT and AST are clinical liver markers.",
+     "Carbamoyl phosphate synthetase I (activated by N-acetylglutamate) is the urea cycle’s control step; each urea costs 4 high-energy bonds.",
+     "The purine ring is built on PRPP; the pyrimidine ring is made first and then attached to PRPP.",
+     "Methotrexate inhibits dihydrofolate reductase; 5-fluorouracil (as FdUMP) inhibits thymidylate synthase.",
+     "Sulfonamides block bacterial folate synthesis as PABA analogues; trimethoprim blocks bacterial DHFR."
+    ]
+   },
+   "src": {
+    "Atoms, bonds and stabilising interactions": [
+     [
+      "lehninger",
+      "Water"
+     ],
+     [
+      "lehninger",
+      "The Foundations of Biochemistry"
+     ]
+    ],
+    "pH, buffers and biophysical chemistry": [
+     [
+      "lehninger",
+      "Water"
+     ],
+     [
+      "lehninger",
+      "Amino Acids, Peptides, and Proteins"
+     ]
+    ],
+    "Thermodynamics and bioenergetics": [
+     [
+      "lehninger",
+      "Bioenergetics and Biochemical Reaction Types"
+     ]
+    ],
+    "Carbohydrates and lipids": [
+     [
+      "lehninger",
+      "Carbohydrates and Glycobiology"
+     ],
+     [
+      "lehninger",
+      "Lipids"
+     ]
+    ],
+    "Amino acids, proteins and vitamins": [
+     [
+      "lehninger",
+      "Amino Acids, Peptides, and Proteins"
+     ],
+     [
+      "lehninger",
+      "Enzymes"
+     ]
+    ],
+    "Protein conformation and stability": [
+     [
+      "lehninger",
+      "The Three-Dimensional Structure of Proteins"
+     ],
+     [
+      "alberts",
+      "Proteins"
+     ]
+    ],
+    "Protein function: oxygen binding and allostery": [
+     [
+      "lehninger",
+      "Protein Function"
+     ]
+    ],
+    "Enzymes and enzyme kinetics": [
+     [
+      "lehninger",
+      "Enzymes"
+     ]
+    ],
+    "Nucleic acid conformation and stability": [
+     [
+      "lehninger",
+      "Nucleotides and Nucleic Acids"
+     ],
+     [
+      "lehninger",
+      "Genes and Chromosomes"
+     ]
+    ],
+    "Glycolysis, TCA cycle and oxidative phosphorylation": [
+     [
+      "lehninger",
+      "Glycolysis, Gluconeogenesis, and the Pentose Phosphate Pathway"
+     ],
+     [
+      "lehninger",
+      "The Citric Acid Cycle"
+     ],
+     [
+      "lehninger",
+      "Oxidative Phosphorylation and Photophosphorylation"
+     ]
+    ],
+    "Carbohydrate and lipid metabolism": [
+     [
+      "lehninger",
+      "Fatty Acid Catabolism"
+     ],
+     [
+      "lehninger",
+      "Lipid Biosynthesis"
+     ],
+     [
+      "prescott",
+      "Catabolism: Energy Release and Conservation"
+     ]
+    ],
+    "Amino acid and nucleotide metabolism": [
+     [
+      "lehninger",
+      "Amino Acid Oxidation and the Production of Urea"
+     ],
+     [
+      "lehninger",
+      "Biosynthesis of Amino Acids, Nucleotides, and Related Molecules"
+     ]
+    ]
+   },
+   "refs": {
+    "Atoms, bonds and stabilising interactions": "Lehninger: Water; Lehninger: The Foundations of Biochemistry",
+    "pH, buffers and biophysical chemistry": "Lehninger: Water; Lehninger: Amino Acids, Peptides, and Proteins",
+    "Thermodynamics and bioenergetics": "Lehninger: Bioenergetics and Biochemical Reaction Types",
+    "Carbohydrates and lipids": "Lehninger: Carbohydrates and Glycobiology; Lehninger: Lipids",
+    "Amino acids, proteins and vitamins": "Lehninger: Amino Acids, Peptides, and Proteins; Lehninger: Enzymes",
+    "Protein conformation and stability": "Lehninger: The Three-Dimensional Structure of Proteins; Alberts: Proteins",
+    "Protein function: oxygen binding and allostery": "Lehninger: Protein Function",
+    "Enzymes and enzyme kinetics": "Lehninger: Enzymes",
+    "Nucleic acid conformation and stability": "Lehninger: Nucleotides and Nucleic Acids; Lehninger: Genes and Chromosomes",
+    "Glycolysis, TCA cycle and oxidative phosphorylation": "Lehninger: Glycolysis, Gluconeogenesis, and the Pentose Phosphate Pathway; Lehninger: The Citric Acid Cycle; Lehninger: Oxidative Phosphorylation and Photophosphorylation",
+    "Carbohydrate and lipid metabolism": "Lehninger: Fatty Acid Catabolism; Lehninger: Lipid Biosynthesis; Prescott: Catabolism: Energy Release and Conservation",
+    "Amino acid and nucleotide metabolism": "Lehninger: Amino Acid Oxidation and the Production of Urea; Lehninger: Biosynthesis of Amino Acids, Nucleotides, and Related Molecules"
+   }
+  },
+  "cell": {
+   "n": "Unit 2 · Cellular Organization",
+   "c": 2,
+   "book": "Alberts; Prescott",
+   "topics": [
+    "Membrane structure and model membranes",
+    "Membrane transport and electrical properties",
+    "Cell walls and bacterial surface structures",
+    "Nucleus and intracellular organelles",
+    "Protein sorting and membrane traffic",
+    "Cytoskeleton and motility",
+    "Organisation of genes and chromosomes",
+    "Cell division and cell cycle",
+    "Apoptosis, necrosis and autophagy",
+    "Microbial physiology: growth, stress and AMR"
+   ],
+   "notes": [
+    {
+     "h": "Strategy",
+     "items": [
+      "Treat prokaryotic and eukaryotic cell structure side by side: envelopes, transport, division and cytoskeleton.",
+      "The revised syllabus adds microbial physiology (growth kinetics, stress responses, AMR): high value for a microbiology candidate.",
+      "Part C favours experiments: drug effects on transport, membrane potentials, cell-cycle arrest points.",
+      "Memorise signal sequences and the destinations they encode."
+     ]
+    }
+   ],
+   "read": {
+    "Membrane structure and model membranes": [
+     "Fluid mosaic model",
+     "Bilayer asymmetry and lipid rafts",
+     "Integral, peripheral and lipid-anchored proteins",
+     "Bacterial, archaeal and eukaryotic membranes compared",
+     "Membrane fluidity and temperature"
+    ],
+    "Membrane transport and electrical properties": [
+     "Simple and facilitated diffusion, osmosis",
+     "P-, V-, F-type and ABC pumps",
+     "Symport and antiport (secondary transport)",
+     "Ion channels and the Nernst equation",
+     "Bacterial uptake: PTS and siderophores"
+    ],
+    "Cell walls and bacterial surface structures": [
+     "Gram-positive wall: peptidoglycan and teichoic acids",
+     "Gram-negative envelope: outer membrane, LPS, porins, periplasm",
+     "Acid-fast walls and wall-less bacteria",
+     "Capsules, S-layers, flagella and pili",
+     "Plant and fungal cell walls"
+    ],
+    "Nucleus and intracellular organelles": [
+     "Nuclear envelope and nuclear pore complex",
+     "Endoplasmic reticulum and Golgi",
+     "Lysosomes, peroxisomes and vacuoles",
+     "Mitochondria, chloroplasts and endosymbiosis",
+     "Plastid types"
+    ],
+    "Protein sorting and membrane traffic": [
+     "Signal sequences and SRP",
+     "Co-translational translocation into the ER",
+     "COPII, COPI and clathrin vesicles",
+     "Rab GTPases and SNAREs",
+     "Endocytosis, exocytosis and bacterial secretion systems"
+    ],
+    "Cytoskeleton and motility": [
+     "Actin filaments and myosin",
+     "Microtubules, kinesin and dynein",
+     "Intermediate filaments",
+     "Treadmilling and dynamic instability",
+     "Bacterial cytoskeleton: FtsZ, MreB, crescentin"
+    ],
+    "Organisation of genes and chromosomes": [
+     "Operons",
+     "Unique and repetitive DNA, Cot curves",
+     "Interrupted genes and gene families",
+     "Nucleosomes and chromatin levels",
+     "Heterochromatin, euchromatin and transposons"
+    ],
+    "Cell division and cell cycle": [
+     "Mitosis and meiosis",
+     "Cyclins and CDKs",
+     "Checkpoints, p53 and Rb",
+     "Bacterial binary fission and the Z-ring",
+     "Other prokaryotic division strategies"
+    ],
+    "Apoptosis, necrosis and autophagy": [
+     "Intrinsic (mitochondrial) pathway",
+     "Extrinsic (death-receptor) pathway",
+     "Caspases and the Bcl-2 family",
+     "Necrosis and necroptosis",
+     "Autophagy machinery"
+    ],
+    "Microbial physiology: growth, stress and AMR": [
+     "Growth curve and growth kinetics",
+     "Measuring microbial growth",
+     "Stress responses: heat shock, SOS, stringent, sporulation",
+     "Biofilms and persister cells",
+     "Mechanisms of antimicrobial resistance"
+    ]
+   },
+   "kp": {
+    "Membrane structure and model membranes": [
+     "Archaeal lipids are isoprenoid chains ether-linked to glycerol-1-phosphate; tetraether lipids form monolayers.",
+     "Hopanoids act as sterol substitutes in many bacterial membranes.",
+     "Phosphatidylserine faces the cytosol; its exposure on the outer leaflet marks apoptotic cells.",
+     "A transmembrane α-helix needs about 20 hydrophobic residues to span ~30 Å.",
+     "Cold-shifted cells raise their proportion of unsaturated and short fatty acids (homeoviscous adaptation)."
+    ],
+    "Membrane transport and electrical properties": [
+     "Na⁺/K⁺-ATPase moves 3 Na⁺ out and 2 K⁺ in per ATP; it is P-type (phosphorylated Asp).",
+     "Nernst: E = (61.5/z) log(Co/Ci) mV at 37 °C; a typical resting potential is about −70 mV.",
+     "The bacterial PEP:sugar phosphotransferase system phosphorylates sugars as it imports them (group translocation).",
+     "Aquaporins pass water but block H₃O⁺ (NPA motifs).",
+     "ABC transporters import nutrients in bacteria and export drugs in eukaryotes (P-glycoprotein/MDR1)."
+    ],
+    "Cell walls and bacterial surface structures": [
+     "Gram-positive peptidoglycan is 20–80 nm thick; Gram-negative is 2–7 nm under an outer membrane.",
+     "LPS = lipid A (endotoxin) + core polysaccharide + O-antigen.",
+     "Mycoplasmas lack a wall, carry sterols in their membrane and are resistant to penicillin.",
+     "The bacterial flagellum is driven by proton-motive force; the eukaryotic flagellum by dynein ATPase on a 9 + 2 axoneme.",
+     "Fungal walls are chitin and glucans; plant primary walls are cellulose microfibrils in hemicellulose and pectin."
+    ],
+    "Nucleus and intracellular organelles": [
+     "Nuclear import uses an NLS (SV40 T antigen: PKKKRKV), importins and a Ran-GTP gradient that is high in the nucleus.",
+     "Mitochondria and chloroplasts have 70S ribosomes, circular DNA and double membranes: evidence for endosymbiosis.",
+     "Lysosomal enzymes get mannose-6-phosphate in the cis-Golgi; losing it causes I-cell disease.",
+     "Peroxisomes hold catalase and β-oxidise very-long-chain fatty acids; failure causes Zellweger syndrome.",
+     "Plastids: proplastid, chloroplast, chromoplast, amyloplast, etioplast."
+    ],
+    "Protein sorting and membrane traffic": [
+     "SRP binds the signal peptide and pauses translation until it docks with its receptor at the Sec61 translocon.",
+     "KDEL retrieves soluble ER proteins; COPII carries cargo ER → Golgi, COPI Golgi → ER.",
+     "Clathrin, adaptors and dynamin form endocytic vesicles; the LDL receptor is the classic example.",
+     "Bacterial secretion: Sec (unfolded), Tat (folded) and Types I–VII; Type III is the injectisome of Salmonella and Yersinia."
+    ],
+    "Cytoskeleton and motility": [
+     "Microtubules: 13 protofilaments of α/β-tubulin, 25 nm wide; actin filaments 7 nm; intermediate filaments about 10 nm.",
+     "Kinesins mostly walk to the plus end; dyneins to the minus end.",
+     "Colchicine and nocodazole depolymerise microtubules; taxol stabilises them; cytochalasin blocks actin polymerisation; phalloidin stabilises F-actin.",
+     "FtsZ (tubulin homologue) forms the Z-ring; MreB (actin homologue) keeps rods rod-shaped; crescentin is intermediate-filament-like."
+    ],
+    "Organisation of genes and chromosomes": [
+     "The nucleosome core wraps 147 bp around an H2A, H2B, H3, H4 octamer; H1 binds linker DNA.",
+     "Constitutive heterochromatin (centromeres, telomeres) is rich in satellite DNA and H3K9me3.",
+     "C-value paradox: genome size does not track organismal complexity.",
+     "In Cot curves highly repetitive DNA reanneals first.",
+     "Bacterial IS elements carry only transposase; composite transposons (Tn5, Tn10) carry drug-resistance genes between IS copies."
+    ],
+    "Cell division and cell cycle": [
+     "At G1/S, cyclin D–CDK4/6 phosphorylates Rb and releases E2F.",
+     "The spindle checkpoint holds APC/C–Cdc20 until every kinetochore is attached.",
+     "Meiosis I is reductional; synapsis at zygotene, crossing over at pachytene, chiasmata visible at diplotene.",
+     "E. coli: C period (replication) ~40 min + D period ~20 min; overlapping rounds of replication allow 20-minute doublings.",
+     "Caulobacter divides asymmetrically into a stalked and a swarmer cell; Streptomyces forms spores by fragmenting hyphae."
+    ],
+    "Apoptosis, necrosis and autophagy": [
+     "Cytochrome c, Apaf-1 and procaspase-9 form the apoptosome.",
+     "Fas and TNF receptors recruit FADD and activate caspase-8.",
+     "Bcl-2 and Bcl-xL block apoptosis; Bax and Bak permeabilise the mitochondrial outer membrane.",
+     "Necrosis swells and bursts cells (inflammation); apoptosis blebs them and ladders DNA in ~180 bp steps.",
+     "mTOR inhibits autophagy; lipidated LC3 (Atg8) marks autophagosomes."
+    ],
+    "Microbial physiology: growth, stress and AMR": [
+     "Generations n = (log N − log N₀)/0.301; generation time g = t/n.",
+     "Stringent response: RelA makes (p)ppGpp during amino-acid starvation and shuts down rRNA synthesis.",
+     "Bacillus sporulation is driven by Spo0A~P and a sigma cascade (σF, σE, σG, σK).",
+     "Resistance mechanisms: drug inactivation (β-lactamases), target change (PBP2a from mecA in MRSA), efflux pumps, reduced porin entry.",
+     "Persisters are dormant, drug-tolerant cells, not genetically resistant mutants."
+    ]
+   },
+   "src": {
+    "Membrane structure and model membranes": [
+     [
+      "alberts",
+      "Membrane Structure"
+     ],
+     [
+      "prescott",
+      "Archaeal Cell Structure"
+     ]
+    ],
+    "Membrane transport and electrical properties": [
+     [
+      "alberts",
+      "Membrane Transport of Small Molecules and the Electrical Properties of Membranes"
+     ],
+     [
+      "prescott",
+      "Bacterial Cell Structure"
+     ]
+    ],
+    "Cell walls and bacterial surface structures": [
+     [
+      "prescott",
+      "Bacterial Cell Structure"
+     ],
+     [
+      "taiz",
+      "Cell Walls: Structure, Formation, and Expansion"
+     ]
+    ],
+    "Nucleus and intracellular organelles": [
+     [
+      "alberts",
+      "Intracellular Compartments and Protein Sorting"
+     ],
+     [
+      "alberts",
+      "Energy Conversion: Mitochondria and Chloroplasts"
+     ]
+    ],
+    "Protein sorting and membrane traffic": [
+     [
+      "alberts",
+      "Intracellular Membrane Traffic"
+     ],
+     [
+      "prescott",
+      "Bacterial Cell Structure"
+     ]
+    ],
+    "Cytoskeleton and motility": [
+     [
+      "alberts",
+      "The Cytoskeleton"
+     ],
+     [
+      "prescott",
+      "Bacterial Cell Structure"
+     ]
+    ],
+    "Organisation of genes and chromosomes": [
+     [
+      "alberts",
+      "DNA, Chromosomes, and Genomes"
+     ],
+     [
+      "griffiths",
+      "The Dynamic Genome: Transposable Elements"
+     ]
+    ],
+    "Cell division and cell cycle": [
+     [
+      "alberts",
+      "The Cell Cycle"
+     ],
+     [
+      "prescott",
+      "Microbial Growth"
+     ]
+    ],
+    "Apoptosis, necrosis and autophagy": [
+     [
+      "alberts",
+      "Cell Death"
+     ]
+    ],
+    "Microbial physiology: growth, stress and AMR": [
+     [
+      "prescott",
+      "Microbial Growth"
+     ],
+     [
+      "prescott",
+      "Antimicrobial Chemotherapy"
+     ]
+    ]
+   },
+   "refs": {
+    "Membrane structure and model membranes": "Alberts: Membrane Structure; Prescott: Archaeal Cell Structure",
+    "Membrane transport and electrical properties": "Alberts: Membrane Transport of Small Molecules and the Electrical Properties of Membranes; Prescott: Bacterial Cell Structure",
+    "Cell walls and bacterial surface structures": "Prescott: Bacterial Cell Structure; Taiz: Cell Walls: Structure, Formation, and Expansion",
+    "Nucleus and intracellular organelles": "Alberts: Intracellular Compartments and Protein Sorting; Alberts: Energy Conversion: Mitochondria and Chloroplasts",
+    "Protein sorting and membrane traffic": "Alberts: Intracellular Membrane Traffic; Prescott: Bacterial Cell Structure",
+    "Cytoskeleton and motility": "Alberts: The Cytoskeleton; Prescott: Bacterial Cell Structure",
+    "Organisation of genes and chromosomes": "Alberts: DNA, Chromosomes, and Genomes; Griffiths: The Dynamic Genome: Transposable Elements",
+    "Cell division and cell cycle": "Alberts: The Cell Cycle; Prescott: Microbial Growth",
+    "Apoptosis, necrosis and autophagy": "Alberts: Cell Death",
+    "Microbial physiology: growth, stress and AMR": "Prescott: Microbial Growth; Prescott: Antimicrobial Chemotherapy"
+   }
+  },
+  "fund": {
+   "n": "Unit 3 · Fundamental Processes",
+   "c": 3,
+   "book": "Lehninger; Alberts; Prescott",
+   "topics": [
+    "DNA replication in bacteria",
+    "Eukaryotic replication, telomeres and plasmids",
+    "DNA damage and repair",
+    "Homologous and site-specific recombination",
+    "Transcription in bacteria",
+    "Eukaryotic transcription and RNA processing",
+    "Translation",
+    "Protein processing, targeting and degradation",
+    "Gene regulation in bacteria and phages",
+    "Gene regulation in eukaryotes and viruses",
+    "Epigenetics and gene silencing"
+   ],
+   "notes": [
+    {
+     "h": "Strategy",
+     "items": [
+      "The core of molecular biology: replication, repair, transcription, translation and gene regulation.",
+      "Learn the bacterial version first (E. coli, λ, lac, trp), then the eukaryotic differences.",
+      "Antibiotic and inhibitor targets are favourite one-liners; make a single table of them.",
+      "Part C uses classic experiments: Meselson–Stahl, lac merodiploids, attenuation mutants."
+     ]
+    }
+   ],
+   "read": {
+    "DNA replication in bacteria": [
+     "Semi-conservative replication (Meselson–Stahl)",
+     "oriC, DnaA and the replisome",
+     "DNA polymerases I, II and III",
+     "Leading and lagging strands, Okazaki fragments",
+     "Termination at Ter sites"
+    ],
+    "Eukaryotic replication, telomeres and plasmids": [
+     "ORC, MCM and replication licensing",
+     "Roles of Pol α, δ and ε",
+     "Telomeres and telomerase",
+     "Plasmid replication: theta and rolling circle",
+     "Plasmid copy-number control and incompatibility"
+    ],
+    "DNA damage and repair": [
+     "Types of DNA damage",
+     "Direct reversal: photolyase and MGMT",
+     "Base and nucleotide excision repair",
+     "Mismatch repair",
+     "Double-strand break repair and the SOS response"
+    ],
+    "Homologous and site-specific recombination": [
+     "Holliday model",
+     "RecBCD and Chi sites",
+     "RecA strand invasion",
+     "RuvABC branch migration and resolution",
+     "Site-specific recombination and transposition"
+    ],
+    "Transcription in bacteria": [
+     "RNA polymerase core enzyme and σ factors",
+     "Promoter elements",
+     "Initiation and elongation",
+     "Rho-dependent and intrinsic termination",
+     "Transcription inhibitors"
+    ],
+    "Eukaryotic transcription and RNA processing": [
+     "RNA polymerases I, II and III",
+     "General transcription factors and the TATA box",
+     "Capping, splicing and polyadenylation",
+     "RNA editing and RNA transport",
+     "Ribozymes, riboswitches and non-coding RNA"
+    ],
+    "Translation": [
+     "Features of the genetic code",
+     "Aminoacyl-tRNA synthetases",
+     "70S and 80S ribosomes",
+     "Initiation, elongation and termination",
+     "Antibiotics that block translation"
+    ],
+    "Protein processing, targeting and degradation": [
+     "Glycosylation, phosphorylation and acetylation",
+     "Targeting to mitochondria, chloroplasts and peroxisomes",
+     "The ubiquitin–proteasome system",
+     "Bacterial proteases (Lon, Clp)",
+     "Protein splicing (inteins)"
+    ],
+    "Gene regulation in bacteria and phages": [
+     "The lac operon: negative and positive control",
+     "The trp operon and attenuation",
+     "Two-component and global regulators",
+     "λ lysis–lysogeny switch",
+     "Riboswitch and small-RNA control"
+    ],
+    "Gene regulation in eukaryotes and viruses": [
+     "Enhancers, activators and Mediator",
+     "Chromatin remodelling and histone modifications",
+     "DNA methylation",
+     "RNA interference: miRNA and siRNA",
+     "Viral gene regulation (HIV Tat, adenovirus E1A)"
+    ],
+    "Epigenetics and gene silencing": [
+     "X-inactivation and XIST",
+     "Position-effect variegation",
+     "Genomic imprinting",
+     "RNA-directed DNA methylation in plants",
+     "Bacterial epigenetics: Dam methylation and phase variation"
+    ]
+   },
+   "kp": {
+    "DNA replication in bacteria": [
+     "Pol III holoenzyme copies about 1000 nt/s with high processivity; its ε subunit proofreads 3′→5′.",
+     "Pol I removes RNA primers with its 5′→3′ exonuclease; the Klenow fragment lacks that activity.",
+     "DnaB is the helicase, DnaG the primase; SSB coats single strands and gyrase relieves supercoils ahead of the fork.",
+     "With proofreading and mismatch repair the error rate is about 10⁻⁹–10⁻¹⁰ per base.",
+     "Meselson and Stahl used ¹⁵N/¹⁴N and CsCl density gradients (1958)."
+    ],
+    "Eukaryotic replication, telomeres and plasmids": [
+     "MCM is loaded in G1 (licensing) and fired by CDK and DDK in S, so DNA replicates only once per cycle.",
+     "Pol ε makes the leading strand, Pol δ the lagging strand; Pol α–primase starts each fragment.",
+     "Telomerase is a reverse transcriptase with its own RNA template (TTAGGG repeats in vertebrates).",
+     "ColE1 copy number is set by antisense RNA I pairing with RNA II, helped by Rop.",
+     "Rolling-circle replication is used by ϕX174, M13 and many small Gram-positive plasmids."
+    ],
+    "DNA damage and repair": [
+     "UV makes cyclobutane pyrimidine dimers and 6-4 photoproducts; nucleotide excision repair (UvrABC) removes them.",
+     "E. coli mismatch repair: MutS finds the mismatch, MutL links, MutH nicks the unmethylated GATC on the new strand.",
+     "SOS: activated RecA triggers LexA self-cleavage and induces error-prone Pol V (UmuD′₂C).",
+     "Double-strand breaks: non-homologous end joining (Ku70/80, error-prone) or homologous recombination (accurate, needs a template).",
+     "Xeroderma pigmentosum is an NER defect; Lynch syndrome a mismatch-repair defect."
+    ],
+    "Homologous and site-specific recombination": [
+     "Chi (5′-GCTGGTGG-3′) switches RecBCD from nuclease to RecA loader.",
+     "RuvAB drives branch migration; RuvC cuts Holliday junctions.",
+     "Site-specific recombination: λ integrase (attP × attB), Cre/loxP, Hin inversion for Salmonella flagellar phase variation.",
+     "Transposition is cut-and-paste (Tn5, Tn10) or replicative (Tn3) and leaves short target-site duplications."
+    ],
+    "Transcription in bacteria": [
+     "E. coli core polymerase is α₂ββ′ω; σ⁷⁰ reads −35 TTGACA and −10 TATAAT.",
+     "Intrinsic terminator: GC-rich hairpin then a U-tract; Rho is an ATP-dependent helicase that loads at rut sites.",
+     "Rifampicin binds the β subunit and blocks initiation; actinomycin D intercalates into DNA.",
+     "Alternative sigma factors: σ³² heat shock, σ⁵⁴ nitrogen, σˢ stationary phase, σ²⁸ flagella."
+    ],
+    "Eukaryotic transcription and RNA processing": [
+     "Pol I makes 28S/18S/5.8S rRNA; Pol II mRNA and most snRNAs and miRNAs; Pol III tRNA, 5S rRNA and U6.",
+     "TFIID (TBP) binds TATA; TFIIH unwinds DNA and phosphorylates CTD Ser5.",
+     "The 5′ cap is m⁷G joined 5′–5′ by a triphosphate; the poly(A) signal is AAUAAA.",
+     "The spliceosome uses U1, U2, U4, U5 and U6 snRNPs; the branch-point A forms a lariat.",
+     "α-Amanitin blocks Pol II strongly, Pol III weakly and Pol I not at all."
+    ],
+    "Translation": [
+     "Bacterial initiation: the Shine–Dalgarno sequence (AGGAGG) pairs with the 3′ end of 16S rRNA; the first tRNA carries fMet.",
+     "70S = 30S (16S rRNA) + 50S (23S, 5S); 80S = 40S (18S) + 60S (28S, 5.8S, 5S).",
+     "Peptidyl transferase is 23S rRNA: the ribosome is a ribozyme.",
+     "30S drugs: aminoglycosides, tetracyclines. 50S drugs: chloramphenicol, macrolides, linezolid. Puromycin causes premature release.",
+     "Wobble allows G·U pairs and inosine at anticodon position 34."
+    ],
+    "Protein processing, targeting and degradation": [
+     "N-linked glycosylation on Asn-X-Ser/Thr starts co-translationally in the ER.",
+     "K48-linked polyubiquitin sends proteins to the 26S proteasome via an E1 → E2 → E3 cascade.",
+     "The N-end rule: the N-terminal residue sets a protein’s half-life.",
+     "Mitochondrial matrix proteins carry an amphipathic N-terminal presequence and pass through TOM and TIM."
+    ],
+    "Gene regulation in bacteria and phages": [
+     "lac: LacI binds the operator; allolactose induces; CAP–cAMP activates when glucose is low (catabolite repression).",
+     "trp attenuation: ribosome stalling at Trp codons in the leader decides between the antiterminator (2:3) and terminator (3:4) hairpins.",
+     "λ: CI repressor maintains lysogeny, Cro drives lysis; high CII (poor nutrients, high MOI) favours lysogeny.",
+     "lacI⁻ and Oᶜ mutants are constitutive; merodiploids show Oᶜ acts only in cis, lacI⁺ in trans."
+    ],
+    "Gene regulation in eukaryotes and viruses": [
+     "Histone acetylation (HATs) opens chromatin, HDACs close it; H3K4me3 marks active promoters, H3K27me3 Polycomb silencing.",
+     "CpG methylation silences promoters; DNMT1 maintains methylation, DNMT3a/b set it de novo.",
+     "miRNA pathway: pri-miRNA → Drosha → exportin-5 → Dicer → RISC (Argonaute).",
+     "HIV Tat binds TAR RNA and recruits P-TEFb to boost elongation.",
+     "Yeast GAL4 has separable DNA-binding and activation domains, the basis of the two-hybrid assay."
+    ],
+    "Epigenetics and gene silencing": [
+     "XIST lncRNA coats the X to be inactivated; Barr bodies = number of X chromosomes − 1.",
+     "Position-effect variegation: the Drosophila white gene silenced next to heterochromatin.",
+     "Imprinted Igf2 is expressed from the paternal allele, H19 from the maternal.",
+     "Dam methylation of GATC times replication (SeqA) and guides mismatch repair.",
+     "E. coli Pap pili switch on and off through Dam methylation and Lrp (phase variation)."
+    ]
+   },
+   "src": {
+    "DNA replication in bacteria": [
+     [
+      "lehninger",
+      "DNA Metabolism"
+     ],
+     [
+      "alberts",
+      "DNA Replication, Repair, and Recombination"
+     ]
+    ],
+    "Eukaryotic replication, telomeres and plasmids": [
+     [
+      "alberts",
+      "DNA Replication, Repair, and Recombination"
+     ],
+     [
+      "prescott",
+      "Bacterial Genome Replication and Expression"
+     ]
+    ],
+    "DNA damage and repair": [
+     [
+      "lehninger",
+      "DNA Metabolism"
+     ],
+     [
+      "prescott",
+      "Mechanisms of Genetic Variation"
+     ]
+    ],
+    "Homologous and site-specific recombination": [
+     [
+      "alberts",
+      "DNA Replication, Repair, and Recombination"
+     ],
+     [
+      "griffiths",
+      "Mutation, Repair, and Recombination"
+     ]
+    ],
+    "Transcription in bacteria": [
+     [
+      "lehninger",
+      "RNA Metabolism"
+     ],
+     [
+      "prescott",
+      "Bacterial Genome Replication and Expression"
+     ]
+    ],
+    "Eukaryotic transcription and RNA processing": [
+     [
+      "lehninger",
+      "RNA Metabolism"
+     ],
+     [
+      "alberts",
+      "How Cells Read the Genome: From DNA to Protein"
+     ]
+    ],
+    "Translation": [
+     [
+      "lehninger",
+      "Protein Metabolism"
+     ],
+     [
+      "alberts",
+      "How Cells Read the Genome: From DNA to Protein"
+     ]
+    ],
+    "Protein processing, targeting and degradation": [
+     [
+      "lehninger",
+      "Protein Metabolism"
+     ],
+     [
+      "alberts",
+      "Intracellular Compartments and Protein Sorting"
+     ]
+    ],
+    "Gene regulation in bacteria and phages": [
+     [
+      "lehninger",
+      "Regulation of Gene Expression"
+     ],
+     [
+      "prescott",
+      "Regulation of Bacterial Cellular Processes"
+     ],
+     [
+      "griffiths",
+      "Regulation of Gene Expression in Bacteria and Their Viruses"
+     ]
+    ],
+    "Gene regulation in eukaryotes and viruses": [
+     [
+      "alberts",
+      "Control of Gene Expression"
+     ],
+     [
+      "griffiths",
+      "Regulation of Gene Expression in Eukaryotes"
+     ]
+    ],
+    "Epigenetics and gene silencing": [
+     [
+      "alberts",
+      "Control of Gene Expression"
+     ],
+     [
+      "griffiths",
+      "Regulation of Gene Expression in Eukaryotes"
+     ]
+    ]
+   },
+   "refs": {
+    "DNA replication in bacteria": "Lehninger: DNA Metabolism; Alberts: DNA Replication, Repair, and Recombination",
+    "Eukaryotic replication, telomeres and plasmids": "Alberts: DNA Replication, Repair, and Recombination; Prescott: Bacterial Genome Replication and Expression",
+    "DNA damage and repair": "Lehninger: DNA Metabolism; Prescott: Mechanisms of Genetic Variation",
+    "Homologous and site-specific recombination": "Alberts: DNA Replication, Repair, and Recombination; Griffiths: Mutation, Repair, and Recombination",
+    "Transcription in bacteria": "Lehninger: RNA Metabolism; Prescott: Bacterial Genome Replication and Expression",
+    "Eukaryotic transcription and RNA processing": "Lehninger: RNA Metabolism; Alberts: How Cells Read the Genome: From DNA to Protein",
+    "Translation": "Lehninger: Protein Metabolism; Alberts: How Cells Read the Genome: From DNA to Protein",
+    "Protein processing, targeting and degradation": "Lehninger: Protein Metabolism; Alberts: Intracellular Compartments and Protein Sorting",
+    "Gene regulation in bacteria and phages": "Lehninger: Regulation of Gene Expression; Prescott: Regulation of Bacterial Cellular Processes; Griffiths: Regulation of Gene Expression in Bacteria and Their Viruses",
+    "Gene regulation in eukaryotes and viruses": "Alberts: Control of Gene Expression; Griffiths: Regulation of Gene Expression in Eukaryotes",
+    "Epigenetics and gene silencing": "Alberts: Control of Gene Expression; Griffiths: Regulation of Gene Expression in Eukaryotes"
+   }
+  },
+  "sig": {
+   "n": "Unit 4 · Cell Communication, Signalling and Immunology",
+   "c": 4,
+   "book": "Alberts; Kuby",
+   "topics": [
+    "Receptors, GPCRs and second messengers",
+    "Enzyme-linked receptors and developmental pathways",
+    "Two-component systems, chemotaxis and quorum sensing",
+    "Cell adhesion, junctions and neurotransmission",
+    "Innate immunity",
+    "Antigens, antibodies and antibody diversity",
+    "MHC, antigen presentation and lymphocyte activation",
+    "Complement and effector responses",
+    "Hypersensitivity, autoimmunity and immunodeficiency",
+    "Immunity to infection and vaccines",
+    "Host–pathogen interaction",
+    "Cancer"
+   ],
+   "notes": [
+    {
+     "h": "Strategy",
+     "items": [
+      "Immunology and host–pathogen interaction are the microbiology core of this unit: give them half the time.",
+      "Signalling questions test pathway order and what a mutation or drug does at each step.",
+      "Learn the TLR–ligand table, antibody classes, MHC pathways and the four hypersensitivity types until you can write them blind.",
+      "Bacterial two-component systems, chemotaxis and quorum sensing are now named in the syllabus."
+     ]
+    }
+   ],
+   "read": {
+    "Receptors, GPCRs and second messengers": [
+     "Receptor classes",
+     "GPCRs and heterotrimeric G proteins",
+     "cAMP and PKA",
+     "IP₃, DAG, Ca²⁺ and PKC",
+     "Signal termination and desensitisation"
+    ],
+    "Enzyme-linked receptors and developmental pathways": [
+     "Receptor tyrosine kinases and Ras–MAPK",
+     "PI3K–Akt–mTOR",
+     "JAK–STAT",
+     "TGF-β–Smad",
+     "Notch, Wnt and Hedgehog"
+    ],
+    "Two-component systems, chemotaxis and quorum sensing": [
+     "Sensor kinase and response regulator",
+     "Bacterial chemotaxis (Che proteins)",
+     "AHL quorum sensing in Gram-negatives",
+     "Peptide quorum sensing in Gram-positives",
+     "Light signalling in plants"
+    ],
+    "Cell adhesion, junctions and neurotransmission": [
+     "Cadherins, integrins, selectins and Ig-superfamily CAMs",
+     "Tight, adherens, desmosome and gap junctions",
+     "Extracellular matrix",
+     "Synaptic transmission",
+     "Regulation of haematopoiesis"
+    ],
+    "Innate immunity": [
+     "Barriers, phagocytes and NK cells",
+     "Pattern-recognition receptors: TLRs, NLRs, RLRs",
+     "Inflammation and the acute-phase response",
+     "Interferons",
+     "Antimicrobial peptides"
+    ],
+    "Antigens, antibodies and antibody diversity": [
+     "Antigenicity, immunogenicity, haptens and epitopes",
+     "Antibody structure and classes",
+     "V(D)J recombination",
+     "Somatic hypermutation and class switching",
+     "Monoclonal antibodies and antibody engineering"
+    ],
+    "MHC, antigen presentation and lymphocyte activation": [
+     "MHC class I and II structure",
+     "Cytosolic and endocytic processing",
+     "Cross-presentation",
+     "T-cell activation: signals 1, 2 and 3",
+     "B-cell activation and germinal centres"
+    ],
+    "Complement and effector responses": [
+     "Classical, lectin and alternative pathways",
+     "Membrane attack complex and its regulators",
+     "Opsonisation and ADCC",
+     "Cytotoxic T-cell killing",
+     "Primary versus secondary responses"
+    ],
+    "Hypersensitivity, autoimmunity and immunodeficiency": [
+     "Types I–IV hypersensitivity",
+     "Central and peripheral tolerance",
+     "Autoimmune diseases",
+     "Primary immunodeficiencies",
+     "HIV and AIDS"
+    ],
+    "Immunity to infection and vaccines": [
+     "Responses to extracellular and intracellular bacteria",
+     "Responses to viruses",
+     "Responses to parasites",
+     "Immune evasion",
+     "Vaccine types and adjuvants"
+    ],
+    "Host–pathogen interaction": [
+     "Adhesion and invasion",
+     "Exotoxins and endotoxin",
+     "Intracellular lifestyles",
+     "Plant immunity: PTI and ETI",
+     "Virus entry and virus-induced transformation"
+    ],
+    "Cancer": [
+     "Oncogenes and proto-oncogenes",
+     "Tumour suppressors: p53 and Rb",
+     "Oncogenic viruses",
+     "Invasion and metastasis",
+     "Targeted therapies"
+    ]
+   },
+   "kp": {
+    "Receptors, GPCRs and second messengers": [
+     "GPCRs have seven transmembrane helices; Gα-GTP activates effectors until its own GTPase switches it off.",
+     "Cholera toxin ADP-ribosylates Gsα and locks it on (cAMP rises); pertussis toxin ADP-ribosylates Giα and blocks inhibition.",
+     "PLCβ cuts PIP₂ into IP₃ (releases ER Ca²⁺) and DAG (activates PKC).",
+     "Steroid hormones bind intracellular nuclear receptors that act as transcription factors."
+    ],
+    "Enzyme-linked receptors and developmental pathways": [
+     "RTK autophosphorylation → Grb2 (SH2) → SOS (GEF) → Ras-GTP → Raf → MEK → ERK.",
+     "Oncogenic Ras mutations (G12, G13, Q61) keep Ras GTP-bound.",
+     "Without Wnt, β-catenin is phosphorylated by GSK3 in the APC–Axin complex and degraded.",
+     "Notch is cut by γ-secretase and its intracellular domain enters the nucleus."
+    ],
+    "Two-component systems, chemotaxis and quorum sensing": [
+     "The sensor kinase autophosphorylates on His and passes the phosphate to an Asp on the response regulator (EnvZ–OmpR).",
+     "CheY~P binds the flagellar motor → clockwise rotation → tumble; CheR/CheB methylation gives adaptation.",
+     "Vibrio fischeri LuxI makes acyl-homoserine lactone; LuxR–AHL switches on the lux genes.",
+     "Staphylococcus aureus agr uses autoinducing peptides; Bacillus subtilis competence uses ComX.",
+     "Active phytochrome (Pfr) enters the nucleus and triggers degradation of PIF transcription factors."
+    ],
+    "Cell adhesion, junctions and neurotransmission": [
+     "Cadherins need Ca²⁺; integrins are α/β dimers that bind RGD motifs in fibronectin.",
+     "A gap-junction connexon is six connexins and passes molecules under about 1 kDa.",
+     "Acetylcholinesterase ends cholinergic signals; organophosphates inhibit it.",
+     "Erythropoietin from the kidney drives red-cell production; G-CSF neutrophils; thrombopoietin platelets."
+    ],
+    "Innate immunity": [
+     "TLR4 senses LPS (with MD-2, CD14); TLR2 lipoproteins; TLR3 dsRNA; TLR5 flagellin; TLR7/8 ssRNA; TLR9 unmethylated CpG DNA.",
+     "Most TLRs signal through MyD88 to NF-κB; TLR3 uses TRIF only.",
+     "Type I interferons (α, β) induce an antiviral state via JAK–STAT; IFN-γ (type II) activates macrophages.",
+     "NK cells kill cells with low MHC I (missing self) using perforin and granzymes."
+    ],
+    "Antigens, antibodies and antibody diversity": [
+     "IgG (~150 kDa) crosses the placenta; IgM is a pentamer and the first antibody made; secretory IgA is a dimer; IgE arms mast cells.",
+     "RAG1/RAG2 cut at recombination signal sequences following the 12/23 rule; TdT adds N-nucleotides.",
+     "Activation-induced cytidine deaminase (AID) drives both somatic hypermutation and class switching.",
+     "Hybridomas: B cell × myeloma fused with PEG, selected in HAT medium because the myeloma is HGPRT⁻.",
+     "A hapten is antigenic but not immunogenic until coupled to a carrier protein."
+    ],
+    "MHC, antigen presentation and lymphocyte activation": [
+     "MHC I (all nucleated cells) shows 8–10-residue peptides to CD8⁺ T cells; MHC II (APCs) shows 13–25-residue peptides to CD4⁺ T cells.",
+     "TAP pumps proteasome peptides into the ER; CLIP holds the MHC II groove until HLA-DM swaps in peptide.",
+     "Co-stimulation: CD28 on the T cell binds B7 (CD80/86); CTLA-4 competes and inhibits.",
+     "Th1 (IFN-γ, T-bet), Th2 (IL-4, GATA3), Th17 (IL-17, RORγt), Treg (FoxP3, IL-10, TGF-β)."
+    ],
+    "Complement and effector responses": [
+     "The classical pathway starts with C1q on bound IgM or IgG; C3 convertases are C4b2a (classical, lectin) and C3bBb (alternative).",
+     "C3a and C5a are anaphylatoxins; C3b opsonises; C5b–9 forms the membrane attack complex.",
+     "Secondary responses are faster and larger, mainly IgG, and of higher affinity.",
+     "CD55 (DAF) and CD59 protect host cells; their loss causes paroxysmal nocturnal haemoglobinuria."
+    ],
+    "Hypersensitivity, autoimmunity and immunodeficiency": [
+     "Type I: IgE and mast cells (anaphylaxis). II: antibody against cell surfaces (haemolytic disease of the newborn). III: immune complexes (serum sickness, SLE). IV: delayed T-cell (tuberculin test).",
+     "AIRE drives thymic expression of tissue antigens for negative selection.",
+     "SCID: ADA deficiency or common γ-chain (IL2RG) defects; Bruton’s X-linked agammaglobulinaemia: BTK mutation, no B cells.",
+     "HIV binds CD4 with CCR5 or CXCR4; AIDS is defined by CD4 counts below 200 cells/µL."
+    ],
+    "Immunity to infection and vaccines": [
+     "Extracellular bacteria are cleared by antibody and complement; Mycobacterium tuberculosis needs Th1, IFN-γ and granulomas.",
+     "Helminths drive Th2 responses, IgE and eosinophils.",
+     "Evasion: antigenic variation (trypanosome VSG), capsules, protein A binding IgG Fc, viral down-regulation of MHC I.",
+     "Conjugate vaccines (Hib, pneumococcal) link polysaccharide to protein to recruit T-cell help.",
+     "Alum is the classic adjuvant; BCG is live attenuated Mycobacterium bovis."
+    ],
+    "Host–pathogen interaction": [
+     "Diphtheria toxin ADP-ribosylates EF-2; botulinum and tetanus toxins are zinc proteases that cut SNAREs.",
+     "Listeria uses ActA to polymerise host actin; Salmonella’s SPI-1 type III system triggers membrane ruffling and uptake.",
+     "Plant PTI is triggered by PAMPs (flg22 via FLS2); ETI by R-protein recognition of effectors, often with a hypersensitive response.",
+     "Agrobacterium transfers T-DNA through its VirB/D4 type IV system and causes crown gall.",
+     "Influenza haemagglutinin binds sialic acid; low endosomal pH triggers membrane fusion."
+    ],
+    "Cancer": [
+     "Knudson’s two-hit hypothesis came from retinoblastoma (RB1).",
+     "p53 induces p21 (G1 arrest) and apoptosis; it is mutated in about half of human cancers.",
+     "HPV E6 degrades p53 and E7 inactivates Rb; EBV, HBV, HTLV-1 and KSHV are also human tumour viruses.",
+     "The Philadelphia chromosome t(9;22) makes BCR–ABL, the target of imatinib.",
+     "Epithelial–mesenchymal transition and matrix metalloproteinases drive invasion."
+    ]
+   },
+   "src": {
+    "Receptors, GPCRs and second messengers": [
+     [
+      "alberts",
+      "Cell Signaling"
+     ],
+     [
+      "lehninger",
+      "Biosignaling"
+     ]
+    ],
+    "Enzyme-linked receptors and developmental pathways": [
+     [
+      "alberts",
+      "Cell Signaling"
+     ]
+    ],
+    "Two-component systems, chemotaxis and quorum sensing": [
+     [
+      "prescott",
+      "Regulation of Bacterial Cellular Processes"
+     ],
+     [
+      "taiz",
+      "Signals from Sunlight"
+     ]
+    ],
+    "Cell adhesion, junctions and neurotransmission": [
+     [
+      "alberts",
+      "Cell Junctions and the Extracellular Matrix"
+     ],
+     [
+      "guyton",
+      "Membrane Potentials and Action Potentials"
+     ]
+    ],
+    "Innate immunity": [
+     [
+      "kuby",
+      "Innate Immunity"
+     ],
+     [
+      "prescott",
+      "Innate Host Resistance"
+     ]
+    ],
+    "Antigens, antibodies and antibody diversity": [
+     [
+      "kuby",
+      "The Organization and Expression of Lymphocyte Receptor Genes"
+     ],
+     [
+      "kuby",
+      "Overview of the Immune System"
+     ]
+    ],
+    "MHC, antigen presentation and lymphocyte activation": [
+     [
+      "kuby",
+      "The Major Histocompatibility Complex and Antigen Presentation"
+     ],
+     [
+      "kuby",
+      "T-Cell Activation, Helper Subset Differentiation, and Memory"
+     ]
+    ],
+    "Complement and effector responses": [
+     [
+      "kuby",
+      "The Complement System"
+     ],
+     [
+      "kuby",
+      "Effector Responses: Antibody- and Cell-Mediated Immunity"
+     ]
+    ],
+    "Hypersensitivity, autoimmunity and immunodeficiency": [
+     [
+      "kuby",
+      "Allergy, Hypersensitivities, and Chronic Inflammation"
+     ],
+     [
+      "kuby",
+      "Tolerance, Autoimmunity, and Transplantation"
+     ],
+     [
+      "kuby",
+      "Immunodeficiency Diseases"
+     ]
+    ],
+    "Immunity to infection and vaccines": [
+     [
+      "kuby",
+      "Infectious Diseases and Vaccines"
+     ],
+     [
+      "prescott",
+      "Pathogenicity and Infection"
+     ]
+    ],
+    "Host–pathogen interaction": [
+     [
+      "prescott",
+      "Pathogenicity and Infection"
+     ],
+     [
+      "alberts",
+      "Pathogens and Infection"
+     ],
+     [
+      "taiz",
+      "Biotic Interactions"
+     ]
+    ],
+    "Cancer": [
+     [
+      "alberts",
+      "Cancer"
+     ],
+     [
+      "kuby",
+      "Cancer and the Immune System"
+     ]
+    ]
+   },
+   "refs": {
+    "Receptors, GPCRs and second messengers": "Alberts: Cell Signaling; Lehninger: Biosignaling",
+    "Enzyme-linked receptors and developmental pathways": "Alberts: Cell Signaling",
+    "Two-component systems, chemotaxis and quorum sensing": "Prescott: Regulation of Bacterial Cellular Processes; Taiz: Signals from Sunlight",
+    "Cell adhesion, junctions and neurotransmission": "Alberts: Cell Junctions and the Extracellular Matrix; Guyton: Membrane Potentials and Action Potentials",
+    "Innate immunity": "Kuby: Innate Immunity; Prescott: Innate Host Resistance",
+    "Antigens, antibodies and antibody diversity": "Kuby: The Organization and Expression of Lymphocyte Receptor Genes; Kuby: Overview of the Immune System",
+    "MHC, antigen presentation and lymphocyte activation": "Kuby: The Major Histocompatibility Complex and Antigen Presentation; Kuby: T-Cell Activation, Helper Subset Differentiation, and Memory",
+    "Complement and effector responses": "Kuby: The Complement System; Kuby: Effector Responses: Antibody- and Cell-Mediated Immunity",
+    "Hypersensitivity, autoimmunity and immunodeficiency": "Kuby: Allergy, Hypersensitivities, and Chronic Inflammation; Kuby: Tolerance, Autoimmunity, and Transplantation; Kuby: Immunodeficiency Diseases",
+    "Immunity to infection and vaccines": "Kuby: Infectious Diseases and Vaccines; Prescott: Pathogenicity and Infection",
+    "Host–pathogen interaction": "Prescott: Pathogenicity and Infection; Alberts: Pathogens and Infection; Taiz: Biotic Interactions",
+    "Cancer": "Alberts: Cancer; Kuby: Cancer and the Immune System"
+   }
+  },
+  "dev": {
+   "n": "Unit 5 · Developmental Biology",
+   "c": 5,
+   "book": "Gilbert; Taiz",
+   "topics": [
+    "Basic concepts of development",
+    "Gametogenesis, fertilisation and early development",
+    "Axes and pattern formation in Drosophila, amphibians and chick",
+    "Organogenesis, sex determination and metamorphosis",
+    "Plant development",
+    "Programmed cell death, ageing and senescence"
+   ],
+   "notes": [
+    {
+     "h": "Strategy",
+     "items": [
+      "Lighter weighting in this plan: one pass of the core models, then PYQs.",
+      "Questions repeat on a few systems: Drosophila axis genes, the amphibian organiser, C. elegans vulva, vertebrate limb, ABC flower model.",
+      "Draw each gene hierarchy once; Part C asks what a loss-of-function mutant looks like."
+     ]
+    }
+   ],
+   "read": {
+    "Basic concepts of development": [
+     "Potency, commitment, specification and determination",
+     "Autonomous, conditional and syncytial specification",
+     "Induction and competence",
+     "Morphogen gradients",
+     "Stem cells, genomic equivalence and imprinting"
+    ],
+    "Gametogenesis, fertilisation and early development": [
+     "Spermatogenesis and oogenesis",
+     "Sperm–egg recognition",
+     "Blocks to polyspermy",
+     "Cleavage patterns and blastula",
+     "Gastrulation and germ layers"
+    ],
+    "Axes and pattern formation in Drosophila, amphibians and chick": [
+     "Maternal-effect genes: bicoid and nanos",
+     "Gap, pair-rule and segment-polarity genes",
+     "Hox genes and colinearity",
+     "The amphibian organiser",
+     "Chick primitive streak and Hensen’s node"
+    ],
+    "Organogenesis, sex determination and metamorphosis": [
+     "C. elegans vulva formation",
+     "Eye lens induction",
+     "Vertebrate limb development and regeneration",
+     "Sex determination systems",
+     "Larval development and metamorphosis"
+    ],
+    "Plant development": [
+     "Male gametophyte and embryo sac",
+     "Double fertilisation and seed formation",
+     "Embryogenesis and symmetry",
+     "Shoot and root apical meristems",
+     "Flowering transition and floral organ identity"
+    ],
+    "Programmed cell death, ageing and senescence": [
+     "Programmed cell death in animals",
+     "Programmed cell death in plants",
+     "Leaf senescence",
+     "Theories of ageing",
+     "Regeneration"
+    ]
+   },
+   "kp": {
+    "Basic concepts of development": [
+     "Totipotent (zygote) → pluripotent (inner cell mass, ES cells) → multipotent → unipotent.",
+     "The Spemann–Mangold organiser (dorsal blastopore lip) induces a second body axis when grafted.",
+     "Genomic equivalence was shown by nuclear transfer: Gurdon’s frogs and Dolly the sheep (1996).",
+     "Yamanaka factors Oct4, Sox2, Klf4 and c-Myc reprogram fibroblasts into iPS cells."
+    ],
+    "Gametogenesis, fertilisation and early development": [
+     "Sea urchin: fast block by membrane depolarisation, slow block by the cortical granule reaction.",
+     "Mouse sperm bind the zona pellucida glycoproteins (ZP2/ZP3).",
+     "Cleavage is holoblastic in sea urchins and mammals, meroblastic discoidal in birds and fish.",
+     "The mammalian blastocyst is an inner cell mass plus trophectoderm."
+    ],
+    "Axes and pattern formation in Drosophila, amphibians and chick": [
+     "bicoid mRNA is anterior, nanos posterior; Nanos represses hunchback translation.",
+     "Cascade: maternal → gap → pair-rule (even-skipped, fushi tarazu: 7 stripes) → segment polarity (engrailed, wingless) → Hox.",
+     "Hox genes show colinearity: 3′ genes act more anteriorly and earlier.",
+     "Hensen’s node is the chick equivalent of the organiser."
+    ],
+    "Organogenesis, sex determination and metamorphosis": [
+     "Vulva: anchor-cell LIN-3 (EGF) → LET-23 in P6.p (1° fate); lateral LIN-12 (Notch) gives 2° fates.",
+     "Limb: the AER (FGF8) drives proximal–distal outgrowth; the ZPA (Shh) sets the anterior–posterior axis.",
+     "Mammals: SRY on the Y makes testes; Drosophila: X:A ratio acting through Sex-lethal.",
+     "Amphibian metamorphosis needs thyroid hormone (T3); insect moulting needs ecdysone, with juvenile hormone setting larval vs adult."
+    ],
+    "Plant development": [
+     "The Polygonum-type embryo sac has 7 cells and 8 nuclei; the endosperm is triploid.",
+     "The shoot meristem is kept by WUSCHEL–CLAVATA3 feedback.",
+     "ABC model: A sepals, A + B petals, B + C stamens, C carpels (AP1; AP3/PI; AG); E-class SEP genes are needed for all four.",
+     "Florigen is the FT protein moving through the phloem; CONSTANS senses long days in Arabidopsis."
+    ],
+    "Programmed cell death, ageing and senescence": [
+     "In C. elegans 131 somatic cells die by programmed cell death: ced-3 (caspase), ced-4 (Apaf-1-like), ced-9 (Bcl-2-like).",
+     "The plant hypersensitive response is local cell death that walls off biotrophic pathogens.",
+     "Telomere shortening sets the Hayflick limit of about 50 divisions in human fibroblasts.",
+     "Cytokinin delays leaf senescence; ethylene and ABA promote it."
+    ]
+   },
+   "src": {
+    "Basic concepts of development": [
+     [
+      "gilbert",
+      "Specifying Identity: Mechanisms of Developmental Patterning"
+     ],
+     [
+      "gilbert",
+      "Stem Cells"
+     ]
+    ],
+    "Gametogenesis, fertilisation and early development": [
+     [
+      "gilbert",
+      "Fertilization"
+     ],
+     [
+      "gilbert",
+      "Sex Determination and Gametogenesis"
+     ]
+    ],
+    "Axes and pattern formation in Drosophila, amphibians and chick": [
+     [
+      "gilbert",
+      "The Genetics of Axis Specification in Drosophila"
+     ],
+     [
+      "gilbert",
+      "Amphibians and Fish"
+     ],
+     [
+      "gilbert",
+      "Birds and Mammals"
+     ]
+    ],
+    "Organogenesis, sex determination and metamorphosis": [
+     [
+      "gilbert",
+      "Rapid Specification in Snails and Nematodes"
+     ],
+     [
+      "gilbert",
+      "Development of the Tetrapod Limb"
+     ],
+     [
+      "gilbert",
+      "Metamorphosis"
+     ]
+    ],
+    "Plant development": [
+     [
+      "taiz",
+      "Embryogenesis"
+     ],
+     [
+      "taiz",
+      "The Control of Flowering and Floral Development"
+     ],
+     [
+      "taiz",
+      "Gametophytes, Pollination, Seeds, and Fruits"
+     ]
+    ],
+    "Programmed cell death, ageing and senescence": [
+     [
+      "gilbert",
+      "Regeneration"
+     ],
+     [
+      "taiz",
+      "Plant Senescence and Cell Death"
+     ],
+     [
+      "alberts",
+      "Cell Death"
+     ]
+    ]
+   },
+   "refs": {
+    "Basic concepts of development": "Gilbert: Specifying Identity: Mechanisms of Developmental Patterning; Gilbert: Stem Cells",
+    "Gametogenesis, fertilisation and early development": "Gilbert: Fertilization; Gilbert: Sex Determination and Gametogenesis",
+    "Axes and pattern formation in Drosophila, amphibians and chick": "Gilbert: The Genetics of Axis Specification in Drosophila; Gilbert: Amphibians and Fish; Gilbert: Birds and Mammals",
+    "Organogenesis, sex determination and metamorphosis": "Gilbert: Rapid Specification in Snails and Nematodes; Gilbert: Development of the Tetrapod Limb; Gilbert: Metamorphosis",
+    "Plant development": "Taiz: Embryogenesis; Taiz: The Control of Flowering and Floral Development; Taiz: Gametophytes, Pollination, Seeds, and Fruits",
+    "Programmed cell death, ageing and senescence": "Gilbert: Regeneration; Taiz: Plant Senescence and Cell Death; Alberts: Cell Death"
+   }
+  },
+  "plant": {
+   "n": "Unit 6 · System Physiology – Plant",
+   "c": 6,
+   "book": "Taiz & Zeiger",
+   "topics": [
+    "Photosynthesis: light reactions",
+    "Carbon fixation: C3, C4 and CAM",
+    "Respiration and nitrogen metabolism",
+    "Plant hormones",
+    "Sensory photobiology and stomata",
+    "Water, solute transport and phloem translocation",
+    "Secondary metabolites and stress physiology"
+   ],
+   "notes": [
+    {
+     "h": "Strategy",
+     "items": [
+      "Lighter weighting: photosynthesis, nitrogen metabolism and hormones carry most of the marks.",
+      "Nitrogen fixation and plant–microbe signalling link straight to your microbiology focus.",
+      "Part C uses spectra and mutant phenotypes: action spectra, phytochrome red/far-red reversals, hormone-insensitive mutants."
+     ]
+    }
+   ],
+   "read": {
+    "Photosynthesis: light reactions": [
+     "Pigments and light-harvesting complexes",
+     "PSII, cytochrome b6f and PSI",
+     "The Z-scheme",
+     "Photophosphorylation",
+     "Photoprotection"
+    ],
+    "Carbon fixation: C3, C4 and CAM": [
+     "Calvin–Benson cycle",
+     "Rubisco and photorespiration",
+     "C4 pathway and Kranz anatomy",
+     "CAM",
+     "Light regulation of carbon fixation"
+    ],
+    "Respiration and nitrogen metabolism": [
+     "Plant mitochondrial electron transport",
+     "Alternative oxidase and cyanide-resistant respiration",
+     "Nitrate and ammonium assimilation",
+     "GS–GOGAT and amino acid synthesis",
+     "Biological nitrogen fixation and nodulation"
+    ],
+    "Plant hormones": [
+     "Auxins",
+     "Gibberellins and cytokinins",
+     "Ethylene and abscisic acid",
+     "Brassinosteroids, jasmonates, salicylic acid and strigolactones",
+     "Hormone receptors and signalling"
+    ],
+    "Sensory photobiology and stomata": [
+     "Phytochromes",
+     "Cryptochromes and phototropins",
+     "Stomatal movement",
+     "Photoperiodism",
+     "Circadian clock"
+    ],
+    "Water, solute transport and phloem translocation": [
+     "Water potential",
+     "Transpiration and cohesion–tension",
+     "Mineral uptake by roots",
+     "Phloem loading and unloading",
+     "Pressure-flow model"
+    ],
+    "Secondary metabolites and stress physiology": [
+     "Terpenes",
+     "Phenolics and phenylpropanoids",
+     "Alkaloids and nitrogenous compounds",
+     "Abiotic stress responses",
+     "Biotic stress and plant immunity"
+    ]
+   },
+   "kp": {
+    "Photosynthesis: light reactions": [
+     "P680 (PSII) splits water at the Mn₄CaO₅ cluster; PSI’s reaction centre is P700.",
+     "About 8 photons are needed per O₂; Emerson enhancement revealed two photosystems.",
+     "Cyclic electron flow around PSI makes ATP without NADPH.",
+     "The xanthophyll cycle (violaxanthin → zeaxanthin) dissipates excess light as heat."
+    ],
+    "Carbon fixation: C3, C4 and CAM": [
+     "The Calvin cycle uses 3 ATP and 2 NADPH per CO₂ fixed.",
+     "Rubisco also adds O₂ to RuBP, starting photorespiration across chloroplast, peroxisome and mitochondrion.",
+     "C4: PEP carboxylase fixes CO₂ in mesophyll; decarboxylation in bundle-sheath cells concentrates CO₂ for Rubisco.",
+     "CAM plants open stomata at night and store malic acid in the vacuole."
+    ],
+    "Respiration and nitrogen metabolism": [
+     "Alternative oxidase bypasses complexes III and IV; it heats the Arum spadix.",
+     "Nitrate reductase (cytosol) → nitrite reductase (plastid) → NH₄⁺ → glutamine synthetase–GOGAT.",
+     "Nitrogenase: N₂ + 8H⁺ + 8e⁻ + 16 ATP → 2NH₃ + H₂; it is destroyed by O₂.",
+     "Leghaemoglobin keeps nodule O₂ low; Nod factors are lipochitooligosaccharides from rhizobia."
+    ],
+    "Plant hormones": [
+     "Auxin (IAA, made from Trp) binds the TIR1 F-box receptor and triggers degradation of Aux/IAA repressors.",
+     "Gibberellin bound to GID1 triggers degradation of DELLA repressors.",
+     "Ethylene is made from methionine via ACC synthase and ACC oxidase; its receptor ETR1 sits in the ER.",
+     "ABA closes stomata via PYR/PYL receptors, PP2C inhibition and SnRK2 activation.",
+     "Cytokinin signals through a His-kinase phosphorelay, like a bacterial two-component system."
+    ],
+    "Sensory photobiology and stomata": [
+     "Pr absorbs red (~660 nm) and becomes Pfr; Pfr absorbs far-red (~730 nm) and reverts.",
+     "Phototropins (blue light) drive phototropism and stomatal opening.",
+     "Short-day plants measure night length: a red flash mid-night stops flowering, far-red after it restores flowering.",
+     "Stomata open when the H⁺-ATPase drives K⁺ uptake and water follows into guard cells."
+    ],
+    "Water, solute transport and phloem translocation": [
+     "Ψw = Ψs + Ψp (+ Ψg); pure water at atmospheric pressure is 0 MPa.",
+     "The Casparian strip of the endodermis forces water and ions into the symplast.",
+     "Münch pressure flow: sucrose loading at sources raises turgor and drives bulk flow to sinks.",
+     "Cucurbits load by polymer trapping (raffinose, stachyose)."
+    ],
+    "Secondary metabolites and stress physiology": [
+     "Terpenes come from IPP (C5) via the mevalonate (cytosol) or MEP (plastid) pathway.",
+     "Phenylalanine ammonia-lyase (PAL) is the entry enzyme for lignin and flavonoids.",
+     "Proline and glycine betaine protect cells against osmotic stress.",
+     "Salicylic acid drives systemic acquired resistance; jasmonate drives defence against herbivores and necrotrophs."
+    ]
+   },
+   "src": {
+    "Photosynthesis: light reactions": [
+     [
+      "taiz",
+      "Photosynthesis: The Light Reactions"
+     ],
+     [
+      "lehninger",
+      "Oxidative Phosphorylation and Photophosphorylation"
+     ]
+    ],
+    "Carbon fixation: C3, C4 and CAM": [
+     [
+      "taiz",
+      "Photosynthesis: The Carbon Reactions"
+     ]
+    ],
+    "Respiration and nitrogen metabolism": [
+     [
+      "taiz",
+      "Respiration and Lipid Metabolism"
+     ],
+     [
+      "taiz",
+      "Assimilation of Inorganic Nutrients"
+     ],
+     [
+      "prescott",
+      "Microorganisms in Terrestrial Ecosystems"
+     ]
+    ],
+    "Plant hormones": [
+     [
+      "taiz",
+      "Signals and Signal Transduction"
+     ]
+    ],
+    "Sensory photobiology and stomata": [
+     [
+      "taiz",
+      "Signals from Sunlight"
+     ],
+     [
+      "taiz",
+      "Stomatal Biology"
+     ]
+    ],
+    "Water, solute transport and phloem translocation": [
+     [
+      "taiz",
+      "Water and Plant Cells"
+     ],
+     [
+      "taiz",
+      "Water Balance of Plants"
+     ],
+     [
+      "taiz",
+      "Translocation in the Phloem"
+     ]
+    ],
+    "Secondary metabolites and stress physiology": [
+     [
+      "taiz",
+      "Biotic Interactions"
+     ],
+     [
+      "taiz",
+      "Abiotic Stress"
+     ]
+    ]
+   },
+   "refs": {
+    "Photosynthesis: light reactions": "Taiz: Photosynthesis: The Light Reactions; Lehninger: Oxidative Phosphorylation and Photophosphorylation",
+    "Carbon fixation: C3, C4 and CAM": "Taiz: Photosynthesis: The Carbon Reactions",
+    "Respiration and nitrogen metabolism": "Taiz: Respiration and Lipid Metabolism; Taiz: Assimilation of Inorganic Nutrients; Prescott: Microorganisms in Terrestrial Ecosystems",
+    "Plant hormones": "Taiz: Signals and Signal Transduction",
+    "Sensory photobiology and stomata": "Taiz: Signals from Sunlight; Taiz: Stomatal Biology",
+    "Water, solute transport and phloem translocation": "Taiz: Water and Plant Cells; Taiz: Water Balance of Plants; Taiz: Translocation in the Phloem",
+    "Secondary metabolites and stress physiology": "Taiz: Biotic Interactions; Taiz: Abiotic Stress"
+   }
+  },
+  "anim": {
+   "n": "Unit 7 · System Physiology – Animal",
+   "c": 7,
+   "book": "Guyton & Hall",
+   "topics": [
+    "Blood, haemostasis and the heart",
+    "Respiration and gas transport",
+    "Nervous system and sense organs",
+    "Excretion, osmoregulation and acid–base balance",
+    "Digestion, thermoregulation and stress",
+    "Endocrinology and reproduction",
+    "Gut microbiome, holobionts and energy homeostasis"
+   ],
+   "notes": [
+    {
+     "h": "Strategy",
+     "items": [
+      "Lighter weighting, but numbers are easy marks: blood values, lung volumes, GFR, ECG waves.",
+      "The revised syllabus adds the gut microbiome and holobionts: learn it well, it overlaps your microbiology prep.",
+      "Part C uses curves and data: O₂ dissociation, pressure–volume loops, clearance calculations."
+     ]
+    }
+   ],
+   "read": {
+    "Blood, haemostasis and the heart": [
+     "Blood cells and haematopoiesis",
+     "Haemoglobin and blood groups",
+     "Haemostasis and coagulation",
+     "Cardiac cycle and ECG",
+     "Blood pressure and its regulation"
+    ],
+    "Respiration and gas transport": [
+     "Respiratory organs compared across species",
+     "Ventilation and lung volumes",
+     "O₂ and CO₂ transport",
+     "Neural and chemical control of breathing",
+     "High-altitude adaptation"
+    ],
+    "Nervous system and sense organs": [
+     "Action potential",
+     "Synapses and neurotransmitters",
+     "Brain and spinal cord organisation",
+     "Vision and phototransduction",
+     "Hearing and touch"
+    ],
+    "Excretion, osmoregulation and acid–base balance": [
+     "Nephron structure",
+     "GFR and clearance",
+     "Counter-current multiplier",
+     "ADH, aldosterone and renin–angiotensin",
+     "Acid–base balance"
+    ],
+    "Digestion, thermoregulation and stress": [
+     "Digestion and absorption",
+     "Energy balance and BMR",
+     "Thermoregulation",
+     "Acclimatisation",
+     "Stress and adaptation"
+    ],
+    "Endocrinology and reproduction": [
+     "Hormone classes and mechanisms",
+     "Hypothalamus–pituitary axis",
+     "Thyroid, adrenal and pancreatic hormones",
+     "Reproductive hormones and the menstrual cycle",
+     "Endocrine disorders"
+    ],
+    "Gut microbiome, holobionts and energy homeostasis": [
+     "Holobionts and metaorganisms",
+     "Gut microbiome composition and how it is studied",
+     "Germ-free and gnotobiotic animals",
+     "Gut–brain axis and dysbiosis",
+     "Inter-organ signals: leptin, ghrelin, insulin"
+    ]
+   },
+   "kp": {
+    "Blood, haemostasis and the heart": [
+     "Red cells live about 120 days; normal Hb is about 15 g/dL in men.",
+     "Group O is the universal red-cell donor, AB the universal recipient; Rh incompatibility causes haemolytic disease of the newborn.",
+     "Intrinsic (XII) and extrinsic (tissue factor–VII) pathways meet at factor X; thrombin turns fibrinogen into fibrin.",
+     "ECG: P = atrial depolarisation, QRS = ventricular depolarisation, T = ventricular repolarisation.",
+     "Cardiac output = stroke volume × heart rate ≈ 5 L/min at rest."
+    ],
+    "Respiration and gas transport": [
+     "Tidal volume is about 500 mL; vital capacity about 4.6 L.",
+     "About 70% of CO₂ travels as HCO₃⁻ (carbonic anhydrase, chloride shift).",
+     "Central chemoreceptors respond to H⁺/CO₂; carotid bodies to low O₂.",
+     "Fish gills use counter-current exchange; birds get one-way airflow through air sacs."
+    ],
+    "Nervous system and sense organs": [
+     "Na⁺ influx depolarises and K⁺ efflux repolarises; tetrodotoxin blocks voltage-gated Na⁺ channels.",
+     "Myelin gives saltatory conduction between nodes of Ranvier.",
+     "Light: 11-cis → all-trans retinal → transducin → PDE → cGMP falls → rod hyperpolarises.",
+     "Cochlea: high frequencies at the base, low at the apex."
+    ],
+    "Excretion, osmoregulation and acid–base balance": [
+     "GFR is about 125 mL/min (180 L/day); inulin clearance measures it.",
+     "The descending limb is water-permeable; the thick ascending limb pumps NaCl but is water-tight.",
+     "ADH inserts aquaporin-2 into collecting-duct cells.",
+     "Fish are ammonotelic, mammals ureotelic, birds and reptiles uricotelic."
+    ],
+    "Digestion, thermoregulation and stress": [
+     "SGLT1 takes up glucose with Na⁺; GLUT5 takes up fructose.",
+     "BMR is about 60–70% of daily energy use in sedentary adults.",
+     "The hypothalamus is the thermostat; brown-fat UCP1 gives non-shivering heat.",
+     "Stress runs through the HPA axis (CRH → ACTH → cortisol) and the sympathoadrenal system (adrenaline)."
+    ],
+    "Endocrinology and reproduction": [
+     "The LH surge triggers ovulation around day 14.",
+     "Insulin acts through a receptor tyrosine kinase; glucagon through a GPCR and cAMP.",
+     "T4 is converted by deiodinases into the more active T3.",
+     "Peptide hormones use surface receptors; steroid and thyroid hormones use nuclear receptors."
+    ],
+    "Gut microbiome, holobionts and energy homeostasis": [
+     "The human gut is dominated by Bacillota (Firmicutes) and Bacteroidota (Bacteroidetes); bacterial cells roughly equal human cells (~10¹³).",
+     "Gut microbes ferment fibre into acetate, propionate and butyrate; butyrate feeds colonocytes.",
+     "16S rRNA amplicon sequencing (often V3–V4) gives composition; shotgun metagenomics gives functions.",
+     "Leptin from fat signals satiety; ghrelin from the stomach signals hunger.",
+     "Clostridioides difficile infection follows antibiotic dysbiosis; faecal microbiota transplant treats recurrences."
+    ]
+   },
+   "src": {
+    "Blood, haemostasis and the heart": [
+     [
+      "guyton",
+      "Hemostasis and Blood Coagulation"
+     ],
+     [
+      "guyton",
+      "Fundamentals of Electrocardiography"
+     ],
+     [
+      "guyton",
+      "Cardiac Muscle; The Heart as a Pump and Function of the Heart Valves"
+     ]
+    ],
+    "Respiration and gas transport": [
+     [
+      "guyton",
+      "Pulmonary Ventilation"
+     ],
+     [
+      "guyton",
+      "Transport of Oxygen and Carbon Dioxide in Blood and Tissue Fluids"
+     ],
+     [
+      "guyton",
+      "Regulation of Respiration"
+     ]
+    ],
+    "Nervous system and sense organs": [
+     [
+      "guyton",
+      "Membrane Potentials and Action Potentials"
+     ],
+     [
+      "guyton",
+      "The Eye: I. Optics of Vision"
+     ],
+     [
+      "guyton",
+      "The Sense of Hearing"
+     ]
+    ],
+    "Excretion, osmoregulation and acid–base balance": [
+     [
+      "guyton",
+      "Urine Formation by the Kidneys: I. Glomerular Filtration, Renal Blood Flow, and Their Control"
+     ],
+     [
+      "guyton",
+      "Acid-Base Regulation"
+     ]
+    ],
+    "Digestion, thermoregulation and stress": [
+     [
+      "guyton",
+      "Digestion and Absorption in the Gastrointestinal Tract"
+     ],
+     [
+      "guyton",
+      "Body Temperature Regulation and Fever"
+     ],
+     [
+      "guyton",
+      "Energetics and Metabolic Rate"
+     ]
+    ],
+    "Endocrinology and reproduction": [
+     [
+      "guyton",
+      "Introduction to Endocrinology"
+     ]
+    ],
+    "Gut microbiome, holobionts and energy homeostasis": [
+     [
+      "prescott",
+      "Microbial Interactions"
+     ],
+     [
+      "guyton",
+      "Energetics and Metabolic Rate"
+     ]
+    ]
+   },
+   "refs": {
+    "Blood, haemostasis and the heart": "Guyton: Hemostasis and Blood Coagulation; Guyton: Fundamentals of Electrocardiography; Guyton: Cardiac Muscle; The Heart as a Pump and Function of the Heart Valves",
+    "Respiration and gas transport": "Guyton: Pulmonary Ventilation; Guyton: Transport of Oxygen and Carbon Dioxide in Blood and Tissue Fluids; Guyton: Regulation of Respiration",
+    "Nervous system and sense organs": "Guyton: Membrane Potentials and Action Potentials; Guyton: The Eye: I. Optics of Vision; Guyton: The Sense of Hearing",
+    "Excretion, osmoregulation and acid–base balance": "Guyton: Urine Formation by the Kidneys: I. Glomerular Filtration, Renal Blood Flow, and Their Control; Guyton: Acid-Base Regulation",
+    "Digestion, thermoregulation and stress": "Guyton: Digestion and Absorption in the Gastrointestinal Tract; Guyton: Body Temperature Regulation and Fever; Guyton: Energetics and Metabolic Rate",
+    "Endocrinology and reproduction": "Guyton: Introduction to Endocrinology",
+    "Gut microbiome, holobionts and energy homeostasis": "Prescott: Microbial Interactions; Guyton: Energetics and Metabolic Rate"
+   }
+  },
+  "gen": {
+   "n": "Unit 8 · Inheritance Biology",
+   "c": 8,
+   "book": "Griffiths",
+   "topics": [
+    "Mendelian principles and gene interaction",
+    "Linkage, crossing over and mapping",
+    "Bacterial transformation",
+    "Conjugation and sexduction",
+    "Transduction and phage genetics",
+    "Genes, mutations and complementation",
+    "Sex-linked and extrachromosomal inheritance",
+    "Human genetics",
+    "Population and quantitative genetics",
+    "Structural and numerical chromosome changes"
+   ],
+   "notes": [
+    {
+     "h": "Strategy",
+     "items": [
+      "High-value for microbiology: bacterial gene transfer (transformation, conjugation, transduction) and phage genetics come up every session.",
+      "Most Part C questions are numerical: map distances, interference, LOD, Hardy–Weinberg, interrupted mating times.",
+      "Solve at least 20 pedigree and 20 mapping problems before the revision phase."
+     ]
+    }
+   ],
+   "read": {
+    "Mendelian principles and gene interaction": [
+     "Dominance, segregation and independent assortment",
+     "Codominance and incomplete dominance",
+     "Penetrance and expressivity",
+     "Epistasis and modified ratios",
+     "Pleiotropy and lethal alleles"
+    ],
+    "Linkage, crossing over and mapping": [
+     "Linkage and recombination frequency",
+     "Three-point test crosses",
+     "Interference and coefficient of coincidence",
+     "Tetrad analysis",
+     "Mapping with molecular markers"
+    ],
+    "Bacterial transformation": [
+     "Griffith and Avery–MacLeod–McCarty experiments",
+     "Natural competence",
+     "Artificial transformation: CaCl₂ and electroporation",
+     "Co-transformation mapping",
+     "DNA uptake machinery"
+    ],
+    "Conjugation and sexduction": [
+     "F plasmid and sex pilus",
+     "F⁺ × F⁻ crosses",
+     "Hfr strains and interrupted mating",
+     "F′ plasmids and sexduction",
+     "R plasmids and conjugative transposons"
+    ],
+    "Transduction and phage genetics": [
+     "Generalised transduction (P1, P22)",
+     "Specialised transduction (λ)",
+     "Co-transduction mapping",
+     "Phage crosses and recombination",
+     "Benzer’s rII fine-structure analysis"
+    ],
+    "Genes, mutations and complementation": [
+     "Alleles, multiple alleles and pseudoalleles",
+     "Mutation types and mutagens",
+     "Loss-of-function, gain-of-function, dominant-negative",
+     "Complementation (cis–trans) tests",
+     "Detecting mutants: replica plating, Ames test, Luria–Delbrück"
+    ],
+    "Sex-linked and extrachromosomal inheritance": [
+     "Sex-linked inheritance",
+     "Mitochondrial and chloroplast inheritance",
+     "Maternal effect",
+     "Genomic imprinting",
+     "Plastid variegation"
+    ],
+    "Human genetics": [
+     "Pedigree analysis",
+     "LOD scores",
+     "Karyotypes",
+     "Genetic disorders",
+     "Prenatal diagnosis"
+    ],
+    "Population and quantitative genetics": [
+     "Hardy–Weinberg equilibrium",
+     "Forces changing allele frequencies",
+     "Polygenic inheritance",
+     "Heritability",
+     "QTL and molecular mapping"
+    ],
+    "Structural and numerical chromosome changes": [
+     "Deletions and duplications",
+     "Paracentric and pericentric inversions",
+     "Reciprocal and Robertsonian translocations",
+     "Aneuploidy",
+     "Auto- and allopolyploidy"
+    ]
+   },
+   "kp": {
+    "Mendelian principles and gene interaction": [
+     "Dihybrid F2 9:3:3:1; recessive epistasis 9:3:4; dominant epistasis 12:3:1; duplicate genes 15:1; complementary genes 9:7.",
+     "A recessive lethal gives 2:1 among survivors (yellow mice).",
+     "Incomplete dominance gives a 1:2:1 phenotypic ratio.",
+     "χ² critical value at p = 0.05 is 3.84 for 1 df and 7.81 for 3 df; df = classes − 1."
+    ],
+    "Linkage, crossing over and mapping": [
+     "1% recombination = 1 map unit (centimorgan).",
+     "In a three-point cross the rarest classes are double crossovers; they reveal the middle gene.",
+     "Coefficient of coincidence = observed ÷ expected double crossovers; interference = 1 − CoC.",
+     "Ordered tetrads: gene–centromere distance = ½ × % second-division segregation."
+    ],
+    "Bacterial transformation": [
+     "Griffith (1928): heat-killed S pneumococci transformed live R cells in mice; Avery et al. (1944) showed the agent is DNA.",
+     "Naturally competent: Streptococcus pneumoniae (CSP pheromone), Bacillus subtilis, Haemophilus influenzae (needs its uptake sequence).",
+     "Only one strand enters a naturally competent cell; RecA integrates it.",
+     "Genes close enough to sit on one fragment co-transform often; co-transformation frequency falls with distance."
+    ],
+    "Conjugation and sexduction": [
+     "F⁺ × F⁻ makes both cells F⁺; Hfr × F⁻ rarely makes the recipient Hfr because F is transferred last.",
+     "Interrupted mating maps genes in minutes; the whole E. coli chromosome takes about 100 min.",
+     "Transfer starts at oriT; one strand moves by rolling-circle replication (relaxase TraI).",
+     "F′ plasmids carry chromosomal genes, making partial diploids (merodiploids) for complementation tests."
+    ],
+    "Transduction and phage genetics": [
+     "Generalised: headful packaging of random host DNA; a P1 particle carries about 100 kb (~2% of the E. coli genome).",
+     "Specialised: faulty λ excision carries only gal or bio.",
+     "Co-transduction frequency falls as distance rises (Wu formula).",
+     "Benzer: rII mutants cannot grow on E. coli K(λ); deletion mapping and cis–trans tests define cistrons."
+    ],
+    "Genes, mutations and complementation": [
+     "Transition: purine ↔ purine or pyrimidine ↔ pyrimidine; transversion: purine ↔ pyrimidine.",
+     "5-Bromouracil and 2-aminopurine cause transitions; acridines cause frameshifts; EMS alkylates guanine.",
+     "Ames test: His⁻ Salmonella reverting on minimal medium, with rat-liver S9 to activate pro-mutagens.",
+     "Wild-type phenotype in trans means the two mutations are in different genes (they complement).",
+     "Luria–Delbrück fluctuation test: mutations arise before selection; the Poisson P(0) estimates mutation rate."
+    ],
+    "Sex-linked and extrachromosomal inheritance": [
+     "X-linked recessive: affected sons of carrier mothers, no male-to-male transmission.",
+     "Mitochondrial traits pass only through mothers; heteroplasmy gives variable severity (LHON, MELAS).",
+     "Maternal effect: offspring phenotype follows the mother’s genotype (snail coiling).",
+     "Correns’ Mirabilis jalapa variegation showed maternal plastid inheritance."
+    ],
+    "Human genetics": [
+     "LOD = log₁₀(likelihood if linked ÷ likelihood if unlinked); ≥ 3 supports linkage, ≤ −2 rejects it.",
+     "Down syndrome is trisomy 21 (mostly maternal meiosis I non-disjunction); Turner 45,X; Klinefelter 47,XXY.",
+     "Cystic fibrosis (CFTR ΔF508) is autosomal recessive; Huntington disease (CAG repeat) is autosomal dominant with anticipation.",
+     "Mitochondrial pedigrees: all children of an affected mother can be affected, none of an affected father’s."
+    ],
+    "Population and quantitative genetics": [
+     "HWE: p² + 2pq + q² = 1; for a rare recessive, carrier frequency ≈ 2q.",
+     "X-linked trait: frequency in males = q, in females = q².",
+     "Broad-sense H² = VG/VP; narrow-sense h² = VA/VP; response to selection R = h²S.",
+     "n additive gene pairs give 2n + 1 phenotypic classes."
+    ],
+    "Structural and numerical chromosome changes": [
+     "A crossover in a paracentric inversion loop gives a dicentric bridge and an acentric fragment.",
+     "Reciprocal translocation heterozygotes pair as a cross-shaped quadrivalent; adjacent segregation gives unbalanced gametes.",
+     "A Robertsonian 14;21 translocation causes familial Down syndrome.",
+     "Bread wheat is an allohexaploid (AABBDD, 2n = 42)."
+    ]
+   },
+   "src": {
+    "Mendelian principles and gene interaction": [
+     [
+      "griffiths",
+      "Single-Gene Inheritance"
+     ],
+     [
+      "griffiths",
+      "Independent Assortment of Genes"
+     ],
+     [
+      "griffiths",
+      "Gene Interaction"
+     ]
+    ],
+    "Linkage, crossing over and mapping": [
+     [
+      "griffiths",
+      "Mapping Eukaryote Chromosomes by Recombination"
+     ]
+    ],
+    "Bacterial transformation": [
+     [
+      "griffiths",
+      "The Genetics of Bacteria and Their Viruses"
+     ],
+     [
+      "prescott",
+      "Mechanisms of Genetic Variation"
+     ]
+    ],
+    "Conjugation and sexduction": [
+     [
+      "griffiths",
+      "The Genetics of Bacteria and Their Viruses"
+     ],
+     [
+      "prescott",
+      "Mechanisms of Genetic Variation"
+     ]
+    ],
+    "Transduction and phage genetics": [
+     [
+      "griffiths",
+      "The Genetics of Bacteria and Their Viruses"
+     ],
+     [
+      "prescott",
+      "Mechanisms of Genetic Variation"
+     ]
+    ],
+    "Genes, mutations and complementation": [
+     [
+      "griffiths",
+      "Mutation, Repair, and Recombination"
+     ],
+     [
+      "prescott",
+      "Mechanisms of Genetic Variation"
+     ]
+    ],
+    "Sex-linked and extrachromosomal inheritance": [
+     [
+      "griffiths",
+      "Single-Gene Inheritance"
+     ],
+     [
+      "griffiths",
+      "Gene Interaction"
+     ]
+    ],
+    "Human genetics": [
+     [
+      "griffiths",
+      "Single-Gene Inheritance"
+     ],
+     [
+      "griffiths",
+      "Large-Scale Chromosomal Changes"
+     ]
+    ],
+    "Population and quantitative genetics": [
+     [
+      "griffiths",
+      "Population Genetics"
+     ],
+     [
+      "griffiths",
+      "The Inheritance of Complex Traits"
+     ]
+    ],
+    "Structural and numerical chromosome changes": [
+     [
+      "griffiths",
+      "Large-Scale Chromosomal Changes"
+     ]
+    ]
+   },
+   "refs": {
+    "Mendelian principles and gene interaction": "Griffiths: Single-Gene Inheritance; Griffiths: Independent Assortment of Genes; Griffiths: Gene Interaction",
+    "Linkage, crossing over and mapping": "Griffiths: Mapping Eukaryote Chromosomes by Recombination",
+    "Bacterial transformation": "Griffiths: The Genetics of Bacteria and Their Viruses; Prescott: Mechanisms of Genetic Variation",
+    "Conjugation and sexduction": "Griffiths: The Genetics of Bacteria and Their Viruses; Prescott: Mechanisms of Genetic Variation",
+    "Transduction and phage genetics": "Griffiths: The Genetics of Bacteria and Their Viruses; Prescott: Mechanisms of Genetic Variation",
+    "Genes, mutations and complementation": "Griffiths: Mutation, Repair, and Recombination; Prescott: Mechanisms of Genetic Variation",
+    "Sex-linked and extrachromosomal inheritance": "Griffiths: Single-Gene Inheritance; Griffiths: Gene Interaction",
+    "Human genetics": "Griffiths: Single-Gene Inheritance; Griffiths: Large-Scale Chromosomal Changes",
+    "Population and quantitative genetics": "Griffiths: Population Genetics; Griffiths: The Inheritance of Complex Traits",
+    "Structural and numerical chromosome changes": "Griffiths: Large-Scale Chromosomal Changes"
+   }
+  },
+  "div": {
+   "n": "Unit 9 · Evolution and Diversity of Life Forms",
+   "c": 1,
+   "book": "Campbell; Prescott",
+   "topics": [
+    "Origin of life and early evolution",
+    "Mechanisms of evolution and speciation",
+    "Principles of taxonomy and microbial classification",
+    "Bacteria: diversity and identification",
+    "Archaea",
+    "Viruses: structure, replication and impact",
+    "Fungi",
+    "Protists",
+    "Plant life",
+    "Animal life",
+    "Human evolution"
+   ],
+   "notes": [
+    {
+     "h": "Strategy",
+     "items": [
+      "Microbial diversity is now inside this unit: bacteria, archaea, viruses, protists and fungi. Give it the most time.",
+      "Learn identification keys you can apply: Gram reaction, shape, oxygen needs, IMViC, catalase and oxidase.",
+      "Classification by 16S rRNA and genome similarity (ANI) is examined with actual thresholds.",
+      "Evolution questions are mostly conceptual; use PYQs to see which mechanisms recur."
+     ]
+    }
+   ],
+   "read": {
+    "Origin of life and early evolution": [
+     "Prebiotic chemistry (Miller–Urey)",
+     "The RNA world",
+     "Origin of eukaryotes and endosymbiosis",
+     "Evolution of multicellularity",
+     "Three domains and the tree of life"
+    ],
+    "Mechanisms of evolution and speciation": [
+     "Natural selection: directional, stabilising, disruptive",
+     "Genetic drift, bottlenecks and founder effects",
+     "Gene flow and mutation",
+     "Speciation and reproductive isolation",
+     "Adaptive radiation, convergence, coevolution and extinctions"
+    ],
+    "Principles of taxonomy and microbial classification": [
+     "Species concepts",
+     "Nomenclature and taxonomic hierarchy",
+     "Classical and numerical taxonomy",
+     "Polyphasic taxonomy of prokaryotes",
+     "Molecular methods: 16S rRNA, ANI, DNA–DNA hybridisation"
+    ],
+    "Bacteria: diversity and identification": [
+     "Proteobacteria",
+     "Firmicutes (low G + C Gram-positives)",
+     "Actinobacteria (high G + C Gram-positives)",
+     "Cyanobacteria, spirochaetes, chlamydiae and others",
+     "Biochemical identification and economically important bacteria"
+    ],
+    "Archaea": [
+     "Archaeal cell envelopes and lipids",
+     "Major archaeal groups",
+     "Methanogens",
+     "Extreme halophiles and thermophiles",
+     "Archaeal transcription and translation"
+    ],
+    "Viruses: structure, replication and impact": [
+     "Capsid symmetry and envelopes",
+     "Baltimore classification",
+     "Animal virus replication cycles",
+     "Bacteriophage lytic and lysogenic cycles",
+     "Viroids, satellites and prions"
+    ],
+    "Fungi": [
+     "Hyphae, yeasts and spores",
+     "Chytrids, zygomycetes and glomeromycetes",
+     "Ascomycetes and basidiomycetes",
+     "Fungal life cycles",
+     "Fungal pathogens of plants and humans"
+    ],
+    "Protists": [
+     "Algae",
+     "Protozoa: amoebae, flagellates, ciliates, apicomplexans",
+     "Slime moulds and water moulds",
+     "Ecological roles of protists",
+     "Protist pathogens"
+    ],
+    "Plant life": [
+     "Bryophytes",
+     "Ferns and lycophytes",
+     "Gymnosperms",
+     "Angiosperms",
+     "Plant morphology, anatomy and reproduction"
+    ],
+    "Animal life": [
+     "Body plans: symmetry and coelom",
+     "Invertebrate phyla",
+     "Protostomes and deuterostomes",
+     "Chordates and vertebrate classes",
+     "Key evolutionary innovations"
+    ],
+    "Human evolution": [
+     "The hominin lineage",
+     "Out of Africa",
+     "Neanderthal and Denisovan admixture",
+     "Molecular clocks",
+     "Human genetic diversity"
+    ]
+   },
+   "kp": {
+    "Origin of life and early evolution": [
+     "Miller–Urey (1953) made amino acids from CH₄, NH₃, H₂ and H₂O with electric sparks.",
+     "Woese used small-subunit rRNA to define Bacteria, Archaea and Eukarya.",
+     "Earth is about 4.5 billion years old; stromatolites and microfossils date to about 3.5 billion years.",
+     "The Great Oxidation Event, about 2.4 billion years ago, followed oxygenic photosynthesis by cyanobacteria."
+    ],
+    "Mechanisms of evolution and speciation": [
+     "Drift is strongest in small populations; the effective population size Ne is usually below the census size.",
+     "Allopatric speciation needs geographic separation; sympatric speciation is common in plants through polyploidy.",
+     "There have been five mass extinctions; the end-Permian (~252 Ma) was the largest, the end-Cretaceous (~66 Ma) ended non-avian dinosaurs.",
+     "Pre-zygotic barriers (habitat, timing, behaviour, mechanical, gametic) act before post-zygotic ones (hybrid inviability, sterility)."
+    ],
+    "Principles of taxonomy and microbial classification": [
+     "Prokaryotic species: ≥ 70% DNA–DNA hybridisation ≈ ≥ 95–96% average nucleotide identity; 16S rRNA identity below 98.7% suggests a new species.",
+     "Bergey’s Manual of Systematics of Archaea and Bacteria is the reference for prokaryote classification.",
+     "Within a genus, G + C content (mol%) usually varies by less than 10%.",
+     "Binomial names: genus capitalised, species lower-case, both in italics."
+    ],
+    "Bacteria: diversity and identification": [
+     "IMViC: E. coli + + − −; Enterobacter aerogenes − − + +.",
+     "Low G + C Gram-positives: Bacillus, Clostridium, Staphylococcus, Streptococcus, Lactobacillus; high G + C: Streptomyces, Mycobacterium, Corynebacterium.",
+     "Catalase separates Staphylococcus (+) from Streptococcus (−); oxidase separates Pseudomonas (+) from Enterobacteriaceae (−).",
+     "Rickettsia and Chlamydia are obligate intracellular parasites; Streptomyces makes about two-thirds of natural antibiotics."
+    ],
+    "Archaea": [
+     "Archaea lack peptidoglycan; some methanogens have pseudomurein (N-acetyltalosaminuronic acid, β1→3 links).",
+     "Methanogens make CH₄ using coenzyme M and F420 and are strict anaerobes.",
+     "Halobacterium uses bacteriorhodopsin as a light-driven proton pump and needs about 3–4 M NaCl.",
+     "Archaeal transcription resembles eukaryotic: TBP, TFB and a multi-subunit RNA polymerase.",
+     "Pyrolobus fumarii grows at up to 113 °C."
+    ],
+    "Viruses: structure, replication and impact": [
+     "Baltimore: I dsDNA; II ssDNA; III dsRNA; IV (+)ssRNA; V (−)ssRNA; VI ssRNA-RT (retroviruses); VII dsDNA-RT (hepadnaviruses).",
+     "(−)ssRNA and dsRNA viruses must carry their own RNA-dependent RNA polymerase in the virion.",
+     "One-step growth curve: eclipse, latent period and burst size (T4 about 100–200 per cell).",
+     "Viroids are naked circular RNAs of about 250–400 nt (PSTVd); prions are misfolded PrP^Sc.",
+     "Plaque assays count infectious virus as plaque-forming units (PFU/mL)."
+    ],
+    "Fungi": [
+     "Fungal walls contain chitin; the membrane sterol is ergosterol, the target of azoles and amphotericin B.",
+     "Ascomycetes make (usually 8) ascospores in an ascus; basidiomycetes make 4 basidiospores on a basidium.",
+     "Glomeromycota form arbuscular mycorrhizae with most land plants.",
+     "Human pathogens: Candida albicans (dimorphic), Aspergillus fumigatus, Cryptococcus neoformans (capsulated).",
+     "Plant pathogens: Magnaporthe oryzae (rice blast), Puccinia (rusts); Phytophthora is an oomycete, not a true fungus."
+    ],
+    "Protists": [
+     "Plasmodium: sporozoites from Anopheles → liver → merozoites in red cells; its apicoplast is a relict plastid (a drug target).",
+     "Paramecium has a macronucleus (somatic) and micronucleus (germline); conjugation exchanges micronuclei.",
+     "Diatoms have silica frustules; dinoflagellates cause red tides.",
+     "Dictyostelium aggregates by cAMP signalling; oomycetes have cellulose walls."
+    ],
+    "Plant life": [
+     "Bryophytes are gametophyte-dominant and need water for fertilisation.",
+     "Ferns are sporophyte-dominant and vascular but seedless; Selaginella is heterosporous.",
+     "Gymnosperms have naked seeds and haploid (n) endosperm.",
+     "Angiosperms have double fertilisation, triploid endosperm and xylem vessels."
+    ],
+    "Animal life": [
+     "Protostomes: blastopore → mouth, spiral determinate cleavage; deuterostomes (echinoderms, chordates): blastopore → anus, radial indeterminate cleavage.",
+     "Chordates have a notochord, dorsal hollow nerve cord, pharyngeal slits and a post-anal tail.",
+     "Protostomes split into Lophotrochozoa (molluscs, annelids) and Ecdysozoa (arthropods, nematodes).",
+     "The amniotic egg let reptiles, birds and mammals reproduce away from water."
+    ],
+    "Human evolution": [
+     "Homo sapiens arose in Africa about 300,000 years ago (Jebel Irhoud fossils).",
+     "Non-African people carry about 1–2% Neanderthal DNA.",
+     "Bipedalism came before large brains (Australopithecus afarensis, ‘Lucy’, ~3.2 Ma).",
+     "Most human genetic diversity is within African populations."
+    ]
+   },
+   "src": {
+    "Origin of life and early evolution": [
+     [
+      "campbell",
+      "The History of Life on Earth"
+     ],
+     [
+      "prescott",
+      "The Evolution of Microorganisms and Microbiology"
+     ]
+    ],
+    "Mechanisms of evolution and speciation": [
+     [
+      "campbell",
+      "The Evolution of Populations"
+     ],
+     [
+      "campbell",
+      "The Origin of Species"
+     ],
+     [
+      "griffiths",
+      "Evolution of Genes, Traits, and Species"
+     ]
+    ],
+    "Principles of taxonomy and microbial classification": [
+     [
+      "prescott",
+      "Microbial Taxonomy and Phylogeny"
+     ],
+     [
+      "campbell",
+      "Phylogeny and the Tree of Life"
+     ]
+    ],
+    "Bacteria: diversity and identification": [
+     [
+      "prescott",
+      "Proteobacteria"
+     ],
+     [
+      "prescott",
+      "Firmicutes: The Low G + C Gram-Positive Bacteria"
+     ],
+     [
+      "prescott",
+      "Actinobacteria: The High G + C Gram-Positive Bacteria"
+     ]
+    ],
+    "Archaea": [
+     [
+      "prescott",
+      "Archaea"
+     ],
+     [
+      "prescott",
+      "Archaeal Cell Structure"
+     ]
+    ],
+    "Viruses: structure, replication and impact": [
+     [
+      "prescott",
+      "Viruses and Other Acellular Infectious Agents"
+     ],
+     [
+      "prescott",
+      "Viruses"
+     ]
+    ],
+    "Fungi": [
+     [
+      "prescott",
+      "Fungi (Eumycota)"
+     ],
+     [
+      "campbell",
+      "Fungi"
+     ]
+    ],
+    "Protists": [
+     [
+      "prescott",
+      "Protists"
+     ],
+     [
+      "campbell",
+      "Protists"
+     ]
+    ],
+    "Plant life": [
+     [
+      "campbell",
+      "Plant Diversity I: How Plants Colonized Land"
+     ],
+     [
+      "campbell",
+      "Plant Diversity II: The Evolution of Seed Plants"
+     ]
+    ],
+    "Animal life": [
+     [
+      "campbell",
+      "An Overview of Animal Diversity"
+     ],
+     [
+      "campbell",
+      "An Introduction to Invertebrates"
+     ],
+     [
+      "campbell",
+      "The Origin and Evolution of Vertebrates"
+     ]
+    ],
+    "Human evolution": [
+     [
+      "campbell",
+      "The Origin and Evolution of Vertebrates"
+     ]
+    ]
+   },
+   "refs": {
+    "Origin of life and early evolution": "Campbell: The History of Life on Earth; Prescott: The Evolution of Microorganisms and Microbiology",
+    "Mechanisms of evolution and speciation": "Campbell: The Evolution of Populations; Campbell: The Origin of Species; Griffiths: Evolution of Genes, Traits, and Species",
+    "Principles of taxonomy and microbial classification": "Prescott: Microbial Taxonomy and Phylogeny; Campbell: Phylogeny and the Tree of Life",
+    "Bacteria: diversity and identification": "Prescott: Proteobacteria; Prescott: Firmicutes: The Low G + C Gram-Positive Bacteria; Prescott: Actinobacteria: The High G + C Gram-Positive Bacteria",
+    "Archaea": "Prescott: Archaea; Prescott: Archaeal Cell Structure",
+    "Viruses: structure, replication and impact": "Prescott: Viruses and Other Acellular Infectious Agents; Prescott: Viruses",
+    "Fungi": "Prescott: Fungi (Eumycota); Campbell: Fungi",
+    "Protists": "Prescott: Protists; Campbell: Protists",
+    "Plant life": "Campbell: Plant Diversity I: How Plants Colonized Land; Campbell: Plant Diversity II: The Evolution of Seed Plants",
+    "Animal life": "Campbell: An Overview of Animal Diversity; Campbell: An Introduction to Invertebrates; Campbell: The Origin and Evolution of Vertebrates",
+    "Human evolution": "Campbell: The Origin and Evolution of Vertebrates"
+   }
+  },
+  "eco": {
+   "n": "Unit 10 · Ecology and Behavioural Biology",
+   "c": 2,
+   "book": "Odum; Campbell",
+   "topics": [
+    "Ecological factors and population ecology",
+    "Community ecology",
+    "Ecosystems and biogeochemical cycles",
+    "Human impacts on ecosystems",
+    "Biodiversity, conservation and policy",
+    "Behavioural ecology"
+   ],
+   "notes": [
+    {
+     "h": "Strategy",
+     "items": [
+      "Lighter weighting: population models, community interactions and nutrient cycles carry most questions.",
+      "Microbes in nutrient cycles (nitrification, denitrification, anammox, methanogenesis) link to your focus.",
+      "Learn Indian conservation law (Biological Diversity Act 2002, PPV&FR Act 2001); it is now named in the syllabus."
+     ]
+    }
+   ],
+   "read": {
+    "Ecological factors and population ecology": [
+     "Levels of organisation and ecological factors",
+     "Exponential and logistic growth",
+     "Life tables and survivorship curves",
+     "r- and K-selection",
+     "Metapopulations and habitat fragmentation"
+    ],
+    "Community ecology": [
+     "Species interactions",
+     "Niche and competitive exclusion",
+     "Food webs and keystone species",
+     "Primary and secondary succession",
+     "Diversity indices"
+    ],
+    "Ecosystems and biogeochemical cycles": [
+     "Primary production",
+     "Energy flow and ecological pyramids",
+     "Carbon cycle",
+     "Nitrogen and phosphorus cycles",
+     "Ecosystem services"
+    ],
+    "Human impacts on ecosystems": [
+     "Land-use and land-cover change",
+     "Climate change and greenhouse gases",
+     "Pollution and eutrophication",
+     "Invasive species",
+     "Biomagnification"
+    ],
+    "Biodiversity, conservation and policy": [
+     "Biodiversity levels and hotspots",
+     "IUCN threat categories",
+     "In-situ and ex-situ conservation",
+     "Population viability analysis",
+     "Biological Diversity Act 2002, PPV&FR Act, ITPGRFA"
+    ],
+    "Behavioural ecology": [
+     "Proximate and ultimate causes",
+     "Foraging behaviour",
+     "Communication",
+     "Social behaviour and kin selection",
+     "Sexual selection and mating systems"
+    ]
+   },
+   "kp": {
+    "Ecological factors and population ecology": [
+     "Exponential: dN/dt = rN. Logistic: dN/dt = rN(1 − N/K), fastest at N = K/2.",
+     "Survivorship: type I (humans), type II (many birds), type III (oysters, most invertebrates).",
+     "Doubling time ≈ 0.693/r.",
+     "Levins metapopulation: dp/dt = cp(1 − p) − ep; equilibrium occupancy p* = 1 − e/c."
+    ],
+    "Community ecology": [
+     "Gause’s competitive exclusion principle came from Paramecium cultures.",
+     "Paine removed Pisaster starfish and showed keystone predation.",
+     "Lotka–Volterra equations give coupled predator–prey cycles.",
+     "Shannon H′ = −Σ pᵢ ln pᵢ; Simpson D = Σ pᵢ² (diversity = 1 − D)."
+    ],
+    "Ecosystems and biogeochemical cycles": [
+     "About 10% of energy passes between trophic levels (Lindeman).",
+     "The energy pyramid is always upright; the biomass pyramid can be inverted in open-ocean plankton.",
+     "Nitrification: Nitrosomonas (NH₄⁺ → NO₂⁻), Nitrobacter (NO₂⁻ → NO₃⁻); anammox bacteria turn NH₄⁺ + NO₂⁻ into N₂.",
+     "The phosphorus cycle has no significant gaseous phase."
+    ],
+    "Human impacts on ecosystems": [
+     "Atmospheric CO₂ is now above 420 ppm, against about 280 ppm before industrialisation.",
+     "Methane traps about 28 times as much heat as CO₂ over 100 years.",
+     "Organic pollution raises BOD; eutrophication causes algal blooms and hypoxia.",
+     "Lantana camara and water hyacinth are major invasive plants in India."
+    ],
+    "Biodiversity, conservation and policy": [
+     "India covers parts of 4 of the 36 global hotspots: Himalaya, Indo-Burma, Western Ghats–Sri Lanka and Sundaland (Nicobar Islands).",
+     "IUCN threatened categories: Critically Endangered, Endangered, Vulnerable.",
+     "Biological Diversity Act 2002: National Biodiversity Authority (Chennai), State Biodiversity Boards, Biodiversity Management Committees.",
+     "The PPV&FR Act 2001 protects plant varieties and farmers’ rights; the ITPGRFA (2001) covers plant genetic resources for food and agriculture."
+    ],
+    "Behavioural ecology": [
+     "Tinbergen’s four questions: mechanism, development, function and evolution.",
+     "Hamilton’s rule: altruism spreads when rB > C.",
+     "Haplodiploidy makes worker sisters related by r = 0.75 in Hymenoptera.",
+     "The honeybee waggle dance codes direction (angle to the sun) and distance (duration of the waggle run)."
+    ]
+   },
+   "src": {
+    "Ecological factors and population ecology": [
+     [
+      "odum",
+      "Population Ecology"
+     ],
+     [
+      "campbell",
+      "Population Ecology"
+     ]
+    ],
+    "Community ecology": [
+     [
+      "odum",
+      "Community Ecology"
+     ],
+     [
+      "campbell",
+      "Community Ecology"
+     ]
+    ],
+    "Ecosystems and biogeochemical cycles": [
+     [
+      "odum",
+      "Energy in Ecological Systems"
+     ],
+     [
+      "odum",
+      "Biogeochemical Cycles"
+     ],
+     [
+      "prescott",
+      "Biogeochemical Cycling and Global Climate Change"
+     ]
+    ],
+    "Human impacts on ecosystems": [
+     [
+      "campbell",
+      "Conservation Biology and Global Change"
+     ],
+     [
+      "odum",
+      "Global Ecology"
+     ]
+    ],
+    "Biodiversity, conservation and policy": [
+     [
+      "campbell",
+      "Conservation Biology and Global Change"
+     ],
+     [
+      "odum",
+      "Regional Ecology: Major Ecosystem Types and Biomes"
+     ]
+    ],
+    "Behavioural ecology": [
+     [
+      "campbell",
+      "Animal Behavior"
+     ]
+    ]
+   },
+   "refs": {
+    "Ecological factors and population ecology": "Odum: Population Ecology; Campbell: Population Ecology",
+    "Community ecology": "Odum: Community Ecology; Campbell: Community Ecology",
+    "Ecosystems and biogeochemical cycles": "Odum: Energy in Ecological Systems; Odum: Biogeochemical Cycles; Prescott: Biogeochemical Cycling and Global Climate Change",
+    "Human impacts on ecosystems": "Campbell: Conservation Biology and Global Change; Odum: Global Ecology",
+    "Biodiversity, conservation and policy": "Campbell: Conservation Biology and Global Change; Odum: Regional Ecology: Major Ecosystem Types and Biomes",
+    "Behavioural ecology": "Campbell: Animal Behavior"
+   }
+  },
+  "binf": {
+   "n": "Unit 11 · Bioinformatics and Computational Biology",
+   "c": 3,
+   "book": "Mount",
+   "topics": [
+    "Biological databases and sequence searching",
+    "Multiple alignment, phylogenetics and gene annotation",
+    "Protein structure prediction and molecular modelling",
+    "Drug design and systems biology"
+   ],
+   "notes": [
+    {
+     "h": "Strategy",
+     "items": [
+      "New unit in the revised syllabus: expect concept questions on databases, BLAST, alignment scores and phylogenetic methods.",
+      "Keep it light but exact: know which tool or matrix suits which problem.",
+      "Link it to microbiology: 16S phylogenies, genome annotation and metagenomics."
+     ]
+    }
+   ],
+   "read": {
+    "Biological databases and sequence searching": [
+     "Primary and secondary databases",
+     "BLAST and FASTA",
+     "Scoring matrices: PAM and BLOSUM",
+     "Pairwise alignment algorithms",
+     "E-values and alignment statistics"
+    ],
+    "Multiple alignment, phylogenetics and gene annotation": [
+     "Multiple sequence alignment",
+     "Orthologues and paralogues",
+     "Distance, parsimony and maximum-likelihood trees",
+     "Bootstrapping",
+     "Gene prediction and functional annotation"
+    ],
+    "Protein structure prediction and molecular modelling": [
+     "Structure classification: SCOP and CATH",
+     "Homology modelling and threading",
+     "Ab initio prediction",
+     "AlphaFold and AI methods",
+     "Molecular mechanics and force fields"
+    ],
+    "Drug design and systems biology": [
+     "Chemical databases (PubChem, NCI)",
+     "Structure-based design and docking",
+     "QSAR and pharmacophores",
+     "ADMET prediction",
+     "Systems biology and metabolic modelling"
+    ]
+   },
+   "kp": {
+    "Biological databases and sequence searching": [
+     "Needleman–Wunsch is global and Smith–Waterman local dynamic-programming alignment.",
+     "BLOSUM62 suits moderately divergent proteins; higher BLOSUM numbers are for closer sequences, PAM250 for distant ones.",
+     "The E-value is the number of hits expected by chance; lower is more significant.",
+     "GenBank, ENA and DDBJ share data daily (INSDC); UniProt holds proteins, PDB structures."
+    ],
+    "Multiple alignment, phylogenetics and gene annotation": [
+     "Orthologues diverge by speciation; paralogues by gene duplication.",
+     "UPGMA assumes a constant molecular clock; neighbour-joining does not.",
+     "Bootstrap support of 70% or more is usually taken as reliable.",
+     "Gene finders use ORFs, codon bias and splice signals (GT–AG); Glimmer is built for prokaryotes."
+    ],
+    "Protein structure prediction and molecular modelling": [
+     "Homology models are reliable above about 30% sequence identity to the template.",
+     "AlphaFold gives a per-residue confidence (pLDDT); above 90 is high confidence.",
+     "Force-field energy = bond + angle + torsion + van der Waals + electrostatic terms.",
+     "CATH levels: Class, Architecture, Topology, Homologous superfamily."
+    ],
+    "Drug design and systems biology": [
+     "Lipinski’s rule of five: MW ≤ 500, logP ≤ 5, ≤ 5 H-bond donors, ≤ 10 acceptors.",
+     "Docking ranks ligand poses by a scoring function; virtual screening applies it to whole libraries.",
+     "Flux balance analysis models metabolism at steady state from stoichiometry plus constraints.",
+     "QSAR relates molecular descriptors to activity by regression."
+    ]
+   },
+   "src": {
+    "Biological databases and sequence searching": [
+     [
+      "mount",
+      "Alignment of Pairs of Sequences"
+     ],
+     [
+      "mount",
+      "Sequence Database Searching for Similar Sequences"
+     ]
+    ],
+    "Multiple alignment, phylogenetics and gene annotation": [
+     [
+      "mount",
+      "Multiple Sequence Alignment"
+     ],
+     [
+      "mount",
+      "Phylogenetic Prediction"
+     ],
+     [
+      "mount",
+      "Gene Prediction and Regulation"
+     ]
+    ],
+    "Protein structure prediction and molecular modelling": [
+     [
+      "mount",
+      "Protein Classification and Structure Prediction"
+     ]
+    ],
+    "Drug design and systems biology": [
+     [
+      "mount",
+      "Genome Analysis"
+     ]
+    ]
+   },
+   "refs": {
+    "Biological databases and sequence searching": "Mount: Alignment of Pairs of Sequences; Mount: Sequence Database Searching for Similar Sequences",
+    "Multiple alignment, phylogenetics and gene annotation": "Mount: Multiple Sequence Alignment; Mount: Phylogenetic Prediction; Mount: Gene Prediction and Regulation",
+    "Protein structure prediction and molecular modelling": "Mount: Protein Classification and Structure Prediction",
+    "Drug design and systems biology": "Mount: Genome Analysis"
+   }
+  },
+  "bpe": {
+   "n": "Unit 12 · Biochemical Engineering and Industrial Biotechnology",
+   "c": 4,
+   "book": "Stanbury; Shuler & Kargi; Prescott",
+   "topics": [
+    "Engineering principles for bioprocesses",
+    "Thermodynamics of biological systems",
+    "Microbial growth kinetics and bioreactors",
+    "Media, sterilisation and inoculum",
+    "Aeration, agitation and scale-up",
+    "Fermentation products: antibiotics, acids, alcohol, vitamins",
+    "Food microbiology and fermented foods",
+    "Enzyme technology and immobilisation",
+    "Downstream processing, plant design and metabolic engineering"
+   ],
+   "notes": [
+    {
+     "h": "Strategy",
+     "items": [
+      "Industrial microbiology lives here: fermentation, sterilisation, antibiotics, bioreactors and downstream processing.",
+      "Expect numericals: Monod kinetics, chemostat washout, D- and Z-values, kLa and yields. Practise them with units.",
+      "The engineering maths and thermodynamics parts are new; one pass is enough, then drill the fermentation numbers.",
+      "Food microbiology is added here for your focus (fermented foods, spoilage, pasteurisation)."
+     ]
+    }
+   ],
+   "read": {
+    "Engineering principles for bioprocesses": [
+     "Calculus and differential equations for growth",
+     "Material balances",
+     "Energy balances",
+     "Transport phenomena basics",
+     "Heat and mass transfer"
+    ],
+    "Thermodynamics of biological systems": [
+     "First and second laws in open systems",
+     "Non-equilibrium thermodynamics: fluxes and forces",
+     "Entropy production",
+     "Coupled biochemical reactions",
+     "Glycolytic oscillations and biological clocks"
+    ],
+    "Microbial growth kinetics and bioreactors": [
+     "Monod kinetics",
+     "Batch, fed-batch and continuous culture",
+     "Yield coefficients",
+     "Bioreactor types",
+     "Chemostat steady state and washout"
+    ],
+    "Media, sterilisation and inoculum": [
+     "Industrial media design",
+     "Thermal death kinetics: D, Z and F values",
+     "Batch and continuous sterilisation",
+     "Air sterilisation",
+     "Strain improvement and inoculum development"
+    ],
+    "Aeration, agitation and scale-up": [
+     "Oxygen transfer and kLa",
+     "Oxygen transfer versus uptake rate",
+     "Agitation and power input",
+     "Rheology of fermentation broths",
+     "Scale-up criteria"
+    ],
+    "Fermentation products: antibiotics, acids, alcohol, vitamins": [
+     "Primary and secondary metabolites",
+     "Penicillin and streptomycin production",
+     "Citric acid and other organic acids",
+     "Ethanol and beverages",
+     "Vitamins, enzymes, bioplastics and steroid biotransformation"
+    ],
+    "Food microbiology and fermented foods": [
+     "Food spoilage and preservation",
+     "Fermented dairy products",
+     "Fermented plant foods and beverages",
+     "Food-borne pathogens",
+     "Probiotics"
+    ],
+    "Enzyme technology and immobilisation": [
+     "Enzymes in organic solvents and ionic liquids",
+     "Random and rational protein engineering",
+     "Immobilisation of enzymes and cells",
+     "Immobilised-enzyme reactors",
+     "Diffusion limits and the Thiele modulus"
+    ],
+    "Downstream processing, plant design and metabolic engineering": [
+     "Cell disruption and solid–liquid separation",
+     "Precipitation and extraction",
+     "Membranes and chromatography",
+     "Drying, process flow sheets and economics",
+     "Metabolic engineering and synthetic biology"
+    ]
+   },
+   "kp": {
+    "Engineering principles for bioprocesses": [
+     "Balance: accumulation = in − out + generation − consumption.",
+     "Exponential growth: dX/dt = μX, so X = X₀e^{μt} and doubling time = ln 2/μ.",
+     "Pipe flow is laminar when the Reynolds number ρvD/μ is below about 2100.",
+     "Fick’s law: flux J = −D dC/dx."
+    ],
+    "Thermodynamics of biological systems": [
+     "Cells are open systems far from equilibrium that continuously produce entropy.",
+     "Near equilibrium, fluxes are linear in forces and the cross-coefficients are equal (Onsager reciprocity).",
+     "Oxidative phosphorylation captures about 40% of the free energy of glucose oxidation as ATP.",
+     "Yeast glycolytic oscillations come from allosteric feedback on PFK, with periods of minutes."
+    ],
+    "Microbial growth kinetics and bioreactors": [
+     "Monod: μ = μmax S/(Ks + S).",
+     "Chemostat steady state: μ = D (dilution rate F/V); washout when D exceeds μmax.",
+     "Yield Yx/s = ΔX/ΔS; for aerobic growth on glucose it is about 0.5 g/g.",
+     "Fed-batch avoids substrate inhibition and overflow metabolism (baker’s yeast, recombinant proteins)."
+    ],
+    "Media, sterilisation and inoculum": [
+     "D-value: minutes at a set temperature for a 90% kill; Z-value: °C change that alters D tenfold.",
+     "Autoclaving: 121 °C, 15 psi, 15–20 min; Geobacillus stearothermophilus spores are the indicator.",
+     "Del factor ∇ = ln(N₀/N) sets how long a medium must be sterilised.",
+     "Industrial strains are improved by mutagenesis and screening, protoplast fusion and genetic engineering."
+    ],
+    "Aeration, agitation and scale-up": [
+     "OTR = kLa(C* − CL); O₂ solubility in water is only about 7–8 mg/L at 25–30 °C.",
+     "kLa is measured by the dynamic gassing-out method.",
+     "Scale-up keeps one criterion constant (P/V, kLa, tip speed or mixing time); you cannot hold them all.",
+     "Filamentous fungal broths are non-Newtonian and pseudoplastic."
+    ],
+    "Fermentation products: antibiotics, acids, alcohol, vitamins": [
+     "Penicillin: Penicillium chrysogenum (rubens), fed-batch, phenylacetic acid precursor; made in the idiophase.",
+     "Citric acid: Aspergillus niger with limited Mn²⁺/Fe and low pH.",
+     "Vitamin B12 from Propionibacterium or Pseudomonas denitrificans; riboflavin from Ashbya gossypii.",
+     "Cupriavidus necator stores PHB when carbon is in excess and another nutrient is limiting.",
+     "Streptomycin comes from Streptomyces griseus; Rhizopus 11α-hydroxylates progesterone."
+    ],
+    "Food microbiology and fermented foods": [
+     "Yoghurt: Streptococcus thermophilus with Lactobacillus delbrueckii subsp. bulgaricus.",
+     "Pasteurisation: 63 °C for 30 min (batch) or 72 °C for 15 s (HTST).",
+     "Low-acid canning targets Clostridium botulinum with a 12-D process (F₀ ≈ 3 min).",
+     "Listeria monocytogenes grows at refrigeration temperatures."
+    ],
+    "Enzyme technology and immobilisation": [
+     "Immobilisation: adsorption, covalent binding, entrapment (alginate beads), cross-linking (glutaraldehyde).",
+     "Thiele modulus ϕ ≫ 1 means the reaction is diffusion-limited and the effectiveness factor η < 1.",
+     "Immobilised glucose isomerase makes high-fructose corn syrup.",
+     "Directed evolution (error-prone PCR, DNA shuffling) improves enzymes without needing a structure."
+    ],
+    "Downstream processing, plant design and metabolic engineering": [
+     "Downstream processing can be 50–80% of production cost.",
+     "Proteins are salted out with ammonium sulphate; aqueous two-phase systems use PEG and dextran.",
+     "Ultrafiltration separates by molecular-weight cut-off; chromatography by charge, size or affinity.",
+     "Artemisinic acid made in engineered yeast is a landmark of synthetic biology."
+    ]
+   },
+   "src": {
+    "Engineering principles for bioprocesses": [
+     [
+      "shuler",
+      "What Is a Bioprocess Engineer?"
+     ],
+     [
+      "stanbury",
+      "Microbial growth kinetics"
+     ]
+    ],
+    "Thermodynamics of biological systems": [
+     [
+      "lehninger",
+      "Bioenergetics and Biochemical Reaction Types"
+     ],
+     [
+      "shuler",
+      "Major Metabolic Pathways"
+     ]
+    ],
+    "Microbial growth kinetics and bioreactors": [
+     [
+      "shuler",
+      "How Cells Grow"
+     ],
+     [
+      "stanbury",
+      "Microbial growth kinetics"
+     ]
+    ],
+    "Media, sterilisation and inoculum": [
+     [
+      "stanbury",
+      "Sterilization"
+     ],
+     [
+      "stanbury",
+      "Media for industrial fermentations"
+     ],
+     [
+      "stanbury",
+      "The isolation, preservation and improvement of industrially important micro-organisms"
+     ]
+    ],
+    "Aeration, agitation and scale-up": [
+     [
+      "stanbury",
+      "Aeration and agitation"
+     ],
+     [
+      "shuler",
+      "Selection, Scale-Up, Operation, and Control of Bioreactors"
+     ]
+    ],
+    "Fermentation products: antibiotics, acids, alcohol, vitamins": [
+     [
+      "stanbury",
+      "An introduction to fermentation processes"
+     ],
+     [
+      "prescott",
+      "Biotechnology and Industrial Microbiology"
+     ]
+    ],
+    "Food microbiology and fermented foods": [
+     [
+      "prescott",
+      "Microbiology of Food"
+     ]
+    ],
+    "Enzyme technology and immobilisation": [
+     [
+      "shuler",
+      "Enzymes"
+     ],
+     [
+      "shuler",
+      "Operating Considerations for Bioreactors for Suspension and Immobilized Cultures"
+     ]
+    ],
+    "Downstream processing, plant design and metabolic engineering": [
+     [
+      "stanbury",
+      "The recovery and purification of fermentation products"
+     ],
+     [
+      "shuler",
+      "Recovery and Purification of Products"
+     ]
+    ]
+   },
+   "refs": {
+    "Engineering principles for bioprocesses": "Shuler & Kargi: What Is a Bioprocess Engineer?; Stanbury: Microbial growth kinetics",
+    "Thermodynamics of biological systems": "Lehninger: Bioenergetics and Biochemical Reaction Types; Shuler & Kargi: Major Metabolic Pathways",
+    "Microbial growth kinetics and bioreactors": "Shuler & Kargi: How Cells Grow; Stanbury: Microbial growth kinetics",
+    "Media, sterilisation and inoculum": "Stanbury: Sterilization; Stanbury: Media for industrial fermentations; Stanbury: The isolation, preservation and improvement of industrially important micro-organisms",
+    "Aeration, agitation and scale-up": "Stanbury: Aeration and agitation; Shuler & Kargi: Selection, Scale-Up, Operation, and Control of Bioreactors",
+    "Fermentation products: antibiotics, acids, alcohol, vitamins": "Stanbury: An introduction to fermentation processes; Prescott: Biotechnology and Industrial Microbiology",
+    "Food microbiology and fermented foods": "Prescott: Microbiology of Food",
+    "Enzyme technology and immobilisation": "Shuler & Kargi: Enzymes; Shuler & Kargi: Operating Considerations for Bioreactors for Suspension and Immobilized Cultures",
+    "Downstream processing, plant design and metabolic engineering": "Stanbury: The recovery and purification of fermentation products; Shuler & Kargi: Recovery and Purification of Products"
+   }
+  },
+  "adv": {
+   "n": "Unit 13 · Advances in Biotechnology",
+   "c": 5,
+   "book": "Brown; Kuby; Prescott",
+   "topics": [
+    "Recombinant DNA technology and genome editing",
+    "PCR, sequencing and genome strategies",
+    "Medical biotechnology: vaccines, antibodies and therapies",
+    "Stem cells, organoids and clinical microbiology",
+    "Animal biotechnology",
+    "Agricultural biotechnology",
+    "Environmental biotechnology",
+    "Marine biotechnology and biofilms"
+   ],
+   "notes": [
+    {
+     "h": "Strategy",
+     "items": [
+      "Covers medical, environmental and marine microbiology plus recombinant DNA: core material for your focus.",
+      "Vaccines, diagnostics and antimicrobial testing come up often; link them to Unit 4 immunology.",
+      "Recombinant DNA questions test vector capacity, selection markers and enzyme specificity.",
+      "Environmental biotechnology: wastewater stages, bioremediation organisms and biofertilisers."
+     ]
+    }
+   ],
+   "read": {
+    "Recombinant DNA technology and genome editing": [
+     "Restriction enzymes and ligase",
+     "Vectors: plasmids, phage, cosmids, BACs, YACs",
+     "Cloning and screening",
+     "Expression systems",
+     "CRISPR–Cas genome editing"
+    ],
+    "PCR, sequencing and genome strategies": [
+     "PCR, RT-PCR and qPCR",
+     "Sanger sequencing",
+     "Next-generation sequencing",
+     "Genome sequencing strategies",
+     "Protein sequencing"
+    ],
+    "Medical biotechnology: vaccines, antibodies and therapies": [
+     "Live, killed, subunit, recombinant and nucleic-acid vaccines",
+     "Adjuvants and diagnostics",
+     "Antibody engineering and phage display",
+     "Cell, gene and CAR-T therapy",
+     "Biosensors and medical devices"
+    ],
+    "Stem cells, organoids and clinical microbiology": [
+     "iPS cells and directed differentiation",
+     "Organoids",
+     "Molecular diagnosis of pathogens",
+     "Clinical microbiology methods",
+     "Antimicrobial susceptibility testing"
+    ],
+    "Animal biotechnology": [
+     "Animal cell culture",
+     "Transgenic animals",
+     "Cloning and germplasm conservation",
+     "Molecular diagnostics in animals",
+     "Cell lines and cell cloning"
+    ],
+    "Agricultural biotechnology": [
+     "Plant tissue culture",
+     "Agrobacterium and biolistic transformation",
+     "Transgenic crops",
+     "Molecular markers and marker-assisted selection",
+     "Gene pyramiding and impact of GE crops"
+    ],
+    "Environmental biotechnology": [
+     "Wastewater treatment",
+     "Bioremediation and phytoremediation",
+     "Biofertilisers and biopesticides",
+     "Biogas and biofuels",
+     "Biosurfactants and microbially enhanced oil recovery"
+    ],
+    "Marine biotechnology and biofilms": [
+     "Marine microorganisms and their roles",
+     "Microbial metabolites and marine pharmacology",
+     "Seafood microbiology",
+     "Biofouling, corrosion and biofilms",
+     "Basics of oceanography"
+    ]
+   },
+   "kp": {
+    "Recombinant DNA technology and genome editing": [
+     "Type II restriction enzymes cut inside palindromes (EcoRI: G^AATTC).",
+     "Insert capacity: plasmid < 10 kb, λ ~20 kb, cosmid ~45 kb, BAC ~300 kb, YAC ~1 Mb.",
+     "Blue–white screening: an insert disrupts lacZα, giving white colonies on X-gal/IPTG.",
+     "pET vectors use a T7 promoter in E. coli BL21(DE3).",
+     "SpCas9 needs an NGG PAM and makes a blunt cut 3 bp upstream of it."
+    ],
+    "PCR, sequencing and genome strategies": [
+     "Taq polymerase lacks 3′→5′ proofreading; Pfu has it.",
+     "qPCR: at 100% efficiency the Ct drops by about 3.3 cycles per tenfold more template.",
+     "Sanger sequencing uses ddNTPs, which lack a 3′-OH.",
+     "Illumina sequences by synthesis with reversible terminators; Nanopore reads long molecules from current changes.",
+     "Edman degradation removes residues from the N-terminus with phenylisothiocyanate."
+    ],
+    "Medical biotechnology: vaccines, antibodies and therapies": [
+     "The hepatitis B vaccine (HBsAg made in yeast) was the first recombinant vaccine.",
+     "mRNA vaccines use N1-methylpseudouridine-modified mRNA in lipid nanoparticles.",
+     "Antibody names: -ximab chimeric, -zumab humanised, -umab fully human.",
+     "CAR-T cells carry an scFv + CD3ζ + a co-stimulatory domain (CD28 or 4-1BB); anti-CD19 CAR-T treats B-cell cancers.",
+     "The glucose biosensor uses glucose oxidase."
+    ],
+    "Stem cells, organoids and clinical microbiology": [
+     "Organoids grow from stem cells in Matrigel with niche factors such as Wnt and R-spondin.",
+     "Kirby–Bauer disc diffusion uses Mueller–Hinton agar; the MIC is found by broth dilution.",
+     "MALDI-TOF identifies microbes from ribosomal-protein mass fingerprints.",
+     "Koch’s postulates were updated as molecular Koch’s postulates by Falkow (1988)."
+    ],
+    "Animal biotechnology": [
+     "Animal cells grow at 37 °C in 5% CO₂ with bicarbonate buffer; serum supplies growth factors.",
+     "Primary cells have a finite lifespan; continuous lines such as HeLa and CHO are immortal.",
+     "Transgenics are made by pronuclear microinjection, ES-cell targeting or CRISPR in zygotes.",
+     "CHO cells are the main host for therapeutic glycoproteins."
+    ],
+    "Agricultural biotechnology": [
+     "High auxin:cytokinin gives roots, low gives shoots (Skoog and Miller).",
+     "Bt cotton expresses Cry1Ac δ-endotoxin; India approved it in 2002.",
+     "Golden Rice makes β-carotene from added psy and crtI genes.",
+     "SSR and SNP markers are codominant; RAPD and AFLP are mostly dominant."
+    ],
+    "Environmental biotechnology": [
+     "Primary treatment removes solids; secondary (activated sludge, trickling filters) lowers BOD biologically; tertiary removes N and P.",
+     "Biogas is about 50–70% CH₄: hydrolysis → acidogenesis → acetogenesis → methanogenesis.",
+     "Pseudomonas putida with catabolic plasmids degrades hydrocarbons; Chakrabarty’s strain led to the 1980 patent case.",
+     "Biofertilisers: Rhizobium, Azotobacter, Azospirillum, Anabaena; Bacillus thuringiensis is the leading biopesticide."
+    ],
+    "Marine biotechnology and biofilms": [
+     "Prochlorococcus is the most abundant photosynthetic organism in the oceans.",
+     "Biofilms embed cells in an EPS matrix and can be up to 1000 times more tolerant of antibiotics.",
+     "Sulfate-reducing bacteria (Desulfovibrio) drive microbially influenced corrosion.",
+     "Vibrio parahaemolyticus is a major seafood-borne pathogen.",
+     "Ziconotide (from a cone snail) and trabectedin (from a tunicate) are marine-derived drugs."
+    ]
+   },
+   "src": {
+    "Recombinant DNA technology and genome editing": [
+     [
+      "brown",
+      "Vectors for gene cloning: plasmids and bacteriophages"
+     ],
+     [
+      "brown",
+      "Cloning vectors for E. coli"
+     ],
+     [
+      "brown",
+      "Production of protein from cloned genes"
+     ]
+    ],
+    "PCR, sequencing and genome strategies": [
+     [
+      "brown",
+      "The polymerase chain reaction"
+     ],
+     [
+      "brown",
+      "Sequencing genes and genomes"
+     ]
+    ],
+    "Medical biotechnology: vaccines, antibodies and therapies": [
+     [
+      "kuby",
+      "Infectious Diseases and Vaccines"
+     ],
+     [
+      "brown",
+      "Gene cloning and DNA analysis in medicine"
+     ]
+    ],
+    "Stem cells, organoids and clinical microbiology": [
+     [
+      "prescott",
+      "Clinical Microbiology and Immunology"
+     ],
+     [
+      "alberts",
+      "Stem Cells and Tissue Renewal"
+     ]
+    ],
+    "Animal biotechnology": [
+     [
+      "wilson",
+      "Cell culture techniques"
+     ],
+     [
+      "brown",
+      "Gene cloning and DNA analysis in medicine"
+     ]
+    ],
+    "Agricultural biotechnology": [
+     [
+      "brown",
+      "Gene cloning and DNA analysis in agriculture"
+     ],
+     [
+      "taiz",
+      "Biotic Interactions"
+     ]
+    ],
+    "Environmental biotechnology": [
+     [
+      "prescott",
+      "Applied Environmental Microbiology"
+     ]
+    ],
+    "Marine biotechnology and biofilms": [
+     [
+      "prescott",
+      "Microorganisms in Marine and Freshwater Ecosystems"
+     ],
+     [
+      "prescott",
+      "Microbial Interactions"
+     ]
+    ]
+   },
+   "refs": {
+    "Recombinant DNA technology and genome editing": "Brown: Vectors for gene cloning: plasmids and bacteriophages; Brown: Cloning vectors for E. coli; Brown: Production of protein from cloned genes",
+    "PCR, sequencing and genome strategies": "Brown: The polymerase chain reaction; Brown: Sequencing genes and genomes",
+    "Medical biotechnology: vaccines, antibodies and therapies": "Kuby: Infectious Diseases and Vaccines; Brown: Gene cloning and DNA analysis in medicine",
+    "Stem cells, organoids and clinical microbiology": "Prescott: Clinical Microbiology and Immunology; Alberts: Stem Cells and Tissue Renewal",
+    "Animal biotechnology": "Wilson & Walker: Cell culture techniques; Brown: Gene cloning and DNA analysis in medicine",
+    "Agricultural biotechnology": "Brown: Gene cloning and DNA analysis in agriculture; Taiz: Biotic Interactions",
+    "Environmental biotechnology": "Prescott: Applied Environmental Microbiology",
+    "Marine biotechnology and biofilms": "Prescott: Microorganisms in Marine and Freshwater Ecosystems; Prescott: Microbial Interactions"
+   }
+  },
+  "meth": {
+   "n": "Unit 14 · Methods in Biology",
+   "c": 6,
+   "book": "Wilson & Walker; Prescott",
+   "topics": [
+    "Microscopy",
+    "Staining and culture methods",
+    "Sterilisation and control of microorganisms",
+    "Isolation and separation of macromolecules",
+    "Biophysical methods and structure determination",
+    "Molecular biology techniques",
+    "Genomics, proteomics and metabolomics",
+    "Immunotechniques and histochemistry",
+    "Radiolabelling techniques",
+    "Electrophysiology, imaging and field methods",
+    "Statistical methods",
+    "IPR, biosafety and bioethics"
+   ],
+   "notes": [
+    {
+     "h": "Strategy",
+     "items": [
+      "Methods questions are reliable marks and Part C loves experimental design: give this unit steady weekly time.",
+      "For microbiology add microscopy, staining, culture methods and sterilisation (all included here).",
+      "Learn numbers: resolution limits, isotope half-lives, centrifugation formulas, statistical cut-offs.",
+      "For each technique know what it measures, its limits, and when to use it instead of the alternatives."
+     ]
+    }
+   ],
+   "read": {
+    "Microscopy": [
+     "Resolution and numerical aperture",
+     "Bright-field, phase-contrast and dark-field",
+     "Fluorescence and confocal microscopy",
+     "TEM, SEM and cryo-EM",
+     "Specimen preparation"
+    ],
+    "Staining and culture methods": [
+     "Simple and differential stains",
+     "Endospore, capsule and flagella stains",
+     "Types of culture media",
+     "Pure-culture techniques",
+     "Counting microbes: plate count and MPN"
+    ],
+    "Sterilisation and control of microorganisms": [
+     "Heat: moist and dry",
+     "Filtration and radiation",
+     "Chemical agents and disinfectants",
+     "Kinetics of killing",
+     "Biosafety cabinets"
+    ],
+    "Isolation and separation of macromolecules": [
+     "Isolating DNA, RNA and proteins",
+     "Centrifugation: differential and density gradient",
+     "Chromatography: ion exchange, gel filtration, affinity, HPLC",
+     "Electrophoresis: agarose, SDS-PAGE, 2-D, PFGE",
+     "Protein assays"
+    ],
+    "Biophysical methods and structure determination": [
+     "UV–visible spectroscopy and Beer–Lambert",
+     "Fluorescence and FRET",
+     "CD, NMR and ESR",
+     "X-ray crystallography and cryo-EM",
+     "Mass spectrometry, light scattering and SPR"
+    ],
+    "Molecular biology techniques": [
+     "Southern, northern and western blots",
+     "Hybridisation probes",
+     "DNA fingerprinting and barcoding",
+     "Microarrays and RNA-seq",
+     "Knockouts and reporter genes"
+    ],
+    "Genomics, proteomics and metabolomics": [
+     "Prokaryotic and eukaryotic genome organisation",
+     "Comparative genomics and transcriptomics",
+     "Proteomics and interaction mapping",
+     "Targeted and untargeted metabolomics",
+     "Single-cell omics and metagenomics"
+    ],
+    "Immunotechniques and histochemistry": [
+     "Raising antibodies",
+     "ELISA formats",
+     "Radioimmunoassay",
+     "Immunoprecipitation and flow cytometry",
+     "Immunofluorescence, FISH and GISH"
+    ],
+    "Radiolabelling techniques": [
+     "Radioisotopes used in biology",
+     "Detection: GM counters and scintillation",
+     "Autoradiography and imaging",
+     "Pulse–chase experiments",
+     "Radiation safety"
+    ],
+    "Electrophysiology, imaging and field methods": [
+     "Single-unit and patch-clamp recording",
+     "ECG and brain activity recording",
+     "PET, MRI, fMRI and CT",
+     "Estimating population density",
+     "Behaviour sampling and remote sensing"
+    ],
+    "Statistical methods": [
+     "Central tendency and dispersion",
+     "Binomial, Poisson and normal distributions",
+     "t-test, χ² and ANOVA",
+     "Correlation and regression",
+     "Confidence intervals, errors and significance"
+    ],
+    "IPR, biosafety and bioethics": [
+     "Types of intellectual property",
+     "Patents and patent databases",
+     "Biosafety levels and containment",
+     "Indian biosafety regulators",
+     "Research and publication ethics"
+    ]
+   },
+   "kp": {
+    "Microscopy": [
+     "Abbe resolution d = 0.61λ/NA; the best light microscopes resolve about 0.2 µm.",
+     "Immersion oil (n ≈ 1.515) raises the NA to about 1.4.",
+     "Phase contrast shows living unstained cells; confocal uses a pinhole to give optical sections.",
+     "TEM needs ultrathin sections (~60–90 nm) stained with heavy metals; SEM images surfaces."
+    ],
+    "Staining and culture methods": [
+     "Gram stain: crystal violet → iodine → alcohol → safranin; Gram-positives stay purple.",
+     "Ziehl–Neelsen (hot carbol fuchsin) stains mycobacteria red.",
+     "Schaeffer–Fulton endospore stain uses malachite green.",
+     "MacConkey agar is selective (bile salts, crystal violet) and differential (lactose fermenters pink).",
+     "Count plates with 30–300 colonies; CFU/mL = colonies ÷ (dilution × volume plated)."
+    ],
+    "Sterilisation and control of microorganisms": [
+     "Dry heat needs 160–170 °C for about 2 h; filter sterilisation uses 0.22 µm membranes.",
+     "The phenol coefficient compares a disinfectant with phenol.",
+     "Gamma rays sterilise heat-sensitive disposables; UV (~260 nm) forms thymine dimers but penetrates poorly.",
+     "Prions need extended autoclaving at 134 °C or NaOH treatment."
+    ],
+    "Isolation and separation of macromolecules": [
+     "Sedimentation coefficients are in Svedberg units (10⁻¹³ s); RCF = 1.118 × 10⁻⁵ × r(cm) × rpm².",
+     "SDS-PAGE separates by mass; 2-D gels by pI, then mass.",
+     "In gel filtration the largest molecules come out first.",
+     "Pulsed-field gels resolve megabase DNA; ordinary agarose about 0.1–25 kb.",
+     "Bradford uses Coomassie G-250 at 595 nm; Lowry and BCA rely on Cu⁺."
+    ],
+    "Biophysical methods and structure determination": [
+     "Beer–Lambert: A = εcl.",
+     "CD spectra: α-helix has minima at 208 and 222 nm; β-sheet near 218 nm.",
+     "FRET efficiency falls with 1/r⁶ and works over about 1–10 nm.",
+     "MALDI-TOF measures intact masses; ESI gives multiply charged ions; MS/MS sequences peptides.",
+     "Surface plasmon resonance measures kon, koff and KD without labels."
+    ],
+    "Molecular biology techniques": [
+     "Southern = DNA, northern = RNA, western = protein; south-western detects DNA-binding proteins.",
+     "DNA barcodes: COI for animals, rbcL and matK for plants, ITS for fungi.",
+     "Forensic DNA profiles use STR loci.",
+     "RNA-seq expression is reported as TPM or FPKM; differential expression uses fold change and adjusted p-values."
+    ],
+    "Genomics, proteomics and metabolomics": [
+     "Yeast two-hybrid tests protein–protein interactions in vivo; co-immunoprecipitation and pull-downs in vitro.",
+     "Metagenomics sequences community DNA without culturing; most environmental microbes are not yet culturable.",
+     "Bacterial genomes are dense (~88% coding); the human genome is about 1–2% protein-coding.",
+     "Untargeted metabolomics uses LC-MS or GC-MS; targeted assays use multiple-reaction monitoring."
+    ],
+    "Immunotechniques and histochemistry": [
+     "Sandwich ELISA needs two antibodies to different epitopes; HRP with TMB is read at 450 nm.",
+     "Flow cytometry: forward scatter ≈ size, side scatter ≈ granularity.",
+     "FISH maps sequences on chromosomes; GISH uses whole genomic DNA to tell parental genomes apart in hybrids.",
+     "Immunoprecipitation is greatest at the equivalence zone."
+    ],
+    "Radiolabelling techniques": [
+     "Half-lives: ³H 12.3 years, ¹⁴C 5730 years, ³²P 14.3 days, ³⁵S 87 days, ¹²⁵I 60 days.",
+     "β-emitters (³H, ¹⁴C, ³²P, ³⁵S) are counted by liquid scintillation; ¹²⁵I by a gamma counter.",
+     "Activity A = λN, with λ = 0.693/t½.",
+     "Shield ³²P with acrylic, not lead, to avoid bremsstrahlung."
+    ],
+    "Electrophysiology, imaging and field methods": [
+     "Patch clamp (Neher and Sakmann) records single-channel currents.",
+     "fMRI detects the BOLD signal from deoxyhaemoglobin.",
+     "Lincoln–Petersen mark–recapture: N = MC/R.",
+     "Quadrats give density, frequency and abundance of plants."
+    ],
+    "Statistical methods": [
+     "Normal distribution: ±1σ covers 68.3%, ±2σ 95.4%, ±3σ 99.7%.",
+     "Poisson mean = variance = λ, and P(0) = e^{−λ}.",
+     "Type I error (α) rejects a true H₀; type II (β) keeps a false one; power = 1 − β.",
+     "Standard error = SD/√n; a 95% CI is roughly mean ± 1.96 SE.",
+     "Non-parametric tests: Mann–Whitney U, Wilcoxon signed-rank, Kruskal–Wallis."
+    ],
+    "IPR, biosafety and bioethics": [
+     "A patent lasts 20 years and needs novelty, an inventive step and industrial applicability.",
+     "BSL-1: E. coli K-12; BSL-2: Salmonella, S. aureus; BSL-3: M. tuberculosis; BSL-4: Ebola virus.",
+     "India: GEAC (environment ministry) approves environmental release of GMOs, RCGM (DBT) oversees research, IBSCs work in each institution.",
+     "Diamond v. Chakrabarty (1980) allowed the first patent on a living engineered microbe."
+    ]
+   },
+   "src": {
+    "Microscopy": [
+     [
+      "wilson",
+      "Microscopy"
+     ],
+     [
+      "prescott",
+      "Microscopy"
+     ]
+    ],
+    "Staining and culture methods": [
+     [
+      "prescott",
+      "Microscopy"
+     ],
+     [
+      "prescott",
+      "Microbial Growth"
+     ]
+    ],
+    "Sterilisation and control of microorganisms": [
+     [
+      "prescott",
+      "Control of Microorganisms in the Environment"
+     ],
+     [
+      "stanbury",
+      "Sterilization"
+     ]
+    ],
+    "Isolation and separation of macromolecules": [
+     [
+      "wilson",
+      "Centrifugation"
+     ],
+     [
+      "wilson",
+      "Chromatographic techniques"
+     ],
+     [
+      "wilson",
+      "Electrophoretic techniques"
+     ]
+    ],
+    "Biophysical methods and structure determination": [
+     [
+      "wilson",
+      "Spectroscopic techniques"
+     ],
+     [
+      "wilson",
+      "Mass spectrometric techniques"
+     ]
+    ],
+    "Molecular biology techniques": [
+     [
+      "wilson",
+      "Recombinant DNA and genetic analysis"
+     ],
+     [
+      "brown",
+      "Studying gene expression and function"
+     ]
+    ],
+    "Genomics, proteomics and metabolomics": [
+     [
+      "prescott",
+      "Microbial Genomics"
+     ],
+     [
+      "brown",
+      "Studying genomes"
+     ]
+    ],
+    "Immunotechniques and histochemistry": [
+     [
+      "wilson",
+      "Immunochemical techniques"
+     ],
+     [
+      "kuby",
+      "Experimental Systems and Methods"
+     ]
+    ],
+    "Radiolabelling techniques": [
+     [
+      "wilson",
+      "Radioisotope techniques"
+     ]
+    ],
+    "Electrophysiology, imaging and field methods": [
+     [
+      "guyton",
+      "Membrane Potentials and Action Potentials"
+     ],
+     [
+      "odum",
+      "Statistical Thinking for Students of Ecology"
+     ]
+    ],
+    "Statistical methods": [
+     [
+      "odum",
+      "Statistical Thinking for Students of Ecology"
+     ]
+    ],
+    "IPR, biosafety and bioethics": [
+     [
+      "prescott",
+      "Biotechnology and Industrial Microbiology"
+     ]
+    ]
+   },
+   "refs": {
+    "Microscopy": "Wilson & Walker: Microscopy; Prescott: Microscopy",
+    "Staining and culture methods": "Prescott: Microscopy; Prescott: Microbial Growth",
+    "Sterilisation and control of microorganisms": "Prescott: Control of Microorganisms in the Environment; Stanbury: Sterilization",
+    "Isolation and separation of macromolecules": "Wilson & Walker: Centrifugation; Wilson & Walker: Chromatographic techniques; Wilson & Walker: Electrophoretic techniques",
+    "Biophysical methods and structure determination": "Wilson & Walker: Spectroscopic techniques; Wilson & Walker: Mass spectrometric techniques",
+    "Molecular biology techniques": "Wilson & Walker: Recombinant DNA and genetic analysis; Brown: Studying gene expression and function",
+    "Genomics, proteomics and metabolomics": "Prescott: Microbial Genomics; Brown: Studying genomes",
+    "Immunotechniques and histochemistry": "Wilson & Walker: Immunochemical techniques; Kuby: Experimental Systems and Methods",
+    "Radiolabelling techniques": "Wilson & Walker: Radioisotope techniques",
+    "Electrophysiology, imaging and field methods": "Guyton: Membrane Potentials and Action Potentials; Odum: Statistical Thinking for Students of Ecology",
+    "Statistical methods": "Odum: Statistical Thinking for Students of Ecology",
+    "IPR, biosafety and bioethics": "Prescott: Biotechnology and Industrial Microbiology"
+   }
+  }
+ },
+ "blocks": [
+  {
+   "s": "2026-10-16",
+   "e": "2026-11-08",
+   "phase": "Phase 1 · Learn",
+   "kind": "learn",
+   "main": [
+    "bio"
+   ],
+   "par": [
+    "pa"
+   ],
+   "style": "NET"
+  },
+  {
+   "s": "2026-11-09",
+   "e": "2026-11-29",
+   "phase": "Phase 1 · Learn",
+   "kind": "learn",
+   "main": [
+    "cell"
+   ],
+   "par": [
+    "pa"
+   ],
+   "style": "NET"
+  },
+  {
+   "s": "2026-11-30",
+   "e": "2026-12-20",
+   "phase": "Phase 1 · Learn",
+   "kind": "learn",
+   "main": [
+    "fund"
+   ],
+   "par": [
+    "pa"
+   ],
+   "style": "NET"
+  },
+  {
+   "s": "2026-12-21",
+   "e": "2027-01-10",
+   "phase": "Phase 1 · Learn",
+   "kind": "learn",
+   "main": [
+    "gen"
+   ],
+   "par": [
+    "pa"
+   ],
+   "style": "NET"
+  },
+  {
+   "s": "2027-01-11",
+   "e": "2027-01-31",
+   "phase": "Phase 1 · Learn",
+   "kind": "learn",
+   "main": [
+    "sig"
+   ],
+   "par": [
+    "pa"
+   ],
+   "style": "NET"
+  },
+  {
+   "s": "2027-02-01",
+   "e": "2027-02-07",
+   "phase": "Phase 1 · Learn",
+   "kind": "learn",
+   "main": [
+    "dev"
+   ],
+   "par": [
+    "pa"
+   ],
+   "style": "NET"
+  },
+  {
+   "s": "2027-02-08",
+   "e": "2027-02-28",
+   "phase": "Phase 1 · Learn",
+   "kind": "learn",
+   "main": [
+    "div"
+   ],
+   "par": [
+    "pa"
+   ],
+   "style": "NET"
+  },
+  {
+   "s": "2027-03-01",
+   "e": "2027-03-07",
+   "phase": "Phase 1 · Learn",
+   "kind": "learn",
+   "main": [
+    "plant"
+   ],
+   "par": [
+    "pa"
+   ],
+   "style": "NET"
+  },
+  {
+   "s": "2027-03-08",
+   "e": "2027-03-28",
+   "phase": "Phase 1 · Learn",
+   "kind": "learn",
+   "main": [
+    "meth"
+   ],
+   "par": [
+    "pa"
+   ],
+   "style": "NET"
+  },
+  {
+   "s": "2027-03-29",
+   "e": "2027-04-04",
+   "phase": "Phase 1 · Learn",
+   "kind": "learn",
+   "main": [
+    "anim"
+   ],
+   "par": [
+    "pa"
+   ],
+   "style": "NET"
+  },
+  {
+   "s": "2027-04-05",
+   "e": "2027-04-11",
+   "phase": "Phase 1 · Learn",
+   "kind": "learn",
+   "main": [
+    "eco"
+   ],
+   "par": [
+    "pa"
+   ],
+   "style": "NET"
+  },
+  {
+   "s": "2027-04-12",
+   "e": "2027-04-18",
+   "phase": "Phase 1 · Learn",
+   "kind": "learn",
+   "main": [
+    "binf"
+   ],
+   "par": [
+    "pa"
+   ],
+   "style": "NET"
+  },
+  {
+   "s": "2027-04-19",
+   "e": "2027-05-09",
+   "phase": "Phase 1 · Learn",
+   "kind": "learn",
+   "main": [
+    "bpe"
+   ],
+   "par": [
+    "pa"
+   ],
+   "style": "NET"
+  },
+  {
+   "s": "2027-05-10",
+   "e": "2027-06-04",
+   "phase": "Phase 1 · Learn",
+   "kind": "learn",
+   "main": [
+    "adv"
+   ],
+   "par": [
+    "pa"
+   ],
+   "style": "NET"
+  },
+  {
+   "s": "2027-06-05",
+   "e": "2027-06-25",
+   "phase": "Phase 2 · Revision",
+   "kind": "revise",
+   "main": [
+    "bio",
+    "cell",
+    "fund",
+    "gen",
+    "sig",
+    "dev",
+    "div",
+    "plant",
+    "meth",
+    "anim",
+    "eco",
+    "binf",
+    "bpe",
+    "adv"
+   ],
+   "par": [
+    "pa"
+   ],
+   "style": "NET"
+  },
+  {
+   "s": "2027-06-26",
+   "e": "2027-07-16",
+   "phase": "Phase 3 · Full mocks",
+   "kind": "mock",
+   "main": [
+    "bio",
+    "cell",
+    "fund",
+    "gen",
+    "sig",
+    "dev",
+    "div",
+    "plant",
+    "meth",
+    "anim",
+    "eco",
+    "binf",
+    "bpe",
+    "adv"
+   ],
+   "par": [
+    "pa"
+   ],
+   "style": "NET"
+  }
+ ],
+ "books": {
+  "lehninger": {
+   "t": "Lehninger Principles of Biochemistry (7th ed.)",
+   "a": "David L. Nelson & Michael M. Cox",
+   "kind": "book",
+   "subj": [
+    "bio",
+    "fund",
+    "sig",
+    "plant",
+    "bpe"
+   ]
+  },
+  "alberts": {
+   "t": "Molecular Biology of the Cell (6th ed.)",
+   "a": "Bruce Alberts et al.",
+   "kind": "book",
+   "subj": [
+    "bio",
+    "cell",
+    "fund",
+    "sig",
+    "dev",
+    "adv"
+   ]
+  },
+  "prescott": {
+   "t": "Prescott’s Microbiology (10th ed.)",
+   "a": "Joanne Willey, Kathleen Sandman & Dorothy Wood",
+   "kind": "book",
+   "subj": [
+    "bio",
+    "cell",
+    "fund",
+    "sig",
+    "plant",
+    "anim",
+    "gen",
+    "div",
+    "eco",
+    "bpe",
+    "adv",
+    "meth"
+   ]
+  },
+  "kuby": {
+   "t": "Kuby Immunology (8th ed.)",
+   "a": "Jenni Punt, Sharon Stranford, Patricia Jones & Judith Owen",
+   "kind": "book",
+   "subj": [
+    "sig",
+    "adv",
+    "meth"
+   ]
+  },
+  "griffiths": {
+   "t": "Introduction to Genetic Analysis (11th ed.)",
+   "a": "Anthony Griffiths, Susan Wessler, Sean Carroll & John Doebley",
+   "kind": "book",
+   "subj": [
+    "cell",
+    "fund",
+    "gen",
+    "div"
+   ]
+  },
+  "gilbert": {
+   "t": "Developmental Biology (11th ed.)",
+   "a": "Scott F. Gilbert & Michael J. F. Barresi",
+   "kind": "book",
+   "subj": [
+    "dev"
+   ]
+  },
+  "taiz": {
+   "t": "Plant Physiology and Development (6th ed.)",
+   "a": "Lincoln Taiz, Eduardo Zeiger, Ian Max Møller & Angus Murphy",
+   "kind": "book",
+   "subj": [
+    "cell",
+    "sig",
+    "dev",
+    "plant",
+    "adv"
+   ]
+  },
+  "guyton": {
+   "t": "Guyton and Hall Textbook of Medical Physiology (14th ed.)",
+   "a": "John E. Hall & Michael E. Hall",
+   "kind": "book",
+   "subj": [
+    "sig",
+    "anim",
+    "meth"
+   ]
+  },
+  "campbell": {
+   "t": "Campbell Biology (11th ed.)",
+   "a": "Lisa Urry, Michael Cain, Steven Wasserman, Peter Minorsky & Jane Reece",
+   "kind": "book",
+   "subj": [
+    "div",
+    "eco"
+   ]
+  },
+  "odum": {
+   "t": "Fundamentals of Ecology (5th ed.)",
+   "a": "Eugene P. Odum & Gary W. Barrett",
+   "kind": "book",
+   "subj": [
+    "eco",
+    "meth"
+   ]
+  },
+  "mount": {
+   "t": "Bioinformatics: Sequence and Genome Analysis (2nd ed.)",
+   "a": "David W. Mount",
+   "kind": "book",
+   "subj": [
+    "binf"
+   ]
+  },
+  "stanbury": {
+   "t": "Principles of Fermentation Technology (3rd ed.)",
+   "a": "Peter Stanbury, Allan Whitaker & Stephen Hall",
+   "kind": "book",
+   "subj": [
+    "bpe",
+    "meth"
+   ]
+  },
+  "shuler": {
+   "t": "Bioprocess Engineering: Basic Concepts (2nd ed.)",
+   "a": "Michael L. Shuler & Fikret Kargi",
+   "kind": "book",
+   "subj": [
+    "bpe"
+   ]
+  },
+  "brown": {
+   "t": "Gene Cloning and DNA Analysis: An Introduction (8th ed.)",
+   "a": "T. A. Brown",
+   "kind": "book",
+   "subj": [
+    "adv",
+    "meth"
+   ]
+  },
+  "wilson": {
+   "t": "Wilson and Walker’s Principles and Techniques of Biochemistry and Molecular Biology (8th ed.)",
+   "a": "Andreas Hofmann & Samuel Clokie (eds.)",
+   "kind": "book",
+   "subj": [
+    "adv",
+    "meth"
+   ]
+  },
+  "aggq": {
+   "t": "Quantitative Aptitude for Competitive Examinations",
+   "a": "R. S. Aggarwal",
+   "kind": "book",
+   "subj": [
+    "pa"
+   ]
+  },
+  "aggr": {
+   "t": "A Modern Approach to Verbal & Non-Verbal Reasoning",
+   "a": "R. S. Aggarwal",
+   "kind": "book",
+   "subj": [
+    "pa"
+   ]
+  },
+  "pyq": {
+   "t": "Joint CSIR-UGC NET question papers and answer keys",
+   "a": "NTA (csirnet.nta.nic.in)",
+   "kind": "doc",
+   "subj": [
+    "pa"
+   ]
+  }
+ }
+}

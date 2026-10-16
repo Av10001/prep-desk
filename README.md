@@ -22,6 +22,7 @@ A free study platform for competitive exams. Each person gets a **profile** that
 | --- | --- | --- | --- |
 | GATE EC + ESE E&T 2028 | 22 | 196 | 14 Oct 2026 to ESE mains, about 26 h/week alongside a 9–6 job |
 | CDSCO Drug Inspector (UPSC) | 12 | 101 | One year at about 3 h/day; test pattern 300 marks, 2 h, 1/3 negative marking |
+| CSIR NET Life Sciences (Microbiology focus) | 15 | 129 | 16 Oct 2026 to the June 2027 session (expected mid-July), 27 h/week; extra weeks on microbiology units; 200 marks, 3 h, 25% negative marking |
 
 Future exam dates are projections from official calendars and are marked as expected.
 
@@ -51,7 +52,7 @@ Courses are JSON files in [`courses/`](courses/).
 | `books` | Book id → `t` title, `a` author, `kind` (`book`, `doc`, `guide`, `notes`), `subj` (subjects it serves) |
 | `blocks` | Date ranges: `kind` = `learn` / `revise` / `mock` / `written`, `main` subjects, Sunday `par` track, paper `style` |
 | `styles` | Question formats: `kind` = `mixed` / `mcq` / `desc`, `marks`, `neg` (fraction of marks lost per wrong answer) |
-| `patterns` | Full-mock blueprints: questions per subject (`dist`) and duration |
+| `patterns` | Full-mock blueprints: questions per subject (`dist`) and duration (optional `sections` with per-part `marks`) |
 | `exams`, `milestones` | Countdown dates and calendar markers |
 | `routine`, `habit`, `hoursTarget` | Slot times, a daily 20-minute habit subject, weekly hour target |
 
